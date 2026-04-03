@@ -1,0 +1,17 @@
+{
+    "Home": {
+      "title": "Hello world!"
+    },
+    "Header": {
+      "btnSignUp": "Sign Up",
+      "btnSLogin": "Login"
+    },
+    "Hero": {
+      "brandName": "Watch and Learn",
+      "description": "Learn Real English with Movies & TV Shows",
+      "h1": "Modern online platform with interactive English video lessons",
+      "h2": "Watch, break down phrases, and practice in context — not theory",
+      "CTA": "Get Started for Free"
+    }
+
+  }
