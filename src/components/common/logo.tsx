@@ -11,10 +11,10 @@ export default function Logo({ size = "md" }: { size?: LogoSize }) {
 
   return (
     <Image
-      src="/Logo2.svg"
+      src="/logo.svg"
       alt="Watch and Learn Logo"
-      width={200}
-      height={50}
+      width={100}
+      height={100}
       className={`${sizes[size]} w-auto`}
       loading="eager"
     />

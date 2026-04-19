@@ -2,16 +2,30 @@
 @import "@heroui/styles";
 
 :root {
+  --font-lato: "Lato", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Titillium Web", "Trebuchet MS", sans-serif;
+
   --primary: #2A666F;
+  --primary200: #ACC8CC;
+  --primary600: #2A666F;
+  --primary700: #23555D;
+
   --secondary: #29586E;
+  --secondary700: #234A5D;
+
   --accent: #DC5318;
+  --accent50: #f9e5ce;
   --accent700: #B84514;
-  --danger: #DC2626;
-  --background: #F7F8F8;
+  --accent400: #ED895E;
+  --accent300: #F4B59A;
+
   --gray100: #ECEFEF;
   --gray150: #6C777A;
   --gray400: #455254;
-  --accent50: #f9e5ce;
+
+  --danger: #DC2626;
+  --background: #F7F8F8;
+
   --textBody: #313131;
   --textTitle: #363d40;
 }
@@ -26,7 +40,7 @@ video::-webkit-media-controls-enclosure {
   display: none !important;
 }
 
-body {
+html, body {
   font-family: var(--font-lato);
 }
 header {
@@ -61,16 +75,19 @@ header {
 
 }
 
-
 .hero {
   height: 80vh;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.side-menu{
+  background: linear-gradient(165deg, #317782 0%, #306882 100%);
+  border-radius: 24px;
+  padding: 24px 8px;
+}
+.extra-bold{
+  font-weight: 700;
 }
 
-.animate-fadeIn {
-  animation: fadeIn 0.7s ease-in-out forwards;
+.app-bg{
+  background: linear-gradient(165deg, #FBFEFE 0%, #FDF5F1 56.73%, #EEF4F6 100%);
 }

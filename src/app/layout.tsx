@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Lato, Titillium_Web } from "next/font/google";
 import "./globals.css";
-import { NextIntlClientProvider } from 'next-intl';
-import HeaderMain from '@/components/common/header-main';
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale } from "next-intl/server";
+import Script from "next/script";
 
 const lato = Lato({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "700", "900"],
   variable: "--font-lato",
 });
 
@@ -21,22 +22,32 @@ export const metadata: Metadata = {
   description: "Watch and Learn Proof of Concept",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
+
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`${lato.variable} ${titillium.variable} h-full antialiased`}
-    ><NextIntlClientProvider>
-        <body className="min-h-full flex flex-col">
-          <HeaderMain />
+    >
+      <body className="min-h-full flex flex-col">
+        <NextIntlClientProvider>
           {children}
-        </body>
-    </NextIntlClientProvider>
-
+        </NextIntlClientProvider>
+        {adsenseClientId ? (
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        ) : null}
+      </body>
     </html>
   );
 }
