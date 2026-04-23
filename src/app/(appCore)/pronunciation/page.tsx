@@ -1,7 +1,7 @@
-export default function Pronounciation() {  
+export default function Pronunciation() {
   return (
-    <section className="flex flex-row gap-12">
-      here will be the pronounciation page
+    <section className="flex h-full flex-row gap-12">
+      here will be the pronunciation page
     </section>
   );
 }

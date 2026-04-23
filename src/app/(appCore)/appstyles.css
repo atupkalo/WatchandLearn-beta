@@ -1,9 +1,0 @@
-.header-app{
-    border-bottom: 1px solid #ffffff;
-    background: rgba(131, 173, 179, 0.20);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-  .gradient{
-    background: linear-gradient(105deg, #e0fbff 2.11%, #FFF6EF 55.29%, #F0FAFF 100%);
-  }

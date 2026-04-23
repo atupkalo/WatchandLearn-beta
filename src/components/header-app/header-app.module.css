@@ -1,0 +1,13 @@
+.headerApp {
+  border-bottom: 1px solid #fff;
+  background: linear-gradient(90deg, #f9f8f1 0%, #d1dfe5 100%);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.avatarButton {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}

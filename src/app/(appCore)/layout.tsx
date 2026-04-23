@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import SideMenu from "@/components/sidemenu/sidemenu";
-import HeaderApp from "@/components/hedaer-app/header-app";
-import "./appstyles.css";
+import HeaderApp from "@/components/header-app/header-app";
+import styles from "./layout.module.css";
 
 export default function AppCoreLayout({
   children,
@@ -9,14 +9,18 @@ export default function AppCoreLayout({
   children: ReactNode;
 }) {
   return (
-    <div className="gradient">
+    <div className="min-h-screen flex flex-col">
       <HeaderApp />
-      <main className="grid gradient h-[calc(100vh-72px)] grid-cols-[max-content_1fr] gap-6 overflow-hidden p-4 app-bg">
-        <aside className="h-full side-menu">
+      <main
+        className={`${styles.appBackground} grid flex-1 min-h-0 grid-cols-[max-content_1fr] gap-6 overflow-hidden p-4`}
+      >
+        <aside className="h-full">
           <SideMenu />
         </aside>
         <section className="min-w-0 h-full overflow-hidden">
-          {children}
+          <div className="h-full overflow-auto rounded-[28px]">
+            {children}
+          </div>
         </section>
       </main>
     </div>

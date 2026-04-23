@@ -6,6 +6,8 @@ interface ButtonCustomProps {
   variant?: "primary" | "secondary" | "ghostIcon" | "accent";
   className?: string;
   icon?: React.ReactNode;
+  type?: "button" | "submit" | "reset";
+  onClick?: () => void;
 }
 
 export default function ButtonCustom({
@@ -14,6 +16,8 @@ export default function ButtonCustom({
   variant = "primary",
   className = "",
   icon,
+  type = "button",
+  onClick,
 }: ButtonCustomProps) {
   const variants = {
     primary: "bg-[var(--primary)] text-white hover:bg-[var(--secondary)]",
@@ -25,9 +29,12 @@ export default function ButtonCustom({
   return (
     <Button
       size={size}
+      type={type}
+      onClick={onClick}
       className={`${variants[variant]} rounded-full text-base font-medium ${className}`}
     >
       {label}{icon}
     </Button>
   );
 }
+

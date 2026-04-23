@@ -4,12 +4,44 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import ButtonCustom from "../ui/button";
 import Title from "../ui/title";
+import { useEffect, useState } from "react";
+import buttonStyles from "../ui/button.module.css";
+import styles from "./hero.module.css";
+
+const layers = [
+  "/l1.png",
+  "/l2.png",
+  "/l3.png",
+  "/l4.png",
+  "/l5.png",
+  "/l6.png",
+  "/l7.png",
+  "/l8.png",
+  "/l9.png",
+  "/l10.png",
+  "/l11.png",
+  "/l12.png",
+];
+const layerLifetimeInSeconds = 3;
+const animationStepInMilliseconds = 1000;
+const cycleLength = layers.length + layerLifetimeInSeconds - 1;
 
 export default function Hero() {
-  const t = useTranslations('Hero');
+  const [currentStep, setCurrentStep] = useState(0);
+  const t = useTranslations("Hero");
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setCurrentStep((previousStep) => (previousStep + 1) % cycleLength);
+    }, animationStepInMilliseconds);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, []);
 
   return (
-    <section className="relative hero overflow-hidden">
+    <section className={`${styles.hero} relative overflow-hidden`}>
       <div className="absolute inset-y-0 right-0 hidden w-1/2 lg:block">
         <Image
           src="/base.png"
@@ -19,9 +51,26 @@ export default function Hero() {
           sizes="50vw"
           className="pointer-events-none object-contain object-right"
         />
-      </div>
+        {layers.map((layerSrc, index) => {
+          const isVisible =
+            currentStep >= index &&
+            currentStep < index + layerLifetimeInSeconds;
 
-      <div className="absolute right-0 top-0 h-full w-full bg-gradient-to-l from-white/35 via-white/10 to-transparent lg:w-1/2" />
+          return (
+            <Image
+              key={layerSrc}
+              src={layerSrc}
+              alt=""
+              fill
+              priority={index === 0}
+              sizes="50vw"
+              className={`pointer-events-none object-contain object-right transition-opacity duration-700 ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          );
+        })}
+      </div>
 
       <div className="relative z-10 flex h-full items-center px-6 lg:px-8">
         <div className="flex w-full flex-col items-center gap-12 text-center lg:w-1/2 lg:gap-16">
@@ -44,7 +93,7 @@ export default function Hero() {
               size="lg"
               label={t("CTA")}
               variant="primary"
-              className="p-6 text-xl shadow-[inset_4px_4px_6px_rgba(255,255,255,0.4)]"
+              className={`p-6 text-xl ${buttonStyles.shadowInset}`}
             />
           </div>
         </div>

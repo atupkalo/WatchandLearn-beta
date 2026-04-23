@@ -1,0 +1,66 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.open {
+  pointer-events: auto;
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(560px, 100vw);
+  padding: 16px;
+  border-radius: 24px 0 0 24px;
+  background: #ffffff;
+  box-shadow: -8px 0 20px rgba(35, 74, 93, 0.08);
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+.panelOpen {
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.panelClosed {
+  pointer-events: none;
+  transform: translateX(100%);
+}
+
+.closeRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.closeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--gray150);
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.closeButton:hover,
+.closeButton:focus-visible {
+  background: rgba(42, 102, 111, 0.08);
+  color: var(--secondary);
+  outline: none;
+}

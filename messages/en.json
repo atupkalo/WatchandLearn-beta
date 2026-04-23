@@ -4,7 +4,7 @@
     },
     "Header": {
       "btnSignUp": "Sign Up",
-      "btnSLogin": "Login"
+      "btnSLogin": "LOGIN"
     },
     "Hero": {
       "brandName": "Watch and Learn",
@@ -18,17 +18,34 @@
       "lessons": "Lessons",
       "vocabulary": "Vocabulary",
       "grammar": "Grammar",
-      "pronounciation": "Pronounciation",
+      "pronunciation": "Pronunciation",
       "admin": "Admin"
     },
     "Onbording": {
       "title": "Welcome to Watch and Learn!",
       "interfaceLang": "Choose the interface language",
-      "descriptionInterface": "This determines the language of your interface; what you see on the screen. We recommend choosing English, even if your level is beginner. You can skip this step and select your preference later using the interface language switch.",
+      "descriptionInterface": "This determines the language of your interface; what you see on the screen. We recommend choosing English, even if your level is beginner. However, you can skip this step and select your preference later using the interface language switch wich will be available fro you in your profile.",
       "studyLang": "Choose the study language",
       "discriptionStudy": "This determines the language used for explanations and translations. For example, if you want to see the meaning of a word or phrase, it will be translated into language you will choose. Since this is a Ukrainian product, the interface language is currently available in English or Ukrainian only.",
       "langUA": "Ukrainian",
-      "langEN": "English"
-    }
-
+      "langEN": "English",
+      "langRu": "russian"
+    },
+  "EnteringForms": {
+    "name": "Name",
+    "email": "Email *",
+    "password": "Password *",
+    "confirmPassword": "Confirm Password *",
+    "alternative": "Or sign up with:",
+    "loginLabel": "Already have an account?",
+    "signupLabel": "Need an account?",
+    "login": "LOGIN",
+    "loginH": "Login",
+    "signup": "Sign Up"
+  },
+  "Account": {
+    "studyLabel": "Choose languages of study:",
+    "studyUa": "English - Ukrainian",
+    "studyRu": "English - russian"
   }
+}

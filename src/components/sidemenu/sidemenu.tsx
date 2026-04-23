@@ -12,18 +12,19 @@ import {
   LessonsStroke,
   VocabularyStroke,
   VocabularySolid,
-  GrammaStroke,
-  GrammaSolid,
-  PronounciationStroke,
-  PronounciationSolid
+  GrammarStroke,
+  GrammarSolid,
+  PronunciationStroke,
+  PronunciationSolid
 } from "../Icons/icons";
+import styles from "./sidemenu.module.css";
 
 const menuItems = [
   { href: "/home", stroke: HomeStroke, solid: HomeSolid, lang: "home" },
   { href: "/lessons", stroke: LessonsStroke, solid: LessonsSolid, lang: "lessons" },
   { href: "/vocabulary", stroke: VocabularyStroke, solid: VocabularySolid, lang: "vocabulary" },
-  { href: "/grammar", stroke: GrammaStroke, solid: GrammaSolid, lang: "grammar" },
-  { href: "/pronunciation", stroke: PronounciationStroke, solid: PronounciationSolid, lang: "pronounciation" }
+  { href: "/grammar", stroke: GrammarStroke, solid: GrammarSolid, lang: "grammar" },
+  { href: "/pronunciation", stroke: PronunciationStroke, solid: PronunciationSolid, lang: "pronunciation" }
 ];
 
 export default function SideMenu() {
@@ -31,7 +32,7 @@ export default function SideMenu() {
   const pathname = usePathname();
 
   return (
-    <div >
+    <div className={styles.sideMenu}>
       <ul className="flex flex-col gap-6">
         {menuItems.map((item) => {
           const isActive =

@@ -3,7 +3,16 @@ import { Lato, Titillium_Web } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
+import { cookies } from "next/headers";
 import Script from "next/script";
+import { AuthPopoverProvider } from "@/components/providers/auth-popover-provider";
+import { UserPreferencesProvider } from "@/components/providers/user-preferences-provider";
+import {
+  defaultInterfaceLanguage,
+  defaultStudyLanguage,
+  isInterfaceLanguage,
+  isStudyLanguage,
+} from "@/lib/user-preferences";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -28,7 +37,15 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const locale = await getLocale();
+  const cookieStore = await cookies();
   const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
+  const initialInterfaceLanguage = isInterfaceLanguage(locale)
+    ? locale
+    : defaultInterfaceLanguage;
+  const studyLanguageCookie = cookieStore.get("studyLanguage")?.value;
+  const initialStudyLanguage = isStudyLanguage(studyLanguageCookie)
+    ? studyLanguageCookie
+    : defaultStudyLanguage;
 
   return (
     <html
@@ -37,7 +54,14 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider>
-          {children}
+          <AuthPopoverProvider>
+            <UserPreferencesProvider
+              initialInterfaceLanguage={initialInterfaceLanguage}
+              initialStudyLanguage={initialStudyLanguage}
+            >
+              {children}
+            </UserPreferencesProvider>
+          </AuthPopoverProvider>
         </NextIntlClientProvider>
         {adsenseClientId ? (
           <Script
