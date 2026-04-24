@@ -76,7 +76,10 @@ export default function HeaderMarketing() {
                   />
                   {isOpen && mode === "login" ? (
                     <div className="absolute right-0 top-full z-50 mt-4 w-[420px] max-w-[calc(100vw-2rem)] rounded-[32px] shadow-[0_18px_40px_rgba(58,82,96,0.16)]">
-                      <LoginForm />
+                      <LoginForm
+                        onSuccess={closeAuthPopover}
+                        showSignupPrompt={false}
+                      />
                     </div>
                   ) : null}
                 </div>

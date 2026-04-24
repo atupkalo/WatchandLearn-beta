@@ -7,6 +7,7 @@ import { Info } from "@/components/Icons/icons";
 import LoginForm from "@/components/login-form/login-form";
 import { useUserPreferences } from "@/components/providers/user-preferences-provider";
 import PopoverCustom from "@/components/ui/popover";
+import ButtonCustom from "@/components/ui/button";
 import RadioButtons from "@/components/ui/radio-buttons";
 import Title from "@/components/ui/title";
 import SignupForm from "@/components/signup-form/signup-form";
@@ -49,6 +50,7 @@ export default function SignupPage() {
   const { interfaceLanguage, studyLanguage, setInterfaceLanguage, setStudyLanguage } =
     useUserPreferences();
   const t = useTranslations("Onbording");
+  const tAuth = useTranslations("EnteringForms");
   const [authMode, setAuthMode] = useState<"signup" | "login">("signup");
 
   const interfaceLanguageOptions: { label: string; value: InterfaceLanguage }[] = [
@@ -62,43 +64,55 @@ export default function SignupPage() {
 
   return (
     <section className="mx-auto flex w-full max-w-[760px] flex-col items-center gap-8 rounded-[32px] p-8">
-      <Title tag="h3" size={32} className="text-center">
-        {t("title")}
-      </Title>
+      {authMode === "signup" ? (
+        <>
+          <Title tag="h3" size={32} className="text-center">
+            {t("title")}
+          </Title>
 
-      <div className="flex flex-col items-center gap-4">
-        <PreferenceInfo
-          title={t("interfaceLang")}
-          description={t("descriptionInterface")}
-        />
-        <RadioButtons
-          options={interfaceLanguageOptions}
-          value={interfaceLanguage}
-          onChange={(value) => setInterfaceLanguage(value as InterfaceLanguage)}
-          name="interfaceLanguage"
-          selectedLabelClassName="text-[var(--textBody)]"
-          idleLabelClassName="text-[var(--gray150)]"
-        />
-      </div>
+          <div className="flex flex-col items-center gap-4">
+            <PreferenceInfo
+              title={t("interfaceLang")}
+              description={t("descriptionInterface")}
+            />
+            <RadioButtons
+              options={interfaceLanguageOptions}
+              value={interfaceLanguage}
+              onChange={(value) => setInterfaceLanguage(value as InterfaceLanguage)}
+              name="interfaceLanguage"
+            />
+          </div>
 
-      <div className="flex flex-col items-center gap-4">
-        <PreferenceInfo
-          title={t("studyLang")}
-          description={t("discriptionStudy")}
-        />
-        <RadioButtons
-          options={studyLanguageOptions}
-          value={studyLanguage}
-          onChange={(value) => setStudyLanguage(value as StudyLanguage)}
-          name="studyLanguage"
-          selectedLabelClassName="text-[var(--textBody)]"
-          idleLabelClassName="text-[var(--gray150)]"
-        />
-      </div>
+          <div className="flex flex-col items-center gap-4">
+            <PreferenceInfo
+              title={t("studyLang")}
+              description={t("discriptionStudy")}
+            />
+            <RadioButtons
+              options={studyLanguageOptions}
+              value={studyLanguage}
+              onChange={(value) => setStudyLanguage(value as StudyLanguage)}
+              name="studyLanguage"
+            />
+          </div>
+        </>
+      ) : null}
       {authMode === "signup" ? (
         <SignupForm onSwitchToLogin={() => setAuthMode("login")} />
       ) : (
-        <LoginForm onSwitchToSignup={() => setAuthMode("signup")} />
+        <>
+          <LoginForm showSignupPrompt={false} />
+          <div className="flex flex-col items-center gap-4 text-center">
+            <span className="text-[var(--textBody)]">{tAuth("signupLabel")}</span>
+            <ButtonCustom
+              label={tAuth("signup")}
+              variant="secondary"
+              size="md"
+              className="w-full max-w-[420px] justify-center"
+              onClick={() => setAuthMode("signup")}
+            />
+          </div>
+        </>
       )}
     </section>
   );

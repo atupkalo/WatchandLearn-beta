@@ -1,6 +1,7 @@
 "use client";
 
 import AvatarCustom from "@/components/ui/avatar-custom";
+import type { AppRole } from "@/lib/auth";
 import Logo from "../common/logo";
 import AdBanner from "@/components/ad-banner/ad-banner";
 import RadioLanguages from "../ui/radio-languages";
@@ -10,7 +11,12 @@ import SlideOut from "../common/slide-out";
 import Account from "@/components/account/account";
 import { useState } from "react";
 
-export default function HeaderApp() {
+interface HeaderAppProps {
+  userName: string;
+  role: AppRole;
+}
+
+export default function HeaderApp({ userName, role }: HeaderAppProps) {
   const [isAccountOpen, setIsAccountOpen] = useState(false);
 
   return (
@@ -37,15 +43,15 @@ export default function HeaderApp() {
             <AvatarCustom
               size="md"
               shape="circle"
-              initials="A"
-              alt="Alina"
+              initials={userName.slice(0, 1).toUpperCase()}
+              alt={userName}
             />
           </button>
         </div>
       </header>
 
       <SlideOut isOpen={isAccountOpen} onClose={() => setIsAccountOpen(false)}>
-        <Account name="Alina" />
+        <Account name={userName} role={role} />
       </SlideOut>
     </>
   );

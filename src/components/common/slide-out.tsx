@@ -16,11 +16,9 @@ export default function SlideOut({
   children,
 }: SlideOutProps) {
   return (
-    <div className={`${styles.root} ${isOpen ? styles.open : ""}`}>
+    <div className={`${styles.root} ${isOpen ? styles.open : styles.closed}`}>
       <aside
-        className={`${styles.panel} ${
-          isOpen ? styles.panelOpen : styles.panelClosed
-        }`}
+        className={`${styles.panel} ${isOpen ? styles.panelOpen : styles.panelClosed}`}
         aria-hidden={!isOpen}
         aria-label="User account panel"
       >

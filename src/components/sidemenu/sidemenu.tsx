@@ -15,7 +15,9 @@ import {
   GrammarStroke,
   GrammarSolid,
   PronunciationStroke,
-  PronunciationSolid
+  PronunciationSolid,
+  AdminStroke,
+  AdminSolid
 } from "../Icons/icons";
 import styles from "./sidemenu.module.css";
 
@@ -24,7 +26,8 @@ const menuItems = [
   { href: "/lessons", stroke: LessonsStroke, solid: LessonsSolid, lang: "lessons" },
   { href: "/vocabulary", stroke: VocabularyStroke, solid: VocabularySolid, lang: "vocabulary" },
   { href: "/grammar", stroke: GrammarStroke, solid: GrammarSolid, lang: "grammar" },
-  { href: "/pronunciation", stroke: PronunciationStroke, solid: PronunciationSolid, lang: "pronunciation" }
+  { href: "/pronunciation", stroke: PronunciationStroke, solid: PronunciationSolid, lang: "pronunciation" },
+  { href: "/admin", stroke: AdminStroke, solid: AdminSolid, lang: "admin" }
 ];
 
 export default function SideMenu() {

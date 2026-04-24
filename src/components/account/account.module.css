@@ -16,6 +16,17 @@
   font-weight: 700;
 }
 
+.role {
+  margin-left: auto;
+  border-radius: 9999px;
+  background: var(--primary200);
+  color: var(--textBody);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  text-transform: capitalize;
+}
+
 .divider {
   width: 100%;
   border-bottom: 1px solid #d9dddd;

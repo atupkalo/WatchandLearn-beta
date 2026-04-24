@@ -41,11 +41,16 @@
     "signupLabel": "Need an account?",
     "login": "LOGIN",
     "loginH": "Login",
-    "signup": "Sign Up"
+    "signup": "Sign Up",
+    "passwordMismatch": "Passwords do not match.",
+    "signupSuccess": "Check your email to confirm your account."
   },
   "Account": {
     "studyLabel": "Choose languages of study:",
     "studyUa": "English - Ukrainian",
-    "studyRu": "English - russian"
+    "studyRu": "English - russian",
+    "regular": "Regular",
+    "admin": "Admin",
+    "logout": "Log Out"
   }
 }

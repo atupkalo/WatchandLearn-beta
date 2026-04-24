@@ -26,8 +26,8 @@ export default function RadioButtons({
   name,
   orientation = "horizontal",
   className = "flex gap-3",
-  selectedLabelClassName = "text-white",
-  idleLabelClassName = "text-gray-300",
+  selectedLabelClassName = "font-semibold text-[var(--accent)]",
+  idleLabelClassName = "text-[var(--gray150)]",
 }: RadioButtonsProps) {
   return (
     <RadioGroup

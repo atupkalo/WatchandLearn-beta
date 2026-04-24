@@ -3,13 +3,13 @@
 }
 
 .radioControl {
-  border: 2px solid #9ca3af;
+  border: 2px solid var(--gray150);
   background: transparent;
 }
 
 .radio[data-selected="true"] .radioControl,
 .radio[aria-checked="true"] .radioControl {
-  border-color: #d97706;
+  border-color: var(--accent);
   background: transparent;
 }
 

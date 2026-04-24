@@ -1,24 +1,38 @@
- "use client";
+"use client";
 
 import styles from "./account.module.css";
+import type { AppRole } from "@/lib/auth";
 import AvatarCustom from "@/components/ui/avatar-custom";
 import RadioButtons from "@/components/ui/radio-buttons";
+import ButtonCustom from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { useUserPreferences } from "@/components/providers/user-preferences-provider";
+import { createClient } from "@/utils/supabase/client";
+import { useRouter } from "next/navigation";
 import radioStyles from "./account-radio.module.css";
 
 interface AccountProps {
   name: string;
+  role: AppRole;
 }
 export default function Account(
-  { name }: AccountProps
+  { name, role }: AccountProps
 ) {
   const t = useTranslations("Account");
   const { studyLanguage, setStudyLanguage } = useUserPreferences();
+  const router = useRouter();
   const studyLanguageOptions = [
     { label: t("studyUa"), value: "en-ua" },
     { label: t("studyRu"), value: "en-ru" },
   ];
+
+  async function handleSignOut() {
+    const supabase = createClient();
+
+    await supabase.auth.signOut();
+    router.push("/");
+    router.refresh();
+  }
 
   return (
     <section className={styles.account}>
@@ -30,6 +44,7 @@ export default function Account(
           shape="circle"
         />
         <div className={styles.name}>{name}</div>
+        <div className={styles.role}>{t(role)}</div>
       </div>
 
       <div className={styles.divider} />
@@ -48,6 +63,16 @@ export default function Account(
           idleLabelClassName={radioStyles.idleLabel}
         />
       </div>
+
+      <ButtonCustom
+        label={t("logout")}
+        variant="secondary"
+        size="md"
+        className="mt-4 self-start"
+        onClick={() => {
+          void handleSignOut();
+        }}
+      />
     </section>
   );
 }

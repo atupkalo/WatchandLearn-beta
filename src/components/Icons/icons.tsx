@@ -13,6 +13,8 @@ import { ArrowLeft02Icon as ArrowLeft } from '@hugeicons-pro/core-solid-standard
 import { InformationCircleIcon as Info } from '@hugeicons-pro/core-stroke-standard';
 import { LoginSquare01Icon as Login } from '@hugeicons-pro/core-stroke-standard';
 import { CancelCircleIcon as Cross } from '@hugeicons-pro/core-stroke-standard';
+import { UserEdit01Icon as AdminStroke } from '@hugeicons-pro/core-stroke-standard';
+import { UserEdit01Icon as AdminSolid } from '@hugeicons-pro/core-solid-standard';
 
 export {
     HomeStroke,
@@ -29,5 +31,7 @@ export {
     ArrowLeft,
     Info,
     Login,
-    Cross
+    Cross,
+    AdminStroke,
+    AdminSolid
 };
