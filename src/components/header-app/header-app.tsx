@@ -24,7 +24,7 @@ export default function HeaderApp({ userName, role }: HeaderAppProps) {
       <header
         className={`${styles.headerApp} flex w-full items-center justify-between px-4 pl-8 pt-4 pr-8 pb-4`}
       >
-        <Link href="/">
+        <Link href="https://watchand-learn-beta.vercel.app">
           <Logo size="md" />
         </Link>
 
