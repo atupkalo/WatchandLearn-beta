@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Button } from "@heroui/react";
-import styles from "./button-icon.module.css";
+import styles from "./ui.module.css";
 
 interface ButtonIconProps {
   icon: ReactNode;
@@ -21,16 +21,16 @@ export default function ButtonIcon({
       variant="ghost"
       onClick={onClick}
       className={`${styles.buttonIcon} ${
-        size === "sm" ? styles.small : styles.large
+        size === "sm" ? styles.buttonIconSmall : styles.buttonIconLarge
       }`}
     >
       <span
-        className={`${styles.label} font-semibold text-[var(--secondary)]`}
+        className={`${styles.buttonIconLabel} font-semibold text-[var(--secondary)]`}
       >
         {label}
       </span>
       <span
-        className={`${styles.icon} text-[var(--secondary)]`}
+        className={`${styles.buttonIconGlyph} text-[var(--secondary)]`}
         aria-hidden="true"
       >
         {icon}

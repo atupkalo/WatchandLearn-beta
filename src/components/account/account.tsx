@@ -9,7 +9,6 @@ import { useTranslations } from "next-intl";
 import { useUserPreferences } from "@/components/providers/user-preferences-provider";
 import { createClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
-import radioStyles from "./account-radio.module.css";
 
 interface AccountProps {
   name: string;
@@ -58,9 +57,9 @@ export default function Account(
             setStudyLanguage(nextValue as "en-ua" | "en-ru")
           }
           name="account-study-language"
-          className={radioStyles.group}
-          selectedLabelClassName={radioStyles.selectedLabel}
-          idleLabelClassName={radioStyles.idleLabel}
+          className={styles.radioGroup}
+          selectedLabelClassName={styles.radioLabelSelected}
+          idleLabelClassName={styles.radioLabelIdle}
         />
       </div>
 

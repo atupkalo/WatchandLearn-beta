@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import ButtonCustom from "../ui/button";
 import Title from "../ui/title";
 import { useEffect, useState } from "react";
-import buttonStyles from "../ui/button.module.css";
+import uiStyles from "../ui/ui.module.css";
 import styles from "./hero.module.css";
 
 const layers = [
@@ -93,7 +93,7 @@ export default function Hero() {
               size="lg"
               label={t("CTA")}
               variant="primary"
-              className={`p-6 text-xl ${buttonStyles.shadowInset}`}
+              className={`p-6 text-xl ${uiStyles.shadowInset}`}
             />
           </div>
         </div>

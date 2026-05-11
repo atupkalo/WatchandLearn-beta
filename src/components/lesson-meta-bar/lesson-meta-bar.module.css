@@ -1,0 +1,54 @@
+.metaBarLayout {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.titleAndMeta {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.lessonTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--textBody);
+}
+
+.metaItems {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.metaLabel {
+  font-weight: 600;
+  color: var(--textBody);
+}
+
+.metaValue {
+  color: var(--textBody);
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 4px 12px;
+}
+
+.rightControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

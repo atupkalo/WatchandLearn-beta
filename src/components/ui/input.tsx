@@ -1,5 +1,5 @@
 import { Input, Label, TextField } from "@heroui/react";
-import styles from "./input.module.css";
+import styles from "./ui.module.css";
 
 interface InputCustomProps {
   id: string;
@@ -31,8 +31,8 @@ export default function InputCustom({
   return (
     <TextField
       className={`${styles.inputCustom} ${
-        size === "lg" ? styles.large : styles.medium
-      } ${shadow ? styles.shadow : styles.flat} flex w-full flex-col gap-1`}
+        size === "lg" ? styles.inputLarge : styles.inputMedium
+      } ${shadow ? styles.inputShadow : styles.inputFlat} flex w-full flex-col gap-1`}
     >
       <Label htmlFor={id}>{label}</Label>
       <Input

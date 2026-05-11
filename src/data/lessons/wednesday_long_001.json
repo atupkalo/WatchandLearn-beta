@@ -1,0 +1,578 @@
+{
+  "schemaVersion": 1,
+  "id": "wednesday_long_001",
+  "slug": "wednesday-room-divider",
+  "title": "Wednesday",
+  "series": "Wednesday",
+  "availableModes": ["easy", "medium", "hard"],
+  "media": {
+    "videoFile": "https://player.mux.com/zuB96qeDp78F5ReRhqvtGqZIBp02vvMKa0000029OJhDPog?metadata-video-title=Wednesday&video-title=Wednesday&accent-color=%23df7801&primary-color=%23034091&secondary-color=%23dedede",
+    "thumbnailFile": "wednesday-cover.jpeg"
+  },
+  "meta": {
+    "level": "B1-B2",
+    "category": "Conversational",
+    "length": "long",
+    "scriptType": "dialog",
+    "type": "series"
+  },
+  "source": {
+    "originalDocx": "/Users/anatolii/Desktop/next/materials/Wednesday/wednesday_long_001.docx",
+    "structuredDocx": "/Users/anatolii/Desktop/next/materials/Wednesday/wednesday_long_001.docx",
+    "sourceFileName": "wednesday_long_001"
+  },
+  "description": {
+    "en": "Wednesday's roommate Enid enters their room and sees that Wednesday has divided the room into two parts with a straight line and removed all color from her side. Enid does not know yet that Wednesday is allergic to colors.",
+    "ua": "Сусідка Венздей по кімнаті, Енід, заходить до них і бачить, що Венздей розділила кімнату на дві частини прямою лінією і позбавила свою частину будь-яких кольорів. Енід ще не знає, що у Венздей алергія на кольори."
+  },
+  "sourceIssues": [
+    "The source slug text says 'Enid is the entering the room', which is ungrammatical. The JSON uses a normalized slug.",
+    "The Ukrainian description is split across two paragraphs in the docx but represents one continuous description.",
+    "The takeaway placed after line 2 in the docx actually explains the tense choice in line 1. This JSON attaches it to line 1."
+  ],
+  "lines": [
+    {
+      "lineNumber": 1,
+      "text": "What the hell did you do to my room?",
+      "translations": {
+        "ua": "Що в біса ти зробила з моєю кімнатою?",
+        "ru": "Что за черт ты сотворила с моей комнатой?"
+      },
+      "takeaways": {
+        "ua": "У цьому випадку також можна було б вжити час Present Perfect Continuous і сказати: \"What have you been doing to my room?\", оскільки Венздей все ще продовжує дію, і цей варіант теж буде валідним. Також можна було б сказати: \"What have you done to my room?\" (Present Perfect), але в такому разі Енід зробила б наголос саме на результаті — тобто на тому, що цей результат їй дуже не подобається. Попри це, вона вживає Past Simple, щоб зробити основний акцент на емоції. Варто зауважити, що у британській англійській найімовірніше було б вжито саме Present Perfect. Отже, в певних ситуаціях часи можуть бути взаємозамінними — усе залежить від того, який саме нюанс ви хочете підкреслити.",
+        "ru": "В данном случае также можно было бы использовать время Present Perfect Continuous и сказать: \"What have you been doing to my room?\", так как Уэнсдэй всё еще продолжает действие, и этот вариант тоже будет валидным. Также можно было бы сказать: \"What have you done to my room?\" (Present Perfect), но в таком случае Энид сделала бы акцент именно на результате — то есть на том, что этот результат ей очень не нравится. Несмотря на это, она использует Past Simple, чтобы сделать основной упор на эмоции. Стоит отметить, что в британском английском, скорее всего, было бы использовано именно Present Perfect. Таким образом, в определенных ситуациях времена могут быть взаимозаменяемыми — всё зависит от того, какой именно нюанс вы хотите подчеркнуть."
+      },
+      "tokens": [
+        { "id": "l1w1", "text": "What", "normalized": "what", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w2", "text": "the", "normalized": "the", "punctuationAfter": "", "saveable": false },
+        { "id": "l1w3", "text": "hell", "normalized": "hell", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w4", "text": "did", "normalized": "do", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w5", "text": "you", "normalized": "you", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w6", "text": "do", "normalized": "do", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w7", "text": "to", "normalized": "to", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w8", "text": "my", "normalized": "my", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w9", "text": "room", "normalized": "room", "punctuationAfter": "?", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "What the hell [[did]] you do to my room?",
+              "blanks": [
+                { "tokenId": "l1w4", "answer": "did", "options": ["did", "dead", "rid"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "What [the] hell [did] you do [to] my [room]?",
+          "blankedTokenIds": ["l1w2", "l1w4", "l1w7", "l1w9"]
+        },
+        "hard": {
+          "text": "[What] [the] [hell] [did] [you] [do] [to] [my] [room?]",
+          "revealOrder": ["l1w1", "l1w2", "l1w3", "l1w4", "l1w5", "l1w6", "l1w7", "l1w8", "l1w9"]
+        }
+      }
+    },
+    {
+      "lineNumber": 2,
+      "text": "Dividing our room equally. It looks like a rainbow vomited on your side.",
+      "translations": {
+        "ua": "Розділяю нашу кімнату порівну. Виглядає так, ніби на твою половину вирвало веселку.",
+        "ru": "Разделяю нашу комнату поровну. Выглядит так, будто на твою сторону вырвало радугу."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        { "id": "l2w1", "text": "Dividing", "normalized": "divide", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w2", "text": "our", "normalized": "our", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w3", "text": "room", "normalized": "room", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w4", "text": "equally", "normalized": "equally", "punctuationAfter": ".", "saveable": true },
+        { "id": "l2w5", "text": "It", "normalized": "it", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w6", "text": "looks", "normalized": "look", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w7", "text": "like", "normalized": "like", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w8", "text": "a", "normalized": "a", "punctuationAfter": "", "saveable": false },
+        { "id": "l2w9", "text": "rainbow", "normalized": "rainbow", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w10", "text": "vomited", "normalized": "vomit", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w11", "text": "on", "normalized": "on", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w12", "text": "your", "normalized": "your", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w13", "text": "side", "normalized": "side", "punctuationAfter": ".", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "Dividing our room [[equally]].",
+              "blanks": [
+                { "tokenId": "l2w4", "answer": "equally", "options": ["injury", "equally", "easily"] }
+              ]
+            },
+            {
+              "snapNumber": 2,
+              "text": "It looks like a rainbow [[vomited]] on your [[side]].",
+              "blanks": [
+                { "tokenId": "l2w10", "answer": "vomited", "options": ["commented", "vomited", "voted"] },
+                { "tokenId": "l2w13", "answer": "side", "options": ["site", "side", "sight"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "[Dividing] our room [equally]. It [looks] like a [rainbow] [vomited] on your [side].",
+          "blankedTokenIds": ["l2w1", "l2w4", "l2w6", "l2w9", "l2w10", "l2w13"]
+        },
+        "hard": {
+          "text": "[Dividing] [our] [room] [equally.] [It] [looks] [like] [a] [rainbow] [vomited] [on] [your] [side.]",
+          "revealOrder": ["l2w1", "l2w2", "l2w3", "l2w4", "l2w5", "l2w6", "l2w7", "l2w8", "l2w9", "l2w10", "l2w11", "l2w12", "l2w13"]
+        }
+      }
+    },
+    {
+      "lineNumber": 3,
+      "text": "I…",
+      "translations": {
+        "ua": "Я...",
+        "ru": "Я..."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        { "id": "l3w1", "text": "I", "normalized": "I", "punctuationAfter": "…", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            { "snapNumber": 1, "text": "I…", "blanks": [] }
+          ]
+        },
+        "medium": {
+          "text": "I…",
+          "blankedTokenIds": []
+        },
+        "hard": {
+          "text": "[I…]",
+          "revealOrder": ["l3w1"]
+        }
+      }
+    },
+    {
+      "lineNumber": 4,
+      "text": "Silence would be appreciated. This is my writing time.",
+      "translations": {
+        "ua": "Буду вдячна за тишу. Це мій час для письма.",
+        "ru": "Буду признательна за тишину. Это мое время для письма."
+      },
+      "takeaways": {
+        "ua": "\"Silence would be appreciated.\" Вживання пасивного залогу (be + verb 3) підкреслює офіційність та зверхність тону. Варіант \"I would appreciate silence\" звучав би менш виразно та не так категорично.",
+        "ru": "\"Silence would be appreciated.\" Использование пассивного залога (be + verb 3) подчеркивает официальность и высокомерие тона. Вариант \"I would appreciate silence\" звучал бы менее выразительно и не так категорично."
+      },
+      "tokens": [
+        { "id": "l4w1", "text": "Silence", "normalized": "silence", "punctuationAfter": "", "saveable": true },
+        { "id": "l4w2", "text": "would", "normalized": "would", "punctuationAfter": "", "saveable": true },
+        { "id": "l4w3", "text": "be", "normalized": "be", "punctuationAfter": "", "saveable": true },
+        { "id": "l4w4", "text": "appreciated", "normalized": "appreciate", "punctuationAfter": ".", "saveable": true },
+        { "id": "l4w5", "text": "This", "normalized": "this", "punctuationAfter": "", "saveable": true },
+        { "id": "l4w6", "text": "is", "normalized": "be", "punctuationAfter": "", "saveable": true },
+        { "id": "l4w7", "text": "my", "normalized": "my", "punctuationAfter": "", "saveable": true },
+        { "id": "l4w8", "text": "writing", "normalized": "writing", "punctuationAfter": "", "saveable": true },
+        { "id": "l4w9", "text": "time", "normalized": "time", "punctuationAfter": ".", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "[[Silence]] would be appreciated. This is my [[writing]] time.",
+              "blanks": [
+                { "tokenId": "l4w1", "answer": "Silence", "options": ["sitemap", "silence", "smile"] },
+                { "tokenId": "l4w8", "answer": "writing", "options": ["whiting", "lighting", "writing"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "[Silence] would be [appreciated]. [This] is [my] [writing] time.",
+          "blankedTokenIds": ["l4w1", "l4w4", "l4w5", "l4w7", "l4w8"]
+        },
+        "hard": {
+          "text": "[Silence] [would] [be] [appreciated.] [This] [is] [my] [writing] [time.]",
+          "revealOrder": ["l4w1", "l4w2", "l4w3", "l4w4", "l4w5", "l4w6", "l4w7", "l4w8", "l4w9"]
+        }
+      }
+    },
+    {
+      "lineNumber": 5,
+      "text": "Your writing time?",
+      "translations": {
+        "ua": "Твій час для письма?",
+        "ru": "Твое время для письма?"
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        { "id": "l5w1", "text": "Your", "normalized": "your", "punctuationAfter": "", "saveable": true },
+        { "id": "l5w2", "text": "writing", "normalized": "writing", "punctuationAfter": "", "saveable": true },
+        { "id": "l5w3", "text": "time", "normalized": "time", "punctuationAfter": "?", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            { "snapNumber": 1, "text": "Your writing time?", "blanks": [] }
+          ]
+        },
+        "medium": {
+          "text": "[Your] [writing] time?",
+          "blankedTokenIds": ["l5w1", "l5w2"]
+        },
+        "hard": {
+          "text": "[Your] [writing] [time?]",
+          "revealOrder": ["l5w1", "l5w2", "l5w3"]
+        }
+      }
+    },
+    {
+      "lineNumber": 6,
+      "text": "I devote an hour a day to my novel. Perhaps if you did the same, your vlog might be coherent. I've read serial killer diaries with better punctuation.",
+      "translations": {
+        "ua": "Я присвячую годину на день своєму роману. Можливо, якби ти робила так само, твій влог був би зв’язним. Я читала щоденники серійних убивць із кращою пунктуацією.",
+        "ru": "Я посвящаю час в день своему роману. Возможно, если бы ты делала то же самое, твой влог был бы связным. Я читала дневники серийных убийц с лучшей пунктуацией."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        { "id": "l6w1", "text": "I", "normalized": "I", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w2", "text": "devote", "normalized": "devote", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w3", "text": "an", "normalized": "an", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w4", "text": "hour", "normalized": "hour", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w5", "text": "a", "normalized": "a", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w6", "text": "day", "normalized": "day", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w7", "text": "to", "normalized": "to", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w8", "text": "my", "normalized": "my", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w9", "text": "novel", "normalized": "novel", "punctuationAfter": ".", "saveable": true },
+        { "id": "l6w10", "text": "Perhaps", "normalized": "perhaps", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w11", "text": "if", "normalized": "if", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w12", "text": "you", "normalized": "you", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w13", "text": "did", "normalized": "do", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w14", "text": "the", "normalized": "the", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w15", "text": "same", "normalized": "same", "punctuationAfter": ",", "saveable": true },
+        { "id": "l6w16", "text": "your", "normalized": "your", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w17", "text": "vlog", "normalized": "vlog", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w18", "text": "might", "normalized": "might", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w19", "text": "be", "normalized": "be", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w20", "text": "coherent", "normalized": "coherent", "punctuationAfter": ".", "saveable": true },
+        { "id": "l6w21", "text": "I've", "normalized": "I have", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w22", "text": "read", "normalized": "read", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w23", "text": "serial", "normalized": "serial", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w24", "text": "killer", "normalized": "killer", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w25", "text": "diaries", "normalized": "diary", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w26", "text": "with", "normalized": "with", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w27", "text": "better", "normalized": "better", "punctuationAfter": "", "saveable": true },
+        { "id": "l6w28", "text": "punctuation", "normalized": "punctuation", "punctuationAfter": ".", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "I [[devote]] an hour a day to my [[novel]].",
+              "blanks": [
+                { "tokenId": "l6w2", "answer": "devote", "options": ["divide", "devote", "desert"] },
+                { "tokenId": "l6w9", "answer": "novel", "options": ["hotel", "novel", "poem"] }
+              ]
+            },
+            {
+              "snapNumber": 2,
+              "text": "[[Perhaps]] if you did the [[same]], your vlog might be [[coherent]].",
+              "blanks": [
+                { "tokenId": "l6w10", "answer": "Perhaps", "options": ["peanut", "perhaps", "parents"] },
+                { "tokenId": "l6w15", "answer": "same", "options": ["same", "sale", "lame"] },
+                { "tokenId": "l6w20", "answer": "coherent", "options": ["coherent", "coworker", "cohesive"] }
+              ]
+            },
+            {
+              "snapNumber": 3,
+              "text": "I've read [[serial]] killer [[diaries]] with better punctuation.",
+              "blanks": [
+                { "tokenId": "l6w23", "answer": "serial", "options": ["serial", "seasonal", "cereal"] },
+                { "tokenId": "l6w25", "answer": "diaries", "options": ["varies", "diaries", "queries"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "I [devote] [an] hour [a] day [to] my [novel]. Perhaps [if] you [did] [the] same, your [vlog] might be [coherent]. [I've] read [serial] killer [diaries] with [better] [punctuation].",
+          "blankedTokenIds": ["l6w2", "l6w3", "l6w5", "l6w7", "l6w9", "l6w11", "l6w13", "l6w14", "l6w17", "l6w20", "l6w21", "l6w23", "l6w25", "l6w27", "l6w28"]
+        },
+        "hard": {
+          "text": "[I] [devote] [an] [hour] [a] [day] [to] [my] [novel.] [Perhaps] [if] [you] [did] [the] [same,] [your] [vlog] [might] [be] [coherent.] [I've] [read] [serial] [killer] [diaries] [with] [better] [punctuation.]",
+          "revealOrder": ["l6w1", "l6w2", "l6w3", "l6w4", "l6w5", "l6w6", "l6w7", "l6w8", "l6w9", "l6w10", "l6w11", "l6w12", "l6w13", "l6w14", "l6w15", "l6w16", "l6w17", "l6w18", "l6w19", "l6w20", "l6w21", "l6w22", "l6w23", "l6w24", "l6w25", "l6w26", "l6w27", "l6w28"]
+        }
+      }
+    },
+    {
+      "lineNumber": 7,
+      "text": "I write in my voice. It's my truth. It's what my followers love.",
+      "translations": {
+        "ua": "Я пишу своїм власним голосом. Це моя правда. Це те, що люблять мої підписники.",
+        "ru": "Я пишу своим собственным голосом. Это моя правда. Это то, что любят мои подписчики."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        { "id": "l7w1", "text": "I", "normalized": "I", "punctuationAfter": "", "saveable": true },
+        { "id": "l7w2", "text": "write", "normalized": "write", "punctuationAfter": "", "saveable": true },
+        { "id": "l7w3", "text": "in", "normalized": "in", "punctuationAfter": "", "saveable": true },
+        { "id": "l7w4", "text": "my", "normalized": "my", "punctuationAfter": "", "saveable": true },
+        { "id": "l7w5", "text": "voice", "normalized": "voice", "punctuationAfter": ".", "saveable": true },
+        { "id": "l7w6", "text": "It's", "normalized": "it is", "punctuationAfter": "", "saveable": true },
+        { "id": "l7w7", "text": "my", "normalized": "my", "punctuationAfter": "", "saveable": true },
+        { "id": "l7w8", "text": "truth", "normalized": "truth", "punctuationAfter": ".", "saveable": true },
+        { "id": "l7w9", "text": "It's", "normalized": "it is", "punctuationAfter": "", "saveable": true },
+        { "id": "l7w10", "text": "what", "normalized": "what", "punctuationAfter": "", "saveable": true },
+        { "id": "l7w11", "text": "my", "normalized": "my", "punctuationAfter": "", "saveable": true },
+        { "id": "l7w12", "text": "followers", "normalized": "follower", "punctuationAfter": "", "saveable": true },
+        { "id": "l7w13", "text": "love", "normalized": "love", "punctuationAfter": ".", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "I write in my [[voice]]. It's my truth. It's what my [[followers]] love.",
+              "blanks": [
+                { "tokenId": "l7w5", "answer": "voice", "options": ["noise", "voice", "vote"] },
+                { "tokenId": "l7w12", "answer": "followers", "options": ["flowers", "followers", "loneliness"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "I [write] in my [voice]. [It's] my [truth]. It's [what] my [followers] love.",
+          "blankedTokenIds": ["l7w2", "l7w5", "l7w6", "l7w8", "l7w10", "l7w12"]
+        },
+        "hard": {
+          "text": "[I] [write] [in] [my] [voice.] [It's] [my] [truth.] [It's] [what] [my] [followers] [love.]",
+          "revealOrder": ["l7w1", "l7w2", "l7w3", "l7w4", "l7w5", "l7w6", "l7w7", "l7w8", "l7w9", "l7w10", "l7w11", "l7w12", "l7w13"]
+        }
+      }
+    },
+    {
+      "lineNumber": 8,
+      "text": "Your followers are clearly imbeciles. They respond to your stories with insipid little pictures.",
+      "translations": {
+        "ua": "Твої підписники — явно ідіоти. Вони відповідають на твої сторіз безглуздими картинками.",
+        "ru": "Твои подписчики — явно имбецилы. Они отвечают на твои сториз бессмысленными картинками."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        { "id": "l8w1", "text": "Your", "normalized": "your", "punctuationAfter": "", "saveable": true },
+        { "id": "l8w2", "text": "followers", "normalized": "follower", "punctuationAfter": "", "saveable": true },
+        { "id": "l8w3", "text": "are", "normalized": "be", "punctuationAfter": "", "saveable": true },
+        { "id": "l8w4", "text": "clearly", "normalized": "clearly", "punctuationAfter": "", "saveable": true },
+        { "id": "l8w5", "text": "imbeciles", "normalized": "imbecile", "punctuationAfter": ".", "saveable": true },
+        { "id": "l8w6", "text": "They", "normalized": "they", "punctuationAfter": "", "saveable": true },
+        { "id": "l8w7", "text": "respond", "normalized": "respond", "punctuationAfter": "", "saveable": true },
+        { "id": "l8w8", "text": "to", "normalized": "to", "punctuationAfter": "", "saveable": true },
+        { "id": "l8w9", "text": "your", "normalized": "your", "punctuationAfter": "", "saveable": true },
+        { "id": "l8w10", "text": "stories", "normalized": "story", "punctuationAfter": "", "saveable": true },
+        { "id": "l8w11", "text": "with", "normalized": "with", "punctuationAfter": "", "saveable": true },
+        { "id": "l8w12", "text": "insipid", "normalized": "insipid", "punctuationAfter": "", "saveable": true },
+        { "id": "l8w13", "text": "little", "normalized": "little", "punctuationAfter": "", "saveable": true },
+        { "id": "l8w14", "text": "pictures", "normalized": "picture", "punctuationAfter": ".", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "Your followers are [[clearly]] imbeciles.",
+              "blanks": [
+                { "tokenId": "l8w4", "answer": "clearly", "options": ["really", "clearly", "nearly"] }
+              ]
+            },
+            {
+              "snapNumber": 2,
+              "text": "They [[respond]] to your stories with [[insipid]] little pictures.",
+              "blanks": [
+                { "tokenId": "l8w7", "answer": "respond", "options": ["resort", "respond", "response"] },
+                { "tokenId": "l8w12", "answer": "insipid", "options": ["insipid", "spit", "incident"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "[Your] followers [are] [clearly] [imbeciles]. They [respond] to your [stories] with [insipid] little pictures.",
+          "blankedTokenIds": ["l8w1", "l8w3", "l8w4", "l8w5", "l8w7", "l8w10", "l8w12"]
+        },
+        "hard": {
+          "text": "[Your] [followers] [are] [clearly] [imbeciles.] [They] [respond] [to] [your] [stories] [with] [insipid] [little] [pictures.]",
+          "revealOrder": ["l8w1", "l8w2", "l8w3", "l8w4", "l8w5", "l8w6", "l8w7", "l8w8", "l8w9", "l8w10", "l8w11", "l8w12", "l8w13", "l8w14"]
+        }
+      }
+    },
+    {
+      "lineNumber": 9,
+      "text": "Uh, you mean, emojis? It's how people express their feelings. I realize that's a foreign concept to you.",
+      "translations": {
+        "ua": "Е-е, ти маєш на увазі емодзі? Так люди виражають свої почуття. Розумію, що для тебе це чуже поняття.",
+        "ru": "Э-э, ты имеешь в виду эмодзи? Так люди выражают свои чувства. Понимаю, что для тебя это чуждое понятие."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        { "id": "l9w1", "text": "Uh", "normalized": "uh", "punctuationAfter": ",", "saveable": true },
+        { "id": "l9w2", "text": "you", "normalized": "you", "punctuationAfter": "", "saveable": true },
+        { "id": "l9w3", "text": "mean", "normalized": "mean", "punctuationAfter": ",", "saveable": true },
+        { "id": "l9w4", "text": "emojis", "normalized": "emoji", "punctuationAfter": "?", "saveable": true },
+        { "id": "l9w5", "text": "It's", "normalized": "it is", "punctuationAfter": "", "saveable": true },
+        { "id": "l9w6", "text": "how", "normalized": "how", "punctuationAfter": "", "saveable": true },
+        { "id": "l9w7", "text": "people", "normalized": "people", "punctuationAfter": "", "saveable": true },
+        { "id": "l9w8", "text": "express", "normalized": "express", "punctuationAfter": "", "saveable": true },
+        { "id": "l9w9", "text": "their", "normalized": "their", "punctuationAfter": "", "saveable": true },
+        { "id": "l9w10", "text": "feelings", "normalized": "feeling", "punctuationAfter": ".", "saveable": true },
+        { "id": "l9w11", "text": "I", "normalized": "I", "punctuationAfter": "", "saveable": true },
+        { "id": "l9w12", "text": "realize", "normalized": "realize", "punctuationAfter": "", "saveable": true },
+        { "id": "l9w13", "text": "that's", "normalized": "that is", "punctuationAfter": "", "saveable": true },
+        { "id": "l9w14", "text": "a", "normalized": "a", "punctuationAfter": "", "saveable": true },
+        { "id": "l9w15", "text": "foreign", "normalized": "foreign", "punctuationAfter": "", "saveable": true },
+        { "id": "l9w16", "text": "concept", "normalized": "concept", "punctuationAfter": "", "saveable": true },
+        { "id": "l9w17", "text": "to", "normalized": "to", "punctuationAfter": "", "saveable": true },
+        { "id": "l9w18", "text": "you", "normalized": "you", "punctuationAfter": ".", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "Uh, you [[mean]], emojis? It's how people [[express]] their feelings.",
+              "blanks": [
+                { "tokenId": "l9w3", "answer": "mean", "options": ["meal", "mean", "mill"] },
+                { "tokenId": "l9w8", "answer": "express", "options": ["express", "stress", "expert"] }
+              ]
+            },
+            {
+              "snapNumber": 2,
+              "text": "I realize that's a foreign [[concept]] to you.",
+              "blanks": [
+                { "tokenId": "l9w16", "answer": "concept", "options": ["concert", "concept", "conquest"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "Uh, [you] mean, [emojis]? It's [how] people [express] their [feelings]. I realize [that's] a foreign [concept] to you.",
+          "blankedTokenIds": ["l9w2", "l9w4", "l9w6", "l9w8", "l9w10", "l9w13", "l9w16"]
+        },
+        "hard": {
+          "text": "[Uh,] [you] [mean,] [emojis?] [It's] [how] [people] [express] [their] [feelings.] [I] [realize] [that's] [a] [foreign] [concept] [to] [you.]",
+          "revealOrder": ["l9w1", "l9w2", "l9w3", "l9w4", "l9w5", "l9w6", "l9w7", "l9w8", "l9w9", "l9w10", "l9w11", "l9w12", "l9w13", "l9w14", "l9w15", "l9w16", "l9w17", "l9w18"]
+        }
+      }
+    },
+    {
+      "lineNumber": 10,
+      "text": "When I look at you, the following emojis come to mind. Rope, shovel, hole. By the way, there are two Ds in Addams. If you're going to gossip about me, at least spell my name correctly.",
+      "translations": {
+        "ua": "Коли я дивлюся на тебе, мені на думку спадають такі емодзі: мотузка, лопата, яма. До речі, у прізвищі Аддамс дві «д». Якщо збираєшся пліткувати про мене, хоча б пиши моє ім’я правильно.",
+        "ru": "Когда я смотрю на тебя, мне на ум приходят следующие эмодзи: веревка, лопата, яма. Кстати, в фамилии Аддамс две «д». Если собираешься сплетничать обо мне, хотя бы пиши мое имя правильно."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        { "id": "l10w1", "text": "When", "normalized": "when", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w2", "text": "I", "normalized": "I", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w3", "text": "look", "normalized": "look", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w4", "text": "at", "normalized": "at", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w5", "text": "you", "normalized": "you", "punctuationAfter": ",", "saveable": true },
+        { "id": "l10w6", "text": "the", "normalized": "the", "punctuationAfter": "", "saveable": false },
+        { "id": "l10w7", "text": "following", "normalized": "following", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w8", "text": "emojis", "normalized": "emoji", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w9", "text": "come", "normalized": "come", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w10", "text": "to", "normalized": "to", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w11", "text": "mind", "normalized": "mind", "punctuationAfter": ".", "saveable": true },
+        { "id": "l10w12", "text": "Rope", "normalized": "rope", "punctuationAfter": ",", "saveable": true },
+        { "id": "l10w13", "text": "shovel", "normalized": "shovel", "punctuationAfter": ",", "saveable": true },
+        { "id": "l10w14", "text": "hole", "normalized": "hole", "punctuationAfter": ".", "saveable": true },
+        { "id": "l10w15", "text": "By", "normalized": "by", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w16", "text": "the", "normalized": "the", "punctuationAfter": "", "saveable": false },
+        { "id": "l10w17", "text": "way", "normalized": "way", "punctuationAfter": ",", "saveable": true },
+        { "id": "l10w18", "text": "there", "normalized": "there", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w19", "text": "are", "normalized": "be", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w20", "text": "two", "normalized": "two", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w21", "text": "Ds", "normalized": "Ds", "punctuationAfter": "", "saveable": false },
+        { "id": "l10w22", "text": "in", "normalized": "in", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w23", "text": "Addams", "normalized": "Addams", "punctuationAfter": ".", "saveable": true },
+        { "id": "l10w24", "text": "If", "normalized": "if", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w25", "text": "you're", "normalized": "you are", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w26", "text": "going", "normalized": "go", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w27", "text": "to", "normalized": "to", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w28", "text": "gossip", "normalized": "gossip", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w29", "text": "about", "normalized": "about", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w30", "text": "me", "normalized": "me", "punctuationAfter": ",", "saveable": true },
+        { "id": "l10w31", "text": "at", "normalized": "at", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w32", "text": "least", "normalized": "least", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w33", "text": "spell", "normalized": "spell", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w34", "text": "my", "normalized": "my", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w35", "text": "name", "normalized": "name", "punctuationAfter": "", "saveable": true },
+        { "id": "l10w36", "text": "correctly", "normalized": "correctly", "punctuationAfter": ".", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "When I [[look]] at you, the following emojis [[come]] to mind.",
+              "blanks": [
+                { "tokenId": "l10w3", "answer": "look", "options": ["hook", "look", "loop"] },
+                { "tokenId": "l10w9", "answer": "come", "options": ["come", "can", "clam"] }
+              ]
+            },
+            {
+              "snapNumber": 2,
+              "text": "Rope, [[shovel]], hole. By the [[way]], there are two Ds in Addams.",
+              "blanks": [
+                { "tokenId": "l10w13", "answer": "shovel", "options": ["shovel", "show", "channel"] },
+                { "tokenId": "l10w17", "answer": "way", "options": ["lay", "may", "way"] }
+              ]
+            },
+            {
+              "snapNumber": 3,
+              "text": "If you're going to [[gossip]] about me, at least [[spell]] my name correctly.",
+              "blanks": [
+                { "tokenId": "l10w28", "answer": "gossip", "options": ["gusted", "guest", "gossip"] },
+                { "tokenId": "l10w33", "answer": "spell", "options": ["smell", "spell", "sale"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "[When] I look [at] [you], the [following] emojis [come] to [mind]. Rope, [shovel], hole. [By] the [way], there [are] two Ds [in] Addams. If [you're] going to [gossip] about [me], at [least] [spell] my name [correctly].",
+          "blankedTokenIds": ["l10w1", "l10w4", "l10w5", "l10w7", "l10w9", "l10w11", "l10w13", "l10w15", "l10w17", "l10w19", "l10w22", "l10w25", "l10w28", "l10w30", "l10w31", "l10w32", "l10w33", "l10w36"]
+        },
+        "hard": {
+          "text": "[When] [I] [look] [at] [you,] [the] [following] [emojis] [come] [to] [mind.] [Rope,] [shovel,] [hole.] [By] [the] [way,] [there] [are] [two] [Ds] [in] [Addams.] [If] [you're] [going] [to] [gossip] [about] [me,] [at] [least] [spell] [my] [name] [correctly.]",
+          "revealOrder": ["l10w1", "l10w2", "l10w3", "l10w4", "l10w5", "l10w6", "l10w7", "l10w8", "l10w9", "l10w10", "l10w11", "l10w12", "l10w13", "l10w14", "l10w15", "l10w16", "l10w17", "l10w18", "l10w19", "l10w20", "l10w21", "l10w22", "l10w23", "l10w24", "l10w25", "l10w26", "l10w27", "l10w28", "l10w29", "l10w30", "l10w31", "l10w32", "l10w33", "l10w34", "l10w35", "l10w36"]
+        }
+      }
+    }
+  ]
+}

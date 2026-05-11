@@ -5,12 +5,11 @@ import { useRouter } from "next/navigation";
 import ButtonCustom from "../ui/button";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Login } from "@/components/Icons/icons";
-import ButtonIcon from "../ui/button-icon/button-icon";
+import ButtonIcon from "../ui/button-icon";
 import Image from "next/image";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import buttonStyles from "@/components/ui/button.module.css";
-import cardStyles from "@/components/ui/card.module.css";
+import uiStyles from "@/components/ui/ui.module.css";
 import { createClient } from "@/utils/supabase/client";
 
 const icons = ['apple', 'google', 'fb', 'github'];
@@ -70,7 +69,7 @@ export default function SignupForm({ onSwitchToLogin }: SignupFormProps) {
     }
 
     return (
-        <div className={cardStyles.card}>
+        <div className={uiStyles.card}>
             <form
                 className="flex w-md flex-col items-center justify-center gap-6"
                 onSubmit={handleSubmit}
@@ -91,7 +90,7 @@ export default function SignupForm({ onSwitchToLogin }: SignupFormProps) {
                         variant="primary"
                         type="submit"
                         disabled={isSubmitting}
-                        className={`p-6 text-xl ${buttonStyles.shadowInset}`}
+                        className={`p-6 text-xl ${uiStyles.shadowInset}`}
                     />
                 <div className="flex w-full pt-2 bt-1 flex-col itmes-center text-center border-t-1 gap-4">
                     <span>{t("alternative")}</span>

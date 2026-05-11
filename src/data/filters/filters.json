@@ -1,0 +1,23 @@
+{
+   "levels": [
+     "A1-A2",
+     "A2-B1",
+    "B1-B2",
+    "B2-C1"
+   ],
+   "categories": [
+     "Conversational"
+   ],
+   "durations": [
+     "Short",
+    "Medium",
+    "Long"
+   ],
+   "types": [
+     "Movie",
+    "Series",
+     "Documentary",
+     "Animation",
+     "Interview"
+   ]
+}

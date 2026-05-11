@@ -1,0 +1,52 @@
+.itemCard {
+  overflow: hidden;
+  gap: 20px;
+  width: 380px;
+}
+
+.thumbnailWrap {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.thumbnailImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.contentWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.itemTitle {
+  font-size: 20px;
+  color: var(--textBody);
+  font-weight: 600;
+}
+
+.itemMetaGrid {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.itemLabel {
+  font-size: 14px;
+  color: var(--textBody);
+  font-weight: 600;
+  padding-right: 8px;
+}
+
+.itemContent {
+  padding: 4px 8px;
+  border-radius: 12px;
+  background: #ffffff;
+  font-size: 14px;
+  color: var(--textBody);
+}

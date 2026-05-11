@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "series": "Wednesday",
+  "lessons": [
+    {
+      "id": "wednesday_short_001",
+      "slug": "wednesday-goodbye-to-family",
+      "title": "Wednesday",
+      "level": "A2-B1",
+      "length": "Short",
+      "type": "Series",
+      "availableModes": ["easy", "medium", "hard"],
+      "media": {
+        "videoFile": "wed-s-1.mp4",
+        "thumbnailFile": "wednesday-cover.jpeg"
+      },
+      "lessonFile": "wednesday_short_001.json",
+      "description": {
+        "en": "Wednesday is saying goodbye to her family before leaving, and she delivers a harsh prediction to Pugsley in her usual deadpan style. He answers affectionately, showing that he is used to her dark sense of humor.",
+        "ua": "Венздей прощається зі своєю родиною перед від’їздом і в притаманній їй беземоційній манері жорстко пророкує майбутнє Паґзлі. Він відповідає тепло, показуючи, що звик до її похмурого гумору."
+      }
+    },
+    {
+      "id": "wednesday_mid_001",
+      "slug": "wednesday-outcasts-warning",
+      "title": "Wednesday",
+      "level": "A2-B1",
+      "length": "Medium",
+      "type": "Series",
+      "availableModes": ["easy", "medium", "hard"],
+      "media": {
+        "videoFile": "wed-m-1.mp4",
+        "thumbnailFile": "wednesday-cover.jpeg"
+      },
+      "lessonFile": "wednesday_mid_001.json",
+      "description": {
+        "en": "A random guy is going for a hike in a forest where a school for special students is located. In the series, they are called outcasts. A local woman gives him a ride and warns him about the school, but it seems like he doesn't really care.",
+        "ua": "Випадковий чоловік вирушає в похід лісом, де розташована школа для особливих учнів. У серіалі їх називають вигнанцями. Місцева жінка підвозить його та попереджає про цю школу, але, схоже, йому це байдуже."
+      }
+    },
+    {
+      "id": "wednesday_long_001",
+      "slug": "wednesday-room-divider",
+      "title": "Wednesday",
+      "level": "B1-B2",
+      "length": "Long",
+      "type": "Series",
+      "availableModes": ["easy", "medium", "hard"],
+      "media": {
+        "videoFile": "wed-l-1.mp4",
+        "thumbnailFile": "wednesday-cover.jpeg"
+      },
+      "lessonFile": "wednesday_long_001.json",
+      "description": {
+        "en": "Wednesday's roommate Enid enters their room and sees that Wednesday has divided the room into two parts with a straight line and removed all color from her side. Enid does not know yet that Wednesday is allergic to colors.",
+        "ua": "Сусідка Венздей по кімнаті, Енід, заходить до них і бачить, що Венздей розділила кімнату на дві частини прямою лінією і позбавила свою частину будь-яких кольорів. Енід ще не знає, що у Венздей алергія на кольори."
+      }
+    }
+  ]
+}

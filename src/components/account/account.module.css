@@ -44,3 +44,18 @@
   font-size: 14px;
   line-height: 1.5;
 }
+
+.radioGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.radioLabelSelected {
+  color: var(--accent) !important;
+  font-weight: 600;
+}
+
+.radioLabelIdle {
+  color: var(--gray150) !important;
+}

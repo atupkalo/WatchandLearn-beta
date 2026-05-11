@@ -35,7 +35,7 @@ export default async function AppCoreLayout({
           <SideMenu />
         </aside>
         <section className="min-w-0 h-full overflow-hidden">
-          <div className="h-full overflow-auto">
+          <div className="h-full min-h-0 overflow-hidden">
             {children}
           </div>
         </section>

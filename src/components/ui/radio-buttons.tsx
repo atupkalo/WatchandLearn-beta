@@ -1,7 +1,7 @@
 'use client';
 
 import { Label, Radio, RadioGroup } from "@heroui/react";
-import styles from "./radio-buttons.module.css";
+import styles from "./ui.module.css";
 
 interface RadioOption {
   label: string;

@@ -1,4 +1,4 @@
-import styles from "./input.module.css";
+import styles from "./ui.module.css";
 
 interface InputSmallProps {
   id: string;

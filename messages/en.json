@@ -1,4 +1,25 @@
 {
+     "Generic": {
+      "search": "Search",
+      "loading": "Loading...",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "save": "Save",
+      "edit": "Edit",
+      "delete": "Delete",
+      "confirm": "Confirm",
+      "apply": "Apply",
+      "next": "Next",
+      "back": "Back",
+      "reset": "Reset",
+      "add": "Add",
+      "remove": "Remove",
+      "yes": "Yes",
+      "no": "No"
+     },
+     "Buttons":{
+      "butonLessonInstructions": "Lesson Instruction"
+   },
     "Home": {
       "title": "Hello world!"
     },
@@ -45,6 +66,9 @@
     "passwordMismatch": "Passwords do not match.",
     "signupSuccess": "Check your email to confirm your account."
   },
+  "Switches": {
+    "sLessonLable": "Video on the left"
+  },
   "Account": {
     "studyLabel": "Choose languages of study:",
     "studyUa": "English - Ukrainian",
@@ -52,5 +76,58 @@
     "regular": "Regular",
     "admin": "Admin",
     "logout": "Log Out"
+  },
+  "LessonKeyPopover": {
+    "script": "Script",
+    "translation": "Translation",
+    "takeaways": "Takeaways"
+  },
+  "Meta": {
+    "level": "Level",
+    "catigory": "Category",
+    "duration": "Duration",
+    "type": "Format"
+  },
+  "Lessons": {
+    "title": "Lessons",
+    "noResults": "No lessons match these filters.",
+    "setFilters": "Set Filters",
+    "instructionIntro": "Watch the clip first, then use the selected lesson mode to work through the dialogue line by line.",
+    "instructionToggle": "Use the switch in the top bar if you want to move the video and lesson key to the left side of the page.",
+    "instructionKey": "Open the lesson key lines whenever you need the script, translation, or takeaways for a specific line.",
+    "instructionEasy": "Drag the missing words into the blank spots under the script.",
+    "instructionMedium": "Type the missing words into the inputs while following the script and the video.",
+    "instructionHard": "Work from the hidden structure and type each word correctly to reveal the line step by step.",
+    "labels": {
+      "level": "Level",
+      "category": "Category",
+      "duration": "Duration",
+      "type": "Type"
+    },
+    "options": {
+      "all": "All",
+      "levels": {
+        "A1-A2": "A1-A2",
+        "A2-B1": "A2-B1",
+        "B1-B2": "B1-B2",
+        "B2-C1": "B2-C1"
+      },
+      "categories": {
+        "Conversational": "Conversational"
+      },
+      "durations": {
+        "Short": "Short",
+        "Medium": "Medium",
+        "Long": "Long"
+      },
+      "types": {
+        "Movie": "Movie",
+        "Series": "TV Show",
+        "Documentary": "Documentary",
+        "Animation": "Animation",
+        "Interview": "Interview"
+      }
+    }
   }
+
 }

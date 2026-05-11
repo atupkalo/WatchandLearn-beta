@@ -5,7 +5,7 @@ import Container from "../common/container";
 import Logo from "../common/logo";
 import RadioLanguages from "../ui/radio-languages";
 import Link from "next/link";
-import ButtonIcon from "@/components/ui/button-icon/button-icon";
+import ButtonIcon from "@/components/ui/button-icon";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Login } from "@/components/Icons/icons";
 import { usePathname, useRouter } from "next/navigation";

@@ -1,0 +1,759 @@
+{
+  "schemaVersion": 1,
+  "id": "wednesday_mid_001",
+  "slug": "wednesday-outcasts-warning",
+  "title": "Wednesday",
+  "series": "Wednesday",
+  "availableModes": ["easy", "medium", "hard"],
+  "media": {
+    "videoFile": "https://player.mux.com/DkwLTYhgCqOguLHYQ3z1B1r8bkF6wZUa1N01qSUqlrPQ?metadata-video-title=Wednesday&video-title=Wednesday&accent-color=%23df7801&primary-color=%23034091&secondary-color=%23dedede",
+    "thumbnailFile": "wednesday-cover.jpeg"
+  },
+  "meta": {
+    "level": "A2-B1",
+    "category": "Conversational",
+    "length": "mid",
+    "scriptType": "dialog",
+    "type": "series"
+  },
+  "source": {
+    "originalDocx": "/Users/anatolii/Desktop/next/materials/Wednesday/wednesday_mid_001.docx",
+    "structuredDocx": "/Users/anatolii/Desktop/next/materials/Wednesday/wednesday_mid_001.docx",
+    "sourceFileName": "wednesday_mid_001"
+  },
+  "description": {
+    "en": "A random guy is going for a hike in a forest where a school for special students is located. In the series, they are called outcasts. A local woman gives him a ride and warns him about the school, but it seems like he doesn't really care.",
+    "ua": "Випадковий чоловік вирушає в похід лісом, де розташована школа для особливих учнів. У серіалі їх називають вигнанцями. Місцева жінка підвозить його та попереджає про цю школу, але, схоже, йому це байдуже."
+  },
+  "sourceIssues": [
+    "The original docx repeated Line 6 in the easy script. The structured source normalizes the final 'Huh, thanks.' line as Line 7.",
+    "The original docx had clipped or inconsistent Russian text in the line 2 takeaway and line 4 takeaway. This JSON normalizes those entries for app use."
+  ],
+  "lines": [
+    {
+      "lineNumber": 1,
+      "text": "Thanks.",
+      "translations": {
+        "ua": "Дякую.",
+        "ru": "Спасибо."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        {
+          "id": "l1w1",
+          "text": "Thanks",
+          "normalized": "thanks",
+          "punctuationAfter": ".",
+          "saveable": true
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "Thanks.",
+              "blanks": []
+            }
+          ]
+        },
+        "medium": {
+          "text": "[Thanks].",
+          "blankedTokenIds": ["l1w1"]
+        },
+        "hard": {
+          "text": "[Thanks.]",
+          "revealOrder": ["l1w1"]
+        }
+      }
+    },
+    {
+      "lineNumber": 2,
+      "text": "Sure you wanna get out here? The trail might look pretty, but it runs right past Nevermore.",
+      "translations": {
+        "ua": "Ти впевнена, що хочеш тут вийти? Стежка може виглядати гарно, але вона проходить прямо повз Невермор.",
+        "ru": "Ты уверена, что хочешь выйти здесь? Тропа может выглядеть красивой, но она проходит прямо мимо Невермора."
+      },
+      "takeaways": {
+        "ua": "З точки зору правильної граматики питання має звучати так — Are you sure you want to get out here? але персонаж — неосвічена проста жінка з маленького містечка, яка в реальному житті говорить саме так, скорочуючи фрази й допускаючи граматичні помилки; у неї є місцевий акцент — зверни увагу на вимову слів “sure” та “Nevermore”, це не стандартна американська вимова; run — багатозначне дієслово і, окрім «бігти», у цьому контексті означає «проходити / пролягати», ним також можна замінювати інші дії руху, наприклад «їхати»: His car ran right next to me — його машина проїхала прямо біля мене.",
+        "ru": "С точки зрения правильной грамматики вопрос должен звучать так — Are you sure you want to get out here? но персонаж — простая необразованная женщина из маленького городка, и в реальной жизни там говорят именно так, сокращая фразы и допуская грамматические ошибки; у неё есть местный акцент — обрати внимание на произношение слов “sure” и “Nevermore”, это не стандартное американское произношение; run — многозначный глагол и, помимо «бежать», в этом контексте означает «проходить / пролегать», им также можно заменять другие действия движения, например «ехать»: His car ran right next to me — его машина проехала прямо рядом со мной."
+      },
+      "tokens": [
+        {
+          "id": "l2w1",
+          "text": "Sure",
+          "normalized": "sure",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w2",
+          "text": "you",
+          "normalized": "you",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w3",
+          "text": "wanna",
+          "normalized": "want to",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w4",
+          "text": "get",
+          "normalized": "get",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w5",
+          "text": "out",
+          "normalized": "out",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w6",
+          "text": "here",
+          "normalized": "here",
+          "punctuationAfter": "?",
+          "saveable": true
+        },
+        {
+          "id": "l2w7",
+          "text": "The",
+          "normalized": "The",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l2w8",
+          "text": "trail",
+          "normalized": "trail",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w9",
+          "text": "might",
+          "normalized": "might",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w10",
+          "text": "look",
+          "normalized": "look",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w11",
+          "text": "pretty",
+          "normalized": "pretty",
+          "punctuationAfter": ",",
+          "saveable": true
+        },
+        {
+          "id": "l2w12",
+          "text": "but",
+          "normalized": "but",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w13",
+          "text": "it",
+          "normalized": "it",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w14",
+          "text": "runs",
+          "normalized": "run",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w15",
+          "text": "right",
+          "normalized": "right",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w16",
+          "text": "past",
+          "normalized": "past",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w17",
+          "text": "Nevermore",
+          "normalized": "Nevermore",
+          "punctuationAfter": ".",
+          "saveable": false
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "Sure you [[wanna]] get out here?",
+              "blanks": [
+                {
+                  "tokenId": "l2w3",
+                  "answer": "wanna",
+                  "options": ["gonna", "wanna", "sauna"]
+                }
+              ]
+            },
+            {
+              "snapNumber": 2,
+              "text": "The trail might look [[pretty]], but it runs right [[past]] Nevermore.",
+              "blanks": [
+                {
+                  "tokenId": "l2w11",
+                  "answer": "pretty",
+                  "options": ["kitty", "nitty", "pretty"]
+                },
+                {
+                  "tokenId": "l2w16",
+                  "answer": "past",
+                  "options": ["last", "past", "dust", "fast"]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "[Sure] you [wanna] [get] out [here]? The [trail] might look [pretty], but it runs right [past] Nevermore.",
+          "blankedTokenIds": ["l2w1", "l2w3", "l2w4", "l2w6", "l2w8", "l2w11", "l2w16"]
+        },
+        "hard": {
+          "text": "[Sure] [you] [wanna] [get] [out] [here?] [The] [trail] [might] [look] [pretty,] [but] [it] [runs] [right] [past] [Nevermore.]",
+          "revealOrder": ["l2w1", "l2w2", "l2w3", "l2w4", "l2w5", "l2w6", "l2w7", "l2w8", "l2w9", "l2w10", "l2w11", "l2w12", "l2w13", "l2w14", "l2w15", "l2w16", "l2w17"]
+        }
+      }
+    },
+    {
+      "lineNumber": 3,
+      "text": "That school for outcasts?",
+      "translations": {
+        "ua": "Та школа для вигнанців?",
+        "ru": "Та школа для изгоев?"
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        {
+          "id": "l3w1",
+          "text": "That",
+          "normalized": "that",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l3w2",
+          "text": "school",
+          "normalized": "school",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l3w3",
+          "text": "for",
+          "normalized": "for",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l3w4",
+          "text": "outcasts",
+          "normalized": "outcasts",
+          "punctuationAfter": "?",
+          "saveable": true
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "That school for [[outcasts]]?",
+              "blanks": [
+                {
+                  "tokenId": "l3w4",
+                  "answer": "outcasts",
+                  "options": ["outlast", "almost", "outcasts"]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "[That] school for [outcasts]?",
+          "blankedTokenIds": ["l3w1", "l3w4"]
+        },
+        "hard": {
+          "text": "[That] [school] [for] [outcasts?]",
+          "revealOrder": ["l3w1", "l3w2", "l3w3", "l3w4"]
+        }
+      }
+    },
+    {
+      "lineNumber": 4,
+      "text": "That's a polite way of putting it.",
+      "translations": {
+        "ua": "Це ще дуже ввічливе формулювання.",
+        "ru": "Это ещё очень мягко сказано."
+      },
+      "takeaways": {
+        "ua": "Дієслово put є багатозначним і в цьому випадку означає «сказати», «висловитись», «підібрати слова»; приклад: Let’s put it this way — давай скажемо це таким чином.",
+        "ru": "Глагол put многозначен и в этом случае означает «сказать», «выразиться», «подобрать слова»; пример: Let’s put it this way — давай скажем это таким образом."
+      },
+      "tokens": [
+        {
+          "id": "l4w1",
+          "text": "That's",
+          "normalized": "That's",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l4w2",
+          "text": "a",
+          "normalized": "a",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l4w3",
+          "text": "polite",
+          "normalized": "polite",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l4w4",
+          "text": "way",
+          "normalized": "way",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l4w5",
+          "text": "of",
+          "normalized": "of",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l4w6",
+          "text": "putting",
+          "normalized": "put",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l4w7",
+          "text": "it",
+          "normalized": "it",
+          "punctuationAfter": ".",
+          "saveable": true
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "That's a polite way of [[putting]] it.",
+              "blanks": [
+                {
+                  "tokenId": "l4w6",
+                  "answer": "putting",
+                  "options": ["looting", "booting", "putting"]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "[That's] a polite [way] of [putting] it.",
+          "blankedTokenIds": ["l4w1", "l4w4", "l4w6"]
+        },
+        "hard": {
+          "text": "[That's] [a] [polite] [way] [of] [putting] [it.]",
+          "revealOrder": ["l4w1", "l4w2", "l4w3", "l4w4", "l4w5", "l4w6", "l4w7"]
+        }
+      }
+    },
+    {
+      "lineNumber": 5,
+      "text": "I never had a problem with outcasts. My counselor at summer camp was a werewolf. Great guy.",
+      "translations": {
+        "ua": "У мене ніколи не було проблем із вигнанцями. Мій вожатий у літньому таборі був перевертнем. Чудовий хлопець.",
+        "ru": "У меня никогда не было проблем с изгоями. Мой вожатый в летнем лагере был оборотнем. Отличный парень."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        {
+          "id": "l5w1",
+          "text": "I",
+          "normalized": "I",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l5w2",
+          "text": "never",
+          "normalized": "never",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l5w3",
+          "text": "had",
+          "normalized": "have",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l5w4",
+          "text": "a",
+          "normalized": "a",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l5w5",
+          "text": "problem",
+          "normalized": "problem",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l5w6",
+          "text": "with",
+          "normalized": "with",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l5w7",
+          "text": "outcasts",
+          "normalized": "outcasts",
+          "punctuationAfter": ".",
+          "saveable": true
+        },
+        {
+          "id": "l5w8",
+          "text": "My",
+          "normalized": "my",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l5w9",
+          "text": "counselor",
+          "normalized": "counselor",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l5w10",
+          "text": "at",
+          "normalized": "at",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l5w11",
+          "text": "summer",
+          "normalized": "summer",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l5w12",
+          "text": "camp",
+          "normalized": "camp",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l5w13",
+          "text": "was",
+          "normalized": "be",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l5w14",
+          "text": "a",
+          "normalized": "a",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l5w15",
+          "text": "werewolf",
+          "normalized": "werewolf",
+          "punctuationAfter": ".",
+          "saveable": true
+        },
+        {
+          "id": "l5w16",
+          "text": "Great",
+          "normalized": "great",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l5w17",
+          "text": "guy",
+          "normalized": "guy",
+          "punctuationAfter": ".",
+          "saveable": true
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "I never had a problem with [[outcasts]].",
+              "blanks": [
+                {
+                  "tokenId": "l5w7",
+                  "answer": "outcasts",
+                  "options": ["outlast", "almost", "outcasts"]
+                }
+              ]
+            },
+            {
+              "snapNumber": 2,
+              "text": "My [[counselor]] at summer [[camp]] was a werewolf. Great guy.",
+              "blanks": [
+                {
+                  "tokenId": "l5w9",
+                  "answer": "counselor",
+                  "options": ["chancellor", "counselor", "consoles"]
+                },
+                {
+                  "tokenId": "l5w12",
+                  "answer": "camp",
+                  "options": ["lamb", "camp", "lamp"]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "[I] never had a [problem] with [outcasts]. My [counselor] at [summer] [camp] was a [werewolf]. Great [guy].",
+          "blankedTokenIds": ["l5w1", "l5w5", "l5w7", "l5w9", "l5w11", "l5w12", "l5w15", "l5w17"]
+        },
+        "hard": {
+          "text": "[I] [never] [had] [a] [problem] [with] [outcasts.] [My] [counselor] [at] [summer] [camp] [was] [a] [werewolf.] [Great] [guy.]",
+          "revealOrder": ["l5w1", "l5w2", "l5w3", "l5w4", "l5w5", "l5w6", "l5w7", "l5w8", "l5w9", "l5w10", "l5w11", "l5w12", "l5w13", "l5w14", "l5w15", "l5w16", "l5w17"]
+        }
+      }
+    },
+    {
+      "lineNumber": 6,
+      "text": "Yeah, they're just like you and me, until they rip your throat out.",
+      "translations": {
+        "ua": "Так, вони такі ж, як ти і я, поки не вирвуть тобі горло.",
+        "ru": "Да, они такие же, как ты и я, пока не вырвут тебе горло."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        {
+          "id": "l6w1",
+          "text": "Yeah",
+          "normalized": "yeah",
+          "punctuationAfter": ",",
+          "saveable": true
+        },
+        {
+          "id": "l6w2",
+          "text": "they're",
+          "normalized": "they're",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l6w3",
+          "text": "just",
+          "normalized": "just",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l6w4",
+          "text": "like",
+          "normalized": "like",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l6w5",
+          "text": "you",
+          "normalized": "you",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l6w6",
+          "text": "and",
+          "normalized": "and",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l6w7",
+          "text": "me",
+          "normalized": "me",
+          "punctuationAfter": ",",
+          "saveable": true
+        },
+        {
+          "id": "l6w8",
+          "text": "until",
+          "normalized": "until",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l6w9",
+          "text": "they",
+          "normalized": "they",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l6w10",
+          "text": "rip",
+          "normalized": "rip",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l6w11",
+          "text": "your",
+          "normalized": "your",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l6w12",
+          "text": "throat",
+          "normalized": "throat",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l6w13",
+          "text": "out",
+          "normalized": "out",
+          "punctuationAfter": ".",
+          "saveable": true
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "Yeah, they're [[just]] like you and me, until they [[rip]] your throat out.",
+              "blanks": [
+                {
+                  "tokenId": "l6w3",
+                  "answer": "just",
+                  "options": ["lust", "dust", "just"]
+                },
+                {
+                  "tokenId": "l6w10",
+                  "answer": "rip",
+                  "options": ["hip", "lip", "rip"]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "Yeah, they're [just] like [you] and [me], until they [rip] your [throat] [out].",
+          "blankedTokenIds": ["l6w3", "l6w5", "l6w7", "l6w10", "l6w12", "l6w13"]
+        },
+        "hard": {
+          "text": "[Yeah,] [they're] [just] [like] [you] [and] [me,] [until] [they] [rip] [your] [throat] [out.]",
+          "revealOrder": ["l6w1", "l6w2", "l6w3", "l6w4", "l6w5", "l6w6", "l6w7", "l6w8", "l6w9", "l6w10", "l6w11", "l6w12", "l6w13"]
+        }
+      }
+    },
+    {
+      "lineNumber": 7,
+      "text": "Huh, thanks.",
+      "translations": {
+        "ua": "Хм, дякую.",
+        "ru": "Хм, спасибо."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        {
+          "id": "l7w1",
+          "text": "Huh",
+          "normalized": "huh",
+          "punctuationAfter": ",",
+          "saveable": true
+        },
+        {
+          "id": "l7w2",
+          "text": "thanks",
+          "normalized": "thanks",
+          "punctuationAfter": ".",
+          "saveable": true
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "Huh, thanks.",
+              "blanks": []
+            }
+          ]
+        },
+        "medium": {
+          "text": "[Huh], [thanks].",
+          "blankedTokenIds": ["l7w1", "l7w2"]
+        },
+        "hard": {
+          "text": "[Huh,] [thanks.]",
+          "revealOrder": ["l7w1", "l7w2"]
+        }
+      }
+    }
+  ]
+}

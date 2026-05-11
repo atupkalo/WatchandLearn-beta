@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import ButtonCustom from "@/components/ui/button";
-import cardStyles from "@/components/ui/card.module.css";
+import uiStyles from "@/components/ui/ui.module.css";
 import { createClient } from "@/utils/supabase/client";
 
 interface LoginFormProps {
@@ -50,7 +50,7 @@ export default function LoginForm({
   }
 
   return (
-    <div className={cardStyles.card}>
+    <div className={uiStyles.cardNoHover}>
       <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
         <Input
           id="login-email"

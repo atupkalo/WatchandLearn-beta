@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "id": "wednesday_short_001",
+  "slug": "wednesday-goodbye-to-family",
+  "title": "Wednesday",
+  "series": "Wednesday",
+  "availableModes": ["easy", "medium", "hard"],
+  "media": {
+    "videoFile": "https://player.mux.com/Iuf7oxHmTlniC8j01qrJbGNr69AjI4vIn26TcFS7BseQ?metadata-video-title=Wednesday&video-title=Wednesday&accent-color=%23df7801&primary-color=%23034091&secondary-color=%23dedede",
+    "thumbnailFile": "wednesday-cover.jpeg"
+  },
+  "meta": {
+    "level": "A2-B1",
+    "category": "Conversational",
+    "length": "short",
+    "scriptType": "dialog",
+    "type": "series"
+  },
+  "source": {
+    "originalDocx": "/Users/anatolii/Desktop/next/materials/Wednesday/wednesday_short_001.docx",
+    "structuredDocx": "/Users/anatolii/Desktop/next/materials/Wednesday/wednesday_short_001_review.docx",
+    "sourceFileName": "wednesday_short_001"
+  },
+  "description": {
+    "en": "Wednesday is saying goodbye to her family before leaving, and she delivers a harsh prediction to Pugsley in her usual deadpan style. He answers affectionately, showing that he is used to her dark sense of humor.",
+    "ua": "Венздей прощається зі своєю родиною перед від’їздом і в притаманній їй беземоційній манері жорстко пророкує майбутнє Паґзлі. Він відповідає тепло, показуючи, що звик до її похмурого гумору."
+  },
+  "sourceIssues": [
+    "The original source docx only contained metadata and the raw script lines.",
+    "The structured review copy was used as the source for easy, medium, hard, and lesson-key data."
+  ],
+  "lines": [
+    {
+      "lineNumber": 1,
+      "text": "Pugsley, you're soft and weak. You'll never survive without me. I give you two months, tops.",
+      "translations": {
+        "ua": "Паґзлі, ти м'який і слабкий. Ти ніколи не виживеш без мене. Даю тобі максимум два місяці.",
+        "ru": "Пагзли, ты мягкий и слабый. Ты никогда не выживешь без меня. Даю тебе максимум два месяца."
+      },
+      "takeaways": {
+        "ua": "tops — розмовне слово, яке означає «максимум», «не більше ніж»; I give you two months, tops = даю тобі максимум два місяці.",
+        "ru": "tops — разговорное слово, которое означает «максимум», «не больше чем»; I give you two months, tops = даю тебе максимум два месяца."
+      },
+      "tokens": [
+        { "id": "l1w1", "text": "Pugsley", "normalized": "Pugsley", "punctuationAfter": ",", "saveable": false },
+        { "id": "l1w2", "text": "you're", "normalized": "you're", "punctuationAfter": "", "saveable": false },
+        { "id": "l1w3", "text": "soft", "normalized": "soft", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w4", "text": "and", "normalized": "and", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w5", "text": "weak", "normalized": "weak", "punctuationAfter": ".", "saveable": true },
+        { "id": "l1w6", "text": "You'll", "normalized": "You'll", "punctuationAfter": "", "saveable": false },
+        { "id": "l1w7", "text": "never", "normalized": "never", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w8", "text": "survive", "normalized": "survive", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w9", "text": "without", "normalized": "without", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w10", "text": "me", "normalized": "me", "punctuationAfter": ".", "saveable": true },
+        { "id": "l1w11", "text": "I", "normalized": "I", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w12", "text": "give", "normalized": "give", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w13", "text": "you", "normalized": "you", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w14", "text": "two", "normalized": "two", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w15", "text": "months", "normalized": "month", "punctuationAfter": ",", "saveable": true },
+        { "id": "l1w16", "text": "tops", "normalized": "tops", "punctuationAfter": ".", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "Pugsley, you're soft and [[weak]].",
+              "blanks": [
+                { "tokenId": "l1w5", "answer": "weak", "options": ["meek", "weak", "peak"] }
+              ]
+            },
+            {
+              "snapNumber": 2,
+              "text": "You'll never [[survive]] without me.",
+              "blanks": [
+                { "tokenId": "l1w8", "answer": "survive", "options": ["survive", "service", "surface"] }
+              ]
+            },
+            {
+              "snapNumber": 3,
+              "text": "I give you two [[months]], [[tops]].",
+              "blanks": [
+                { "tokenId": "l1w15", "answer": "months", "options": ["mouths", "months", "monks"] },
+                { "tokenId": "l1w16", "answer": "tops", "options": ["tops", "stops", "chops"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "Pugsley, you're [soft] and [weak]. You'll [never] [survive] [without] me. I give you [two] [months], [tops].",
+          "blankedTokenIds": ["l1w3", "l1w5", "l1w7", "l1w8", "l1w9", "l1w14", "l1w15", "l1w16"]
+        },
+        "hard": {
+          "text": "[Pugsley,] [you're] [soft] [and] [weak.] [You'll] [never] [survive] [without] [me.] [I] [give] [you] [two] [months,] [tops.]",
+          "revealOrder": ["l1w1", "l1w2", "l1w3", "l1w4", "l1w5", "l1w6", "l1w7", "l1w8", "l1w9", "l1w10", "l1w11", "l1w12", "l1w13", "l1w14", "l1w15", "l1w16"]
+        }
+      }
+    },
+    {
+      "lineNumber": 2,
+      "text": "I'm gonna miss you, too, sis.",
+      "translations": {
+        "ua": "Я теж сумуватиму за тобою, сестричко.",
+        "ru": "Я тоже буду скучать по тебе, сестренка."
+      },
+      "takeaways": {
+        "ua": "gonna — дуже поширена розмовна форма від going to. sis — неформальне скорочення від sister.",
+        "ru": "gonna — очень распространенная разговорная форма от going to. sis — неформальное сокращение от sister."
+      },
+      "tokens": [
+        { "id": "l2w1", "text": "I'm", "normalized": "I'm", "punctuationAfter": "", "saveable": false },
+        { "id": "l2w2", "text": "gonna", "normalized": "going to", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w3", "text": "miss", "normalized": "miss", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w4", "text": "you", "normalized": "you", "punctuationAfter": ",", "saveable": true },
+        { "id": "l2w5", "text": "too", "normalized": "too", "punctuationAfter": ",", "saveable": true },
+        { "id": "l2w6", "text": "sis", "normalized": "sis", "punctuationAfter": ".", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "I'm [[gonna]] miss you, too, [[sis]].",
+              "blanks": [
+                { "tokenId": "l2w2", "answer": "gonna", "options": ["going", "gonna", "gone"] },
+                { "tokenId": "l2w6", "answer": "sis", "options": ["sis", "sir", "six"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "I'm [gonna] [miss] you, too, [sis].",
+          "blankedTokenIds": ["l2w2", "l2w3", "l2w6"]
+        },
+        "hard": {
+          "text": "[I'm] [gonna] [miss] [you,] [too,] [sis.]",
+          "revealOrder": ["l2w1", "l2w2", "l2w3", "l2w4", "l2w5", "l2w6"]
+        }
+      }
+    }
+  ]
+}

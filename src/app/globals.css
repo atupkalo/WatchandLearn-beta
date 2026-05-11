@@ -5,29 +5,44 @@
   --font-lato: "Lato", "Helvetica Neue", Arial, sans-serif;
   --font-heading: "Titillium Web", "Trebuchet MS", sans-serif;
 
-  --primary: #2A666F;
+  --primary100: #D6E4E6;
   --primary200: #ACC8CC;
+  --primary: #317782;
   --primary600: #2A666F;
   --primary700: #23555D;
 
-  --secondary: #29586E;
+  --secondary100: #CDDDE4;
+  --secondary200: #ADC5D0;
+  --secondary: #306882;
+  --secondary600: #29586E;
   --secondary700: #234A5D;
 
-  --accent: #DC5318;
   --accent50: #f9e5ce;
-  --accent700: #B84514;
-  --accent400: #ED895E;
   --accent300: #F4B59A;
+  --accent400: #ED895E;
+  --accent: #DC5318;
+  --accent700: #B84514;
 
-  --gray100: #ECEFEF;
+  --neutral50: #F7F8F8;
+  --neutral100: #F1F3F3;
+  --neutral150: #ECEFEF;
+  --neutral500: #D6DBDB;
+  --neutral600: #D1D6D6;
+  --neutral700: #CCD1D1;
+
+  --gray100: #798386;
   --gray150: #6C777A;
   --gray400: #455254;
 
-  --danger: #DC2626;
+  --negative: #DC2626;
+  --warning: #FBBF24;
+  --success: #0D7300;
   --background: #F7F8F8;
 
   --textBody: #313131;
   --textTitle: #363d40;
+  --textInactive: #525E60;
+  --textDisabled: #868F92;
 
   --borderDefault: #CCD1D1;
 }
@@ -43,6 +58,7 @@ video::-webkit-media-controls-enclosure {
 
 html,
 body {
+  min-height: 1220px;
   min-height: 100%;
   font-family: var(--font-lato);
   background: linear-gradient(97deg, #E4F1F7 3.41%, #FDFBEF 96.48%);
@@ -57,4 +73,7 @@ body {
 .icon-hover{
   transition: all 0.3s ease;
   opacity: 0.8;
+}
+.spacer{
+  background: transparent!important;
 }

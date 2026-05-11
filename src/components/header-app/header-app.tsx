@@ -50,7 +50,11 @@ export default function HeaderApp({ userName, role }: HeaderAppProps) {
         </div>
       </header>
 
-      <SlideOut isOpen={isAccountOpen} onClose={() => setIsAccountOpen(false)}>
+      <SlideOut
+        isOpen={isAccountOpen}
+        onClose={() => setIsAccountOpen(false)}
+        title="Profile"
+      >
         <Account name={userName} role={role} />
       </SlideOut>
     </>
