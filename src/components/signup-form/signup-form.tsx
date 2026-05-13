@@ -69,7 +69,7 @@ export default function SignupForm({ onSwitchToLogin }: SignupFormProps) {
     }
 
     return (
-        <div className={uiStyles.card}>
+        <div className={uiStyles.cardNoHover}>
             <form
                 className="flex w-md flex-col items-center justify-center gap-6"
                 onSubmit={handleSubmit}
