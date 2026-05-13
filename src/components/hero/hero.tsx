@@ -88,13 +88,14 @@ export default function Hero() {
             <h2 className="max-w-[420px] text-base text-[var(--textBody)]">
               {t("h2")}
             </h2>
-
-            <ButtonCustom
-              size="lg"
-              label={t("CTA")}
-              variant="primary"
-              className={`p-6 text-xl ${uiStyles.shadowInset}`}
-            />
+            <a href="/signup">
+              <ButtonCustom
+                size="lg"
+                label={t("CTA")}
+                variant="primary"
+                className={`p-6 text-xl ${uiStyles.shadowInset}`}
+              />
+            </a>
           </div>
         </div>
 
