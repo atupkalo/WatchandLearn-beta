@@ -52,7 +52,7 @@ export default async function RootLayout({
       lang={locale}
       className={`${lato.variable} ${titillium.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="h-full min-h-0 flex flex-col">
         <NextIntlClientProvider>
           <AuthPopoverProvider>
             <UserPreferencesProvider

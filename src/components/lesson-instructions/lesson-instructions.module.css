@@ -1,0 +1,22 @@
+.lessonInstructions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--textBody);
+}
+
+.lessonInstructionsSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.lessonInstructionsTitle {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.stepsList {
+  display: block;
+  list-style-type: decimal;
+  padding-left: 24px;
+}

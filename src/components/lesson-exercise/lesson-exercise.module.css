@@ -1,0 +1,167 @@
+.exerciseRoot {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+}
+
+.exercisePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+}
+
+.exerciseCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.easyLineRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(204, 209, 209, 0.9);
+}
+
+.easyLineRow:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.lineBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lineContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.lineLabel {
+  flex: 0 0 auto;
+  min-width: 64px;
+  padding-top: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--accent);
+}
+
+.lineRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.lineText {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--textBody);
+}
+
+.optionGroups {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.optionRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.exerciseControls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.mediumLines {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow-y: auto;
+  min-height: 0;
+  padding-right: 4px;
+}
+
+.mediumLine {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mediumText {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--textBody);
+}
+
+.hardControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hardButton {
+  height: 36px;
+}
+
+.hardButton:hover {
+  background: var(--secondary50) !important;
+}
+
+.hardInput {
+  background: #ffffff;
+}
+
+.hardSchema {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hardSchemaLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--textBody);
+}
+
+.hardSchemaToken {
+  white-space: pre-wrap;
+}
+
+.completedText {
+  color: var(--success);
+  font-weight: 600;
+}

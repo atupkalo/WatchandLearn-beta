@@ -11,6 +11,7 @@
   --primary600: #2A666F;
   --primary700: #23555D;
 
+  --secondary50: #E6EEF0;
   --secondary100: #CDDDE4;
   --secondary200: #ADC5D0;
   --secondary: #306882;
@@ -18,6 +19,7 @@
   --secondary700: #234A5D;
 
   --accent50: #f9e5ce;
+  --accent100: #f8dbc7;
   --accent300: #F4B59A;
   --accent400: #ED895E;
   --accent: #DC5318;
@@ -58,7 +60,7 @@ video::-webkit-media-controls-enclosure {
 
 html,
 body {
-  min-height: 1220px;
+  height: 100%;
   min-height: 100%;
   font-family: var(--font-lato);
   background: linear-gradient(97deg, #E4F1F7 3.41%, #FDFBEF 96.48%);
@@ -66,10 +68,6 @@ body {
 .component-gradient{
   background: linear-gradient(80deg, #FDFBEF 96.48%, #E4F1F7 3.41%);
 }
-body {
-  min-height: 100vh;
-}
-
 .icon-hover{
   transition: all 0.3s ease;
   opacity: 0.8;

@@ -23,7 +23,7 @@ export default async function AppCoreLayout({
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="h-full min-h-0 flex flex-col overflow-hidden">
       <HeaderApp
         userName={getUserDisplayName(user)}
         role={getUserRole(user)}

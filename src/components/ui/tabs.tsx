@@ -4,18 +4,37 @@ import styles from "./ui.module.css";
 
 interface TabsCustomProps {
   tabs: Array<{
+    id?: string;
     label: string;
     content: ReactNode;
   }>;
+  selectedKey?: string;
+  onSelectionChange?: (key: string) => void;
 }
 
-export function TabsCustom({ tabs }: TabsCustomProps) {
+export function TabsCustom({
+  tabs,
+  selectedKey,
+  onSelectionChange,
+}: TabsCustomProps) {
   return (
-    <Tabs className="w-full">
+    <Tabs
+      className="w-full"
+      selectedKey={selectedKey}
+      onSelectionChange={
+        onSelectionChange
+          ? (key) => onSelectionChange(String(key))
+          : undefined
+      }
+    >
       <Tabs.ListContainer>
         <Tabs.List className={styles.tabsList} aria-label="Tabs">
           {tabs.map((tab, index) => (
-            <Tabs.Tab className={styles.tab } key={index} id={`tab-${index}`}>
+            <Tabs.Tab
+              className={styles.tab}
+              key={tab.id ?? `tab-${index}`}
+              id={tab.id ?? `tab-${index}`}
+            >
               {tab.label}
               <Tabs.Indicator />
             </Tabs.Tab>
@@ -24,7 +43,10 @@ export function TabsCustom({ tabs }: TabsCustomProps) {
       </Tabs.ListContainer>
 
       {tabs.map((tab, index) => (
-        <Tabs.Panel key={index} id={`tab-${index}`} className="pt-4">
+        <Tabs.Panel
+          key={tab.id ?? `panel-${index}`}
+          id={tab.id ?? `tab-${index}`}
+        >
           {tab.content}
         </Tabs.Panel>
       ))}

@@ -1,9 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { HugeiconsIcon } from "@hugeicons/react";
 import LessonMetaBar from "@/components/lesson-meta-bar/lesson-meta-bar";
+import LessonInstructions from "@/components/lesson-instructions/lesson-instructions";
 import SlideOut from "@/components/common/slide-out";
 import ButtonIcon from "@/components/ui/button-icon";
 import SwitchCustom from "@/components/ui/switch";
@@ -12,7 +13,6 @@ import LessonWorkingAreaSide from "./lesson-working-area-side";
 import styles from "./lessons.module.css";
 import { openSlideOut } from "@/components/Icons/icons";
 import type { LessonLine } from "@/lib/lessons";
-
 interface LessonPageClientProps {
   title: string;
   level: string;
@@ -23,10 +23,6 @@ interface LessonPageClientProps {
   availableModes: string[];
   videoSrc: string;
   lines: LessonLine[];
-}
-
-function getModeLabel(mode: string) {
-  return mode.charAt(0).toUpperCase() + mode.slice(1);
 }
 
 export default function LessonPageClient({
@@ -46,19 +42,11 @@ export default function LessonPageClient({
   const [sidebarOnLeft, setSidebarOnLeft] = useState(false);
   const [isInstructionsOpen, setIsInstructionsOpen] = useState(false);
 
-  const tabs = useMemo(
-    () =>
-      availableModes.map((mode) => ({
-        label: getModeLabel(mode),
-        content: <div className={styles.tabPlaceholder}>{mode} working field</div>,
-      })),
-    [availableModes],
-  );
-
   const workingAreaSide = (
     <LessonWorkingAreaSide
       description={description}
-      tabs={tabs}
+      availableModes={availableModes}
+      lines={lines}
     />
   );
 
@@ -72,7 +60,7 @@ export default function LessonPageClient({
 
   return (
     <>
-      <section className="flex h-full min-h-0 flex-col gap-6 overflow-hidden">
+      <section className={styles.lessonPage}>
         <LessonMetaBar
           title={title}
           level={level}
@@ -89,7 +77,7 @@ export default function LessonPageClient({
               <ButtonIcon
                 label={tButtons("butonLessonInstructions")}
                 icon={<HugeiconsIcon icon={openSlideOut} size={18} strokeWidth={1.6} />}
-                size="sm"
+                size="lg"
                 onClick={() => setIsInstructionsOpen(true)}
               />
             </>
@@ -99,13 +87,13 @@ export default function LessonPageClient({
         <div className={styles.lessonLayout}>
           {sidebarOnLeft ? (
             <>
-              {videoSide}
-              {workingAreaSide}
+              <div className={styles.lessonColumn}>{videoSide}</div>
+              <div className={styles.lessonColumn}>{workingAreaSide}</div>
             </>
           ) : (
             <>
-              {workingAreaSide}
-              {videoSide}
+              <div className={styles.lessonColumn}>{workingAreaSide}</div>
+              <div className={styles.lessonColumn}>{videoSide}</div>
             </>
           )}
         </div>
@@ -114,30 +102,9 @@ export default function LessonPageClient({
       <SlideOut
         isOpen={isInstructionsOpen}
         onClose={() => setIsInstructionsOpen(false)}
-        title={tButtons("butonLessonInstructions")}
+        title={tLessons("slideOutTitle")}
       >
-        <div className={styles.lessonInstructionPanel}>
-          <h2 className={styles.lessonInstructionTitle}>
-            {tButtons("butonLessonInstructions")}
-          </h2>
-          <div className={styles.lessonInstructionBody}>
-            <p>{tLessons("instructionIntro")}</p>
-            <p>{tLessons("instructionToggle")}</p>
-            <p>{tLessons("instructionKey")}</p>
-            <div>
-              <div className={styles.lessonInstructionSubtitle}>Easy</div>
-              <p>{tLessons("instructionEasy")}</p>
-            </div>
-            <div>
-              <div className={styles.lessonInstructionSubtitle}>Medium</div>
-              <p>{tLessons("instructionMedium")}</p>
-            </div>
-            <div>
-              <div className={styles.lessonInstructionSubtitle}>Hard</div>
-              <p>{tLessons("instructionHard")}</p>
-            </div>
-          </div>
-        </div>
+        <LessonInstructions />
       </SlideOut>
     </>
   );

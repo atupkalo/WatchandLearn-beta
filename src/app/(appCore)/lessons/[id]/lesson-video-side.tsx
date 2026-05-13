@@ -1,5 +1,9 @@
+"use client";
+
 import { Eye } from "@gravity-ui/icons";
+import { useTranslations } from "next-intl";
 import LessonKeyPopover from "@/components/lesson-key-popover/lesson-key-popover";
+import { useUserPreferences } from "@/components/providers/user-preferences-provider";
 import ButtonTrigger from "@/components/ui/button-trigger";
 import Iframe from "@/components/ui/iframe";
 import PopoverCustom from "@/components/ui/popover";
@@ -17,6 +21,10 @@ export default function LessonVideoSide({
   videoSrc,
   lines,
 }: LessonVideoSideProps) {
+  const tLessons = useTranslations("Lessons");
+  const { studyLanguage } = useUserPreferences();
+  const translationKey = studyLanguage === "en-ru" ? "ru" : "ua";
+
   return (
     <div className={styles.lessonVideoSide}>
       <div className={styles.video}>
@@ -24,14 +32,16 @@ export default function LessonVideoSide({
       </div>
 
       <div className={styles.lessonKeysSection}>
-        <div className={styles.lessonKeysTitle}>Lessons Key</div>
+        <div className={styles.lessonKeysTitle}>
+          {tLessons("lessonKeyTitle")}
+        </div>
         <div className={styles.lessonKeysList}>
           {lines.map((line) => (
-            <PopoverCustom 
+            <PopoverCustom
               key={line.lineNumber}
               trigger={
                 <ButtonTrigger
-                  label={`Line ${line.lineNumber}`}
+                  label={`${tLessons("lineLabel")} ${line.lineNumber}`}
                   icon={<Eye />}
                   size="md"
                 />
@@ -39,8 +49,8 @@ export default function LessonVideoSide({
               content={
                 <LessonKeyPopover
                   script={line.text}
-                  translation={line.translations.ua ?? "-"}
-                  takeaways={line.takeaways.ua}
+                  translation={line.translations[translationKey] ?? "-"}
+                  takeaways={line.takeaways[translationKey]}
                 />
               }
             />

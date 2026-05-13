@@ -8,9 +8,9 @@
   z-index: 70;
   padding: 16px 24px;
   border-radius: 24px 0 0 24px;
-  background: var(--secondary100);
+  background: var(--secondary50);
   overflow-y: auto;
-  box-shadow: -8px 0 20px rgba(35, 74, 93, 0.2);
+  box-shadow: -8px 0 20px rgba(35, 74, 93, 0.4);
   transform: translateX(100%);
   opacity: 0;
   transition:

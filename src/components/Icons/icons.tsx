@@ -15,7 +15,9 @@ import { LoginSquare01Icon as Login } from '@hugeicons-pro/core-stroke-standard'
 import { CancelCircleIcon as Cross } from '@hugeicons-pro/core-stroke-standard';
 import { UserEdit01Icon as AdminStroke } from '@hugeicons-pro/core-stroke-standard';
 import { UserEdit01Icon as AdminSolid } from '@hugeicons-pro/core-solid-standard';
-import { ArrowLeft03Icon as openSlideOut } from '@hugeicons-pro/core-solid-standard';
+import { ArrowLeft05Icon as openSlideOut } from '@hugeicons-pro/core-stroke-standard';
+import { DragDropVerticalIcon as DragDots } from '@hugeicons-pro/core-stroke-standard';
+import {Drag02Icon as DragDrop} from '@hugeicons-pro/core-stroke-standard';
 
 export {
     HomeStroke,
@@ -35,5 +37,7 @@ export {
     Cross,
     AdminStroke,
     AdminSolid,
-    openSlideOut
+    openSlideOut,
+    DragDots,
+    DragDrop
 };
