@@ -80,7 +80,14 @@
   "LessonKeyPopover": {
     "script": "Script",
     "translation": "Translation",
-    "takeaways": "Takeaways"
+    "takeaways": "Takeaways",
+    "learn": "Learn",
+    "saving": "Saving..."
+  },
+  "Vocabulary": {
+    "english": "English",
+    "translation": "Translation",
+    "empty": "You have not saved any words yet."
   },
   "Meta": {
     "level": "Level",
@@ -144,6 +151,10 @@
         "Interview": "Interview"
       }
     }
+  },
+  "Misc":{
+    "vocabTitle":"My Vocabulary",
+    "homePgaeTitle": "Welcome"
   }
 
 }

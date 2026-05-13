@@ -19,6 +19,8 @@ export default async function LessonPage({ params }: LessonPageProps) {
 
   return (
     <LessonPageClient
+      lessonId={lesson.id}
+      lessonSlug={lesson.slug}
       title={lesson.title}
       level={lessonListItem.level}
       category={lessonListItem.category}

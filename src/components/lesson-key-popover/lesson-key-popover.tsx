@@ -1,12 +1,22 @@
 import { useTranslations } from "next-intl";
+import type { LessonLine } from "@/lib/lessons";
+import LessonKeyWord from "./lesson-key-word";
 
 interface LessonKeyPopoverProps {
-  script: string;
+  lessonId: string;
+  lessonSlug: string;
+  line: LessonLine;
   translation: string;
   takeaways?: string | null;
 }
 
-export default function LessonKeyPopover({ script, translation, takeaways }: LessonKeyPopoverProps) {
+export default function LessonKeyPopover({
+  lessonId,
+  lessonSlug,
+  line,
+  translation,
+  takeaways,
+}: LessonKeyPopoverProps) {
   const t = useTranslations("LessonKeyPopover");
 
   return (
@@ -15,8 +25,23 @@ export default function LessonKeyPopover({ script, translation, takeaways }: Les
         <div className="text-base font-semibold text-[#0f7c90]">
           {t("script")}:
         </div>
-        <div className="text-base font-normal text-[var(--textBody)]">
-          {script}
+        <div className="flex flex-wrap items-center gap-x-1 gap-y-2 text-base font-normal text-[var(--textBody)]">
+          {line.tokens.map((token) =>
+            token.saveable ? (
+              <LessonKeyWord
+                key={token.id}
+                lessonId={lessonId}
+                lessonSlug={lessonSlug}
+                lineNumber={line.lineNumber}
+                token={token}
+              />
+            ) : (
+              <span key={token.id}>
+                {token.text}
+                {token.punctuationAfter}
+              </span>
+            ),
+          )}
         </div>
       </div>
 

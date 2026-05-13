@@ -14,6 +14,8 @@ import styles from "./lessons.module.css";
 import { openSlideOut } from "@/components/Icons/icons";
 import type { LessonLine } from "@/lib/lessons";
 interface LessonPageClientProps {
+  lessonId: string;
+  lessonSlug: string;
   title: string;
   level: string;
   category: string;
@@ -26,6 +28,8 @@ interface LessonPageClientProps {
 }
 
 export default function LessonPageClient({
+  lessonId,
+  lessonSlug,
   title,
   level,
   category,
@@ -52,6 +56,8 @@ export default function LessonPageClient({
 
   const videoSide = (
     <LessonVideoSide
+      lessonId={lessonId}
+      lessonSlug={lessonSlug}
       title={title}
       videoSrc={videoSrc}
       lines={lines}

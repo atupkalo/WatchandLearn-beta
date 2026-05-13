@@ -1,5 +1,10 @@
+import VocabularyList from "@/components/vocabulary-list/vocabulary-list";
+
+
 export default function Vocabulary() {
   return (
-    <section className="flex h-full flex-row gap-12" />
+    <section className="h-full min-h-0">
+      <VocabularyList />
+    </section>
   );
 }

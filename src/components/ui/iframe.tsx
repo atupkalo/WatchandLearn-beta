@@ -1,6 +1,6 @@
 'use client';
 
-import type { CSSProperties } from "react";
+import { useEffect, useRef, type CSSProperties } from "react";
 import MuxPlayer from "@mux/mux-player-react";
 
 interface IframeProps {
@@ -39,6 +39,25 @@ function parseMuxPlayerUrl(src: string): ParsedMuxPlayerUrl | null {
 }
 
 export default function Iframe({ src = "", title = "Lesson media" }: IframeProps) {
+  const muxPlayerRef = useRef<any>(null);
+
+  useEffect(() => {
+    const playerElement = muxPlayerRef.current;
+
+    if (!playerElement?.shadowRoot) {
+      return;
+    }
+
+    const mediaTheme = playerElement.shadowRoot.querySelector("media-theme") as HTMLElement | null;
+
+    if (!mediaTheme) {
+      return;
+    }
+
+    mediaTheme.style.setProperty("width", "106%", "important");
+    mediaTheme.style.setProperty("transform", "translateX(-3%)", "important");
+  }, [src]);
+
   if (!src) {
     return (
       <div className="flex aspect-video w-full items-center justify-center rounded-[24px] bg-white/40 text-[var(--textBody)]">
@@ -69,8 +88,9 @@ export default function Iframe({ src = "", title = "Lesson media" }: IframeProps
     return (
       <div className="w-full overflow-hidden rounded-[24px]">
         <MuxPlayer
+          ref={muxPlayerRef}
           playbackId={muxPlayerConfig.playbackId}
-          className="block aspect-video w-full"
+          className="media-theme block aspect-video w-full"
           style={muxPlayerStyle}
           playbackRates={[0.5, 0.75, 1, 1.25, 1.5]}
           backwardSeekOffset={10}

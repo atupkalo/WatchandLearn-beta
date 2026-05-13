@@ -11,12 +11,16 @@ import type { LessonLine } from "@/lib/lessons";
 import styles from "./lessons.module.css";
 
 interface LessonVideoSideProps {
+  lessonId: string;
+  lessonSlug: string;
   title: string;
   videoSrc: string;
   lines: LessonLine[];
 }
 
 export default function LessonVideoSide({
+  lessonId,
+  lessonSlug,
   title,
   videoSrc,
   lines,
@@ -48,7 +52,9 @@ export default function LessonVideoSide({
               }
               content={
                 <LessonKeyPopover
-                  script={line.text}
+                  lessonId={lessonId}
+                  lessonSlug={lessonSlug}
+                  line={line}
                   translation={line.translations[translationKey] ?? "-"}
                   takeaways={line.takeaways[translationKey]}
                 />

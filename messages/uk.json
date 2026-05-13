@@ -80,7 +80,14 @@
   "LessonKeyPopover": {
     "script": "Скрипт",
     "translation": "Переклад",
-    "takeaways": "Пояснення"
+    "takeaways": "Пояснення",
+    "learn": "Вивчити",
+    "saving": "Збереження..."
+  },
+  "Vocabulary": {
+    "english": "Англійська",
+    "translation": "Переклад",
+    "empty": "Ви ще не зберегли жодного слова."
   },
   "Meta": {
     "level": "Рівень",
@@ -144,5 +151,10 @@
         "Interview": "Інтерв’ю"
       }
     }
+  },
+  "Misc":{
+    "vocabTitle":"Мій словник",
+    "homePgaeTitle": "Ласкаво просимо"
   }
+
 }
