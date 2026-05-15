@@ -11,9 +11,9 @@ interface LessonCardItemProps {
   title: string;
   thumbnailUrl: string;
   level: string;
-  category: string;
+  category: string[];
   duration: string;
-  type: string;
+  type: string[];
   description: string;
 }
 
@@ -27,6 +27,8 @@ export default function LessonCardItem({
   type,
 }: LessonCardItemProps) {
   const t = useTranslations("Lessons");
+  const categoryLabel = category.map((item) => t(`options.categories.${item}`)).join(", ");
+  const typeLabel = type.map((item) => t(`options.types.${item}`)).join(", ");
 
   return (
     <Link href={`/lessons/${id}`} className="block">
@@ -50,7 +52,7 @@ export default function LessonCardItem({
             </div>
             <div className={styles.itemContent}>
               <span className={styles.itemLabel}>{t("labels.category")}:</span>
-              <span>{t(`options.categories.${category}`)}</span>
+              <span>{categoryLabel}</span>
             </div>
             <div className={styles.itemContent}>
               <span className={styles.itemLabel}>{t("labels.duration")}:</span>
@@ -58,7 +60,7 @@ export default function LessonCardItem({
             </div>
             <div className={styles.itemContent}>
               <span className={styles.itemLabel}>{t("labels.type")}:</span>
-              <span>{t(`options.types.${type}`)}</span>
+              <span>{typeLabel}</span>
             </div>
           </div>
         </div>

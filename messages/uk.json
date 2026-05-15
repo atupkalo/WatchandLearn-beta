@@ -136,7 +136,12 @@
         "B2-C1": "B2-C1"
       },
       "categories": {
-        "Conversational": "Розмовна"
+        "Conversational": "Розмовна",
+        "Slang": "Сленг",
+        "Business": "Бізнес",
+        "Technical": "Технічна",
+        "IT": "ІТ",
+        "Medical": "Медична"
       },
       "durations": {
         "Short": "Коротка",

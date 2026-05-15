@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "id": "invincible_mid_001",
+  "slug": "invincible-mark-william-school-talk",
+  "title": "Invincible",
+  "series": "Invincible",
+  "availableModes": ["easy", "medium", "hard"],
+  "media": {
+    "videoFile": "https://player.mux.com/SpwSDrxjQCQFGDitroIGA6NHaNqQAL7eBL7EqdAbGBI?metadata-video-title=Invincible_mid_001&video-title=Invincible_mid_001&accent-color=%23e86933&primary-color=%23317782",
+    "thumbnailFile": "Invincible-thumbnail.webp"
+  },
+  "meta": {
+    "level": "A2-B1",
+    "category": ["Conversational", "Slang"],
+    "length": "mid",
+    "scriptType": "dialog",
+    "type": ["series", "animation"]
+  },
+  "source": {
+    "originalDocx": "/Users/anatolii/Desktop/next/materials/Invincible/invincible_mid_001.docx",
+    "structuredDocx": "/Users/anatolii/Desktop/next/materials/Invincible/invincible_mid_001_review.docx",
+    "sourceFileName": "invincible_mid_001"
+  },
+  "description": {
+    "en": "Mark comes to school after his father was attacked. He looks very upset. His friend William asks what happened and tries to support him.",
+    "ua": "Марк приходить до школи після того, як на його батька напали. Він виглядає дуже засмученим. Його друг Вільям питає, що сталося, і намагається його підтримати."
+  },
+  "sourceIssues": [
+    "The structured review copy was used as the source for exercise modes and lesson-key data.",
+    "Names remain visible in hard mode by design."
+  ],
+  "lines": [
+    {
+      "lineNumber": 1,
+      "text": "Hey, Mark. Mark! Mark! Whoa, are you ok?",
+      "translations": {
+        "ua": "Гей, Марку. Марку! Марку! Ого, з тобою все гаразд?",
+        "ru": "Эй, Марк. Марк! Марк! Ого, с тобой всё в порядке?"
+      },
+      "takeaways": {
+        "ua": "Whoa — це емоційний вигук. Його кажуть, коли людина різко дивується, хвилюється або бачить, що щось не так.",
+        "ru": "Whoa — это эмоциональное междометие. Его говорят, когда человек резко удивляется, тревожится или видит, что что-то не так."
+      },
+      "tokens": [
+        { "id": "l1w1", "text": "Hey", "normalized": "hey", "punctuationAfter": ",", "saveable": true },
+        { "id": "l1w2", "text": "Mark", "normalized": "Mark", "punctuationAfter": ".", "saveable": false },
+        { "id": "l1w3", "text": "Mark", "normalized": "Mark", "punctuationAfter": "!", "saveable": false },
+        { "id": "l1w4", "text": "Mark", "normalized": "Mark", "punctuationAfter": "!", "saveable": false },
+        { "id": "l1w5", "text": "Whoa", "normalized": "whoa", "punctuationAfter": ",", "saveable": true },
+        { "id": "l1w6", "text": "are", "normalized": "be", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w7", "text": "you", "normalized": "you", "punctuationAfter": "", "saveable": true },
+        { "id": "l1w8", "text": "ok", "normalized": "ok", "punctuationAfter": "?", "saveable": false }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "[[Hey]], Mark. Mark! Mark! Whoa, [[are]] you ok?",
+              "blanks": [
+                { "tokenId": "l1w1", "answer": "Hey", "options": ["Hey", "Lay", "Say"] },
+                { "tokenId": "l1w6", "answer": "are", "options": ["are", "or", "our"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "Hey, Mark. Mark! Mark! Whoa, are you [ok]?",
+          "blankedTokenIds": ["l1w8"]
+        },
+        "hard": {
+          "text": "[Hey,] Mark. Mark! Mark! [Whoa,] [are] [you] [ok?]",
+          "revealOrder": ["l1w1", "l1w5", "l1w6", "l1w7", "l1w8"]
+        }
+      }
+    },
+    {
+      "lineNumber": 2,
+      "text": "My dad, um... he got attacked.",
+      "translations": {
+        "ua": "На мого тата, ем... напали.",
+        "ru": "На моего папу, эм... напали."
+      },
+      "takeaways": {
+        "ua": "get attacked = «зазнати нападу» або просто «на когось напали». Одне з важливих значень дієслова get — показати зміну стану когось або чогось: he got attacked — на нього напали; the food got cold — їжа була гарячою, а тепер холодна; I got sick — я був здоровий, а тепер захворів.",
+        "ru": "get attacked = «подвергнуться нападению» или просто «на кого-то напали». Одно из важных значений глагола get — показать изменение состояния кого-то или чего-то: he got attacked — на него напали; the food got cold — еда была горячей, а теперь холодная; I got sick — я был здоров, а потом заболел."
+      },
+      "tokens": [
+        { "id": "l2w1", "text": "My", "normalized": "my", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w2", "text": "dad", "normalized": "dad", "punctuationAfter": ",", "saveable": true },
+        { "id": "l2w3", "text": "um", "normalized": "um", "punctuationAfter": "...", "saveable": false },
+        { "id": "l2w4", "text": "he", "normalized": "he", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w5", "text": "got", "normalized": "get", "punctuationAfter": "", "saveable": true },
+        { "id": "l2w6", "text": "attacked", "normalized": "attacked", "punctuationAfter": ".", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "My dad, um... he got [[attacked]].",
+              "blanks": [
+                { "tokenId": "l2w6", "answer": "attacked", "options": ["attacked", "adapted", "attracted"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "My [dad], um... [he] got [attacked].",
+          "blankedTokenIds": ["l2w2", "l2w4", "l2w6"]
+        },
+        "hard": {
+          "text": "[My] [dad,] [um...] [he] [got] [attacked.]",
+          "revealOrder": ["l2w1", "l2w2", "l2w3", "l2w4", "l2w5", "l2w6"]
+        }
+      }
+    },
+    {
+      "lineNumber": 3,
+      "text": "What? You're kidding? Oh, god, you're not kidding. I... I... Is he okay? What happened?",
+      "translations": {
+        "ua": "Що? Ти жартуєш? О Боже, ти не жартуєш. Я... я... З ним усе гаразд? Що сталося?",
+        "ru": "Что? Ты шутишь? О Боже, ты не шутишь. Я... я... С ним всё в порядке? Что случилось?"
+      },
+      "takeaways": {
+        "ua": "You're kidding? — дуже поширена розмовна реакція, коли нам важко повірити в почуте. Вона означає «ти що, жартуєш?» або «не може бути».",
+        "ru": "You're kidding? — очень распространённая разговорная реакция, когда нам трудно поверить в услышанное. Она означает «ты что, шутишь?» или «не может быть»."
+      },
+      "tokens": [
+        { "id": "l3w1", "text": "What", "normalized": "what", "punctuationAfter": "?", "saveable": true },
+        { "id": "l3w2", "text": "You're", "normalized": "You're", "punctuationAfter": "", "saveable": false },
+        { "id": "l3w3", "text": "kidding", "normalized": "kid", "punctuationAfter": "?", "saveable": true },
+        { "id": "l3w4", "text": "Oh", "normalized": "oh", "punctuationAfter": ",", "saveable": true },
+        { "id": "l3w5", "text": "god", "normalized": "god", "punctuationAfter": ",", "saveable": true },
+        { "id": "l3w6", "text": "you're", "normalized": "you're", "punctuationAfter": "", "saveable": false },
+        { "id": "l3w7", "text": "not", "normalized": "not", "punctuationAfter": "", "saveable": true },
+        { "id": "l3w8", "text": "kidding", "normalized": "kid", "punctuationAfter": ".", "saveable": true },
+        { "id": "l3w9", "text": "I", "normalized": "I", "punctuationAfter": "...", "saveable": true },
+        { "id": "l3w10", "text": "I", "normalized": "I", "punctuationAfter": "...", "saveable": true },
+        { "id": "l3w11", "text": "Is", "normalized": "be", "punctuationAfter": "", "saveable": true },
+        { "id": "l3w12", "text": "he", "normalized": "he", "punctuationAfter": "", "saveable": true },
+        { "id": "l3w13", "text": "okay", "normalized": "okay", "punctuationAfter": "?", "saveable": true },
+        { "id": "l3w14", "text": "What", "normalized": "what", "punctuationAfter": "", "saveable": true },
+        { "id": "l3w15", "text": "happened", "normalized": "happen", "punctuationAfter": "?", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "What? You're [[kidding]]? Oh, [[god]], you're not kidding.",
+              "blanks": [
+                { "tokenId": "l3w3", "answer": "kidding", "options": ["kidding", "kicking", "cooking"] },
+                { "tokenId": "l3w5", "answer": "god", "options": ["god", "got", "lot"] }
+              ]
+            },
+            {
+              "snapNumber": 2,
+              "text": "I... I... Is he [[okay]]? What [[happened]]?",
+              "blanks": [
+                { "tokenId": "l3w13", "answer": "okay", "options": ["okay", "away", "open"] },
+                { "tokenId": "l3w15", "answer": "happened", "options": ["happened", "happens", "happy"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "[What]? You're [kidding]? Oh, god, [you're] not kidding. I... I... Is he [okay]? What [happened]?",
+          "blankedTokenIds": ["l3w1", "l3w3", "l3w6", "l3w13", "l3w15"]
+        },
+        "hard": {
+          "text": "[What?] [You're] [kidding?] [Oh,] [god,] [you're] [not] [kidding.] [I...] [I...] [Is] [he] [okay?] [What] [happened?]",
+          "revealOrder": ["l3w1", "l3w2", "l3w3", "l3w4", "l3w5", "l3w6", "l3w7", "l3w8", "l3w9", "l3w10", "l3w11", "l3w12", "l3w13", "l3w14", "l3w15"]
+        }
+      }
+    },
+    {
+      "lineNumber": 4,
+      "text": "He's in the hospital. They're doing, uh... They're doing their best, but it's... It's messed up, William. He's really hurt.",
+      "translations": {
+        "ua": "Він у лікарні. Вони, е-е... роблять усе можливе, але це... це жахливо, Вільяме. Йому дуже сильно дісталося.",
+        "ru": "Он в больнице. Они, э-э... делают всё возможное, но это... это ужасно, Уильям. Ему очень сильно досталось."
+      },
+      "takeaways": {
+        "ua": "do their best = «робити все можливе». А messed up означає, що щось або хтось у дуже поганому стані: понівечений, розбитий, зіпсований. Якщо згадати слово mess як іменник — «бардак», «безлад», — то фраза messed up стає зрозумілішою.",
+        "ru": "do their best = «делать всё возможное». А messed up означает, что что-то или кто-то в очень плохом состоянии: изуродованный, разбитый, испорченный. Если вспомнить слово mess как существительное — «бардак», «беспорядок», — то фраза messed up становится понятнее."
+      },
+      "tokens": [
+        { "id": "l4w1", "text": "He's", "normalized": "He's", "punctuationAfter": "", "saveable": false },
+        { "id": "l4w2", "text": "in", "normalized": "in", "punctuationAfter": "", "saveable": true },
+        { "id": "l4w3", "text": "the", "normalized": "the", "punctuationAfter": "", "saveable": false },
+        { "id": "l4w4", "text": "hospital", "normalized": "hospital", "punctuationAfter": ".", "saveable": true },
+        { "id": "l4w5", "text": "They're", "normalized": "They're", "punctuationAfter": "", "saveable": false },
+        { "id": "l4w6", "text": "doing", "normalized": "do", "punctuationAfter": ",", "saveable": true },
+        { "id": "l4w7", "text": "uh", "normalized": "uh", "punctuationAfter": "...", "saveable": false },
+        { "id": "l4w8", "text": "They're", "normalized": "They're", "punctuationAfter": "", "saveable": false },
+        { "id": "l4w9", "text": "doing", "normalized": "do", "punctuationAfter": "", "saveable": true },
+        { "id": "l4w10", "text": "their", "normalized": "their", "punctuationAfter": "", "saveable": true },
+        { "id": "l4w11", "text": "best", "normalized": "best", "punctuationAfter": ",", "saveable": true },
+        { "id": "l4w12", "text": "but", "normalized": "but", "punctuationAfter": "", "saveable": true },
+        { "id": "l4w13", "text": "it's", "normalized": "it's", "punctuationAfter": "...", "saveable": false },
+        { "id": "l4w14", "text": "It's", "normalized": "It's", "punctuationAfter": "", "saveable": false },
+        { "id": "l4w15", "text": "messed", "normalized": "mess", "punctuationAfter": "", "saveable": true },
+        { "id": "l4w16", "text": "up", "normalized": "up", "punctuationAfter": ",", "saveable": true },
+        { "id": "l4w17", "text": "William", "normalized": "William", "punctuationAfter": ".", "saveable": false },
+        { "id": "l4w18", "text": "He's", "normalized": "He's", "punctuationAfter": "", "saveable": false },
+        { "id": "l4w19", "text": "really", "normalized": "really", "punctuationAfter": "", "saveable": true },
+        { "id": "l4w20", "text": "hurt", "normalized": "hurt", "punctuationAfter": ".", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "He's in the [[hospital]]. They're doing, uh... They're doing their [[best]],",
+              "blanks": [
+                { "tokenId": "l4w4", "answer": "hospital", "options": ["hospital", "hostel", "history"] },
+                { "tokenId": "l4w11", "answer": "best", "options": ["best", "test", "rest"] }
+              ]
+            },
+            {
+              "snapNumber": 2,
+              "text": "but it's... It's [[messed]] up, William. He's really [[hurt]].",
+              "blanks": [
+                { "tokenId": "l4w15", "answer": "messed", "options": ["messed", "missed", "mixed"] },
+                { "tokenId": "l4w20", "answer": "hurt", "options": ["hurt", "heard", "heart"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "[He's] in the [hospital]. They're [doing], uh... They're doing [their] [best], but it's... It's [messed] up, William. He's really [hurt].",
+          "blankedTokenIds": ["l4w1", "l4w4", "l4w6", "l4w10", "l4w11", "l4w15", "l4w20"]
+        },
+        "hard": {
+          "text": "[He's] [in] [the] [hospital.] [They're] [doing,] [uh...] [They're] [doing] [their] [best,] [but] [it's...] [It's] [messed] [up,] William. [He's] [really] [hurt.]",
+          "revealOrder": ["l4w1", "l4w2", "l4w3", "l4w4", "l4w5", "l4w6", "l4w7", "l4w8", "l4w9", "l4w10", "l4w11", "l4w12", "l4w13", "l4w14", "l4w15", "l4w16", "l4w18", "l4w19", "l4w20"]
+        }
+      }
+    },
+    {
+      "lineNumber": 5,
+      "text": "Jesus, Mark. I'm so sorry.",
+      "translations": {
+        "ua": "Боже, Марку. Мені так шкода.",
+        "ru": "Боже, Марк. Мне так жаль."
+      },
+      "takeaways": {
+        "ua": "Jesus у такому контексті — це емоційний вигук, а не буквальна релігійна згадка. Ним часто виражають шок, співчуття або сильні емоції.",
+        "ru": "Jesus в таком контексте — это эмоциональное восклицание, а не буквальное религиозное упоминание. Им часто выражают шок, сочувствие или сильные эмоции."
+      },
+      "tokens": [
+        { "id": "l5w1", "text": "Jesus", "normalized": "Jesus", "punctuationAfter": ",", "saveable": true },
+        { "id": "l5w2", "text": "Mark", "normalized": "Mark", "punctuationAfter": ".", "saveable": false },
+        { "id": "l5w3", "text": "I'm", "normalized": "I'm", "punctuationAfter": "", "saveable": false },
+        { "id": "l5w4", "text": "so", "normalized": "so", "punctuationAfter": "", "saveable": true },
+        { "id": "l5w5", "text": "sorry", "normalized": "sorry", "punctuationAfter": ".", "saveable": true }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "Jesus, Mark. I'm so [[sorry]].",
+              "blanks": [
+                { "tokenId": "l5w5", "answer": "sorry", "options": ["sorry", "story", "softly"] }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "Jesus, Mark. I'm so [sorry].",
+          "blankedTokenIds": ["l5w5"]
+        },
+        "hard": {
+          "text": "[Jesus,] Mark. [I'm] [so] [sorry.]",
+          "revealOrder": ["l5w1", "l5w3", "l5w4", "l5w5"]
+        }
+      }
+    }
+  ]
+}

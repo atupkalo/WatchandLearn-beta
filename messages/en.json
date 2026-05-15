@@ -136,7 +136,12 @@
         "B2-C1": "B2-C1"
       },
       "categories": {
-        "Conversational": "Conversational"
+        "Conversational": "Conversational",
+        "Slang": "Slang",
+        "Business": "Business",
+        "Technical": "Technical",
+        "IT": "IT",
+        "Medical": "Medical"
       },
       "durations": {
         "Short": "Short",

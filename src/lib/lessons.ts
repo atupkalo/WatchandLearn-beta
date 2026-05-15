@@ -64,10 +64,10 @@ interface LessonRecord {
   };
   meta: {
     level: string;
-    category: string;
+    category: string | string[];
     length: string;
     scriptType: string;
-    type: string;
+    type: string | string[];
   };
   source: {
     originalDocx: string;
@@ -98,9 +98,9 @@ export interface LessonListItem {
     ua: string;
   };
   level: string;
-  category: string;
+  category: string[];
   duration: string;
-  type: string;
+  type: string[];
 }
 
 export interface LessonData extends LessonRecord {
@@ -108,9 +108,9 @@ export interface LessonData extends LessonRecord {
   fileName: string;
   displayMeta: {
     level: string;
-    category: string;
+    category: string[];
     duration: string;
-    type: string;
+    type: string[];
   };
 }
 
@@ -139,6 +139,10 @@ function toDisplayDuration(value: string) {
   return lessonLengthMap[value.toLowerCase()] ?? value;
 }
 
+function toArray(value: string | string[]) {
+  return Array.isArray(value) ? value : [value];
+}
+
 function toLessonData(fileName: string, record: LessonRecord): LessonData {
   return {
     ...record,
@@ -150,9 +154,9 @@ function toLessonData(fileName: string, record: LessonRecord): LessonData {
     },
     displayMeta: {
       level: record.meta.level,
-      category: record.meta.category,
+      category: toArray(record.meta.category),
       duration: toDisplayDuration(record.meta.length),
-      type: toDisplayType(record.meta.type),
+      type: toArray(record.meta.type).map(toDisplayType),
     },
   };
 }
@@ -178,6 +182,7 @@ const readLessons = cache(async (): Promise<LessonData[]> => {
   const files = await readdir(lessonsDirectory);
   const lessonFiles = files
     .filter((fileName) => fileName.endsWith(".json"))
+    .filter((fileName) => fileName !== "lessons_list.json")
     .filter((fileName) => !fileName.endsWith("_lessons_list.json"))
     .sort((left, right) => left.localeCompare(right));
 

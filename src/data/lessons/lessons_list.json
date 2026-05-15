@@ -1,7 +1,64 @@
 {
   "schemaVersion": 1,
-  "series": "Wednesday",
+  "series": "All Lessons",
   "lessons": [
+    {
+      "id": "invincible_short_001",
+      "slug": "invincible-hospital-team-talk",
+      "title": "Invincible",
+      "level": "A2-B1",
+      "length": "Short",
+      "category": ["Conversational", "Slang"],
+      "type": ["Series", "Animation"],
+      "availableModes": ["easy", "medium", "hard"],
+      "media": {
+        "videoFile": "/videos/Invincible_short_001.mp4",
+        "thumbnailFile": "Invincible-thumbnail.webp"
+      },
+      "lessonFile": "invincible_short_001.json",
+      "description": {
+        "en": "Mark visits his father in the hospital after a hard fight. He talks about the new team and about Eve.",
+        "ua": "Марк навідує свого батька в лікарні після важкого бою. Він розповідає про нову команду та про Ів."
+      }
+    },
+    {
+      "id": "invincible_mid_001",
+      "slug": "invincible-mark-william-school-talk",
+      "title": "Invincible",
+      "level": "A2-B1",
+      "length": "Medium",
+      "category": ["Conversational", "Slang"],
+      "type": ["Series", "Animation"],
+      "availableModes": ["easy", "medium", "hard"],
+      "media": {
+        "videoFile": "https://player.mux.com/SpwSDrxjQCQFGDitroIGA6NHaNqQAL7eBL7EqdAbGBI?metadata-video-title=Invincible_mid_001&video-title=Invincible_mid_001&accent-color=%23e86933&primary-color=%23317782",
+        "thumbnailFile": "Invincible-thumbnail.webp"
+      },
+      "lessonFile": "invincible_mid_001.json",
+      "description": {
+        "en": "Mark comes to school after his father was attacked. He looks very upset. His friend William asks what happened and tries to support him.",
+        "ua": "Марк приходить до школи після того, як на його батька напали. Він виглядає дуже засмученим. Його друг Вільям питає, що сталося, і намагається його підтримати."
+      }
+    },
+    {
+      "id": "invincible_long_001",
+      "slug": "invincible-mark-eve-first-talk",
+      "title": "Invincible",
+      "level": "A2-B1",
+      "length": "Long",
+      "category": ["Conversational", "Slang"],
+      "type": ["Series", "Animation"],
+      "availableModes": ["easy", "medium", "hard"],
+      "media": {
+        "videoFile": "https://player.mux.com/2raSgwBsGwUv1fe3EiJBsxa34wpcwHDsRntxXK7iyPs?metadata-video-title=Invincible_long_001&video-title=Invincible_long_001&accent-color=%23e86933&primary-color=%23317782",
+        "thumbnailFile": "Invincible-thumbnail.webp"
+      },
+      "lessonFile": "invincible_long_001.json",
+      "description": {
+        "en": "Mark has a new superhero name: Invincible. After a fight, he meets Atom Eve at school. He feels nervous and starts an awkward conversation with her.",
+        "ua": "Марк має нове супергеройське ім’я — Інвінсібл. Після бою він зустрічає в школі Атом Ів. Він нервується і починає з нею незграбну розмову."
+      }
+    },
     {
       "id": "wednesday_short_001",
       "slug": "wednesday-goodbye-to-family",

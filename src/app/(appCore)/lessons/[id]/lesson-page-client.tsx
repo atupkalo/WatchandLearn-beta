@@ -18,9 +18,9 @@ interface LessonPageClientProps {
   lessonSlug: string;
   title: string;
   level: string;
-  category: string;
+  category: string[];
   duration: string;
-  type: string;
+  type: string[];
   description: string;
   availableModes: string[];
   videoSrc: string;

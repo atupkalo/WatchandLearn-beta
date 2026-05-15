@@ -8,9 +8,9 @@ import styles from "./lesson-meta-bar.module.css";
 interface LessonMetaBarProps {
   title: string;
   level: string;
-  category: string;
+  category: string[];
   duration: string;
-  type: string;
+  type: string[];
   rightControls?: ReactNode;
 }
 
@@ -23,12 +23,14 @@ export default function LessonMetaBar({
   rightControls,
 }: LessonMetaBarProps) {
   const t = useTranslations("Lessons");
+  const categoryLabel = category.map((item) => t(`options.categories.${item}`)).join(", ");
+  const typeLabel = type.map((item) => t(`options.types.${item}`)).join(", ");
 
   const items = [
     { label: t("labels.level"), value: t(`options.levels.${level}`) },
-    { label: t("labels.category"), value: t(`options.categories.${category}`) },
+    { label: t("labels.category"), value: categoryLabel },
     { label: t("labels.duration"), value: t(`options.durations.${duration}`) },
-    { label: t("labels.type"), value: t(`options.types.${type}`) },
+    { label: t("labels.type"), value: typeLabel },
   ];
 
   return (

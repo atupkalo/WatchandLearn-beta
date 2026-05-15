@@ -18,8 +18,8 @@ function matchesSingle(value: string, filterValue: string) {
   return filterValue.length === 0 || value === filterValue;
 }
 
-function matchesMultiple(value: string, filterValues: string[]) {
-  return filterValues.length === 0 || filterValues.includes(value);
+function matchesMultiple(values: string[], filterValues: string[]) {
+  return filterValues.length === 0 || values.some((value) => filterValues.includes(value));
 }
 
 interface LessonsListClientProps {
@@ -39,8 +39,8 @@ export default function LessonsListClient({ lessons }: LessonsListClientProps) {
         lesson.title,
         lesson.description.en,
         lesson.description.ua,
-        lesson.category,
-        lesson.type,
+        lesson.category.join(" "),
+        lesson.type.join(" "),
         lesson.duration,
       ]
         .join(" ")
@@ -50,7 +50,7 @@ export default function LessonsListClient({ lessons }: LessonsListClientProps) {
         (search.length === 0 || searchableText.includes(search)) &&
         matchesSingle(lesson.level, appliedFilters.level) &&
         matchesMultiple(lesson.category, appliedFilters.categories) &&
-        matchesMultiple(lesson.duration, appliedFilters.durations) &&
+        matchesMultiple([lesson.duration], appliedFilters.durations) &&
         matchesMultiple(lesson.type, appliedFilters.types)
       );
     });

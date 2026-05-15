@@ -48,14 +48,76 @@ export default function Iframe({ src = "", title = "Lesson media" }: IframeProps
       return;
     }
 
-    const mediaTheme = playerElement.shadowRoot.querySelector("media-theme") as HTMLElement | null;
+    const shadowRoot = playerElement.shadowRoot as ShadowRoot;
 
-    if (!mediaTheme) {
-      return;
-    }
+    const collectShadowRoots = (root: ShadowRoot): ShadowRoot[] => {
+      const roots = [root];
+      const elements = root.querySelectorAll("*");
 
-    mediaTheme.style.setProperty("width", "106%", "important");
-    mediaTheme.style.setProperty("transform", "translateX(-3%)", "important");
+      for (const element of elements) {
+        const nestedShadowRoot = (element as HTMLElement).shadowRoot;
+        if (nestedShadowRoot) {
+          roots.push(...collectShadowRoots(nestedShadowRoot));
+        }
+      }
+
+      return roots;
+    };
+
+    const setImportantStyle = (element: HTMLElement, property: string, value: string) => {
+      if (element.style.getPropertyValue(property) === value) {
+        return;
+      }
+
+      element.style.setProperty(property, value, "important");
+    };
+
+    const applyShadowStyles = () => {
+      for (const root of collectShadowRoots(shadowRoot)) {
+        const mediaTheme = root.querySelector("media-theme") as HTMLElement | null;
+        if (mediaTheme) {
+          setImportantStyle(mediaTheme, "width", "106%");
+          setImportantStyle(mediaTheme, "transform", "translateX(-3%)");
+        }
+
+        const controlBars = root.querySelectorAll("media-control-bar");
+        for (const controlBar of controlBars) {
+          const element = controlBar as HTMLElement;
+          setImportantStyle(element, "padding", "0 32px 16px 32px");
+        }
+
+        const timeRanges = root.querySelectorAll("media-time-range");
+        for (const timeRange of timeRanges) {
+          const element = timeRange as HTMLElement;
+          setImportantStyle(element, "padding", "0 32px 16px 32px");
+        }
+      }
+    };
+
+    applyShadowStyles();
+
+    const frameId = requestAnimationFrame(() => {
+      applyShadowStyles();
+    });
+
+    const timeoutId = window.setTimeout(() => {
+      applyShadowStyles();
+    }, 250);
+
+    const observer = new MutationObserver(() => {
+      applyShadowStyles();
+    });
+
+    observer.observe(shadowRoot, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.clearTimeout(timeoutId);
+      observer.disconnect();
+    };
   }, [src]);
 
   if (!src) {
