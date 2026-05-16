@@ -6,7 +6,6 @@ import { Popover } from "@heroui/react";
 import { useUserPreferences } from "@/components/providers/user-preferences-provider";
 import ButtonCustom from "@/components/ui/button";
 import type { LessonToken } from "@/lib/lessons";
-import { getWordTranslations } from "@/lib/word-translations";
 import {
   getVocabularyEntryId,
   upsertVocabularyCache,
@@ -31,7 +30,10 @@ export default function LessonKeyWord({
   const { studyLanguage } = useUserPreferences();
   const [isOpen, setIsOpen] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
-  const translations = getWordTranslations(token.normalized, token.text);
+  const translations = token.translations ?? {
+    ua: token.text,
+    ru: token.text,
+  };
   const translation = studyLanguage === "en-ru" ? translations.ru : translations.ua;
 
   async function handleLearn() {

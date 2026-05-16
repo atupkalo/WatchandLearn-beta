@@ -12,7 +12,7 @@
       "type": ["Series", "Animation"],
       "availableModes": ["easy", "medium", "hard"],
       "media": {
-        "videoFile": "/videos/Invincible_short_001.mp4",
+        "videoFile": "https://player.mux.com/XN2XDjNR3ez62HjOrF00XYJXDvWhyLcm65dHAGR1ZUVg?metadata-video-title=Invincible_short_001&video-title=Invincible_short_001&accent-color=%23e86933&primary-color=%23317782",
         "thumbnailFile": "Invincible-thumbnail.webp"
       },
       "lessonFile": "invincible_short_001.json",
@@ -57,6 +57,63 @@
       "description": {
         "en": "Mark has a new superhero name: Invincible. After a fight, he meets Atom Eve at school. He feels nervous and starts an awkward conversation with her.",
         "ua": "Марк має нове супергеройське ім’я — Інвінсібл. Після бою він зустрічає в школі Атом Ів. Він нервується і починає з нею незграбну розмову."
+      }
+    },
+    {
+      "id": "the-morning-show_short_001",
+      "slug": "bradley-and-mia-argue-in-the-car",
+      "title": "The Morning Show",
+      "level": "B1-B2",
+      "length": "Short",
+      "category": ["Conversational"],
+      "type": ["Series"],
+      "availableModes": ["easy", "medium", "hard"],
+      "media": {
+        "videoFile": "https://player.mux.com/iwulOTk1beuK01NIKwagdwCRXXWAQUwmJmAUCgot01U0100?metadata-video-title=ms-s-1&video-title=ms-s-1&accent-color=%23e86933&primary-color=%23317782",
+        "thumbnailFile": "the-morning-show-thumbnail.jpg"
+      },
+      "lessonFile": "the-morning-show_short_001.json",
+      "description": {
+        "en": "Bradley is shocked after Alex suddenly names her as the new co-anchor on live TV. In the car, Mia tries to take control of the situation, but Bradley wants to leave for the airport.",
+        "ua": "Бредлі шокована після того, як Алекс раптово називає її новою співведучою в прямому ефірі. У машині Мія намагається взяти ситуацію під контроль, але Бредлі хоче поїхати в аеропорт."
+      }
+    },
+    {
+      "id": "the-morning-show_mid_001",
+      "slug": "conversation-between-mitch-and-his-lawyer",
+      "title": "The Morning Show",
+      "level": "B1-B2",
+      "length": "Medium",
+      "category": ["Conversational", "Business"],
+      "type": ["Series"],
+      "availableModes": ["easy", "medium", "hard"],
+      "media": {
+        "videoFile": "https://player.mux.com/jOcUWM1cJSbtIM00NkDzHfMi7ibZkQwpnuihRUT01PkfA?metadata-video-title=ms-m-1&video-title=ms-m-1&accent-color=%23e86933&primary-color=%23317782",
+        "thumbnailFile": "the-morning-show-thumbnail.jpg"
+      },
+      "lessonFile": "the-morning-show_mid_001.json",
+      "description": {
+        "en": "Mitch has recently lost his job on The Morning Show because of sexual misconduct. He is talking to his lawyer and realizes that even his closest professional relationships may now be over.",
+        "ua": "Мітч нещодавно втратив роботу на The Morning Show через сексуальні домагання. Він розмовляє зі своїм адвокатом і розуміє, що навіть його найближчі професійні зв’язки тепер можуть закінчитися."
+      }
+    },
+    {
+      "id": "the-morning-show_long_001",
+      "slug": "alex-is-calling-her-agent",
+      "title": "The Morning Show",
+      "level": "B2-C1",
+      "length": "Long",
+      "category": ["Conversational", "Business"],
+      "type": ["Series"],
+      "availableModes": ["easy", "medium", "hard"],
+      "media": {
+        "videoFile": "https://player.mux.com/ENmosJJXGiPRlABgZxK62fQXo9li2601O6yQv00JV6ve4?metadata-video-title=ms-l-1&video-title=ms-l-1&accent-color=%23e86933&primary-color=%23317782",
+        "thumbnailFile": "the-morning-show-thumbnail.jpg"
+      },
+      "lessonFile": "the-morning-show_long_001.json",
+      "description": {
+        "en": "Alex suddenly announces Bradley as her new co-anchor on live TV. Right after that, she calls her agent in panic, and the conversation turns into a tense argument about damage control, image, and power.",
+        "ua": "Алекс раптово оголошує Бредлі своєю новою співведучою в прямому ефірі. Одразу після цього вона в паніці телефонує своїй агентці, і розмова перетворюється на напружену суперечку про наслідки, репутацію та владу."
       }
     },
     {

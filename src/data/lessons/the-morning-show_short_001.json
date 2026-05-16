@@ -1,0 +1,959 @@
+{
+  "schemaVersion": 1,
+  "id": "the-morning-show_short_001",
+  "slug": "bradley-and-mia-argue-in-the-car",
+  "title": "The Morning Show",
+  "series": "The Morning Show",
+  "availableModes": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "media": {
+    "videoFile": "https://player.mux.com/iwulOTk1beuK01NIKwagdwCRXXWAQUwmJmAUCgot01U0100?metadata-video-title=ms-s-1&video-title=ms-s-1&accent-color=%23e86933&primary-color=%23317782",
+    "thumbnailFile": "the-morning-show-thumbnail.jpg"
+  },
+  "meta": {
+    "level": "B1-B2",
+    "category": [
+      "Conversational"
+    ],
+    "length": "short",
+    "scriptType": "dialog",
+    "type": [
+      "series"
+    ]
+  },
+  "source": {
+    "originalDocx": "/Users/anatolii/Desktop/next/materials/MorningShow/the-morning-show_short_001.docx",
+    "structuredDocx": "/Users/anatolii/Desktop/next/materials/MorningShow/the-morning-show_short_001_review.docx",
+    "sourceFileName": "the-morning-show_short_001"
+  },
+  "description": {
+    "en": "Bradley is shocked after Alex suddenly names her as the new co-anchor on live TV. In the car, Mia tries to take control of the situation, but Bradley wants to leave for the airport.",
+    "ua": "Бредлі шокована після того, як Алекс раптово називає її новою співведучою в прямому ефірі. У машині Мія намагається взяти ситуацію під контроль, але Бредлі хоче поїхати в аеропорт."
+  },
+  "sourceIssues": [
+    "The structured review copy was used as the source for exercise modes and lesson-key data.",
+    "Names and place names remain visible in hard mode by design."
+  ],
+  "lines": [
+    {
+      "lineNumber": 1,
+      "text": "What the hell just happened?",
+      "translations": {
+        "ua": "Що, в біса, щойно сталося?",
+        "ru": "Что, чёрт возьми, только что произошло?"
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        {
+          "id": "l1w1",
+          "text": "What",
+          "normalized": "what",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "що",
+            "ru": "что"
+          }
+        },
+        {
+          "id": "l1w2",
+          "text": "the",
+          "normalized": "the",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l1w3",
+          "text": "hell",
+          "normalized": "hell",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "біса",
+            "ru": "чёрт"
+          }
+        },
+        {
+          "id": "l1w4",
+          "text": "just",
+          "normalized": "just",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "щойно",
+            "ru": "только что"
+          }
+        },
+        {
+          "id": "l1w5",
+          "text": "happened",
+          "normalized": "happen",
+          "punctuationAfter": "?",
+          "saveable": true,
+          "translations": {
+            "ua": "статися",
+            "ru": "произойти"
+          }
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "What the [[hell]] just [[happened]]?",
+              "blanks": [
+                {
+                  "tokenId": "l1w3",
+                  "answer": "hell",
+                  "options": [
+                    "hello",
+                    "hill",
+                    "hell"
+                  ]
+                },
+                {
+                  "tokenId": "l1w5",
+                  "answer": "happened",
+                  "options": [
+                    "happened",
+                    "happens",
+                    "happy"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "[What] the [hell] just [happened]?",
+          "blankedTokenIds": [
+            "l1w1",
+            "l1w3",
+            "l1w5"
+          ]
+        },
+        "hard": {
+          "text": "[What] [the] [hell] [just] [happened?]",
+          "revealOrder": [
+            "l1w1",
+            "l1w2",
+            "l1w3",
+            "l1w4",
+            "l1w5"
+          ]
+        }
+      }
+    },
+    {
+      "lineNumber": 2,
+      "text": "They'll have answers for us at the studio. Chip knows we're on our way.",
+      "translations": {
+        "ua": "Вони дадуть нам відповіді в студії. Чіп знає, що ми вже їдемо.",
+        "ru": "Они дадут нам ответы в студии. Чип знает, что мы уже едем."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        {
+          "id": "l2w1",
+          "text": "They'll",
+          "normalized": "They'll",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l2w2",
+          "text": "have",
+          "normalized": "have",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "мати",
+            "ru": "иметь"
+          }
+        },
+        {
+          "id": "l2w3",
+          "text": "answers",
+          "normalized": "answer",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "відповіді",
+            "ru": "ответы"
+          }
+        },
+        {
+          "id": "l2w4",
+          "text": "for",
+          "normalized": "for",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "для",
+            "ru": "для"
+          }
+        },
+        {
+          "id": "l2w5",
+          "text": "us",
+          "normalized": "us",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "нам",
+            "ru": "нам"
+          }
+        },
+        {
+          "id": "l2w6",
+          "text": "at",
+          "normalized": "at",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "в",
+            "ru": "в"
+          }
+        },
+        {
+          "id": "l2w7",
+          "text": "the",
+          "normalized": "the",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l2w8",
+          "text": "studio",
+          "normalized": "studio",
+          "punctuationAfter": ".",
+          "saveable": true,
+          "translations": {
+            "ua": "студія",
+            "ru": "студия"
+          }
+        },
+        {
+          "id": "l2w9",
+          "text": "Chip",
+          "normalized": "Chip",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l2w10",
+          "text": "knows",
+          "normalized": "know",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "знати",
+            "ru": "знать"
+          }
+        },
+        {
+          "id": "l2w11",
+          "text": "we're",
+          "normalized": "we're",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l2w12",
+          "text": "on",
+          "normalized": "on",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "вже",
+            "ru": "уже"
+          }
+        },
+        {
+          "id": "l2w13",
+          "text": "our",
+          "normalized": "our",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "наш",
+            "ru": "наш"
+          }
+        },
+        {
+          "id": "l2w14",
+          "text": "way",
+          "normalized": "way",
+          "punctuationAfter": ".",
+          "saveable": true,
+          "translations": {
+            "ua": "дорога",
+            "ru": "дорога"
+          }
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "They'll have [[answers]] for us at the [[studio]].",
+              "blanks": [
+                {
+                  "tokenId": "l2w3",
+                  "answer": "answers",
+                  "options": [
+                    "answers",
+                    "anchors",
+                    "angles"
+                  ]
+                },
+                {
+                  "tokenId": "l2w8",
+                  "answer": "studio",
+                  "options": [
+                    "studio",
+                    "student",
+                    "steward"
+                  ]
+                }
+              ]
+            },
+            {
+              "snapNumber": 2,
+              "text": "Chip knows we're on our [[way]].",
+              "blanks": [
+                {
+                  "tokenId": "l2w14",
+                  "answer": "way",
+                  "options": [
+                    "way",
+                    "wave",
+                    "wait"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "They'll have [answers] for [us] at the [studio]. Chip [knows] we're [on] our [way].",
+          "blankedTokenIds": [
+            "l2w3",
+            "l2w5",
+            "l2w8",
+            "l2w10",
+            "l2w12",
+            "l2w14"
+          ]
+        },
+        "hard": {
+          "text": "[They'll] [have] [answers] [for] [us] [at] [the] [studio.] Chip [knows] [we're] [on] [our] [way.]",
+          "revealOrder": [
+            "l2w1",
+            "l2w2",
+            "l2w3",
+            "l2w4",
+            "l2w5",
+            "l2w6",
+            "l2w7",
+            "l2w8",
+            "l2w10",
+            "l2w11",
+            "l2w12",
+            "l2w13",
+            "l2w14"
+          ]
+        }
+      }
+    },
+    {
+      "lineNumber": 3,
+      "text": "Oh, no, no. I'm going to LaGuardia. LaGuardia, please.",
+      "translations": {
+        "ua": "О, ні-ні. Я їду в Ла-Ґуардію. У Ла-Ґуардію, будь ласка.",
+        "ru": "О, нет-нет. Я еду в Ла-Гуардию. В Ла-Гуардию, пожалуйста."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        {
+          "id": "l3w1",
+          "text": "Oh",
+          "normalized": "oh",
+          "punctuationAfter": ",",
+          "saveable": false
+        },
+        {
+          "id": "l3w2",
+          "text": "no",
+          "normalized": "no",
+          "punctuationAfter": ",",
+          "saveable": true,
+          "translations": {
+            "ua": "ні",
+            "ru": "нет"
+          }
+        },
+        {
+          "id": "l3w3",
+          "text": "no",
+          "normalized": "no",
+          "punctuationAfter": ".",
+          "saveable": true,
+          "translations": {
+            "ua": "ні",
+            "ru": "нет"
+          }
+        },
+        {
+          "id": "l3w4",
+          "text": "I'm",
+          "normalized": "I'm",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l3w5",
+          "text": "going",
+          "normalized": "go",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "їхати",
+            "ru": "ехать"
+          }
+        },
+        {
+          "id": "l3w6",
+          "text": "to",
+          "normalized": "to",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "до",
+            "ru": "в"
+          }
+        },
+        {
+          "id": "l3w7",
+          "text": "LaGuardia",
+          "normalized": "LaGuardia",
+          "punctuationAfter": ".",
+          "saveable": false
+        },
+        {
+          "id": "l3w8",
+          "text": "LaGuardia",
+          "normalized": "LaGuardia",
+          "punctuationAfter": ",",
+          "saveable": false
+        },
+        {
+          "id": "l3w9",
+          "text": "please",
+          "normalized": "please",
+          "punctuationAfter": ".",
+          "saveable": true,
+          "translations": {
+            "ua": "будь ласка",
+            "ru": "пожалуйста"
+          }
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "Oh, no, no. I'm [[going]] to LaGuardia.",
+              "blanks": [
+                {
+                  "tokenId": "l3w5",
+                  "answer": "going",
+                  "options": [
+                    "going",
+                    "giving",
+                    "getting"
+                  ]
+                }
+              ]
+            },
+            {
+              "snapNumber": 2,
+              "text": "LaGuardia, [[please]].",
+              "blanks": [
+                {
+                  "tokenId": "l3w9",
+                  "answer": "please",
+                  "options": [
+                    "please",
+                    "place",
+                    "pleased"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "Oh, [no], no. I'm [going] to LaGuardia. LaGuardia, [please].",
+          "blankedTokenIds": [
+            "l3w2",
+            "l3w5",
+            "l3w9"
+          ]
+        },
+        "hard": {
+          "text": "Oh, [no,] [no.] [I'm] [going] [to] LaGuardia. LaGuardia, [please.]",
+          "revealOrder": [
+            "l3w2",
+            "l3w3",
+            "l3w4",
+            "l3w5",
+            "l3w6",
+            "l3w9"
+          ]
+        }
+      }
+    },
+    {
+      "lineNumber": 4,
+      "text": "We're not going to LaGuardia...",
+      "translations": {
+        "ua": "Ми не їдемо в Ла-Ґуардію...",
+        "ru": "Мы не едем в Ла-Гуардию..."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        {
+          "id": "l4w1",
+          "text": "We're",
+          "normalized": "We're",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l4w2",
+          "text": "not",
+          "normalized": "not",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "не",
+            "ru": "не"
+          }
+        },
+        {
+          "id": "l4w3",
+          "text": "going",
+          "normalized": "go",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "їхати",
+            "ru": "ехать"
+          }
+        },
+        {
+          "id": "l4w4",
+          "text": "to",
+          "normalized": "to",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "до",
+            "ru": "в"
+          }
+        },
+        {
+          "id": "l4w5",
+          "text": "LaGuardia",
+          "normalized": "LaGuardia",
+          "punctuationAfter": "...",
+          "saveable": false
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "We're [[not]] going to LaGuardia...",
+              "blanks": [
+                {
+                  "tokenId": "l4w2",
+                  "answer": "not",
+                  "options": [
+                    "note",
+                    "not",
+                    "now"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "We're [not] going [to] LaGuardia...",
+          "blankedTokenIds": [
+            "l4w2",
+            "l4w4"
+          ]
+        },
+        "hard": {
+          "text": "[We're] [not] [going] [to] LaGuardia...",
+          "revealOrder": [
+            "l4w1",
+            "l4w2",
+            "l4w3",
+            "l4w4"
+          ]
+        }
+      }
+    },
+    {
+      "lineNumber": 5,
+      "text": "Ok.",
+      "translations": {
+        "ua": "Гаразд.",
+        "ru": "Ладно."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        {
+          "id": "l5w1",
+          "text": "Ok",
+          "normalized": "ok",
+          "punctuationAfter": ".",
+          "saveable": false
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "Ok.",
+              "blanks": []
+            }
+          ]
+        },
+        "medium": {
+          "text": "Ok.",
+          "blankedTokenIds": []
+        },
+        "hard": {
+          "text": "Ok.",
+          "revealOrder": []
+        }
+      }
+    },
+    {
+      "lineNumber": 6,
+      "text": "Yes. And with all due respect, who the hell are you to tell me what to do?",
+      "translations": {
+        "ua": "Так. І, з усією повагою, хто ти взагалі така, щоб казати мені, що робити?",
+        "ru": "Да. И, при всём уважении, кто ты вообще такая, чтобы говорить мне, что делать?"
+      },
+      "takeaways": {
+        "ua": "with all due respect — формально ввічливий вираз, який часто звучить перед незгодою або різкою реплікою. Дуже часто після нього людина якраз і каже щось неввічливе.",
+        "ru": "with all due respect — формально вежливое выражение, которое часто звучит перед несогласием или резкой репликой. Очень часто после него человек как раз и говорит что-то невежливое."
+      },
+      "tokens": [
+        {
+          "id": "l6w1",
+          "text": "Yes",
+          "normalized": "yes",
+          "punctuationAfter": ".",
+          "saveable": false
+        },
+        {
+          "id": "l6w2",
+          "text": "And",
+          "normalized": "and",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "і",
+            "ru": "и"
+          }
+        },
+        {
+          "id": "l6w3",
+          "text": "with",
+          "normalized": "with",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "з",
+            "ru": "с"
+          }
+        },
+        {
+          "id": "l6w4",
+          "text": "all",
+          "normalized": "all",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "усією",
+            "ru": "всем"
+          }
+        },
+        {
+          "id": "l6w5",
+          "text": "due",
+          "normalized": "due",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "належний",
+            "ru": "должный"
+          }
+        },
+        {
+          "id": "l6w6",
+          "text": "respect",
+          "normalized": "respect",
+          "punctuationAfter": ",",
+          "saveable": true,
+          "translations": {
+            "ua": "повага",
+            "ru": "уважение"
+          }
+        },
+        {
+          "id": "l6w7",
+          "text": "who",
+          "normalized": "who",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "хто",
+            "ru": "кто"
+          }
+        },
+        {
+          "id": "l6w8",
+          "text": "the",
+          "normalized": "the",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l6w9",
+          "text": "hell",
+          "normalized": "hell",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "взагалі",
+            "ru": "вообще"
+          }
+        },
+        {
+          "id": "l6w10",
+          "text": "are",
+          "normalized": "be",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "бути",
+            "ru": "быть"
+          }
+        },
+        {
+          "id": "l6w11",
+          "text": "you",
+          "normalized": "you",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "ти",
+            "ru": "ты"
+          }
+        },
+        {
+          "id": "l6w12",
+          "text": "to",
+          "normalized": "to",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "щоб",
+            "ru": "чтобы"
+          }
+        },
+        {
+          "id": "l6w13",
+          "text": "tell",
+          "normalized": "tell",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "казати",
+            "ru": "говорить"
+          }
+        },
+        {
+          "id": "l6w14",
+          "text": "me",
+          "normalized": "me",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "мені",
+            "ru": "мне"
+          }
+        },
+        {
+          "id": "l6w15",
+          "text": "what",
+          "normalized": "what",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "що",
+            "ru": "что"
+          }
+        },
+        {
+          "id": "l6w16",
+          "text": "to",
+          "normalized": "to",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "щоб",
+            "ru": "чтобы"
+          }
+        },
+        {
+          "id": "l6w17",
+          "text": "do",
+          "normalized": "do",
+          "punctuationAfter": "?",
+          "saveable": true,
+          "translations": {
+            "ua": "робити",
+            "ru": "делать"
+          }
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "Yes. And with all [[due]] [[respect]],",
+              "blanks": [
+                {
+                  "tokenId": "l6w5",
+                  "answer": "due",
+                  "options": [
+                    "do",
+                    "due",
+                    "done"
+                  ]
+                },
+                {
+                  "tokenId": "l6w6",
+                  "answer": "respect",
+                  "options": [
+                    "respect",
+                    "result",
+                    "request"
+                  ]
+                }
+              ]
+            },
+            {
+              "snapNumber": 2,
+              "text": "who the [[hell]] are you to [[tell]] me what to [[do]]?",
+              "blanks": [
+                {
+                  "tokenId": "l6w9",
+                  "answer": "hell",
+                  "options": [
+                    "well",
+                    "hall",
+                    "hell"
+                  ]
+                },
+                {
+                  "tokenId": "l6w13",
+                  "answer": "tell",
+                  "options": [
+                    "tell",
+                    "talk",
+                    "take"
+                  ]
+                },
+                {
+                  "tokenId": "l6w17",
+                  "answer": "do",
+                  "options": [
+                    "do",
+                    "go",
+                    "get"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "Yes. [And] with all [due] [respect], who the hell [are] you to [tell] me what to [do]?",
+          "blankedTokenIds": [
+            "l6w2",
+            "l6w5",
+            "l6w6",
+            "l6w10",
+            "l6w13",
+            "l6w17"
+          ]
+        },
+        "hard": {
+          "text": "Yes. [And] [with] [all] [due] [respect,] [who] [the] [hell] [are] [you] [to] [tell] [me] [what] [to] [do?]",
+          "revealOrder": [
+            "l6w2",
+            "l6w3",
+            "l6w4",
+            "l6w5",
+            "l6w6",
+            "l6w7",
+            "l6w8",
+            "l6w9",
+            "l6w10",
+            "l6w11",
+            "l6w12",
+            "l6w13",
+            "l6w14",
+            "l6w15",
+            "l6w16",
+            "l6w17"
+          ]
+        }
+      }
+    }
+  ]
+}

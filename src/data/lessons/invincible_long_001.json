@@ -4,17 +4,27 @@
   "slug": "invincible-mark-eve-first-talk",
   "title": "Invincible",
   "series": "Invincible",
-  "availableModes": ["easy", "medium", "hard"],
+  "availableModes": [
+    "easy",
+    "medium",
+    "hard"
+  ],
   "media": {
     "videoFile": "https://player.mux.com/2raSgwBsGwUv1fe3EiJBsxa34wpcwHDsRntxXK7iyPs?metadata-video-title=Invincible_long_001&video-title=Invincible_long_001&accent-color=%23e86933&primary-color=%23317782",
     "thumbnailFile": "Invincible-thumbnail.webp"
   },
   "meta": {
     "level": "A2-B1",
-    "category": ["Conversational", "Slang"],
+    "category": [
+      "Conversational",
+      "Slang"
+    ],
     "length": "long",
     "scriptType": "dialog",
-    "type": ["series", "animation"]
+    "type": [
+      "series",
+      "animation"
+    ]
   },
   "source": {
     "originalDocx": "/Users/anatolii/Desktop/next/materials/Invincible/invincible_long_001.docx",
@@ -42,9 +52,35 @@
         "ru": "uh — это междометие-пауза, которое люди часто используют, когда нервничают или не знают, что сказать дальше. В этой сцене Марк волнуется, поэтому начинает фразу очень неловко."
       },
       "tokens": [
-        { "id": "l1w1", "text": "Eve", "normalized": "Eve", "punctuationAfter": "?", "saveable": false },
-        { "id": "l1w2", "text": "Hi", "normalized": "hi", "punctuationAfter": ",", "saveable": true },
-        { "id": "l1w3", "text": "uh", "normalized": "uh", "punctuationAfter": "…", "saveable": true }
+        {
+          "id": "l1w1",
+          "text": "Eve",
+          "normalized": "Eve",
+          "punctuationAfter": "?",
+          "saveable": false
+        },
+        {
+          "id": "l1w2",
+          "text": "Hi",
+          "normalized": "hi",
+          "punctuationAfter": ",",
+          "saveable": false,
+          "translations": {
+            "ua": "привіт",
+            "ru": "привет"
+          }
+        },
+        {
+          "id": "l1w3",
+          "text": "uh",
+          "normalized": "uh",
+          "punctuationAfter": "…",
+          "saveable": false,
+          "translations": {
+            "ua": "е-е",
+            "ru": "э-э"
+          }
+        }
       ],
       "modes": {
         "easy": {
@@ -61,8 +97,8 @@
           "blankedTokenIds": []
         },
         "hard": {
-          "text": "Eve? [Hi,] [uh…]",
-          "revealOrder": ["l1w2", "l1w3"]
+          "text": "Eve? Hi, uh…",
+          "revealOrder": []
         }
       }
     },
@@ -78,10 +114,46 @@
         "ru": null
       },
       "tokens": [
-        { "id": "l2w1", "text": "Oh", "normalized": "oh", "punctuationAfter": ",", "saveable": true },
-        { "id": "l2w2", "text": "hey", "normalized": "hey", "punctuationAfter": ".", "saveable": true },
-        { "id": "l2w3", "text": "Mark", "normalized": "Mark", "punctuationAfter": ",", "saveable": false },
-        { "id": "l2w4", "text": "right", "normalized": "right", "punctuationAfter": "?", "saveable": true }
+        {
+          "id": "l2w1",
+          "text": "Oh",
+          "normalized": "oh",
+          "punctuationAfter": ",",
+          "saveable": false,
+          "translations": {
+            "ua": "о",
+            "ru": "о"
+          }
+        },
+        {
+          "id": "l2w2",
+          "text": "hey",
+          "normalized": "hey",
+          "punctuationAfter": ".",
+          "saveable": false,
+          "translations": {
+            "ua": "гей",
+            "ru": "эй"
+          }
+        },
+        {
+          "id": "l2w3",
+          "text": "Mark",
+          "normalized": "Mark",
+          "punctuationAfter": ",",
+          "saveable": false
+        },
+        {
+          "id": "l2w4",
+          "text": "right",
+          "normalized": "right",
+          "punctuationAfter": "?",
+          "saveable": true,
+          "translations": {
+            "ua": "прямо",
+            "ru": "прямо"
+          }
+        }
       ],
       "modes": {
         "easy": {
@@ -95,11 +167,15 @@
         },
         "medium": {
           "text": "Oh, hey. Mark, [right]?",
-          "blankedTokenIds": ["l2w4"]
+          "blankedTokenIds": [
+            "l2w4"
+          ]
         },
         "hard": {
-          "text": "[Oh,] [hey.] Mark, [right?]",
-          "revealOrder": ["l2w1", "l2w2", "l2w4"]
+          "text": "Oh, hey. Mark, [right?]",
+          "revealOrder": [
+            "l2w4"
+          ]
         }
       }
     },
@@ -115,20 +191,152 @@
         "ru": "save my butt — разговорное выражение, которое означает «спасти меня» или «вытащить меня из беды». Butt — это способ сказать ass в менее грубой и вульгарной форме; ближайший перевод будет примерно «задница»."
       },
       "tokens": [
-        { "id": "l3w1", "text": "Grayson", "normalized": "Grayson", "punctuationAfter": ",", "saveable": false },
-        { "id": "l3w2", "text": "yeah", "normalized": "yeah", "punctuationAfter": ".", "saveable": true },
-        { "id": "l3w3", "text": "Um", "normalized": "um", "punctuationAfter": "…", "saveable": true },
-        { "id": "l3w4", "text": "thanks", "normalized": "thanks", "punctuationAfter": "", "saveable": true },
-        { "id": "l3w5", "text": "for", "normalized": "for", "punctuationAfter": "", "saveable": true },
-        { "id": "l3w6", "text": "saving", "normalized": "save", "punctuationAfter": "", "saveable": true },
-        { "id": "l3w7", "text": "my", "normalized": "my", "punctuationAfter": "", "saveable": true },
-        { "id": "l3w8", "text": "butt", "normalized": "butt", "punctuationAfter": "", "saveable": true },
-        { "id": "l3w9", "text": "back", "normalized": "back", "punctuationAfter": "", "saveable": true },
-        { "id": "l3w10", "text": "there", "normalized": "there", "punctuationAfter": ",", "saveable": true },
-        { "id": "l3w11", "text": "Ye", "normalized": "ye", "punctuationAfter": "…", "saveable": false },
-        { "id": "l3w12", "text": "Yesterday", "normalized": "yesterday", "punctuationAfter": ",", "saveable": true },
-        { "id": "l3w13", "text": "I", "normalized": "I", "punctuationAfter": "", "saveable": true },
-        { "id": "l3w14", "text": "mean", "normalized": "mean", "punctuationAfter": ".", "saveable": true }
+        {
+          "id": "l3w1",
+          "text": "Grayson",
+          "normalized": "Grayson",
+          "punctuationAfter": ",",
+          "saveable": false
+        },
+        {
+          "id": "l3w2",
+          "text": "yeah",
+          "normalized": "yeah",
+          "punctuationAfter": ".",
+          "saveable": true,
+          "translations": {
+            "ua": "так",
+            "ru": "да"
+          }
+        },
+        {
+          "id": "l3w3",
+          "text": "Um",
+          "normalized": "um",
+          "punctuationAfter": "…",
+          "saveable": false,
+          "translations": {
+            "ua": "ем",
+            "ru": "эм"
+          }
+        },
+        {
+          "id": "l3w4",
+          "text": "thanks",
+          "normalized": "thanks",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "дякую",
+            "ru": "спасибо"
+          }
+        },
+        {
+          "id": "l3w5",
+          "text": "for",
+          "normalized": "for",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "для",
+            "ru": "для"
+          }
+        },
+        {
+          "id": "l3w6",
+          "text": "saving",
+          "normalized": "save",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "рятувати",
+            "ru": "спасать"
+          }
+        },
+        {
+          "id": "l3w7",
+          "text": "my",
+          "normalized": "my",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "мій",
+            "ru": "мой"
+          }
+        },
+        {
+          "id": "l3w8",
+          "text": "butt",
+          "normalized": "butt",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "дупа",
+            "ru": "задница"
+          }
+        },
+        {
+          "id": "l3w9",
+          "text": "back",
+          "normalized": "back",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "назад",
+            "ru": "назад"
+          }
+        },
+        {
+          "id": "l3w10",
+          "text": "there",
+          "normalized": "there",
+          "punctuationAfter": ",",
+          "saveable": true,
+          "translations": {
+            "ua": "там",
+            "ru": "там"
+          }
+        },
+        {
+          "id": "l3w11",
+          "text": "Ye",
+          "normalized": "ye",
+          "punctuationAfter": "…",
+          "saveable": false
+        },
+        {
+          "id": "l3w12",
+          "text": "Yesterday",
+          "normalized": "yesterday",
+          "punctuationAfter": ",",
+          "saveable": true,
+          "translations": {
+            "ua": "учора",
+            "ru": "вчера"
+          }
+        },
+        {
+          "id": "l3w13",
+          "text": "I",
+          "normalized": "I",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "я",
+            "ru": "я"
+          }
+        },
+        {
+          "id": "l3w14",
+          "text": "mean",
+          "normalized": "mean",
+          "punctuationAfter": ".",
+          "saveable": true,
+          "translations": {
+            "ua": "мати на увазі",
+            "ru": "иметь в виду"
+          }
+        }
       ],
       "modes": {
         "easy": {
@@ -137,26 +345,67 @@
               "snapNumber": 1,
               "text": "Grayson, yeah. Um… thanks for [[saving]] my [[butt]] back there,",
               "blanks": [
-                { "tokenId": "l3w6", "answer": "saving", "options": ["back", "butt", "boat", "selling", "sailing", "saving"] },
-                { "tokenId": "l3w8", "answer": "butt", "options": ["back", "butt", "boat", "selling", "sailing", "saving"] }
+                {
+                  "tokenId": "l3w6",
+                  "answer": "saving",
+                  "options": [
+                    "selling",
+                    "sailing",
+                    "saving"
+                  ]
+                },
+                {
+                  "tokenId": "l3w8",
+                  "answer": "butt",
+                  "options": [
+                    "back",
+                    "butt",
+                    "boat"
+                  ]
+                }
               ]
             },
             {
               "snapNumber": 2,
               "text": "Ye… [[Yesterday]], I mean.",
               "blanks": [
-                { "tokenId": "l3w12", "answer": "Yesterday", "options": ["yesterday", "yellow", "yesterdays"] }
+                {
+                  "tokenId": "l3w12",
+                  "answer": "Yesterday",
+                  "options": [
+                    "Yesterday",
+                    "yellow",
+                    "yesterdays"
+                  ]
+                }
               ]
             }
           ]
         },
         "medium": {
           "text": "Grayson, yeah. Um… thanks for [saving] my [butt] back [there], Ye… [Yesterday], I mean.",
-          "blankedTokenIds": ["l3w6", "l3w8", "l3w10", "l3w12"]
+          "blankedTokenIds": [
+            "l3w6",
+            "l3w8",
+            "l3w10",
+            "l3w12"
+          ]
         },
         "hard": {
-          "text": "Grayson, [yeah.] [Um…] [thanks] [for] [saving] [my] [butt] [back] [there,] [Ye…] [Yesterday,] [I] [mean.]",
-          "revealOrder": ["l3w2", "l3w3", "l3w4", "l3w5", "l3w6", "l3w7", "l3w8", "l3w9", "l3w10", "l3w11", "l3w12", "l3w13", "l3w14"]
+          "text": "Grayson, [yeah.] Um… [thanks] [for] [saving] [my] [butt] [back] [there,] Ye… [Yesterday,] [I] [mean.]",
+          "revealOrder": [
+            "l3w2",
+            "l3w4",
+            "l3w5",
+            "l3w6",
+            "l3w7",
+            "l3w8",
+            "l3w9",
+            "l3w10",
+            "l3w12",
+            "l3w13",
+            "l3w14"
+          ]
         }
       }
     },
@@ -172,18 +421,130 @@
         "ru": null
       },
       "tokens": [
-        { "id": "l4w1", "text": "Yesterday", "normalized": "yesterday", "punctuationAfter": "?", "saveable": true },
-        { "id": "l4w2", "text": "Oh", "normalized": "oh", "punctuationAfter": "…", "saveable": true },
-        { "id": "l4w3", "text": "Oh", "normalized": "oh", "punctuationAfter": "!!!", "saveable": true },
-        { "id": "l4w4", "text": "That", "normalized": "that", "punctuationAfter": "", "saveable": true },
-        { "id": "l4w5", "text": "was", "normalized": "be", "punctuationAfter": "", "saveable": true },
-        { "id": "l4w6", "text": "you", "normalized": "you", "punctuationAfter": "?", "saveable": true },
-        { "id": "l4w7", "text": "In", "normalized": "in", "punctuationAfter": "", "saveable": true },
-        { "id": "l4w8", "text": "the", "normalized": "the", "punctuationAfter": "", "saveable": false },
-        { "id": "l4w9", "text": "blue", "normalized": "blue", "punctuationAfter": "", "saveable": true },
-        { "id": "l4w10", "text": "and", "normalized": "and", "punctuationAfter": "", "saveable": true },
-        { "id": "l4w11", "text": "the", "normalized": "the", "punctuationAfter": "", "saveable": false },
-        { "id": "l4w12", "text": "yellow", "normalized": "yellow", "punctuationAfter": "?", "saveable": true }
+        {
+          "id": "l4w1",
+          "text": "Yesterday",
+          "normalized": "yesterday",
+          "punctuationAfter": "?",
+          "saveable": true,
+          "translations": {
+            "ua": "учора",
+            "ru": "вчера"
+          }
+        },
+        {
+          "id": "l4w2",
+          "text": "Oh",
+          "normalized": "oh",
+          "punctuationAfter": "…",
+          "saveable": false,
+          "translations": {
+            "ua": "о",
+            "ru": "о"
+          }
+        },
+        {
+          "id": "l4w3",
+          "text": "Oh",
+          "normalized": "oh",
+          "punctuationAfter": "!!!",
+          "saveable": false,
+          "translations": {
+            "ua": "о",
+            "ru": "о"
+          }
+        },
+        {
+          "id": "l4w4",
+          "text": "That",
+          "normalized": "that",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "той",
+            "ru": "тот"
+          }
+        },
+        {
+          "id": "l4w5",
+          "text": "was",
+          "normalized": "be",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "бути",
+            "ru": "быть"
+          }
+        },
+        {
+          "id": "l4w6",
+          "text": "you",
+          "normalized": "you",
+          "punctuationAfter": "?",
+          "saveable": true,
+          "translations": {
+            "ua": "ти",
+            "ru": "ты"
+          }
+        },
+        {
+          "id": "l4w7",
+          "text": "In",
+          "normalized": "in",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "в",
+            "ru": "в"
+          }
+        },
+        {
+          "id": "l4w8",
+          "text": "the",
+          "normalized": "the",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l4w9",
+          "text": "blue",
+          "normalized": "blue",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "синій",
+            "ru": "синий"
+          }
+        },
+        {
+          "id": "l4w10",
+          "text": "and",
+          "normalized": "and",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "і",
+            "ru": "и"
+          }
+        },
+        {
+          "id": "l4w11",
+          "text": "the",
+          "normalized": "the",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l4w12",
+          "text": "yellow",
+          "normalized": "yellow",
+          "punctuationAfter": "?",
+          "saveable": true,
+          "translations": {
+            "ua": "жовтий",
+            "ru": "жёлтый"
+          }
+        }
       ],
       "modes": {
         "easy": {
@@ -192,25 +553,56 @@
               "snapNumber": 1,
               "text": "[[Yesterday]]? Oh… Oh!!! That was you?",
               "blanks": [
-                { "tokenId": "l4w1", "answer": "Yesterday", "options": ["yesterday", "tomorrow", "yesterdays"] }
+                {
+                  "tokenId": "l4w1",
+                  "answer": "Yesterday",
+                  "options": [
+                    "Yesterday",
+                    "tomorrow",
+                    "yesterdays"
+                  ]
+                }
               ]
             },
             {
               "snapNumber": 2,
               "text": "In the blue and the [[yellow]]?",
               "blanks": [
-                { "tokenId": "l4w12", "answer": "yellow", "options": ["yellow", "hollow", "fellow"] }
+                {
+                  "tokenId": "l4w12",
+                  "answer": "yellow",
+                  "options": [
+                    "yellow",
+                    "hollow",
+                    "fellow"
+                  ]
+                }
               ]
             }
           ]
         },
         "medium": {
           "text": "[Yesterday]? Oh… Oh!!! [That] was [you]? In the [blue] and the [yellow]?",
-          "blankedTokenIds": ["l4w1", "l4w4", "l4w6", "l4w9", "l4w12"]
+          "blankedTokenIds": [
+            "l4w1",
+            "l4w4",
+            "l4w6",
+            "l4w9",
+            "l4w12"
+          ]
         },
         "hard": {
-          "text": "[Yesterday?] [Oh…] [Oh!!!] [That] [was] [you?] [In] [the] [blue] [and] [the] [yellow?]",
-          "revealOrder": ["l4w1", "l4w2", "l4w3", "l4w4", "l4w5", "l4w6", "l4w7", "l4w8", "l4w9", "l4w10", "l4w11", "l4w12"]
+          "text": "[Yesterday?] Oh… Oh!!! [That] [was] [you?] [In] the [blue] [and] the [yellow?]",
+          "revealOrder": [
+            "l4w1",
+            "l4w4",
+            "l4w5",
+            "l4w6",
+            "l4w7",
+            "l4w9",
+            "l4w10",
+            "l4w12"
+          ]
         }
       }
     },
@@ -226,23 +618,185 @@
         "ru": "ближайшим соответствием слову dumb будет «тупо». Это разговорно-сленговое слово, которое не считается слишком грубым."
       },
       "tokens": [
-        { "id": "l5w1", "text": "Yeah", "normalized": "yeah", "punctuationAfter": ".", "saveable": true },
-        { "id": "l5w2", "text": "That", "normalized": "that", "punctuationAfter": "", "saveable": true },
-        { "id": "l5w3", "text": "was", "normalized": "be", "punctuationAfter": "", "saveable": true },
-        { "id": "l5w4", "text": "me", "normalized": "me", "punctuationAfter": ".", "saveable": true },
-        { "id": "l5w5", "text": "I’m", "normalized": "I’m", "punctuationAfter": "", "saveable": false },
-        { "id": "l5w6", "text": "um", "normalized": "um", "punctuationAfter": "…", "saveable": true },
-        { "id": "l5w7", "text": "Invincible", "normalized": "Invincible", "punctuationAfter": ".", "saveable": false },
-        { "id": "l5w8", "text": "God", "normalized": "god", "punctuationAfter": ",", "saveable": true },
-        { "id": "l5w9", "text": "that", "normalized": "that", "punctuationAfter": "", "saveable": true },
-        { "id": "l5w10", "text": "sounds", "normalized": "sound", "punctuationAfter": "", "saveable": true },
-        { "id": "l5w11", "text": "dumb", "normalized": "dumb", "punctuationAfter": "", "saveable": true },
-        { "id": "l5w12", "text": "when", "normalized": "when", "punctuationAfter": "", "saveable": true },
-        { "id": "l5w13", "text": "I", "normalized": "I", "punctuationAfter": "", "saveable": true },
-        { "id": "l5w14", "text": "say", "normalized": "say", "punctuationAfter": "", "saveable": true },
-        { "id": "l5w15", "text": "it", "normalized": "it", "punctuationAfter": "", "saveable": true },
-        { "id": "l5w16", "text": "like", "normalized": "like", "punctuationAfter": "", "saveable": true },
-        { "id": "l5w17", "text": "that", "normalized": "that", "punctuationAfter": ".", "saveable": true }
+        {
+          "id": "l5w1",
+          "text": "Yeah",
+          "normalized": "yeah",
+          "punctuationAfter": ".",
+          "saveable": true,
+          "translations": {
+            "ua": "так",
+            "ru": "да"
+          }
+        },
+        {
+          "id": "l5w2",
+          "text": "That",
+          "normalized": "that",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "той",
+            "ru": "тот"
+          }
+        },
+        {
+          "id": "l5w3",
+          "text": "was",
+          "normalized": "be",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "бути",
+            "ru": "быть"
+          }
+        },
+        {
+          "id": "l5w4",
+          "text": "me",
+          "normalized": "me",
+          "punctuationAfter": ".",
+          "saveable": true,
+          "translations": {
+            "ua": "мене",
+            "ru": "меня"
+          }
+        },
+        {
+          "id": "l5w5",
+          "text": "I’m",
+          "normalized": "I’m",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l5w6",
+          "text": "um",
+          "normalized": "um",
+          "punctuationAfter": "…",
+          "saveable": false,
+          "translations": {
+            "ua": "ем",
+            "ru": "эм"
+          }
+        },
+        {
+          "id": "l5w7",
+          "text": "Invincible",
+          "normalized": "Invincible",
+          "punctuationAfter": ".",
+          "saveable": false
+        },
+        {
+          "id": "l5w8",
+          "text": "God",
+          "normalized": "god",
+          "punctuationAfter": ",",
+          "saveable": true,
+          "translations": {
+            "ua": "боже",
+            "ru": "боже"
+          }
+        },
+        {
+          "id": "l5w9",
+          "text": "that",
+          "normalized": "that",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "той",
+            "ru": "тот"
+          }
+        },
+        {
+          "id": "l5w10",
+          "text": "sounds",
+          "normalized": "sound",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "звучати",
+            "ru": "звучать"
+          }
+        },
+        {
+          "id": "l5w11",
+          "text": "dumb",
+          "normalized": "dumb",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "тупий",
+            "ru": "глупый"
+          }
+        },
+        {
+          "id": "l5w12",
+          "text": "when",
+          "normalized": "when",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "коли",
+            "ru": "когда"
+          }
+        },
+        {
+          "id": "l5w13",
+          "text": "I",
+          "normalized": "I",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "я",
+            "ru": "я"
+          }
+        },
+        {
+          "id": "l5w14",
+          "text": "say",
+          "normalized": "say",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "казати",
+            "ru": "говорить"
+          }
+        },
+        {
+          "id": "l5w15",
+          "text": "it",
+          "normalized": "it",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "це",
+            "ru": "это"
+          }
+        },
+        {
+          "id": "l5w16",
+          "text": "like",
+          "normalized": "like",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "як",
+            "ru": "как"
+          }
+        },
+        {
+          "id": "l5w17",
+          "text": "that",
+          "normalized": "that",
+          "punctuationAfter": ".",
+          "saveable": true,
+          "translations": {
+            "ua": "той",
+            "ru": "тот"
+          }
+        }
       ],
       "modes": {
         "easy": {
@@ -251,26 +805,71 @@
               "snapNumber": 1,
               "text": "Yeah. That [[was]] me. I’m um… Invincible.",
               "blanks": [
-                { "tokenId": "l5w3", "answer": "was", "options": ["was", "as", "knows"] }
+                {
+                  "tokenId": "l5w3",
+                  "answer": "was",
+                  "options": [
+                    "was",
+                    "as",
+                    "knows"
+                  ]
+                }
               ]
             },
             {
               "snapNumber": 2,
               "text": "God, that sounds [[dumb]] when I [[say]] it like that.",
               "blanks": [
-                { "tokenId": "l5w11", "answer": "dumb", "options": ["dumb", "deep", "drum"] },
-                { "tokenId": "l5w14", "answer": "say", "options": ["say", "see", "sale"] }
+                {
+                  "tokenId": "l5w11",
+                  "answer": "dumb",
+                  "options": [
+                    "dumb",
+                    "deep",
+                    "drum"
+                  ]
+                },
+                {
+                  "tokenId": "l5w14",
+                  "answer": "say",
+                  "options": [
+                    "say",
+                    "see",
+                    "sale"
+                  ]
+                }
               ]
             }
           ]
         },
         "medium": {
           "text": "Yeah. That was [me]. I’m um… Invincible. God, [that] sounds [dumb] when I [say] it like [that].",
-          "blankedTokenIds": ["l5w4", "l5w9", "l5w11", "l5w14", "l5w17"]
+          "blankedTokenIds": [
+            "l5w4",
+            "l5w9",
+            "l5w11",
+            "l5w14",
+            "l5w17"
+          ]
         },
         "hard": {
-          "text": "[Yeah.] [That] [was] [me.] [I’m] [um…] Invincible. [God,] [that] [sounds] [dumb] [when] [I] [say] [it] [like] [that.]",
-          "revealOrder": ["l5w1", "l5w2", "l5w3", "l5w4", "l5w5", "l5w6", "l5w8", "l5w9", "l5w10", "l5w11", "l5w12", "l5w13", "l5w14", "l5w15", "l5w16", "l5w17"]
+          "text": "[Yeah.] [That] [was] [me.] I’m um… Invincible. [God,] [that] [sounds] [dumb] [when] [I] [say] [it] [like] [that.]",
+          "revealOrder": [
+            "l5w1",
+            "l5w2",
+            "l5w3",
+            "l5w4",
+            "l5w8",
+            "l5w9",
+            "l5w10",
+            "l5w11",
+            "l5w12",
+            "l5w13",
+            "l5w14",
+            "l5w15",
+            "l5w16",
+            "l5w17"
+          ]
         }
       }
     },
@@ -286,29 +885,231 @@
         "ru": "So does everyone else — если перевести это выражение буквально, то оно звучало бы так: «также делают все остальные». Слово does в данном контексте имеет своё прямое значение «делать» и стоит в форме третьего лица единственного числа, потому что everyone всегда выступает как третье лицо."
       },
       "tokens": [
-        { "id": "l6w1", "text": "It", "normalized": "it", "punctuationAfter": "", "saveable": true },
-        { "id": "l6w2", "text": "sounds", "normalized": "sound", "punctuationAfter": "", "saveable": true },
-        { "id": "l6w3", "text": "a", "normalized": "a", "punctuationAfter": "", "saveable": false },
-        { "id": "l6w4", "text": "little", "normalized": "little", "punctuationAfter": "", "saveable": true },
-        { "id": "l6w5", "text": "optimistic", "normalized": "optimistic", "punctuationAfter": "", "saveable": true },
-        { "id": "l6w6", "text": "maybe", "normalized": "maybe", "punctuationAfter": ".", "saveable": true },
-        { "id": "l6w7", "text": "I'm", "normalized": "I'm", "punctuationAfter": "", "saveable": false },
-        { "id": "l6w8", "text": "Atom", "normalized": "Atom", "punctuationAfter": "", "saveable": false },
-        { "id": "l6w9", "text": "Eve", "normalized": "Eve", "punctuationAfter": ",", "saveable": false },
-        { "id": "l6w10", "text": "but", "normalized": "but", "punctuationAfter": "", "saveable": true },
-        { "id": "l6w11", "text": "the", "normalized": "the", "punctuationAfter": "", "saveable": false },
-        { "id": "l6w12", "text": "rest", "normalized": "rest", "punctuationAfter": "", "saveable": true },
-        { "id": "l6w13", "text": "of", "normalized": "of", "punctuationAfter": "", "saveable": true },
-        { "id": "l6w14", "text": "the", "normalized": "the", "punctuationAfter": "", "saveable": false },
-        { "id": "l6w15", "text": "team", "normalized": "team", "punctuationAfter": "", "saveable": true },
-        { "id": "l6w16", "text": "just", "normalized": "just", "punctuationAfter": "", "saveable": true },
-        { "id": "l6w17", "text": "calls", "normalized": "call", "punctuationAfter": "", "saveable": true },
-        { "id": "l6w18", "text": "me", "normalized": "me", "punctuationAfter": "", "saveable": true },
-        { "id": "l6w19", "text": "Eve", "normalized": "Eve", "punctuationAfter": ".", "saveable": false },
-        { "id": "l6w20", "text": "So", "normalized": "so", "punctuationAfter": "", "saveable": true },
-        { "id": "l6w21", "text": "does", "normalized": "do", "punctuationAfter": "", "saveable": true },
-        { "id": "l6w22", "text": "everyone", "normalized": "everyone", "punctuationAfter": "", "saveable": true },
-        { "id": "l6w23", "text": "else", "normalized": "else", "punctuationAfter": ".", "saveable": true }
+        {
+          "id": "l6w1",
+          "text": "It",
+          "normalized": "it",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "це",
+            "ru": "это"
+          }
+        },
+        {
+          "id": "l6w2",
+          "text": "sounds",
+          "normalized": "sound",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "звучати",
+            "ru": "звучать"
+          }
+        },
+        {
+          "id": "l6w3",
+          "text": "a",
+          "normalized": "a",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l6w4",
+          "text": "little",
+          "normalized": "little",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "маленький",
+            "ru": "маленький"
+          }
+        },
+        {
+          "id": "l6w5",
+          "text": "optimistic",
+          "normalized": "optimistic",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "оптимістичний",
+            "ru": "оптимистичный"
+          }
+        },
+        {
+          "id": "l6w6",
+          "text": "maybe",
+          "normalized": "maybe",
+          "punctuationAfter": ".",
+          "saveable": true,
+          "translations": {
+            "ua": "можливо",
+            "ru": "может быть"
+          }
+        },
+        {
+          "id": "l6w7",
+          "text": "I'm",
+          "normalized": "I'm",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l6w8",
+          "text": "Atom",
+          "normalized": "Atom",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l6w9",
+          "text": "Eve",
+          "normalized": "Eve",
+          "punctuationAfter": ",",
+          "saveable": false
+        },
+        {
+          "id": "l6w10",
+          "text": "but",
+          "normalized": "but",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "але",
+            "ru": "но"
+          }
+        },
+        {
+          "id": "l6w11",
+          "text": "the",
+          "normalized": "the",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l6w12",
+          "text": "rest",
+          "normalized": "rest",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "решта",
+            "ru": "остальные"
+          }
+        },
+        {
+          "id": "l6w13",
+          "text": "of",
+          "normalized": "of",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "з",
+            "ru": "из"
+          }
+        },
+        {
+          "id": "l6w14",
+          "text": "the",
+          "normalized": "the",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l6w15",
+          "text": "team",
+          "normalized": "team",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "команда",
+            "ru": "команда"
+          }
+        },
+        {
+          "id": "l6w16",
+          "text": "just",
+          "normalized": "just",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "просто",
+            "ru": "просто"
+          }
+        },
+        {
+          "id": "l6w17",
+          "text": "calls",
+          "normalized": "call",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "називати",
+            "ru": "называть"
+          }
+        },
+        {
+          "id": "l6w18",
+          "text": "me",
+          "normalized": "me",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "мене",
+            "ru": "меня"
+          }
+        },
+        {
+          "id": "l6w19",
+          "text": "Eve",
+          "normalized": "Eve",
+          "punctuationAfter": ".",
+          "saveable": false
+        },
+        {
+          "id": "l6w20",
+          "text": "So",
+          "normalized": "so",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "так",
+            "ru": "так"
+          }
+        },
+        {
+          "id": "l6w21",
+          "text": "does",
+          "normalized": "do",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "робити",
+            "ru": "делать"
+          }
+        },
+        {
+          "id": "l6w22",
+          "text": "everyone",
+          "normalized": "everyone",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "усі",
+            "ru": "все"
+          }
+        },
+        {
+          "id": "l6w23",
+          "text": "else",
+          "normalized": "else",
+          "punctuationAfter": ".",
+          "saveable": true,
+          "translations": {
+            "ua": "інші",
+            "ru": "другие"
+          }
+        }
       ],
       "modes": {
         "easy": {
@@ -317,33 +1118,89 @@
               "snapNumber": 1,
               "text": "It sounds a little [[optimistic]] maybe.",
               "blanks": [
-                { "tokenId": "l6w5", "answer": "optimistic", "options": ["optimistic", "automatic", "artistic"] }
+                {
+                  "tokenId": "l6w5",
+                  "answer": "optimistic",
+                  "options": [
+                    "optimistic",
+                    "automatic",
+                    "artistic"
+                  ]
+                }
               ]
             },
             {
               "snapNumber": 2,
               "text": "I'm Atom Eve, but the [[rest]] of the [[team]] just calls me Eve.",
               "blanks": [
-                { "tokenId": "l6w12", "answer": "rest", "options": ["team", "time", "theme", "rest", "wrist", "rent"] },
-                { "tokenId": "l6w15", "answer": "team", "options": ["team", "time", "theme", "rest", "wrist", "rent"] }
+                {
+                  "tokenId": "l6w12",
+                  "answer": "rest",
+                  "options": [
+                    "rest",
+                    "wrist",
+                    "rent"
+                  ]
+                },
+                {
+                  "tokenId": "l6w15",
+                  "answer": "team",
+                  "options": [
+                    "team",
+                    "time",
+                    "theme"
+                  ]
+                }
               ]
             },
             {
               "snapNumber": 3,
               "text": "So does everyone [[else]].",
               "blanks": [
-                { "tokenId": "l6w23", "answer": "else", "options": ["else", "edge", "ours"] }
+                {
+                  "tokenId": "l6w23",
+                  "answer": "else",
+                  "options": [
+                    "else",
+                    "edge",
+                    "ours"
+                  ]
+                }
               ]
             }
           ]
         },
         "medium": {
           "text": "It [sounds] a little [optimistic] maybe. I'm Atom Eve, but the [rest] of the [team] just calls me Eve. So [does] everyone [else].",
-          "blankedTokenIds": ["l6w2", "l6w5", "l6w12", "l6w15", "l6w21", "l6w23"]
+          "blankedTokenIds": [
+            "l6w2",
+            "l6w5",
+            "l6w12",
+            "l6w15",
+            "l6w21",
+            "l6w23"
+          ]
         },
         "hard": {
-          "text": "[It] [sounds] [a] [little] [optimistic] [maybe.] [I'm] Atom Eve, [but] [the] [rest] [of] [the] [team] [just] [calls] [me] Eve. [So] [does] [everyone] [else.]",
-          "revealOrder": ["l6w1", "l6w2", "l6w3", "l6w4", "l6w5", "l6w6", "l6w7", "l6w10", "l6w11", "l6w12", "l6w13", "l6w14", "l6w15", "l6w16", "l6w17", "l6w18", "l6w20", "l6w21", "l6w22", "l6w23"]
+          "text": "[It] [sounds] a [little] [optimistic] [maybe.] I'm Atom Eve, [but] the [rest] [of] the [team] [just] [calls] [me] Eve. [So] [does] [everyone] [else.]",
+          "revealOrder": [
+            "l6w1",
+            "l6w2",
+            "l6w4",
+            "l6w5",
+            "l6w6",
+            "l6w10",
+            "l6w12",
+            "l6w13",
+            "l6w15",
+            "l6w16",
+            "l6w17",
+            "l6w18",
+            "l6w20",
+            "l6w21",
+            "l6w22",
+            "l6w23"
+          ]
         }
       }
     },
@@ -359,18 +1216,130 @@
         "ru": "kind of = очень распространённый разговорный смягчитель, который означает «вроде», «как бы», «типа»."
       },
       "tokens": [
-        { "id": "l7w1", "text": "Right", "normalized": "right", "punctuationAfter": ",", "saveable": true },
-        { "id": "l7w2", "text": "since", "normalized": "since", "punctuationAfter": "", "saveable": true },
-        { "id": "l7w3", "text": "it's", "normalized": "it's", "punctuationAfter": "", "saveable": false },
-        { "id": "l7w4", "text": "kind", "normalized": "kind", "punctuationAfter": "", "saveable": true },
-        { "id": "l7w5", "text": "of", "normalized": "of", "punctuationAfter": "", "saveable": true },
-        { "id": "l7w6", "text": "a", "normalized": "a", "punctuationAfter": "", "saveable": false },
-        { "id": "l7w7", "text": "normal", "normalized": "normal", "punctuationAfter": "", "saveable": true },
-        { "id": "l7w8", "text": "name", "normalized": "name", "punctuationAfter": ",", "saveable": true },
-        { "id": "l7w9", "text": "and", "normalized": "and", "punctuationAfter": "", "saveable": true },
-        { "id": "l7w10", "text": "not", "normalized": "not", "punctuationAfter": "", "saveable": true },
-        { "id": "l7w11", "text": "something", "normalized": "something", "punctuationAfter": "", "saveable": true },
-        { "id": "l7w12", "text": "like", "normalized": "like", "punctuationAfter": "...", "saveable": true }
+        {
+          "id": "l7w1",
+          "text": "Right",
+          "normalized": "right",
+          "punctuationAfter": ",",
+          "saveable": true,
+          "translations": {
+            "ua": "прямо",
+            "ru": "прямо"
+          }
+        },
+        {
+          "id": "l7w2",
+          "text": "since",
+          "normalized": "since",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "оскільки",
+            "ru": "так как"
+          }
+        },
+        {
+          "id": "l7w3",
+          "text": "it's",
+          "normalized": "it's",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l7w4",
+          "text": "kind",
+          "normalized": "kind",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "тип",
+            "ru": "тип"
+          }
+        },
+        {
+          "id": "l7w5",
+          "text": "of",
+          "normalized": "of",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "з",
+            "ru": "из"
+          }
+        },
+        {
+          "id": "l7w6",
+          "text": "a",
+          "normalized": "a",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l7w7",
+          "text": "normal",
+          "normalized": "normal",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "звичайний",
+            "ru": "обычный"
+          }
+        },
+        {
+          "id": "l7w8",
+          "text": "name",
+          "normalized": "name",
+          "punctuationAfter": ",",
+          "saveable": true,
+          "translations": {
+            "ua": "ім'я",
+            "ru": "имя"
+          }
+        },
+        {
+          "id": "l7w9",
+          "text": "and",
+          "normalized": "and",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "і",
+            "ru": "и"
+          }
+        },
+        {
+          "id": "l7w10",
+          "text": "not",
+          "normalized": "not",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "не",
+            "ru": "не"
+          }
+        },
+        {
+          "id": "l7w11",
+          "text": "something",
+          "normalized": "something",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "щось",
+            "ru": "что-то"
+          }
+        },
+        {
+          "id": "l7w12",
+          "text": "like",
+          "normalized": "like",
+          "punctuationAfter": "...",
+          "saveable": true,
+          "translations": {
+            "ua": "як",
+            "ru": "как"
+          }
+        }
       ],
       "modes": {
         "easy": {
@@ -379,26 +1348,66 @@
               "snapNumber": 1,
               "text": "Right, [[since]] it's kind of a [[normal]] name,",
               "blanks": [
-                { "tokenId": "l7w2", "answer": "since", "options": ["normal", "formal", "north", "seen", "sense", "since"] },
-                { "tokenId": "l7w7", "answer": "normal", "options": ["normal", "formal", "north", "seen", "sense", "since"] }
+                {
+                  "tokenId": "l7w2",
+                  "answer": "since",
+                  "options": [
+                    "seen",
+                    "sense",
+                    "since"
+                  ]
+                },
+                {
+                  "tokenId": "l7w7",
+                  "answer": "normal",
+                  "options": [
+                    "normal",
+                    "formal",
+                    "north"
+                  ]
+                }
               ]
             },
             {
               "snapNumber": 2,
               "text": "and not something [[like]]...",
               "blanks": [
-                { "tokenId": "l7w12", "answer": "like", "options": ["like", "nike", "line"] }
+                {
+                  "tokenId": "l7w12",
+                  "answer": "like",
+                  "options": [
+                    "like",
+                    "nike",
+                    "line"
+                  ]
+                }
               ]
             }
           ]
         },
         "medium": {
           "text": "Right, since it's [kind] of a [normal] name, [and] not [something] like...",
-          "blankedTokenIds": ["l7w4", "l7w7", "l7w9", "l7w11"]
+          "blankedTokenIds": [
+            "l7w4",
+            "l7w7",
+            "l7w9",
+            "l7w11"
+          ]
         },
         "hard": {
-          "text": "[Right,] [since] [it's] [kind] [of] [a] [normal] [name,] [and] [not] [something] [like...]",
-          "revealOrder": ["l7w1", "l7w2", "l7w3", "l7w4", "l7w5", "l7w6", "l7w7", "l7w8", "l7w9", "l7w10", "l7w11", "l7w12"]
+          "text": "[Right,] [since] it's [kind] [of] a [normal] [name,] [and] [not] [something] [like...]",
+          "revealOrder": [
+            "l7w1",
+            "l7w2",
+            "l7w4",
+            "l7w5",
+            "l7w7",
+            "l7w8",
+            "l7w9",
+            "l7w10",
+            "l7w11",
+            "l7w12"
+          ]
         }
       }
     },
@@ -414,7 +1423,13 @@
         "ru": null
       },
       "tokens": [
-        { "id": "l8w1", "text": "Invincible", "normalized": "Invincible", "punctuationAfter": "?", "saveable": false }
+        {
+          "id": "l8w1",
+          "text": "Invincible",
+          "normalized": "Invincible",
+          "punctuationAfter": "?",
+          "saveable": false
+        }
       ],
       "modes": {
         "easy": {
@@ -448,8 +1463,24 @@
         "ru": null
       },
       "tokens": [
-        { "id": "l9w1", "text": "Invincible", "normalized": "Invincible", "punctuationAfter": ",", "saveable": false },
-        { "id": "l9w2", "text": "yeah", "normalized": "yeah", "punctuationAfter": ".", "saveable": true }
+        {
+          "id": "l9w1",
+          "text": "Invincible",
+          "normalized": "Invincible",
+          "punctuationAfter": ",",
+          "saveable": false
+        },
+        {
+          "id": "l9w2",
+          "text": "yeah",
+          "normalized": "yeah",
+          "punctuationAfter": ".",
+          "saveable": true,
+          "translations": {
+            "ua": "так",
+            "ru": "да"
+          }
+        }
       ],
       "modes": {
         "easy": {
@@ -467,7 +1498,9 @@
         },
         "hard": {
           "text": "Invincible, [yeah.]",
-          "revealOrder": ["l9w2"]
+          "revealOrder": [
+            "l9w2"
+          ]
         }
       }
     },
@@ -483,22 +1516,182 @@
         "ru": "you look like you need to... = очень полезный разговорный шаблон, когда мы осторожно делаем вывод о состоянии человека: «похоже, тебе нужно...». В этой сцене Eve видит, что Mark смущён и, возможно, хочет выговориться."
       },
       "tokens": [
-        { "id": "l10w1", "text": "Do", "normalized": "do", "punctuationAfter": "", "saveable": true },
-        { "id": "l10w2", "text": "you", "normalized": "you", "punctuationAfter": "", "saveable": true },
-        { "id": "l10w3", "text": "want", "normalized": "want", "punctuationAfter": "", "saveable": true },
-        { "id": "l10w4", "text": "to", "normalized": "to", "punctuationAfter": "", "saveable": true },
-        { "id": "l10w5", "text": "talk", "normalized": "talk", "punctuationAfter": "", "saveable": true },
-        { "id": "l10w6", "text": "about", "normalized": "about", "punctuationAfter": "", "saveable": true },
-        { "id": "l10w7", "text": "yesterday", "normalized": "yesterday", "punctuationAfter": "?", "saveable": true },
-        { "id": "l10w8", "text": "You", "normalized": "you", "punctuationAfter": "", "saveable": true },
-        { "id": "l10w9", "text": "look", "normalized": "look", "punctuationAfter": "", "saveable": true },
-        { "id": "l10w10", "text": "like", "normalized": "like", "punctuationAfter": "", "saveable": true },
-        { "id": "l10w11", "text": "you", "normalized": "you", "punctuationAfter": "", "saveable": true },
-        { "id": "l10w12", "text": "need", "normalized": "need", "punctuationAfter": "", "saveable": true },
-        { "id": "l10w13", "text": "to", "normalized": "to", "punctuationAfter": "", "saveable": true },
-        { "id": "l10w14", "text": "talk", "normalized": "talk", "punctuationAfter": "", "saveable": true },
-        { "id": "l10w15", "text": "about", "normalized": "about", "punctuationAfter": "", "saveable": true },
-        { "id": "l10w16", "text": "yesterday", "normalized": "yesterday", "punctuationAfter": ".", "saveable": true }
+        {
+          "id": "l10w1",
+          "text": "Do",
+          "normalized": "do",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "робити",
+            "ru": "делать"
+          }
+        },
+        {
+          "id": "l10w2",
+          "text": "you",
+          "normalized": "you",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "ти",
+            "ru": "ты"
+          }
+        },
+        {
+          "id": "l10w3",
+          "text": "want",
+          "normalized": "want",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "хотіти",
+            "ru": "хотеть"
+          }
+        },
+        {
+          "id": "l10w4",
+          "text": "to",
+          "normalized": "to",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "до",
+            "ru": "до"
+          }
+        },
+        {
+          "id": "l10w5",
+          "text": "talk",
+          "normalized": "talk",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "говорити",
+            "ru": "говорить"
+          }
+        },
+        {
+          "id": "l10w6",
+          "text": "about",
+          "normalized": "about",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "про",
+            "ru": "о"
+          }
+        },
+        {
+          "id": "l10w7",
+          "text": "yesterday",
+          "normalized": "yesterday",
+          "punctuationAfter": "?",
+          "saveable": true,
+          "translations": {
+            "ua": "учора",
+            "ru": "вчера"
+          }
+        },
+        {
+          "id": "l10w8",
+          "text": "You",
+          "normalized": "you",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "ти",
+            "ru": "ты"
+          }
+        },
+        {
+          "id": "l10w9",
+          "text": "look",
+          "normalized": "look",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "виглядати",
+            "ru": "выглядеть"
+          }
+        },
+        {
+          "id": "l10w10",
+          "text": "like",
+          "normalized": "like",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "як",
+            "ru": "как"
+          }
+        },
+        {
+          "id": "l10w11",
+          "text": "you",
+          "normalized": "you",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "ти",
+            "ru": "ты"
+          }
+        },
+        {
+          "id": "l10w12",
+          "text": "need",
+          "normalized": "need",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "потребувати",
+            "ru": "нуждаться"
+          }
+        },
+        {
+          "id": "l10w13",
+          "text": "to",
+          "normalized": "to",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "до",
+            "ru": "до"
+          }
+        },
+        {
+          "id": "l10w14",
+          "text": "talk",
+          "normalized": "talk",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "говорити",
+            "ru": "говорить"
+          }
+        },
+        {
+          "id": "l10w15",
+          "text": "about",
+          "normalized": "about",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "про",
+            "ru": "о"
+          }
+        },
+        {
+          "id": "l10w16",
+          "text": "yesterday",
+          "normalized": "yesterday",
+          "punctuationAfter": ".",
+          "saveable": true,
+          "translations": {
+            "ua": "учора",
+            "ru": "вчера"
+          }
+        }
       ],
       "modes": {
         "easy": {
@@ -507,26 +1700,73 @@
               "snapNumber": 1,
               "text": "Do you want to [[talk]] about yesterday?",
               "blanks": [
-                { "tokenId": "l10w5", "answer": "talk", "options": ["walk", "talk", "task"] }
+                {
+                  "tokenId": "l10w5",
+                  "answer": "talk",
+                  "options": [
+                    "walk",
+                    "talk",
+                    "task"
+                  ]
+                }
               ]
             },
             {
               "snapNumber": 2,
               "text": "You [[look]] like you [[need]] to talk about yesterday.",
               "blanks": [
-                { "tokenId": "l10w9", "answer": "look", "options": ["look", "book", "lock"] },
-                { "tokenId": "l10w12", "answer": "need", "options": ["need", "read", "lead"] }
+                {
+                  "tokenId": "l10w9",
+                  "answer": "look",
+                  "options": [
+                    "look",
+                    "book",
+                    "lock"
+                  ]
+                },
+                {
+                  "tokenId": "l10w12",
+                  "answer": "need",
+                  "options": [
+                    "need",
+                    "read",
+                    "lead"
+                  ]
+                }
               ]
             }
           ]
         },
         "medium": {
           "text": "Do you [want] to [talk] about yesterday? You [look] like you [need] to talk [about] yesterday.",
-          "blankedTokenIds": ["l10w3", "l10w5", "l10w9", "l10w12", "l10w15"]
+          "blankedTokenIds": [
+            "l10w3",
+            "l10w5",
+            "l10w9",
+            "l10w12",
+            "l10w15"
+          ]
         },
         "hard": {
           "text": "[Do] [you] [want] [to] [talk] [about] [yesterday?] [You] [look] [like] [you] [need] [to] [talk] [about] [yesterday.]",
-          "revealOrder": ["l10w1", "l10w2", "l10w3", "l10w4", "l10w5", "l10w6", "l10w7", "l10w8", "l10w9", "l10w10", "l10w11", "l10w12", "l10w13", "l10w14", "l10w15", "l10w16"]
+          "revealOrder": [
+            "l10w1",
+            "l10w2",
+            "l10w3",
+            "l10w4",
+            "l10w5",
+            "l10w6",
+            "l10w7",
+            "l10w8",
+            "l10w9",
+            "l10w10",
+            "l10w11",
+            "l10w12",
+            "l10w13",
+            "l10w14",
+            "l10w15",
+            "l10w16"
+          ]
         }
       }
     }

@@ -4,7 +4,11 @@
   "slug": "wednesday-outcasts-warning",
   "title": "Wednesday",
   "series": "Wednesday",
-  "availableModes": ["easy", "medium", "hard"],
+  "availableModes": [
+    "easy",
+    "medium",
+    "hard"
+  ],
   "media": {
     "videoFile": "https://player.mux.com/DkwLTYhgCqOguLHYQ3z1B1r8bkF6wZUa1N01qSUqlrPQ?metadata-video-title=Wednesday&video-title=Wednesday&accent-color=%23df7801&primary-color=%23034091&secondary-color=%23dedede",
     "thumbnailFile": "wednesday-cover.jpeg"
@@ -47,7 +51,11 @@
           "text": "Thanks",
           "normalized": "thanks",
           "punctuationAfter": ".",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "дякую",
+            "ru": "спасибо"
+          }
         }
       ],
       "modes": {
@@ -62,11 +70,15 @@
         },
         "medium": {
           "text": "[Thanks].",
-          "blankedTokenIds": ["l1w1"]
+          "blankedTokenIds": [
+            "l1w1"
+          ]
         },
         "hard": {
           "text": "[Thanks.]",
-          "revealOrder": ["l1w1"]
+          "revealOrder": [
+            "l1w1"
+          ]
         }
       }
     },
@@ -87,42 +99,66 @@
           "text": "Sure",
           "normalized": "sure",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "впевнений",
+            "ru": "уверенный"
+          }
         },
         {
           "id": "l2w2",
           "text": "you",
           "normalized": "you",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "ти",
+            "ru": "ты"
+          }
         },
         {
           "id": "l2w3",
           "text": "wanna",
           "normalized": "want to",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "хотіти",
+            "ru": "хотеть"
+          }
         },
         {
           "id": "l2w4",
           "text": "get",
           "normalized": "get",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "отримати",
+            "ru": "получить"
+          }
         },
         {
           "id": "l2w5",
           "text": "out",
           "normalized": "out",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "назовні",
+            "ru": "наружу"
+          }
         },
         {
           "id": "l2w6",
           "text": "here",
           "normalized": "here",
           "punctuationAfter": "?",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "тут",
+            "ru": "здесь"
+          }
         },
         {
           "id": "l2w7",
@@ -136,63 +172,99 @@
           "text": "trail",
           "normalized": "trail",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "стежка",
+            "ru": "тропа"
+          }
         },
         {
           "id": "l2w9",
           "text": "might",
           "normalized": "might",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "може",
+            "ru": "может"
+          }
         },
         {
           "id": "l2w10",
           "text": "look",
           "normalized": "look",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "виглядати",
+            "ru": "выглядеть"
+          }
         },
         {
           "id": "l2w11",
           "text": "pretty",
           "normalized": "pretty",
           "punctuationAfter": ",",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "гарний",
+            "ru": "красивый"
+          }
         },
         {
           "id": "l2w12",
           "text": "but",
           "normalized": "but",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "але",
+            "ru": "но"
+          }
         },
         {
           "id": "l2w13",
           "text": "it",
           "normalized": "it",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "це",
+            "ru": "это"
+          }
         },
         {
           "id": "l2w14",
           "text": "runs",
           "normalized": "run",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "проходити",
+            "ru": "проходить"
+          }
         },
         {
           "id": "l2w15",
           "text": "right",
           "normalized": "right",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "прямо",
+            "ru": "прямо"
+          }
         },
         {
           "id": "l2w16",
           "text": "past",
           "normalized": "past",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "повз",
+            "ru": "мимо"
+          }
         },
         {
           "id": "l2w17",
@@ -212,7 +284,11 @@
                 {
                   "tokenId": "l2w3",
                   "answer": "wanna",
-                  "options": ["gonna", "wanna", "sauna"]
+                  "options": [
+                    "gonna",
+                    "wanna",
+                    "sauna"
+                  ]
                 }
               ]
             },
@@ -223,12 +299,20 @@
                 {
                   "tokenId": "l2w11",
                   "answer": "pretty",
-                  "options": ["kitty", "nitty", "pretty"]
+                  "options": [
+                    "kitty",
+                    "nitty",
+                    "pretty"
+                  ]
                 },
                 {
                   "tokenId": "l2w16",
                   "answer": "past",
-                  "options": ["last", "past", "dust", "fast"]
+                  "options": [
+                    "last",
+                    "past",
+                    "fast"
+                  ]
                 }
               ]
             }
@@ -236,11 +320,35 @@
         },
         "medium": {
           "text": "[Sure] you [wanna] [get] out [here]? The [trail] might look [pretty], but it runs right [past] Nevermore.",
-          "blankedTokenIds": ["l2w1", "l2w3", "l2w4", "l2w6", "l2w8", "l2w11", "l2w16"]
+          "blankedTokenIds": [
+            "l2w1",
+            "l2w3",
+            "l2w4",
+            "l2w6",
+            "l2w8",
+            "l2w11",
+            "l2w16"
+          ]
         },
         "hard": {
-          "text": "[Sure] [you] [wanna] [get] [out] [here?] [The] [trail] [might] [look] [pretty,] [but] [it] [runs] [right] [past] [Nevermore.]",
-          "revealOrder": ["l2w1", "l2w2", "l2w3", "l2w4", "l2w5", "l2w6", "l2w7", "l2w8", "l2w9", "l2w10", "l2w11", "l2w12", "l2w13", "l2w14", "l2w15", "l2w16", "l2w17"]
+          "text": "[Sure] [you] [wanna] [get] [out] [here?] The [trail] [might] [look] [pretty,] [but] [it] [runs] [right] [past] Nevermore.",
+          "revealOrder": [
+            "l2w1",
+            "l2w2",
+            "l2w3",
+            "l2w4",
+            "l2w5",
+            "l2w6",
+            "l2w8",
+            "l2w9",
+            "l2w10",
+            "l2w11",
+            "l2w12",
+            "l2w13",
+            "l2w14",
+            "l2w15",
+            "l2w16"
+          ]
         }
       }
     },
@@ -261,28 +369,44 @@
           "text": "That",
           "normalized": "that",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "той",
+            "ru": "тот"
+          }
         },
         {
           "id": "l3w2",
           "text": "school",
           "normalized": "school",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "школа",
+            "ru": "школа"
+          }
         },
         {
           "id": "l3w3",
           "text": "for",
           "normalized": "for",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "для",
+            "ru": "для"
+          }
         },
         {
           "id": "l3w4",
           "text": "outcasts",
           "normalized": "outcasts",
           "punctuationAfter": "?",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "вигнанці",
+            "ru": "изгои"
+          }
         }
       ],
       "modes": {
@@ -295,7 +419,11 @@
                 {
                   "tokenId": "l3w4",
                   "answer": "outcasts",
-                  "options": ["outlast", "almost", "outcasts"]
+                  "options": [
+                    "outlast",
+                    "almost",
+                    "outcasts"
+                  ]
                 }
               ]
             }
@@ -303,11 +431,19 @@
         },
         "medium": {
           "text": "[That] school for [outcasts]?",
-          "blankedTokenIds": ["l3w1", "l3w4"]
+          "blankedTokenIds": [
+            "l3w1",
+            "l3w4"
+          ]
         },
         "hard": {
           "text": "[That] [school] [for] [outcasts?]",
-          "revealOrder": ["l3w1", "l3w2", "l3w3", "l3w4"]
+          "revealOrder": [
+            "l3w1",
+            "l3w2",
+            "l3w3",
+            "l3w4"
+          ]
         }
       }
     },
@@ -342,35 +478,55 @@
           "text": "polite",
           "normalized": "polite",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "ввічливий",
+            "ru": "вежливый"
+          }
         },
         {
           "id": "l4w4",
           "text": "way",
           "normalized": "way",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "спосіб",
+            "ru": "способ"
+          }
         },
         {
           "id": "l4w5",
           "text": "of",
           "normalized": "of",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "з",
+            "ru": "из"
+          }
         },
         {
           "id": "l4w6",
           "text": "putting",
           "normalized": "put",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "сказати",
+            "ru": "сформулировать"
+          }
         },
         {
           "id": "l4w7",
           "text": "it",
           "normalized": "it",
           "punctuationAfter": ".",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "це",
+            "ru": "это"
+          }
         }
       ],
       "modes": {
@@ -383,7 +539,11 @@
                 {
                   "tokenId": "l4w6",
                   "answer": "putting",
-                  "options": ["looting", "booting", "putting"]
+                  "options": [
+                    "looting",
+                    "booting",
+                    "putting"
+                  ]
                 }
               ]
             }
@@ -391,11 +551,21 @@
         },
         "medium": {
           "text": "[That's] a polite [way] of [putting] it.",
-          "blankedTokenIds": ["l4w1", "l4w4", "l4w6"]
+          "blankedTokenIds": [
+            "l4w1",
+            "l4w4",
+            "l4w6"
+          ]
         },
         "hard": {
-          "text": "[That's] [a] [polite] [way] [of] [putting] [it.]",
-          "revealOrder": ["l4w1", "l4w2", "l4w3", "l4w4", "l4w5", "l4w6", "l4w7"]
+          "text": "That's a [polite] [way] [of] [putting] [it.]",
+          "revealOrder": [
+            "l4w3",
+            "l4w4",
+            "l4w5",
+            "l4w6",
+            "l4w7"
+          ]
         }
       }
     },
@@ -416,21 +586,33 @@
           "text": "I",
           "normalized": "I",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "я",
+            "ru": "я"
+          }
         },
         {
           "id": "l5w2",
           "text": "never",
           "normalized": "never",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "ніколи",
+            "ru": "никогда"
+          }
         },
         {
           "id": "l5w3",
           "text": "had",
           "normalized": "have",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "мати",
+            "ru": "иметь"
+          }
         },
         {
           "id": "l5w4",
@@ -444,63 +626,99 @@
           "text": "problem",
           "normalized": "problem",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "проблема",
+            "ru": "проблема"
+          }
         },
         {
           "id": "l5w6",
           "text": "with",
           "normalized": "with",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "з",
+            "ru": "с"
+          }
         },
         {
           "id": "l5w7",
           "text": "outcasts",
           "normalized": "outcasts",
           "punctuationAfter": ".",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "вигнанці",
+            "ru": "изгои"
+          }
         },
         {
           "id": "l5w8",
           "text": "My",
           "normalized": "my",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "мій",
+            "ru": "мой"
+          }
         },
         {
           "id": "l5w9",
           "text": "counselor",
           "normalized": "counselor",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "радник",
+            "ru": "консультант"
+          }
         },
         {
           "id": "l5w10",
           "text": "at",
           "normalized": "at",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "біля",
+            "ru": "у"
+          }
         },
         {
           "id": "l5w11",
           "text": "summer",
           "normalized": "summer",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "літо",
+            "ru": "лето"
+          }
         },
         {
           "id": "l5w12",
           "text": "camp",
           "normalized": "camp",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "табір",
+            "ru": "лагерь"
+          }
         },
         {
           "id": "l5w13",
           "text": "was",
           "normalized": "be",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "бути",
+            "ru": "быть"
+          }
         },
         {
           "id": "l5w14",
@@ -514,21 +732,33 @@
           "text": "werewolf",
           "normalized": "werewolf",
           "punctuationAfter": ".",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "перевертень",
+            "ru": "оборотень"
+          }
         },
         {
           "id": "l5w16",
           "text": "Great",
           "normalized": "great",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "чудовий",
+            "ru": "отличный"
+          }
         },
         {
           "id": "l5w17",
           "text": "guy",
           "normalized": "guy",
           "punctuationAfter": ".",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "хлопець",
+            "ru": "парень"
+          }
         }
       ],
       "modes": {
@@ -541,7 +771,11 @@
                 {
                   "tokenId": "l5w7",
                   "answer": "outcasts",
-                  "options": ["outlast", "almost", "outcasts"]
+                  "options": [
+                    "outlast",
+                    "almost",
+                    "outcasts"
+                  ]
                 }
               ]
             },
@@ -552,12 +786,20 @@
                 {
                   "tokenId": "l5w9",
                   "answer": "counselor",
-                  "options": ["chancellor", "counselor", "consoles"]
+                  "options": [
+                    "chancellor",
+                    "counselor",
+                    "consoles"
+                  ]
                 },
                 {
                   "tokenId": "l5w12",
                   "answer": "camp",
-                  "options": ["lamb", "camp", "lamp"]
+                  "options": [
+                    "lamb",
+                    "camp",
+                    "lamp"
+                  ]
                 }
               ]
             }
@@ -565,11 +807,36 @@
         },
         "medium": {
           "text": "[I] never had a [problem] with [outcasts]. My [counselor] at [summer] [camp] was a [werewolf]. Great [guy].",
-          "blankedTokenIds": ["l5w1", "l5w5", "l5w7", "l5w9", "l5w11", "l5w12", "l5w15", "l5w17"]
+          "blankedTokenIds": [
+            "l5w1",
+            "l5w5",
+            "l5w7",
+            "l5w9",
+            "l5w11",
+            "l5w12",
+            "l5w15",
+            "l5w17"
+          ]
         },
         "hard": {
-          "text": "[I] [never] [had] [a] [problem] [with] [outcasts.] [My] [counselor] [at] [summer] [camp] [was] [a] [werewolf.] [Great] [guy.]",
-          "revealOrder": ["l5w1", "l5w2", "l5w3", "l5w4", "l5w5", "l5w6", "l5w7", "l5w8", "l5w9", "l5w10", "l5w11", "l5w12", "l5w13", "l5w14", "l5w15", "l5w16", "l5w17"]
+          "text": "[I] [never] [had] a [problem] [with] [outcasts.] [My] [counselor] [at] [summer] [camp] [was] a [werewolf.] [Great] [guy.]",
+          "revealOrder": [
+            "l5w1",
+            "l5w2",
+            "l5w3",
+            "l5w5",
+            "l5w6",
+            "l5w7",
+            "l5w8",
+            "l5w9",
+            "l5w10",
+            "l5w11",
+            "l5w12",
+            "l5w13",
+            "l5w15",
+            "l5w16",
+            "l5w17"
+          ]
         }
       }
     },
@@ -590,7 +857,11 @@
           "text": "Yeah",
           "normalized": "yeah",
           "punctuationAfter": ",",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "так",
+            "ru": "да"
+          }
         },
         {
           "id": "l6w2",
@@ -604,77 +875,121 @@
           "text": "just",
           "normalized": "just",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "просто",
+            "ru": "просто"
+          }
         },
         {
           "id": "l6w4",
           "text": "like",
           "normalized": "like",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "як",
+            "ru": "как"
+          }
         },
         {
           "id": "l6w5",
           "text": "you",
           "normalized": "you",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "ти",
+            "ru": "ты"
+          }
         },
         {
           "id": "l6w6",
           "text": "and",
           "normalized": "and",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "і",
+            "ru": "и"
+          }
         },
         {
           "id": "l6w7",
           "text": "me",
           "normalized": "me",
           "punctuationAfter": ",",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "мене",
+            "ru": "меня"
+          }
         },
         {
           "id": "l6w8",
           "text": "until",
           "normalized": "until",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "поки не",
+            "ru": "пока не"
+          }
         },
         {
           "id": "l6w9",
           "text": "they",
           "normalized": "they",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "вони",
+            "ru": "они"
+          }
         },
         {
           "id": "l6w10",
           "text": "rip",
           "normalized": "rip",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "розривати",
+            "ru": "рвать"
+          }
         },
         {
           "id": "l6w11",
           "text": "your",
           "normalized": "your",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "твій",
+            "ru": "твой"
+          }
         },
         {
           "id": "l6w12",
           "text": "throat",
           "normalized": "throat",
           "punctuationAfter": "",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "горло",
+            "ru": "горло"
+          }
         },
         {
           "id": "l6w13",
           "text": "out",
           "normalized": "out",
           "punctuationAfter": ".",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "назовні",
+            "ru": "наружу"
+          }
         }
       ],
       "modes": {
@@ -687,12 +1002,20 @@
                 {
                   "tokenId": "l6w3",
                   "answer": "just",
-                  "options": ["lust", "dust", "just"]
+                  "options": [
+                    "lust",
+                    "dust",
+                    "just"
+                  ]
                 },
                 {
                   "tokenId": "l6w10",
                   "answer": "rip",
-                  "options": ["hip", "lip", "rip"]
+                  "options": [
+                    "hip",
+                    "lip",
+                    "rip"
+                  ]
                 }
               ]
             }
@@ -700,11 +1023,31 @@
         },
         "medium": {
           "text": "Yeah, they're [just] like [you] and [me], until they [rip] your [throat] [out].",
-          "blankedTokenIds": ["l6w3", "l6w5", "l6w7", "l6w10", "l6w12", "l6w13"]
+          "blankedTokenIds": [
+            "l6w3",
+            "l6w5",
+            "l6w7",
+            "l6w10",
+            "l6w12",
+            "l6w13"
+          ]
         },
         "hard": {
-          "text": "[Yeah,] [they're] [just] [like] [you] [and] [me,] [until] [they] [rip] [your] [throat] [out.]",
-          "revealOrder": ["l6w1", "l6w2", "l6w3", "l6w4", "l6w5", "l6w6", "l6w7", "l6w8", "l6w9", "l6w10", "l6w11", "l6w12", "l6w13"]
+          "text": "[Yeah,] they're [just] [like] [you] [and] [me,] [until] [they] [rip] [your] [throat] [out.]",
+          "revealOrder": [
+            "l6w1",
+            "l6w3",
+            "l6w4",
+            "l6w5",
+            "l6w6",
+            "l6w7",
+            "l6w8",
+            "l6w9",
+            "l6w10",
+            "l6w11",
+            "l6w12",
+            "l6w13"
+          ]
         }
       }
     },
@@ -725,14 +1068,22 @@
           "text": "Huh",
           "normalized": "huh",
           "punctuationAfter": ",",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "га",
+            "ru": "хм"
+          }
         },
         {
           "id": "l7w2",
           "text": "thanks",
           "normalized": "thanks",
           "punctuationAfter": ".",
-          "saveable": true
+          "saveable": true,
+          "translations": {
+            "ua": "дякую",
+            "ru": "спасибо"
+          }
         }
       ],
       "modes": {
@@ -747,11 +1098,17 @@
         },
         "medium": {
           "text": "[Huh], [thanks].",
-          "blankedTokenIds": ["l7w1", "l7w2"]
+          "blankedTokenIds": [
+            "l7w1",
+            "l7w2"
+          ]
         },
         "hard": {
           "text": "[Huh,] [thanks.]",
-          "revealOrder": ["l7w1", "l7w2"]
+          "revealOrder": [
+            "l7w1",
+            "l7w2"
+          ]
         }
       }
     }

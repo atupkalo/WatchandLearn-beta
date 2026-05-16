@@ -8,6 +8,10 @@ export interface LessonToken {
   normalized: string;
   punctuationAfter: string;
   saveable: boolean;
+  translations?: {
+    ua: string;
+    ru: string;
+  };
 }
 
 export interface LessonLineModeEasy {

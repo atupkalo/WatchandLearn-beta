@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, type CSSProperties } from "react";
+import { useEffect, useRef, type CSSProperties, type ElementRef } from "react";
 import MuxPlayer from "@mux/mux-player-react";
 
 interface IframeProps {
@@ -39,7 +39,7 @@ function parseMuxPlayerUrl(src: string): ParsedMuxPlayerUrl | null {
 }
 
 export default function Iframe({ src = "", title = "Lesson media" }: IframeProps) {
-  const muxPlayerRef = useRef<any>(null);
+  const muxPlayerRef = useRef<ElementRef<typeof MuxPlayer> | null>(null);
 
   useEffect(() => {
     const playerElement = muxPlayerRef.current;

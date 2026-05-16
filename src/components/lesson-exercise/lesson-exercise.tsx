@@ -509,9 +509,13 @@ function HardMode({ lines }: { lines: LessonLine[] }) {
               {tLessons("lineLabel")} {line.lineNumber}
             </span>
             {line.tokens.map((token) => {
-              const visibleToken = revealedTokenIds.has(token.id)
+              const revealableTokenIds = new Set(line.modes.hard.revealOrder);
+              const isRevealable = revealableTokenIds.has(token.id);
+              const visibleToken = !isRevealable
                 ? token.text
-                : "—".repeat(Math.max(3, token.text.length));
+                : revealedTokenIds.has(token.id)
+                  ? token.text
+                  : "—".repeat(Math.max(3, token.text.length));
 
               return (
                 <span key={token.id} className={styles.hardSchemaToken}>
