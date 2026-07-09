@@ -122,6 +122,11 @@
   color: var(--textBody);
 }
 
+.mediumInput {
+  background: #ffffff;
+  text-align: center;
+}
+
 .hardControls {
   display: flex;
   align-items: center;

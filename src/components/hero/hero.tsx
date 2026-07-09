@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import ButtonCustom from "../ui/button";
 import Title from "../ui/title";
@@ -29,6 +30,7 @@ const cycleLength = layers.length + layerLifetimeInSeconds - 1;
 export default function Hero() {
   const [currentStep, setCurrentStep] = useState(0);
   const t = useTranslations("Hero");
+  const router = useRouter();
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
@@ -88,14 +90,13 @@ export default function Hero() {
             <h2 className="max-w-[420px] text-base text-[var(--textBody)]">
               {t("h2")}
             </h2>
-            <a href="/signup">
-              <ButtonCustom
-                size="lg"
-                label={t("CTA")}
-                variant="primary"
-                className={`p-6 text-xl ${uiStyles.shadowInset}`}
-              />
-            </a>
+            <ButtonCustom
+              size="lg"
+              label={t("CTA")}
+              variant="primary"
+              className={`p-6 text-xl ${uiStyles.shadowInset}`}
+              onClick={() => router.push("/signup")}
+            />
           </div>
         </div>
 

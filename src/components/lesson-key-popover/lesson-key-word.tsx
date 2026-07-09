@@ -71,6 +71,8 @@ export default function LessonKeyWord({
           },
         );
       }
+    } catch {
+      // Local cache is enough if the auth session is stale or DB is unavailable.
     } finally {
       setIsSaving(false);
       setIsOpen(false);

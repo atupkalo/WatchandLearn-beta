@@ -1,0 +1,218 @@
+.sayItRoot {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sayItTitle {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--textBody);
+}
+
+.sayItCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.sayItBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sayItFooter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sayItAttempts {
+  position: absolute;
+  left: 16px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--textInactive);
+}
+
+.sayItLabel {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--textBody);
+}
+
+.sayItMicButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 72px;
+  height: 72px;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--secondary100);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.sayItMicButton:hover {
+  opacity: 0.8;
+}
+
+.sayItMicButtonActive {
+  animation: sayItPulse 0.5s ease-in-out infinite;
+}
+
+.sayItMicGlyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1);
+}
+
+.sayItMicGlyphActive {
+  animation: sayItMicGlyphPulse 0.5s ease-in-out infinite;
+}
+
+.sayItQuote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 9999px;
+  background: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--textBody);
+}
+
+.sayItResultRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.sayItResultGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.sayItResultCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 120px;
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.sayItResultLabel {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--textInactive);
+}
+
+.sayItResultText {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--primary600);
+}
+
+.sayItResultHint {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--textInactive);
+  text-align: center;
+}
+
+.sayItScoreBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background: var(--accent50);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary600);
+}
+
+@media (max-width: 767px) {
+  .sayItResultGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.sayItTranscript {
+  background: #ffffff;
+  padding: 8px 16px;
+  border-radius: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--textBody);
+}
+
+.sayItLoader {
+  animation: sayItLoaderSpin 0.8s linear infinite;
+}
+
+.sayItLoaderWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes sayItPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes sayItMicGlyphPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes sayItLoaderSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -235,12 +235,16 @@
 
 .card {
   padding: 16px;
-  background: rgba(255, 255, 255, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: #ffffff40;
+  border: 1px solid #ffffffb3;
   border-radius: 24px;
-  backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px);
-  transition: 0.3s ease;
+  background: #ffffff40;
+  border: 1px solid #ffffffb3;
+  border-radius: 24px;
+  padding: 16px;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
 }
 
 .cardNoHover{
@@ -260,7 +264,7 @@
 
 @supports (backdrop-filter: blur(1px)) {
   .card {
-    background: rgba(255, 255, 255, 0.25);
+    background: #ffffff40;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
@@ -274,14 +278,14 @@
   height: 22px;
   border: solid 1px var(--gray100);
   border-radius: 24px;
-  box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
   background: #ffffff;
   line-height: 1;
   text-align: center;
   transition: .3s;
 }
 .dropSlot:hover{
-  border: solid 1px var(--accent);
+  border: solid 1px var(--gray100);
 }
 .dropSlorSuccess{
   border: solid 1px var(--success);
@@ -292,29 +296,56 @@
   background: #feeeee;
 }
 
-.dragIcon{
-  color: var(--gray200);
-  width: 12px;
-  margin-bottom: -2px;
-}
-
 .dropWord{
   padding: 0 12px;
   height: 24px;
   display: flex;
   flex-direction: row;
-  align-items: top;
+  align-items: center;
   justify-content: center;
   gap: 4px;
-  background: var(--accent50);
+  background: var(--secondary50);
+  border: 1px solid transparent;
   border-radius: 24px;
   transition: .3s;
   cursor: pointer;
 }
 .dropWord:hover{
-  .dragIcon{
-    color: var(--accent);
-  }
+  background: var(--neutral100);
+}
+
+.dropWord:disabled{
+  cursor: default;
+  opacity: 1;
+}
+
+.dropWordDefault{
+  background: var(--secondary50);
+}
+
+.dropWordSuccess{
+  background: var(--success100);
+}
+
+.dropWordError{
+  background: var(--negative100);
+}
+
+.dropWordIcon{
+  width: 14px;
+  flex-shrink: 0;
+}
+
+.dropWordIconDefault{
+  color: var(--textBody);
+}
+
+.dropWordIconSuccess{
+  color: var(--success);
+}
+
+.dropWordIconError{
+  color: var(--negative);
 }
 
 /* input */
@@ -380,7 +411,7 @@
    box-shadow: none;
 }
 .inputLesson:hover{
-  border-color: var(--accent);
+  border-color: var(--textBody);
 }
 .inputLesson:focus{
   outline: none;
@@ -396,6 +427,8 @@
 }
 .inputLessonError{
   border: 1px solid var(--negative);
+  background: var(--negative100);
+  color: var(--negative700);
 }
 .inputLessonSuccess{
   border: 1px solid var(--success);
@@ -438,7 +471,7 @@
 
 .multiSelectTrigger:hover,
 .multiSelectTrigger:focus-visible {
-  border-color: var(--accent);
+  border-color: var(--textBody);
 }
 
 /* input-select */
@@ -471,7 +504,7 @@
 
 .selectTrigger:hover,
 .selectTrigger:focus-visible {
-  border-color: var(--accent);
+  border-color: var(--textBody);
 }
 
 .selectValue {
@@ -543,7 +576,7 @@
 
 .searchFieldGroup:hover,
 .searchFieldGroup:focus-within {
-  border-color: var(--accent);
+  border-color: var(--textBody);
 }
 
 .searchFieldIcon {

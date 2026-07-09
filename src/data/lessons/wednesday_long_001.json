@@ -1623,7 +1623,7 @@
     },
     {
       "lineNumber": 9,
-      "text": "Uh, you mean, emojis? It's how people express their feelings. I realize that's a foreign concept to you.",
+      "text": "Uh, you mean, emojis? It's how people express their feelings. You know, I realize that's a foreign concept to you.",
       "translations": {
         "ua": "Е-е, ти маєш на увазі емодзі? Так люди виражають свої почуття. Розумію, що для тебе це чуже поняття.",
         "ru": "Э-э, ты имеешь в виду эмодзи? Так люди выражают свои чувства. Понимаю, что для тебя это чуждое понятие."
@@ -1744,6 +1744,28 @@
           }
         },
         {
+          "id": "l9w19",
+          "text": "You",
+          "normalized": "you",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "ти",
+            "ru": "ты"
+          }
+        },
+        {
+          "id": "l9w20",
+          "text": "know",
+          "normalized": "know",
+          "punctuationAfter": ",",
+          "saveable": true,
+          "translations": {
+            "ua": "знати",
+            "ru": "знать"
+          }
+        },
+        {
           "id": "l9w11",
           "text": "I",
           "normalized": "I",
@@ -1861,7 +1883,7 @@
             },
             {
               "snapNumber": 2,
-              "text": "I realize that's a foreign [[concept]] to you.",
+              "text": "You know, I realize that's a foreign [[concept]] to you.",
               "blanks": [
                 {
                   "tokenId": "l9w16",
@@ -1877,7 +1899,7 @@
           ]
         },
         "medium": {
-          "text": "Uh, [you] mean, [emojis]? It's [how] people [express] their [feelings]. I realize [that's] a foreign [concept] to you.",
+          "text": "Uh, [you] mean, [emojis]? It's [how] people [express] their [feelings]. You know, I realize [that's] a foreign [concept] to you.",
           "blankedTokenIds": [
             "l9w2",
             "l9w4",
@@ -1889,7 +1911,7 @@
           ]
         },
         "hard": {
-          "text": "[Uh,] [you] [mean,] [emojis?] [It's] [how] [people] [express] [their] [feelings.] [I] [realize] [that's] [a] [foreign] [concept] [to] [you.]",
+          "text": "[Uh,] [you] [mean,] [emojis?] [It's] [how] [people] [express] [their] [feelings.] [You] [know,] [I] [realize] [that's] [a] [foreign] [concept] [to] [you.]",
           "revealOrder": [
             "l9w1",
             "l9w2",
@@ -1901,6 +1923,8 @@
             "l9w8",
             "l9w9",
             "l9w10",
+            "l9w19",
+            "l9w20",
             "l9w11",
             "l9w12",
             "l9w13",
@@ -2449,6 +2473,50 @@
           ]
         }
       }
+    }
+  ],
+  "sayIt": [
+    {
+      "quoteNumber": 1,
+      "startSec": 2,
+      "endSec": 5,
+      "text": "What the hell did you do to my room?"
+    },
+    {
+      "quoteNumber": 2,
+      "startSec": 10,
+      "endSec": 12,
+      "text": "It looks like a rainbow vomited on your side."
+    },
+    {
+      "quoteNumber": 3,
+      "startSec": 18,
+      "endSec": 23,
+      "text": "I devote an hour a day to my novel. Perhaps if you did the same, your vlog might be coherent."
+    },
+    {
+      "quoteNumber": 4,
+      "startSec": 27,
+      "endSec": 31,
+      "text": "I write in my voice. It's my truth. It's what my followers love."
+    },
+    {
+      "quoteNumber": 5,
+      "startSec": 34,
+      "endSec": 37,
+      "text": "They respond to your stories with insipid little pictures."
+    },
+    {
+      "quoteNumber": 6,
+      "startSec": 39,
+      "endSec": 44,
+      "text": "It's how people express their feelings. You know, I realize that's a foreign concept to you."
+    },
+    {
+      "quoteNumber": 7,
+      "startSec": 45,
+      "endSec": 52,
+      "text": "When I look at you, the following emojis come to mind. Rope, shovel, hole."
     }
   ]
 }

@@ -1112,5 +1112,31 @@
         }
       }
     }
+  ],
+  "sayIt": [
+    {
+      "quoteNumber": 1,
+      "startSec": 8,
+      "endSec": 11,
+      "text": "The trail might look pretty, but it runs right past Nevermore."
+    },
+    {
+      "quoteNumber": 2,
+      "startSec": 14,
+      "endSec": 15,
+      "text": "That's a polite way of putting it."
+    },
+    {
+      "quoteNumber": 3,
+      "startSec": 18,
+      "endSec": 20,
+      "text": "My counselor at summer camp was a werewolf."
+    },
+    {
+      "quoteNumber": 4,
+      "startSec": 22,
+      "endSec": 27,
+      "text": "Yeah, they're just like you and me, until they rip your throat out."
+    }
   ]
 }

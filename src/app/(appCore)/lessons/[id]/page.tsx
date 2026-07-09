@@ -1,5 +1,7 @@
+import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
 import { getLessonById, getLessonListItemById } from "@/lib/lessons";
+import { getUserOrNull } from "@/utils/supabase/server";
 import LessonPageClient from "./lesson-page-client";
 
 interface LessonPageProps {
@@ -9,6 +11,8 @@ interface LessonPageProps {
 }
 
 export default async function LessonPage({ params }: LessonPageProps) {
+  const cookieStore = await cookies();
+  const user = await getUserOrNull(cookieStore);
   const { id } = await params;
   const lesson = await getLessonById(id);
   const lessonListItem = await getLessonListItemById(id);
@@ -21,6 +25,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
     <LessonPageClient
       lessonId={lesson.id}
       lessonSlug={lesson.slug}
+      userId={user?.id ?? null}
       title={lesson.title}
       level={lessonListItem.level}
       category={lessonListItem.category}
@@ -30,6 +35,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
       availableModes={lesson.availableModes}
       videoSrc={lesson.media?.videoFile ?? ""}
       lines={lesson.lines}
+      sayIt={lesson.sayIt ?? []}
     />
   );
 }

@@ -1,19 +1,29 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
-import type { LessonLine, LessonToken } from "@/lib/lessons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import type { LessonLine, LessonSayItQuote, LessonToken } from "@/lib/lessons";
+import { markLessonCompleted, markLessonStarted } from "@/lib/lesson-state";
+import { ArrowRight, MicStroke } from "@/components/Icons/icons";
 import ButtonCustom from "@/components/ui/button";
+import ButtonIcon from "@/components/ui/button-icon";
 import DropSlot from "@/components/ui/drop-slot";
 import DropWord from "@/components/ui/drop-word";
 import InputLesson from "@/components/ui/input-lesson";
 import { TabsCustom } from "@/components/ui/tabs";
+import SayIt from "@/components/sayIt/sayIt";
 import styles from "./lesson-exercise.module.css";
 
 interface LessonExerciseProps {
+  lessonId: string;
+  userId: string | null;
   availableModes: string[];
   lines: LessonLine[];
+  sayIt?: LessonSayItQuote[];
 }
+
+const SAY_IT_UNLOCKED_EVENT = "watchandlearn:say-it-unlocked";
 
 interface EasyGroup {
   lines: LessonLine[];
@@ -21,6 +31,7 @@ interface EasyGroup {
 
 type ValidationState = "default" | "success" | "error";
 type HardInputState = "default" | "active" | "success" | "error";
+type EasyOptionState = "default" | "success" | "error";
 
 function hasEasyBlank(line: LessonLine) {
   return line.modes.easy.snaps.some((snap) => snap.blanks.length > 0);
@@ -103,21 +114,45 @@ function getModeLabel(mode: string, tLessons: ReturnType<typeof useTranslations>
   return mode.charAt(0).toUpperCase() + mode.slice(1);
 }
 
-function EasyMode({ lines }: { lines: LessonLine[] }) {
+function EasyMode({
+  lines,
+  onAdvanceToMedium,
+}: {
+  lines: LessonLine[];
+  onAdvanceToMedium: () => void;
+}) {
   const tGeneric = useTranslations("Generic");
   const tLessons = useTranslations("Lessons");
   const easyGroups = useMemo(() => buildEasyGroups(lines), [lines]);
   const [groupIndex, setGroupIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [statuses, setStatuses] = useState<Record<string, ValidationState>>({});
+  const [optionStates, setOptionStates] = useState<
+    Record<string, { selectedWord: string; status: EasyOptionState }>
+  >({});
 
   const currentGroup = easyGroups[groupIndex] ?? null;
   const visibleGroups = easyGroups.slice(0, groupIndex + 1);
+  const allBlanks = useMemo(
+    () =>
+      easyGroups.flatMap((group) =>
+        group.lines.flatMap((line) =>
+          line.modes.easy.snaps.flatMap((snap) => snap.blanks),
+        ),
+      ),
+    [easyGroups],
+  );
+  const isExerciseComplete =
+    allBlanks.length > 0 &&
+    allBlanks.every(
+      (blank) => answers[blank.tokenId]?.toLowerCase() === blank.answer.toLowerCase(),
+    );
 
   function resetExercise() {
     setGroupIndex(0);
     setAnswers({});
     setStatuses({});
+    setOptionStates({});
   }
 
   function goToNextGroup() {
@@ -128,15 +163,26 @@ function EasyMode({ lines }: { lines: LessonLine[] }) {
     return null;
   }
 
-  const allBlanks = currentGroup.lines.flatMap((line) =>
+  const currentGroupBlanks = currentGroup.lines.flatMap((line) =>
     line.modes.easy.snaps.flatMap((snap) => snap.blanks),
   );
 
-  function handleDrop(tokenId: string, answer: string, droppedWord: string) {
-    if (droppedWord.toLowerCase() !== answer.toLowerCase()) {
+  function handleOptionClick(tokenId: string, answer: string, selectedWord: string) {
+    if (answers[tokenId]?.toLowerCase() === answer.toLowerCase()) {
+      return;
+    }
+
+    if (selectedWord.toLowerCase() !== answer.toLowerCase()) {
       setStatuses((current) => ({
         ...current,
         [tokenId]: "error",
+      }));
+      setOptionStates((current) => ({
+        ...current,
+        [tokenId]: {
+          selectedWord,
+          status: "error",
+        },
       }));
       return;
     }
@@ -151,8 +197,15 @@ function EasyMode({ lines }: { lines: LessonLine[] }) {
       ...current,
       [tokenId]: "success",
     }));
+    setOptionStates((current) => ({
+      ...current,
+      [tokenId]: {
+        selectedWord,
+        status: "success",
+      },
+    }));
 
-    const completed = allBlanks.every(
+    const completed = currentGroupBlanks.every(
       (blank) => nextAnswers[blank.tokenId]?.toLowerCase() === blank.answer.toLowerCase(),
     );
 
@@ -205,11 +258,6 @@ function EasyMode({ lines }: { lines: LessonLine[] }) {
                               width={getTokenWidth(blank.answer)}
                               value={answers[blank.tokenId] ?? ""}
                               status={statuses[blank.tokenId] ?? "default"}
-                              onElementDrop={(word) =>
-                                isCurrentGroup
-                                  ? handleDrop(blank.tokenId, blank.answer, word)
-                                  : undefined
-                              }
                             />
                           );
                         })}
@@ -223,9 +271,20 @@ function EasyMode({ lines }: { lines: LessonLine[] }) {
                                 <DropWord
                                   key={`${blank.tokenId}-${option}`}
                                   word={option}
-                                  onDragStart={(event, word) => {
-                                    event.dataTransfer.setData("word", word);
-                                  }}
+                                  status={
+                                    optionStates[blank.tokenId]?.selectedWord === option
+                                      ? optionStates[blank.tokenId]?.status
+                                      : "default"
+                                  }
+                                  disabled={
+                                    answers[blank.tokenId]?.toLowerCase() ===
+                                    blank.answer.toLowerCase()
+                                  }
+                                  onClick={(word) =>
+                                    isCurrentGroup
+                                      ? handleOptionClick(blank.tokenId, blank.answer, word)
+                                      : undefined
+                                  }
                                 />
                               ))}
                             </div>
@@ -241,12 +300,25 @@ function EasyMode({ lines }: { lines: LessonLine[] }) {
         })}
       </div>
 
-      {groupIndex === easyGroups.length - 1 ? (
+      {isExerciseComplete ? (
         <div className={styles.exerciseControls}>
           <ButtonCustom
             label={tGeneric("reset")}
             variant="secondary"
             onClick={resetExercise}
+          />
+          <ButtonIcon
+            size="sm"
+            label={tGeneric("next")}
+            color="accent"
+            icon={
+              <HugeiconsIcon
+                icon={ArrowRight}
+                size={18}
+                strokeWidth={1.6}
+              />
+            }
+            onClick={onAdvanceToMedium}
           />
         </div>
       ) : null}
@@ -254,11 +326,31 @@ function EasyMode({ lines }: { lines: LessonLine[] }) {
   );
 }
 
-function MediumMode({ lines }: { lines: LessonLine[] }) {
+function MediumMode({
+  lines,
+  onAdvanceToHard,
+}: {
+  lines: LessonLine[];
+  onAdvanceToHard: () => void;
+}) {
+  const tGeneric = useTranslations("Generic");
   const tLessons = useTranslations("Lessons");
   const [values, setValues] = useState<Record<string, string>>({});
   const [statuses, setStatuses] = useState<Record<string, ValidationState>>({});
   const [locked, setLocked] = useState<Record<string, boolean>>({});
+  const blankedTokenIds = useMemo(
+    () => lines.flatMap((line) => line.modes.medium.blankedTokenIds),
+    [lines],
+  );
+  const isExerciseComplete =
+    blankedTokenIds.length > 0 &&
+    blankedTokenIds.every((tokenId) => locked[tokenId] === true);
+
+  function resetExercise() {
+    setValues({});
+    setStatuses({});
+    setLocked({});
+  }
 
   function handleValidate(token: LessonToken) {
     if (locked[token.id]) {
@@ -297,23 +389,12 @@ function MediumMode({ lines }: { lines: LessonLine[] }) {
     }));
   }
 
-  function getInputClassName(tokenId: string) {
-    if (statuses[tokenId] === "success") {
-      return "inputLessonSuccess";
-    }
-
-    if (statuses[tokenId] === "error") {
-      return "inputLessonError";
-    }
-
-    return "";
-  }
-
   return (
-    <div className={styles.exerciseCard}>
-      <div className={styles.mediumLines}>
+    <div className={styles.exercisePanel}>
+      <div className={styles.exerciseCard}>
+        <div className={styles.mediumLines}>
         {lines.map((line) => {
-          const blankedTokenIds = new Set(line.modes.medium.blankedTokenIds);
+          const blankedTokenIdSet = new Set(line.modes.medium.blankedTokenIds);
 
           return (
             <div key={line.lineNumber} className={styles.lineRow}>
@@ -326,7 +407,7 @@ function MediumMode({ lines }: { lines: LessonLine[] }) {
                   {line.tokens.map((token) => {
                     const suffix = token.punctuationAfter;
 
-                    if (!blankedTokenIds.has(token.id)) {
+                    if (!blankedTokenIdSet.has(token.id)) {
                       return (
                         <span key={token.id}>
                           {token.text}
@@ -343,6 +424,8 @@ function MediumMode({ lines }: { lines: LessonLine[] }) {
                         width={getTokenWidth(token.text)}
                         height="22"
                         paddingX="4"
+                        status={statuses[token.id] ?? "default"}
+                        className={styles.mediumInput}
                         onChange={(nextValue) =>
                           setValues((current) => ({
                             ...current,
@@ -357,7 +440,6 @@ function MediumMode({ lines }: { lines: LessonLine[] }) {
                             }
                           }}
                           readOnly={locked[token.id] === true}
-                          className={getInputClassName(token.id)}
                         />
                         <span>{suffix}</span>
                       </span>
@@ -368,21 +450,50 @@ function MediumMode({ lines }: { lines: LessonLine[] }) {
             </div>
           );
         })}
+        </div>
       </div>
+
+      {isExerciseComplete ? (
+        <div className={styles.exerciseControls}>
+          <ButtonCustom
+            label={tGeneric("reset")}
+            variant="secondary"
+            onClick={resetExercise}
+          />
+          <ButtonIcon
+            size="sm"
+            label={tGeneric("next")}
+            color="accent"
+            icon={
+              <HugeiconsIcon
+                icon={ArrowRight}
+                size={18}
+                strokeWidth={1.6}
+              />
+            }
+            onClick={onAdvanceToHard}
+          />
+        </div>
+      ) : null}
     </div>
   );
 }
 
-function HardMode({ lines }: { lines: LessonLine[] }) {
+function HardMode({
+  lines,
+  onStartSayIt,
+  isSayItUnlocked = false,
+  onUnlockSayIt,
+}: {
+  lines: LessonLine[];
+  onStartSayIt?: () => void;
+  isSayItUnlocked?: boolean;
+  onUnlockSayIt?: () => void;
+}) {
   const tGeneric = useTranslations("Generic");
   const tLessons = useTranslations("Lessons");
   const sequence = useMemo(
-    () =>
-      lines.flatMap((line) =>
-        line.modes.hard.revealOrder
-          .map((tokenId) => line.tokens.find((token) => token.id === tokenId))
-          .filter((token): token is LessonToken => token != null),
-      ),
+    () => lines.flatMap((line) => line.tokens),
     [lines],
   );
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -392,6 +503,12 @@ function HardMode({ lines }: { lines: LessonLine[] }) {
 
   const currentToken = sequence[currentIndex] ?? null;
   const isComplete = currentToken == null;
+
+  useEffect(() => {
+    if (isComplete) {
+      onUnlockSayIt?.();
+    }
+  }, [isComplete, onUnlockSayIt]);
 
   function revealCurrentToken() {
     if (!currentToken) {
@@ -450,22 +567,11 @@ function HardMode({ lines }: { lines: LessonLine[] }) {
   function getHardInputClassName() {
     const classNames = [styles.hardInput];
 
-    if (inputState === "success") {
-      classNames.push("inputLessonSuccess");
-      return classNames.join(" ");
-    }
-
-    if (inputState === "error") {
-      classNames.push("inputLessonError");
-      return classNames.join(" ");
-    }
-
-    if (inputState === "active") {
-      classNames.push("inputLessonActive");
-      return classNames.join(" ");
-    }
-
     return classNames.join(" ");
+  }
+
+  function getHiddenToken(tokenText: string) {
+    return "_".repeat(Math.max(1, Array.from(tokenText).length));
   }
 
   return (
@@ -476,6 +582,7 @@ function HardMode({ lines }: { lines: LessonLine[] }) {
           width="220"
           height="36"
           paddingX="8"
+          status={inputState}
           onChange={handleInputChange}
           readOnly={isComplete || inputState === "success"}
           className={getHardInputClassName()}
@@ -509,13 +616,9 @@ function HardMode({ lines }: { lines: LessonLine[] }) {
               {tLessons("lineLabel")} {line.lineNumber}
             </span>
             {line.tokens.map((token) => {
-              const revealableTokenIds = new Set(line.modes.hard.revealOrder);
-              const isRevealable = revealableTokenIds.has(token.id);
-              const visibleToken = !isRevealable
+              const visibleToken = revealedTokenIds.has(token.id)
                 ? token.text
-                : revealedTokenIds.has(token.id)
-                  ? token.text
-                  : "—".repeat(Math.max(3, token.text.length));
+                : getHiddenToken(token.text);
 
               return (
                 <span key={token.id} className={styles.hardSchemaToken}>
@@ -527,19 +630,77 @@ function HardMode({ lines }: { lines: LessonLine[] }) {
           </div>
         ))}
       </div>
+
+      {onStartSayIt ? (
+        <div className="mt-6 flex flex-col items-center gap-3 text-center">
+          <div className="flex items-center gap-2 text-[var(--secondary)]">
+            <HugeiconsIcon icon={MicStroke} size={22} strokeWidth={1.8} />
+            <span className="text-base font-medium text-[var(--textBody)]">
+              {tLessons("sayItPrompt")}
+            </span>
+          </div>
+
+          <ButtonCustom
+            label={tLessons("sayItOutLoud")}
+            variant="accent"
+            size="md"
+            onClick={onStartSayIt}
+            disabled={!isComplete && !isSayItUnlocked}
+          />
+        </div>
+      ) : null}
     </div>
   );
 }
 
 export default function LessonExercise({
+  lessonId,
+  userId,
   availableModes,
   lines,
+  sayIt = [],
 }: LessonExerciseProps) {
   const tLessons = useTranslations("Lessons");
+  const sayItUnlockKey = `watchandlearn:say-it-unlocked:${lessonId}`;
   const [selectedMode, setSelectedMode] = useState(availableModes[0] ?? "easy");
   const [modeRenderKeys, setModeRenderKeys] = useState<Record<string, number>>({});
+  const [isSayItOpen, setIsSayItOpen] = useState(false);
+  const isSayItUnlocked = useSyncExternalStore(
+    (onStoreChange) => {
+      if (typeof window === "undefined") {
+        return () => undefined;
+      }
 
-  function handleSelectionChange(nextMode: string) {
+      const handleUnlocked = () => {
+        onStoreChange();
+      };
+
+      window.addEventListener("storage", handleUnlocked);
+      window.addEventListener(SAY_IT_UNLOCKED_EVENT, handleUnlocked);
+
+      return () => {
+        window.removeEventListener("storage", handleUnlocked);
+        window.removeEventListener(SAY_IT_UNLOCKED_EVENT, handleUnlocked);
+      };
+    },
+    () =>
+      typeof window !== "undefined" &&
+      window.localStorage.getItem(sayItUnlockKey) === "true",
+    () => false,
+  );
+
+  useEffect(() => {
+    markLessonStarted(userId, lessonId);
+  }, [lessonId, userId]);
+
+  const unlockSayIt = useCallback(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(sayItUnlockKey, "true");
+      window.dispatchEvent(new Event(SAY_IT_UNLOCKED_EVENT));
+    }
+  }, [sayItUnlockKey]);
+
+  const handleSelectionChange = useCallback((nextMode: string) => {
     if (selectedMode === nextMode) {
       return;
     }
@@ -549,7 +710,29 @@ export default function LessonExercise({
       [selectedMode]: (current[selectedMode] ?? 0) + 1,
     }));
     setSelectedMode(nextMode);
-  }
+  }, [selectedMode]);
+
+  const advanceFromEasy = useCallback(() => {
+    const easyIndex = availableModes.indexOf("easy");
+    const nextMode =
+      availableModes[easyIndex + 1] ??
+      (availableModes.includes("medium") ? "medium" : availableModes[0]);
+
+    if (nextMode) {
+      handleSelectionChange(nextMode);
+    }
+  }, [availableModes, handleSelectionChange]);
+
+  const advanceFromMedium = useCallback(() => {
+    const mediumIndex = availableModes.indexOf("medium");
+    const nextMode =
+      availableModes[mediumIndex + 1] ??
+      (availableModes.includes("hard") ? "hard" : availableModes[0]);
+
+    if (nextMode) {
+      handleSelectionChange(nextMode);
+    }
+  }, [availableModes, handleSelectionChange]);
 
   const tabs = useMemo(
     () =>
@@ -558,23 +741,54 @@ export default function LessonExercise({
         label: getModeLabel(mode, tLessons),
         content:
           mode === "easy" ? (
-            <EasyMode key={`easy-${modeRenderKeys.easy ?? 0}`} lines={lines} />
+            <EasyMode
+              key={`easy-${modeRenderKeys.easy ?? 0}`}
+              lines={lines}
+              onAdvanceToMedium={advanceFromEasy}
+            />
           ) : mode === "medium" ? (
-            <MediumMode key={`medium-${modeRenderKeys.medium ?? 0}`} lines={lines} />
+            <MediumMode
+              key={`medium-${modeRenderKeys.medium ?? 0}`}
+              lines={lines}
+              onAdvanceToHard={advanceFromMedium}
+            />
           ) : (
-            <HardMode key={`hard-${modeRenderKeys.hard ?? 0}`} lines={lines} />
+            <HardMode
+              key={`hard-${modeRenderKeys.hard ?? 0}`}
+              lines={lines}
+              isSayItUnlocked={isSayItUnlocked}
+              onUnlockSayIt={sayIt.length > 0 ? unlockSayIt : undefined}
+              onStartSayIt={sayIt.length > 0 ? () => setIsSayItOpen(true) : undefined}
+            />
           ),
       })),
-    [availableModes, lines, modeRenderKeys, tLessons],
+    [
+      availableModes,
+      advanceFromEasy,
+      advanceFromMedium,
+      isSayItUnlocked,
+      lines,
+      modeRenderKeys,
+      sayIt.length,
+      tLessons,
+      unlockSayIt,
+    ],
   );
 
   return (
     <div className={styles.exerciseRoot}>
-      <TabsCustom
-        tabs={tabs}
-        selectedKey={selectedMode}
-        onSelectionChange={handleSelectionChange}
-      />
+      {isSayItOpen ? (
+        <SayIt
+          quotes={sayIt}
+          onComplete={() => markLessonCompleted(userId, lessonId)}
+        />
+      ) : (
+        <TabsCustom
+          tabs={tabs}
+          selectedKey={selectedMode}
+          onSelectionChange={handleSelectionChange}
+        />
+      )}
     </div>
   );
 }

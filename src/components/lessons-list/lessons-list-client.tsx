@@ -24,9 +24,13 @@ function matchesMultiple(values: string[], filterValues: string[]) {
 
 interface LessonsListClientProps {
   lessons: LessonListItem[];
+  userId: string | null;
 }
 
-export default function LessonsListClient({ lessons }: LessonsListClientProps) {
+export default function LessonsListClient({
+  lessons,
+  userId,
+}: LessonsListClientProps) {
   const t = useTranslations("Lessons");
   const [draftFilters, setDraftFilters] = useState<LessonFilterState>(defaultFilters);
   const [appliedFilters, setAppliedFilters] = useState<LessonFilterState>(defaultFilters);
@@ -64,17 +68,18 @@ export default function LessonsListClient({ lessons }: LessonsListClientProps) {
         onApply={() => setAppliedFilters(draftFilters)}
       />
 
-      <div className="min-h-0 flex-1 w-[1188px] max-w-full overflow-y-auto mx-auto">
+      <div className="min-h-0 flex-1 w-full overflow-y-auto">
         {filteredLessons.length === 0 ? (
           <div className="rounded-2xl bg-white/60 p-6 text-[var(--textBody)]">
             {t("noResults")}
           </div>
         ) : (
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {filteredLessons.map((lesson) => (
               <LessonCardItem
                 key={lesson.id}
                 id={lesson.id}
+                userId={userId}
                 title={lesson.title}
                 thumbnailUrl={`/thumbnails/${lesson.media.thumbnailFile}`}
                 level={lesson.level}

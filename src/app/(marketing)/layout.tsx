@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import HeaderMarketing from "@/components/header-marketing/header-marketing";
 import Container from "@/components/common/container";
-import { createClient } from "@/utils/supabase/server";
+import { getUserOrNull } from "@/utils/supabase/server";
 
 export default async function MarketingLayout({
   children,
@@ -11,10 +11,7 @@ export default async function MarketingLayout({
   children: ReactNode;
 }) {
   const cookieStore = await cookies();
-  const supabase = createClient(cookieStore);
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getUserOrNull(cookieStore);
 
   if (user) {
     redirect("/home");

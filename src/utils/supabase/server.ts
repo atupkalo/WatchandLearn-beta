@@ -1,4 +1,5 @@
 import { createServerClient } from "@supabase/ssr";
+import type { User } from "@supabase/supabase-js";
 import { cookies } from "next/headers";
 
 function getSupabaseConfig() {
@@ -15,6 +16,34 @@ function getSupabaseConfig() {
 }
 
 type CookieStore = Awaited<ReturnType<typeof cookies>>;
+
+function isSupabaseAuthCookie(name: string) {
+  return name.startsWith("sb-");
+}
+
+function isInvalidRefreshTokenError(error: unknown) {
+  if (!(error instanceof Error)) {
+    return false;
+  }
+
+  return (
+    error.message.includes("Invalid Refresh Token") ||
+    error.message.includes("Refresh Token Not Found")
+  );
+}
+
+function clearSupabaseAuthCookies(cookieStore: CookieStore) {
+  cookieStore.getAll().forEach(({ name }) => {
+    if (!isSupabaseAuthCookie(name)) {
+      return;
+    }
+
+    cookieStore.set(name, "", {
+      maxAge: 0,
+      path: "/",
+    });
+  });
+}
 
 export const createClient = (cookieStore: CookieStore) => {
   const { supabaseUrl, supabaseKey } = getSupabaseConfig();
@@ -36,3 +65,22 @@ export const createClient = (cookieStore: CookieStore) => {
     },
   });
 };
+
+export async function getUserOrNull(cookieStore: CookieStore): Promise<User | null> {
+  const supabase = createClient(cookieStore);
+
+  try {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    return user ?? null;
+  } catch (error) {
+    if (isInvalidRefreshTokenError(error)) {
+      clearSupabaseAuthCookies(cookieStore);
+      return null;
+    }
+
+    throw error;
+  }
+}

@@ -286,7 +286,7 @@
     },
     {
       "lineNumber": 3,
-      "text": "What? You're kidding? Oh, god, you're not kidding. I... I... Is he okay? What happened?",
+      "text": "What? You're kidding? Oh, God, you're not kidding. I... I... Is he okay? What happened?",
       "translations": {
         "ua": "Що? Ти жартуєш? О Боже, ти не жартуєш. Я... я... З ним усе гаразд? Що сталося?",
         "ru": "Что? Ты шутишь? О Боже, ты не шутишь. Я... я... С ним всё в порядке? Что случилось?"
@@ -338,7 +338,7 @@
         },
         {
           "id": "l3w5",
-          "text": "god",
+          "text": "God",
           "normalized": "god",
           "punctuationAfter": ",",
           "saveable": true,
@@ -459,7 +459,7 @@
           "snaps": [
             {
               "snapNumber": 1,
-              "text": "What? You're [[kidding]]? Oh, [[god]], you're not kidding.",
+              "text": "What? You're [[kidding]]? Oh, [[God]], you're not kidding.",
               "blanks": [
                 {
                   "tokenId": "l3w3",
@@ -518,11 +518,14 @@
           ]
         },
         "hard": {
-          "text": "[What?] You're [kidding?] Oh, [god,] you're [not] [kidding.] [I...] [I...] [Is] [he] [okay?] [What] [happened?]",
+          "text": "[What?] [You're] [kidding?] [Oh,] [God,] [you're] [not] [kidding.] [I...] [I...] [Is] [he] [okay?] [What] [happened?]",
           "revealOrder": [
             "l3w1",
+            "l3w2",
             "l3w3",
+            "l3w4",
             "l3w5",
+            "l3w6",
             "l3w7",
             "l3w8",
             "l3w9",
@@ -538,7 +541,7 @@
     },
     {
       "lineNumber": 4,
-      "text": "He's in the hospital. They're doing, uh... They're doing their best, but it's... It's messed up, William. He's really hurt.",
+      "text": "He's in the hospital. They're doing, uh... They're doing their best, but it's... It's messed up, but ah… William. He's really hurt.",
       "translations": {
         "ua": "Він у лікарні. Вони, е-е... роблять усе можливе, але це... це жахливо, Вільяме. Йому дуже сильно дісталося.",
         "ru": "Он в больнице. Они, э-э... делают всё возможное, но это... это ужасно, Уильям. Ему очень сильно досталось."
@@ -697,6 +700,24 @@
           }
         },
         {
+          "id": "l4w21",
+          "text": "but",
+          "normalized": "but",
+          "punctuationAfter": "",
+          "saveable": true,
+          "translations": {
+            "ua": "але",
+            "ru": "но"
+          }
+        },
+        {
+          "id": "l4w22",
+          "text": "ah",
+          "normalized": "ah",
+          "punctuationAfter": "…",
+          "saveable": false
+        },
+        {
           "id": "l4w17",
           "text": "William",
           "normalized": "William",
@@ -762,7 +783,7 @@
             },
             {
               "snapNumber": 2,
-              "text": "but it's... It's [[messed]] up, William. He's really [[hurt]].",
+              "text": "but it's... It's [[messed]] up, but ah… William. He's really [[hurt]].",
               "blanks": [
                 {
                   "tokenId": "l4w15",
@@ -787,7 +808,7 @@
           ]
         },
         "medium": {
-          "text": "[He's] in the [hospital]. They're [doing], uh... They're doing [their] [best], but it's... It's [messed] up, William. He's really [hurt].",
+          "text": "[He's] in the [hospital]. They're [doing], uh... They're doing [their] [best], but it's... It's [messed] up, but ah… William. He's really [hurt].",
           "blankedTokenIds": [
             "l4w1",
             "l4w4",
@@ -799,7 +820,7 @@
           ]
         },
         "hard": {
-          "text": "He's [in] the [hospital.] They're [doing,] uh... They're [doing] [their] [best,] [but] it's... It's [messed] [up,] William. He's [really] [hurt.]",
+          "text": "He's [in] the [hospital.] They're [doing,] uh... They're [doing] [their] [best,] [but] it's... It's [messed] [up,] [but] [ah…] William. He's [really] [hurt.]",
           "revealOrder": [
             "l4w2",
             "l4w4",
@@ -810,6 +831,8 @@
             "l4w12",
             "l4w15",
             "l4w16",
+            "l4w21",
+            "l4w22",
             "l4w19",
             "l4w20"
           ]
@@ -910,6 +933,26 @@
           ]
         }
       }
+    }
+  ],
+  "sayIt": [
+    {
+      "quoteNumber": 1,
+      "startSec": 9,
+      "endSec": 12,
+      "text": "My dad, he got attacked."
+    },
+    {
+      "quoteNumber": 2,
+      "startSec": 12,
+      "endSec": 21,
+      "text": "What? You're kidding? Oh, God, you're not kidding."
+    },
+    {
+      "quoteNumber": 3,
+      "startSec": 21,
+      "endSec": 26,
+      "text": "They're doing their best, but it's… it's messed up."
     }
   ]
 }

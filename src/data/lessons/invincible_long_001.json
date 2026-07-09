@@ -685,7 +685,11 @@
           "text": "Invincible",
           "normalized": "Invincible",
           "punctuationAfter": ".",
-          "saveable": false
+          "saveable": true,
+          "translations": {
+            "ua": "Інвінсібл",
+            "ru": "Инвинсибл"
+          }
         },
         {
           "id": "l5w8",
@@ -1428,7 +1432,11 @@
           "text": "Invincible",
           "normalized": "Invincible",
           "punctuationAfter": "?",
-          "saveable": false
+          "saveable": true,
+          "translations": {
+            "ua": "Інвінсібл",
+            "ru": "Инвинсибл"
+          }
         }
       ],
       "modes": {
@@ -1468,7 +1476,11 @@
           "text": "Invincible",
           "normalized": "Invincible",
           "punctuationAfter": ",",
-          "saveable": false
+          "saveable": true,
+          "translations": {
+            "ua": "Інвінсібл",
+            "ru": "Инвинсибл"
+          }
         },
         {
           "id": "l9w2",
@@ -1769,6 +1781,32 @@
           ]
         }
       }
+    }
+  ],
+  "sayIt": [
+    {
+      "quoteNumber": 1,
+      "startSec": 9,
+      "endSec": 12,
+      "text": "Thanks for saving my butt back there."
+    },
+    {
+      "quoteNumber": 2,
+      "startSec": 28,
+      "endSec": 31,
+      "text": "God, that sounds dumb when I say it like that."
+    },
+    {
+      "quoteNumber": 3,
+      "startSec": 37,
+      "endSec": 41,
+      "text": "But the rest of the team just calls me Eve. So does everyone else."
+    },
+    {
+      "quoteNumber": 4,
+      "startSec": 46,
+      "endSec": 52,
+      "text": "Do you want to talk about yesterday?"
     }
   ]
 }

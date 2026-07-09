@@ -2,6 +2,10 @@
 
 import { useEffect, useRef, type CSSProperties, type ElementRef } from "react";
 import MuxPlayer from "@mux/mux-player-react";
+import {
+  LESSON_SEGMENT_PLAY_EVENT,
+  type LessonSegmentPlayDetail,
+} from "@/lib/lesson-media-events";
 
 interface IframeProps {
   src?: string;
@@ -9,7 +13,13 @@ interface IframeProps {
 }
 
 interface ParsedMuxPlayerUrl {
+  accentColor?: string;
+  metadataVideoTitle?: string;
   playbackId: string;
+  playbackToken?: string;
+  primaryColor?: string;
+  secondaryColor?: string;
+  videoTitle?: string;
 }
 
 function isVideoSource(src: string) {
@@ -31,7 +41,14 @@ function parseMuxPlayerUrl(src: string): ParsedMuxPlayerUrl | null {
     }
 
     return {
+      accentColor: url.searchParams.get("accent-color") ?? undefined,
+      metadataVideoTitle:
+        url.searchParams.get("metadata-video-title") ?? undefined,
       playbackId,
+      playbackToken: url.searchParams.get("token") ?? undefined,
+      primaryColor: url.searchParams.get("primary-color") ?? undefined,
+      secondaryColor: url.searchParams.get("secondary-color") ?? undefined,
+      videoTitle: url.searchParams.get("video-title") ?? undefined,
     };
   } catch {
     return null;
@@ -40,6 +57,67 @@ function parseMuxPlayerUrl(src: string): ParsedMuxPlayerUrl | null {
 
 export default function Iframe({ src = "", title = "Lesson media" }: IframeProps) {
   const muxPlayerRef = useRef<ElementRef<typeof MuxPlayer> | null>(null);
+  const htmlVideoRef = useRef<HTMLVideoElement | null>(null);
+  const segmentEndRef = useRef<number | null>(null);
+
+  function getActivePlayer() {
+    return (
+      (muxPlayerRef.current as unknown as HTMLMediaElement | null) ??
+      htmlVideoRef.current
+    );
+  }
+
+  useEffect(() => {
+    const player = getActivePlayer();
+
+    if (!player) {
+      return;
+    }
+
+    const handleTimeUpdate = () => {
+      if (segmentEndRef.current == null) {
+        return;
+      }
+
+      if (player.currentTime >= segmentEndRef.current) {
+        player.pause();
+        segmentEndRef.current = null;
+      }
+    };
+
+    player.addEventListener("timeupdate", handleTimeUpdate);
+
+    return () => {
+      player.removeEventListener("timeupdate", handleTimeUpdate);
+    };
+  }, [src]);
+
+  useEffect(() => {
+    const handleSegmentPlay = (event: Event) => {
+      const player = getActivePlayer();
+
+      if (!player) {
+        return;
+      }
+
+      const customEvent = event as CustomEvent<LessonSegmentPlayDetail>;
+      const detail = customEvent.detail;
+
+      if (!detail) {
+        return;
+      }
+
+      segmentEndRef.current = detail.endSec;
+      player.currentTime = detail.startSec;
+      void player.play();
+    };
+
+    window.addEventListener(LESSON_SEGMENT_PLAY_EVENT, handleSegmentPlay);
+
+    return () => {
+      window.removeEventListener(LESSON_SEGMENT_PLAY_EVENT, handleSegmentPlay);
+    };
+  }, [src]);
 
   useEffect(() => {
     const playerElement = muxPlayerRef.current;
@@ -158,8 +236,19 @@ export default function Iframe({ src = "", title = "Lesson media" }: IframeProps
           backwardSeekOffset={10}
           forwardSeekOffset={10}
           disablePictureInPicture
+          accentColor={muxPlayerConfig.accentColor}
           metadataVideoId={muxPlayerConfig.playbackId}
+          metadataVideoTitle={muxPlayerConfig.metadataVideoTitle}
+          primaryColor={muxPlayerConfig.primaryColor}
+          secondaryColor={muxPlayerConfig.secondaryColor}
+          tokens={
+            muxPlayerConfig.playbackToken
+              ? { playback: muxPlayerConfig.playbackToken }
+              : undefined
+          }
           aria-label={title}
+          title={muxPlayerConfig.videoTitle ?? title}
+          videoTitle={muxPlayerConfig.videoTitle}
         />
       </div>
     );
@@ -169,6 +258,7 @@ export default function Iframe({ src = "", title = "Lesson media" }: IframeProps
     return (
       <div className="w-full overflow-hidden rounded-[24px] bg-black/80">
         <video
+          ref={htmlVideoRef}
           src={src}
           controls
           className="aspect-video w-full"

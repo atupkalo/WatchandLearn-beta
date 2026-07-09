@@ -6,6 +6,7 @@ interface InputSmallProps {
   width: string;
   height?: string;
   paddingX?: string;
+  status?: "default" | "active" | "success" | "error";
   onChange: (value: string) => void;
   className?: string;
   readOnly?: boolean;
@@ -20,6 +21,7 @@ export default function InputLesson({
   width,
   height = "24",
   paddingX = "4",
+  status = "default",
   onChange,
   className = "",
   readOnly = false,
@@ -27,6 +29,15 @@ export default function InputLesson({
   onBlur,
   onKeyDown,
 }: InputSmallProps) {
+  const statusClassName =
+    status === "success"
+      ? styles.inputLessonSuccess
+      : status === "error"
+        ? styles.inputLessonError
+        : status === "active"
+          ? styles.inputLessonActive
+          : "";
+
   return (
     <input
       name={name}
@@ -37,7 +48,7 @@ export default function InputLesson({
       placeholder={placeholder}
       onBlur={onBlur}
       onKeyDown={onKeyDown}
-      className={`${styles.inputLesson} ${className}`.trim()}
+      className={`${styles.inputLesson} ${statusClassName} ${className}`.trim()}
       style={{
         width: `${width}px`,
         height: `${height}px`,

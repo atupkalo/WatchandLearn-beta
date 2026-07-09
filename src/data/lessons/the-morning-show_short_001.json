@@ -955,5 +955,25 @@
         }
       }
     }
+  ],
+  "sayIt": [
+    {
+      "quoteNumber": 1,
+      "startSec": 2,
+      "endSec": 3,
+      "text": "What the hell just happened?"
+    },
+    {
+      "quoteNumber": 2,
+      "startSec": 3,
+      "endSec": 5,
+      "text": "They'll have answers for us at the studio. Chip knows we're on our way."
+    },
+    {
+      "quoteNumber": 3,
+      "startSec": 9,
+      "endSec": 14,
+      "text": "Yes. And with all due respect, who the hell are you to tell me what to do?"
+    }
   ]
 }

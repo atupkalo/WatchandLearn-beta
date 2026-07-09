@@ -427,5 +427,25 @@
         }
       }
     }
+  ],
+  "sayIt": [
+    {
+      "quoteNumber": 1,
+      "startSec": 3,
+      "endSec": 9,
+      "text": "Pugsley, you're soft and weak. You'll never survive without me."
+    },
+    {
+      "quoteNumber": 2,
+      "startSec": 9,
+      "endSec": 11,
+      "text": "I give you two months, tops."
+    },
+    {
+      "quoteNumber": 3,
+      "startSec": 12,
+      "endSec": 13,
+      "text": "I'm gonna miss you, too, sis."
+    }
   ]
 }

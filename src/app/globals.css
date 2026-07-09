@@ -23,6 +23,7 @@
   --accent300: #F4B59A;
   --accent400: #ED895E;
   --accent: #DC5318;
+  --accent600: #C74B16;
   --accent700: #B84514;
 
   --neutral50: #F7F8F8;
@@ -36,9 +37,13 @@
   --gray150: #6C777A;
   --gray400: #455254;
 
+  --negative100: #f3caca;
   --negative: #DC2626;
+  --negative700: #9f1313;
   --warning: #FBBF24;
   --success: #0D7300;
+  --success100: #D0F2CC;
+  --success600: #0D7300;
   --background: #F7F8F8;
 
   --textBody: #313131;
@@ -65,6 +70,17 @@ body {
   font-family: var(--font-lato);
   background: linear-gradient(97deg, #E4F1F7 3.41%, #FDFBEF 96.48%);
 }
+
+.card {
+  -webkit-backdrop-filter: blur(10px);
+  background: #ffffff40;
+  border: 1px solid #ffffffb3;
+  border-radius: 24px;
+  padding: 16px;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
 .component-gradient{
   background: linear-gradient(80deg, #FDFBEF 96.48%, #E4F1F7 3.41%);
 }
@@ -74,4 +90,10 @@ body {
 }
 .spacer{
   background: transparent!important;
+}
+.title32{
+  font-size: 32px;
+  font-family: var(--font-heading);
+  color: var(--textTitle);
+  font-weight: 600;
 }

@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import SideMenu from "@/components/sidemenu/sidemenu";
 import HeaderApp from "@/components/header-app/header-app";
 import { getUserDisplayName, getUserRole } from "@/lib/auth";
-import { createClient } from "@/utils/supabase/server";
+import { getUserOrNull } from "@/utils/supabase/server";
 import styles from "./layout.module.css";
 
 export default async function AppCoreLayout({
@@ -13,10 +13,7 @@ export default async function AppCoreLayout({
   children: ReactNode;
 }) {
   const cookieStore = await cookies();
-  const supabase = createClient(cookieStore);
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getUserOrNull(cookieStore);
 
   if (!user) {
     redirect("/");

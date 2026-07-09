@@ -1,32 +1,47 @@
 import styles from "./ui.module.css";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { DragDots } from "../Icons/icons";
+import { Circle, CircleSolid } from "../Icons/icons";
 
 interface DropWordProps {
   word: string;
-  onDragStart?: (
-    e: React.DragEvent<HTMLButtonElement>,
-    word: string
-  ) => void;
+  status?: "default" | "success" | "error";
+  onClick?: (word: string) => void;
+  disabled?: boolean;
 }
 
 export default function DropWord({
   word,
-  onDragStart,
+  status = "default",
+  onClick,
+  disabled = false,
 }: DropWordProps) {
+  const statusClassName =
+    status === "success"
+      ? styles.dropWordSuccess
+      : status === "error"
+        ? styles.dropWordError
+        : styles.dropWordDefault;
+  const iconClassName =
+    status === "success"
+      ? styles.dropWordIconSuccess
+      : status === "error"
+        ? styles.dropWordIconError
+        : styles.dropWordIconDefault;
+
   return (
     <button
       type="button"
-      draggable
-      onDragStart={(e) => onDragStart?.(e, word)}
-      className={styles.dropWord}
+      onClick={() => onClick?.(word)}
+      disabled={disabled}
+      className={`${styles.dropWord} ${statusClassName}`.trim()}
     >
-      {word}
-
       <HugeiconsIcon
-        icon={DragDots}
-        className={styles.dragIcon}
+        icon={status === "default" ? Circle : CircleSolid}
+        className={`${styles.dropWordIcon} ${iconClassName}`.trim()}
+        size={14}
+        strokeWidth={1.8}
       />
+      {word}
     </button>
   );
 }

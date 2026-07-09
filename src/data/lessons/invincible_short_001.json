@@ -622,5 +622,25 @@
         }
       }
     }
+  ],
+  "sayIt": [
+    {
+      "quoteNumber": 1,
+      "startSec": 1,
+      "endSec": 5,
+      "text": "I know you don't like teams much, but they were all pretty cool."
+    },
+    {
+      "quoteNumber": 2,
+      "startSec": 7,
+      "endSec": 9,
+      "text": "I do not know what that guy's problem is."
+    },
+    {
+      "quoteNumber": 3,
+      "startSec": 10,
+      "endSec": 12,
+      "text": "I think he and Eve are a thing maybe."
+    }
   ]
 }

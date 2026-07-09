@@ -23,7 +23,7 @@ export default function ButtonCustom({
 }: ButtonCustomProps) {
   const variants = {
     primary: "bg-[var(--primary)] text-white hover:bg-[var(--secondary)]",
-    secondary: "bg-[var(--background)] text-[var(--primary)] border border-[var(--primary)] hover:bg-[var(--gray100)]",
+    secondary: "bg-[var(--background)] text-[var(--primary)] border border-[var(--primary)] hover:bg-[var(--secondary50)]",
     accent: "bg-[var(--accent)] text-white hover:bg-[var(--accent700)]",
     ghostIcon: "bg-transparent text-[var(--primary)] hover:bg-[var(--gray100)]",
   };

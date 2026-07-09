@@ -55,6 +55,13 @@ export interface LessonLine {
   };
 }
 
+export interface LessonSayItQuote {
+  quoteNumber: number;
+  startSec: number;
+  endSec: number;
+  text: string;
+}
+
 interface LessonRecord {
   schemaVersion: number;
   id: string;
@@ -84,6 +91,7 @@ interface LessonRecord {
   };
   sourceIssues?: string[];
   lines: LessonLine[];
+  sayIt?: LessonSayItQuote[];
 }
 
 export interface LessonListItem {

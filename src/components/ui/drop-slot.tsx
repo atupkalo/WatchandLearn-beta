@@ -2,7 +2,7 @@ import styles from "./ui.module.css";
 
 interface DropSlotProps {
   width?: string;
-  onElementDrop: (word: string) => void;
+  onElementDrop?: (word: string) => void;
   value?: string;
   status?: "default" | "success" | "error";
 }
@@ -15,6 +15,10 @@ export default function DropSlot({
 }: DropSlotProps) {
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
+
+    if (!onElementDrop) {
+      return;
+    }
 
     const word = e.dataTransfer.getData("word");
 

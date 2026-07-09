@@ -14,3 +14,14 @@ model User {
   name  String?
   type  String
 }
+
+model LessonLike {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId    String   @map("user_id") @db.Uuid
+  lessonId  String   @map("lesson_id")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@unique([userId, lessonId])
+  @@index([lessonId])
+  @@map("lesson_likes")
+}
