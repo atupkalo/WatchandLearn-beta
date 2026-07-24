@@ -64,96 +64,120 @@
   min-height: 30px;
   padding: 2px 10px;
   border-radius: 9999px;
-  background: #ffffff;
+  background: var(--primary100);
   font-size: 16px;
   font-weight: 500;
   line-height: 1.2;
   color: var(--textBody);
 }
 
-.likesButton {
-  margin: 8px 8px 0 0;
+.topControls {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 24px;
+  left: 24px;
+  right: 24px;
   z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.likesShell {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  min-height: 34px;
-  padding: 6px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-sizing: border-box;
+  height: 32px;
+  padding: 0 10px;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.30);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.8px)!important;
+-webkit-backdrop-filter: blur(6.8px);
+border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.likesButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
   cursor: pointer;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .likesButton:hover {
   opacity: 0.9;
   transform: translateY(-1px);
-  background: linear-gradient(97deg, #E4F1F7 3.41%, #FDFBEF 96.48%);
 }
 
 .likesCount {
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
-  color: var(--accent);
+  color: #ffffff;
 }
 
 .likesIcon {
-  color: var(--accent);
+  color: #ffffff;
 }
 
 .statusBar {
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: 12px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  min-height: 50px;
-  padding: 10px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  gap: 6px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  height: 32px;
+  max-width: calc(100% - 88px);
+  padding: 0 8px 0 12px;
+  background: rgba(255, 255, 255, 0.30);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.8px)!important;
+  -webkit-backdrop-filter: blur(6.8px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
 }
 
 .statusCompleted {
-  color: var(--success600);
+  background: var(--success600);
 }
 
 .statusLabel {
-  font-size: 16px;
-  line-height: 1.2;
-  color: var(--textBody);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: #ffffff;
 }
 
 .statusNotStarted {
-  color: var(--accent600);
+  background: #C59800;
 }
 
 .statusStarted {
-  color: var(--secondary600);
-}
-
-.statusIcon {
-  flex-shrink: 0;
+  background: var(--secondary600);
 }
 
 .statusValue {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 16px;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 9999px;
+  font-size: 12px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1;
+  color: var(--white);
+  white-space: nowrap;
 }
 
 .thumbnailImage {

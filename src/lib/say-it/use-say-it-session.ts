@@ -85,13 +85,6 @@ export function useSayItSession({ quote, strings }: UseSayItSessionProps) {
   const [isProcessing, setIsProcessing] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const playResetTimeoutRef = useRef<number | null>(null);
-  const transcriptRecognizerRef = useRef<{
-    close: () => void;
-    stopContinuousRecognitionAsync?: (
-      success: () => void,
-      error: (error: string) => void,
-    ) => void;
-  } | null>(null);
   const pronunciationRecognizerRef = useRef<{
     close: () => void;
     stopContinuousRecognitionAsync?: (
@@ -99,7 +92,6 @@ export function useSayItSession({ quote, strings }: UseSayItSessionProps) {
       error: (error: string) => void,
     ) => void;
   } | null>(null);
-  const transcriptAudioConfigRef = useRef<{ close: () => void } | null>(null);
   const pronunciationAudioConfigRef = useRef<{ close: () => void } | null>(null);
   const mediaStreamsRef = useRef<MediaStream[]>([]);
   const transcriptPartsRef = useRef<string[]>([]);
@@ -116,12 +108,8 @@ export function useSayItSession({ quote, strings }: UseSayItSessionProps) {
   }, []);
 
   const cleanupRecognitionResources = useCallback(() => {
-    transcriptAudioConfigRef.current?.close();
-    transcriptAudioConfigRef.current = null;
     pronunciationAudioConfigRef.current?.close();
     pronunciationAudioConfigRef.current = null;
-    transcriptRecognizerRef.current?.close();
-    transcriptRecognizerRef.current = null;
     pronunciationRecognizerRef.current?.close();
     pronunciationRecognizerRef.current = null;
     stopMediaStreams();
@@ -214,9 +202,10 @@ export function useSayItSession({ quote, strings }: UseSayItSessionProps) {
         throw new Error("microphone-not-supported");
       }
 
-      const transcriptStream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const pronunciationStream = transcriptStream.clone();
-      mediaStreamsRef.current = [transcriptStream, pronunciationStream];
+      // Safari is more reliable when we only use getUserMedia as a permission
+      // preflight and let the Azure SDK manage the microphone input itself.
+      const permissionStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaStreamsRef.current = [permissionStream];
 
       const tokenResponse = await fetch("/api/azure-speech-token", {
         cache: "no-store",
@@ -238,13 +227,10 @@ export function useSayItSession({ quote, strings }: UseSayItSessionProps) {
       );
       speechConfig.speechRecognitionLanguage = "en-US";
 
-      const transcriptAudioConfig = SpeechSDK.AudioConfig.fromStreamInput(
-        transcriptStream,
-      );
-      transcriptAudioConfigRef.current = transcriptAudioConfig;
-      const pronunciationAudioConfig = SpeechSDK.AudioConfig.fromStreamInput(
-        pronunciationStream,
-      );
+      stopMediaStreams();
+
+      const pronunciationAudioConfig =
+        SpeechSDK.AudioConfig.fromDefaultMicrophoneInput();
       pronunciationAudioConfigRef.current = pronunciationAudioConfig;
       const pronunciationConfig = new SpeechSDK.PronunciationAssessmentConfig(
         quote.text,
@@ -253,21 +239,6 @@ export function useSayItSession({ quote, strings }: UseSayItSessionProps) {
         true,
       );
       pronunciationConfig.enableProsodyAssessment = true;
-
-      const transcriptRecognizer = new SpeechSDK.SpeechRecognizer(
-        speechConfig,
-        transcriptAudioConfig,
-      );
-      transcriptRecognizerRef.current = transcriptRecognizer;
-      transcriptRecognizer.recognized = (_sender, event) => {
-        const result = event.result;
-
-        if (!result?.text) {
-          return;
-        }
-
-        transcriptPartsRef.current.push(result.text.trim());
-      };
 
       const pronunciationRecognizer = new SpeechSDK.SpeechRecognizer(
         speechConfig,
@@ -281,6 +252,8 @@ export function useSayItSession({ quote, strings }: UseSayItSessionProps) {
         if (!result?.text) {
           return;
         }
+
+        transcriptPartsRef.current.push(result.text.trim());
 
         try {
           const jsonResult = result.properties.getProperty(
@@ -341,20 +314,12 @@ export function useSayItSession({ quote, strings }: UseSayItSessionProps) {
         }
       };
 
-      await Promise.all([
-        new Promise<void>((resolve, reject) => {
-          transcriptRecognizer.startContinuousRecognitionAsync(
-            () => resolve(),
-            (error) => reject(error),
-          );
-        }),
-        new Promise<void>((resolve, reject) => {
-          pronunciationRecognizer.startContinuousRecognitionAsync(
+      await new Promise<void>((resolve, reject) => {
+        pronunciationRecognizer.startContinuousRecognitionAsync(
           () => resolve(),
           (error) => reject(error),
         );
-        }),
-      ]);
+      });
     } catch (error) {
       const message =
         error instanceof Error ? error.message : "speech-recognition-failed";
@@ -379,23 +344,16 @@ export function useSayItSession({ quote, strings }: UseSayItSessionProps) {
     isListening,
     isProcessing,
     quote,
+    stopMediaStreams,
     strings,
   ]);
 
   const stopRecognition = useCallback(async () => {
-    const transcriptRecognizer = transcriptRecognizerRef.current;
     const pronunciationRecognizer = pronunciationRecognizerRef.current;
-    const stopTranscriptRecognition =
-      transcriptRecognizer?.stopContinuousRecognitionAsync;
     const stopPronunciationRecognition =
       pronunciationRecognizer?.stopContinuousRecognitionAsync;
 
-    if (
-      !transcriptRecognizer ||
-      !pronunciationRecognizer ||
-      !stopTranscriptRecognition ||
-      !stopPronunciationRecognition
-    ) {
+    if (!pronunciationRecognizer || !stopPronunciationRecognition) {
       return;
     }
 
@@ -404,22 +362,13 @@ export function useSayItSession({ quote, strings }: UseSayItSessionProps) {
     setFeedback(strings.processing);
 
     try {
-      await Promise.all([
-        new Promise<void>((resolve, reject) => {
-          stopTranscriptRecognition.call(
-            transcriptRecognizer,
-            () => resolve(),
-            (error) => reject(error),
-          );
-        }),
-        new Promise<void>((resolve, reject) => {
-          stopPronunciationRecognition.call(
-            pronunciationRecognizer,
-            () => resolve(),
-            (error) => reject(error),
-          );
-        }),
-      ]);
+      await new Promise<void>((resolve, reject) => {
+        stopPronunciationRecognition.call(
+          pronunciationRecognizer,
+          () => resolve(),
+          (error) => reject(error),
+        );
+      });
 
       window.setTimeout(() => {
         finalizeRecognitionAttempt();

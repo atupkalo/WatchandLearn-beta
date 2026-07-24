@@ -3,9 +3,6 @@
 import { useEffect, useState } from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  Circle,
-  CircleCheck,
-  CirclePause,
   HeartSolid,
   HeartStroke,
 } from "@/components/Icons/icons";
@@ -54,23 +51,19 @@ export default function LessonCardItem({
   const statusConfigMap: Record<
     LessonListStatus,
     {
-      icon: typeof Circle;
       label: string;
       className: string;
     }
   > = {
     completed: {
-      icon: CircleCheck,
       label: t("cardStatusCompleted"),
       className: styles.statusCompleted,
     },
     "not-started": {
-      icon: Circle,
       label: t("cardStatusNotStarted"),
       className: styles.statusNotStarted,
     },
     started: {
-      icon: CirclePause,
       label: t("cardStatusStarted"),
       className: styles.statusStarted,
     },
@@ -153,78 +146,89 @@ export default function LessonCardItem({
 
   return (
     <Card variant="noHover" className={styles.lessonCard}>
-      <button
-        type="button"
-        className={styles.likesButton}
-        aria-label={
-          lessonState.liked ? t("cardUnlikeLesson") : t("cardLikeLesson")
-        }
-        aria-pressed={lessonState.liked}
-        disabled={isLikePending}
-        onClick={async (event) => {
-          event.preventDefault();
-          event.stopPropagation();
+      <div className={styles.topControls}>
+        <div className={styles.statusBar}>
+          <span className={styles.statusLabel}>{t("cardStatusLabel")}:</span>
+          <span className={`${styles.statusValue} ${statusConfig.className}`}>
+            {statusConfig.label}
+          </span>
+        </div>
 
-          try {
-            setIsLikePending(true);
-
-            const response = await fetch("/api/lesson-likes", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ lessonId: id }),
-            });
-
-            if (!response.ok) {
-              const snapshot = toggleLocalLessonLike(userId, id);
-
-              setLessonState((current) => ({
-                ...current,
-                likeCount: snapshot.likeCount,
-                liked: snapshot.liked,
-              }));
-              return;
+        <div className={styles.likesShell}>
+          <button
+            type="button"
+            className={styles.likesButton}
+            aria-label={
+              lessonState.liked ? t("cardUnlikeLesson") : t("cardLikeLesson")
             }
+            aria-pressed={lessonState.liked}
+            disabled={isLikePending}
+            onClick={async (event) => {
+              event.preventDefault();
+              event.stopPropagation();
 
-            const payload = (await response.json()) as {
-              snapshot?: {
-                likeCount: number;
-                liked: boolean;
-              };
-            };
+              try {
+                setIsLikePending(true);
 
-            if (!payload.snapshot) {
-              throw new Error(`Missing updated like snapshot for lesson "${id}".`);
-            }
+                const response = await fetch("/api/lesson-likes", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({ lessonId: id }),
+                });
 
-            storeLocalLessonLikeSnapshot(userId, id, payload.snapshot);
-            setLessonState((current) => ({
-              ...current,
-              likeCount: payload.snapshot?.likeCount ?? current.likeCount,
-              liked: payload.snapshot?.liked ?? current.liked,
-            }));
-          } catch {
-            const snapshot = toggleLocalLessonLike(userId, id);
+                if (!response.ok) {
+                  const snapshot = toggleLocalLessonLike(userId, id);
 
-            setLessonState((current) => ({
-              ...current,
-              likeCount: snapshot.likeCount,
-              liked: snapshot.liked,
-            }));
-          } finally {
-            setIsLikePending(false);
-          }
-        }}
-      >
-        <span className={styles.likesCount}>{lessonState.likeCount}</span>
-        <HugeiconsIcon
-          icon={lessonState.liked ? HeartSolid : HeartStroke}
-          size={16}
-          strokeWidth={1.8}
-          className={styles.likesIcon}
-        />
-      </button>
+                  setLessonState((current) => ({
+                    ...current,
+                    likeCount: snapshot.likeCount,
+                    liked: snapshot.liked,
+                  }));
+                  return;
+                }
+
+                const payload = (await response.json()) as {
+                  snapshot?: {
+                    likeCount: number;
+                    liked: boolean;
+                  };
+                };
+
+                if (!payload.snapshot) {
+                  throw new Error(`Missing updated like snapshot for lesson "${id}".`);
+                }
+
+                storeLocalLessonLikeSnapshot(userId, id, payload.snapshot);
+                setLessonState((current) => ({
+                  ...current,
+                  likeCount: payload.snapshot?.likeCount ?? current.likeCount,
+                  liked: payload.snapshot?.liked ?? current.liked,
+                }));
+              } catch {
+                const snapshot = toggleLocalLessonLike(userId, id);
+
+                setLessonState((current) => ({
+                  ...current,
+                  likeCount: snapshot.likeCount,
+                  liked: snapshot.liked,
+                }));
+              } finally {
+                setIsLikePending(false);
+              }
+            }}
+          >
+            <span className={styles.likesCount}>{lessonState.likeCount}</span>
+            <HugeiconsIcon
+              icon={lessonState.liked ? HeartSolid : HeartStroke}
+              size={16}
+              strokeWidth={1.8}
+              className={styles.likesIcon}
+            />
+          </button>
+        </div>
+      </div>
 
       <Link href={`/lessons/${id}`} className={styles.itemLink}>
         <div className={styles.thumbnailWrap}>
@@ -235,19 +239,6 @@ export default function LessonCardItem({
             height={675}
             className={styles.thumbnailImage}
           />
-
-          <div className={styles.statusBar}>
-            <span className={styles.statusLabel}>{t("cardStatusLabel")}:</span>
-            <span className={`${styles.statusValue} ${statusConfig.className}`}>
-              <HugeiconsIcon
-                icon={statusConfig.icon}
-                size={18}
-                strokeWidth={1.8}
-                className={styles.statusIcon}
-              />
-              {statusConfig.label}
-            </span>
-          </div>
         </div>
 
         <div className={styles.contentWrap}>

@@ -199,7 +199,7 @@
   },
   "LessonInstructions": {
     "title": "How does it work?",
-    "progressLabel": "Six simple steps",
+    "progressLabel": "Seven simple steps",
     "stepLabel": "Step {current} of {total}",
     "previousButton": "Previous",
     "nextButton": "Next",
@@ -216,8 +216,10 @@
     "step4Body": "If Hard mode feels too difficult, try Medium or Easy first to prepare yourself. In Hard mode, you need to type each word individually. If the word is correct, it will appear in its place within the script.",
     "step5Title": "Say it",
     "step5Body": "If you've worked through the modes, repeating the sentences you already know should come naturally. Try to get as close to the original as possible, and focus on pronunciation and intonation.",
-    "step6Title": "If you get stuck",
-    "step6Body": "Use Lesson key if you feel stuck, but try not to look for the answer right away. Give yourself a chance. Play the clip at least three times, and only then check the answer."
+    "step6Title": "Translate it",
+    "step6Body": "Read the sentence aloud in English. The sentence will be shown in Ukrainian or Russian, depending on the selected study language. If you can't say it correctly after three attempts, you can reveal the English version.",
+    "step7Title": "If you get stuck",
+    "step7Body": "Use Lesson key if you feel stuck, but try not to look for the answer right away. Give yourself a chance. Play the clip at least three times, and only then check the answer."
   }
 
 }

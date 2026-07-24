@@ -126,7 +126,7 @@
       "availableModes": ["easy", "medium", "hard"],
       "media": {
         "videoFile": "wed-s-1.mp4",
-        "thumbnailFile": "wednesday-cover.jpeg"
+        "thumbnailFile": "wednesday-cover.jpg"
       },
       "lessonFile": "wednesday_short_001.json",
       "description": {
@@ -144,7 +144,7 @@
       "availableModes": ["easy", "medium", "hard"],
       "media": {
         "videoFile": "wed-m-1.mp4",
-        "thumbnailFile": "wednesday-cover.jpeg"
+        "thumbnailFile": "wednesday-cover.jpg"
       },
       "lessonFile": "wednesday_mid_001.json",
       "description": {
@@ -162,7 +162,7 @@
       "availableModes": ["easy", "medium", "hard"],
       "media": {
         "videoFile": "wed-l-1.mp4",
-        "thumbnailFile": "wednesday-cover.jpeg"
+        "thumbnailFile": "wednesday-cover.jpg"
       },
       "lessonFile": "wednesday_long_001.json",
       "description": {

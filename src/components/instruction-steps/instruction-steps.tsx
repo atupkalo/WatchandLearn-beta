@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowLeft, ArrowRight } from "../Icons/icons";
 import ButtonCustom from "../ui/button";
@@ -29,6 +29,7 @@ export default function InstructionSteps({
   onStart,
   onSkip,
 }: InstructionStepsProps) {
+  const locale = useLocale();
   const t = useTranslations("LessonInstructions");
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -39,6 +40,12 @@ export default function InstructionSteps({
   const activeStep = steps[currentStep];
   const hasPreviousStep = currentStep > 0;
   const hasNextStep = currentStep < steps.length - 1;
+  const progressLabel =
+    steps.length === 7
+      ? locale === "uk"
+        ? "Сім простих кроків"
+        : "Seven simple steps"
+      : t("progressLabel");
 
   const handleNext = () => {
     setCurrentStep((previousStep) =>
@@ -73,7 +80,7 @@ export default function InstructionSteps({
             <div className={styles.lessonInstructionEyebrow}>{t("title")}</div>
 
             <InstructionStepsDots
-              label={t("progressLabel")}
+              label={progressLabel}
               totalSteps={steps.length}
               currentStep={currentStep + 1}
             />

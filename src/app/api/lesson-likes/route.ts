@@ -9,6 +9,43 @@ function isUnauthorizedError(error: unknown) {
   return error instanceof Error && error.message === "Unauthorized";
 }
 
+function normalizeLessonIds(lessonIds: string[]) {
+  return Array.from(new Set(lessonIds.map((lessonId) => lessonId.trim()).filter(Boolean)));
+}
+
+function getEmptySnapshots(lessonIds: string[]) {
+  return normalizeLessonIds(lessonIds).reduce<
+    Record<string, { lessonId: string; likeCount: number; liked: boolean }>
+  >((accumulator, lessonId) => {
+    accumulator[lessonId] = {
+      lessonId,
+      likeCount: 0,
+      liked: false,
+    };
+
+    return accumulator;
+  }, {});
+}
+
+function isLessonLikesStorageMissing(error: unknown) {
+  if (!error || typeof error !== "object") {
+    return false;
+  }
+
+  const maybeCode = "code" in error ? error.code : undefined;
+  const maybeMessage = "message" in error ? error.message : undefined;
+  const message = typeof maybeMessage === "string" ? maybeMessage : "";
+
+  return (
+    maybeCode === "42P01" ||
+    message.includes("lesson_likes") &&
+      (
+        message.includes("does not exist") ||
+        message.includes("Could not find the table")
+      )
+  );
+}
+
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const lessonIds = [
@@ -45,6 +82,17 @@ export async function GET(request: Request) {
   } catch (error) {
     if (isUnauthorizedError(error)) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    if (isLessonLikesStorageMissing(error)) {
+      return NextResponse.json(
+        { snapshots: getEmptySnapshots(lessonIds) },
+        {
+          headers: {
+            "Cache-Control": "no-store",
+          },
+        },
+      );
     }
 
     console.error("Failed to load lesson likes.", error);
@@ -84,6 +132,13 @@ export async function POST(request: Request) {
   } catch (error) {
     if (isUnauthorizedError(error)) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    if (isLessonLikesStorageMissing(error)) {
+      return NextResponse.json(
+        { error: "Lesson likes storage is not available yet." },
+        { status: 503 },
+      );
     }
 
     console.error("Failed to toggle lesson like.", error);

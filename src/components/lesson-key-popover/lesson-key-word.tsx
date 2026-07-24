@@ -11,7 +11,7 @@ import {
   upsertVocabularyCache,
   type VocabularyEntry,
 } from "@/lib/vocabulary";
-import { createClient } from "@/utils/supabase/client";
+import { createClient, getUserOrNull } from "@/utils/supabase/client";
 
 interface LessonKeyWordProps {
   lessonId: string;
@@ -56,9 +56,7 @@ export default function LessonKeyWord({
 
     try {
       const supabase = createClient();
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
+      const user = await getUserOrNull();
 
       if (user) {
         await supabase.from("vocabulary_entries").upsert(

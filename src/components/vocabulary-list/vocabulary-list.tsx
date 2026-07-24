@@ -9,7 +9,7 @@ import {
   sortVocabularyEntries,
   type VocabularyEntry,
 } from "@/lib/vocabulary";
-import { createClient } from "@/utils/supabase/client";
+import { createClient, getUserOrNull } from "@/utils/supabase/client";
 
 export default function VocabularyList() {
   const tMisc = useTranslations("Misc");
@@ -29,9 +29,7 @@ export default function VocabularyList() {
 
       try {
         const supabase = createClient();
-        const {
-          data: { user },
-        } = await supabase.auth.getUser();
+        const user = await getUserOrNull();
 
         if (!user) {
           return;

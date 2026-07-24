@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { HugeiconsIcon } from "@hugeicons/react";
 import LessonMetaBar from "@/components/lesson-meta-bar/lesson-meta-bar";
 import InstructionSteps from "@/components/instruction-steps/instruction-steps";
@@ -53,6 +53,7 @@ export default function LessonPageClient({
   lines,
   sayIt = [],
 }: LessonPageClientProps) {
+  const locale = useLocale();
   const tLessons = useTranslations("Lessons");
   const tButtons = useTranslations("Buttons");
   const tLessonInstructions = useTranslations("LessonInstructions");
@@ -65,6 +66,19 @@ export default function LessonPageClient({
     LESSON_INSTRUCTIONS_DISABLED_KEY,
     userId,
   );
+  const translateItTitle =
+    locale === "uk"
+      ? "Перекладіть і скажіть"
+      : "Translate it";
+  const translateItBody =
+    locale === "uk"
+      ? "Прочитайте речення англійською вголос. Речення буде показано українською або російською мовою, залежно від вибраної мови навчання. Якщо після трьох спроб вам все ще важко сказати його правильно, ви зможете відкрити англійську версію."
+      : "Read the sentence aloud in English. The sentence will be shown in Ukrainian or Russian, depending on the selected study language. If you can't say it correctly after three attempts, you can reveal the English version.";
+  const stuckTitle = locale === "uk" ? "Якщо застрягли" : "If you get stuck";
+  const stuckBody =
+    locale === "uk"
+      ? "Скористайтеся Lesson key, якщо відчуваєте, що застрягли, але намагайтеся не підглядати відповідь одразу. Дайте собі шанс. Прослухайте кліп щонайменше тричі й лише потім перевіряйте відповідь."
+      : "Use Lesson key if you feel stuck, but try not to look for the answer right away. Give yourself a chance. Play the clip at least three times, and only then check the answer.";
 
   const lessonInstructionSteps = [
     {
@@ -93,9 +107,14 @@ export default function LessonPageClient({
       image: "/lesson-steps/step-5.svg",
     },
     {
-      title: tLessonInstructions("step6Title"),
-      body: tLessonInstructions("step6Body"),
+      title: translateItTitle,
+      body: translateItBody,
       image: "/lesson-steps/step-6.svg",
+    },
+    {
+      title: stuckTitle,
+      body: stuckBody,
+      image: "/lesson-steps/step-7.svg",
     },
   ];
 
