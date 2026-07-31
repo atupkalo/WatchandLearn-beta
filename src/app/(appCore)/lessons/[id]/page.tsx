@@ -32,10 +32,10 @@ export default async function LessonPage({ params }: LessonPageProps) {
       duration={lessonListItem.duration}
       type={lessonListItem.type}
       description={lesson.description.en}
-      availableModes={lesson.availableModes}
       videoSrc={lesson.media?.videoFile ?? ""}
       lines={lesson.lines}
       sayIt={lesson.sayIt ?? []}
+      translateIt={lesson.translateIt ?? []}
     />
   );
 }

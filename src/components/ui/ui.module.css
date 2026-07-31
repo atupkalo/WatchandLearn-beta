@@ -5,6 +5,9 @@
   transition: background-color 0.2s ease;
 }
 
+.accordionSquareDisabled {
+  opacity: 0.6;
+}
 
 .accordionSquareOpen .accordionSquareChevron {
   transform: rotate(180deg);
@@ -52,6 +55,10 @@
 }
 .accordionSquareSummary:hover{
   color: var(--textInactive);
+}
+
+.accordionSquareSummary:disabled {
+  cursor: not-allowed;
 }
 
 .accordionSquareOpen .accordionSquarePanel {
@@ -609,11 +616,13 @@
   font-size: 14px;
   font-weight: 500;
   color: var(--textBody);
+  white-space: nowrap;
 }
 
 .switchRoot {
   display: inline-flex;
   align-items: center;
+  flex-wrap: nowrap;
   gap: 8px;
 }
 
@@ -652,6 +661,12 @@
 .tab {
   font-size: 16px;
   font-weight: 500;
+  color: var(--textBody);
+}
+
+.tab[data-selected="true"] {
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .tabs:hover {

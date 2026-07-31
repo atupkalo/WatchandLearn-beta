@@ -13,7 +13,11 @@ import LessonVideoSide from "./lesson-video-side";
 import LessonWorkingAreaSide from "./lesson-working-area-side";
 import styles from "./lessons.module.css";
 import { openSlideOut } from "@/components/Icons/icons";
-import type { LessonLine, LessonSayItQuote } from "@/lib/lessons";
+import type {
+  LessonLine,
+  LessonSayItQuote,
+  LessonTranslateItQuote,
+} from "@/lib/lessons";
 
 const LESSON_INSTRUCTIONS_SEEN_KEY = "watchandlearn:lesson-instructions:seen";
 const LESSON_INSTRUCTIONS_DISABLED_KEY = "watchandlearn:lesson-instructions:disabled";
@@ -32,10 +36,10 @@ interface LessonPageClientProps {
   duration: string;
   type: string[];
   description: string;
-  availableModes: string[];
   videoSrc: string;
   lines: LessonLine[];
   sayIt?: LessonSayItQuote[];
+  translateIt?: LessonTranslateItQuote[];
 }
 
 export default function LessonPageClient({
@@ -48,10 +52,10 @@ export default function LessonPageClient({
   duration,
   type,
   description,
-  availableModes,
   videoSrc,
   lines,
   sayIt = [],
+  translateIt = [],
 }: LessonPageClientProps) {
   const locale = useLocale();
   const tLessons = useTranslations("Lessons");
@@ -197,9 +201,9 @@ export default function LessonPageClient({
       lessonId={lessonId}
       userId={userId}
       description={description}
-      availableModes={availableModes}
       lines={lines}
       sayIt={sayIt}
+      translateIt={translateIt}
     />
   );
 
@@ -216,41 +220,42 @@ export default function LessonPageClient({
   return (
     <>
       <section className={styles.lessonPage}>
-        <LessonMetaBar
-          title={title}
-          level={level}
-          category={category}
-          duration={duration}
-          type={type}
-          rightControls={
-            <>
-              <SwitchCustom
-                label={tSwitches("sLessonLable")}
-                isSelected={sidebarOnLeft}
-                onChange={setSidebarOnLeft}
-              />
-              <ButtonIcon
-                label={tButtons("butonLessonInstructions")}
-                icon={<HugeiconsIcon icon={openSlideOut} size={18} strokeWidth={1.6} />}
-                size="lg"
-                onClick={() => setIsInstructionsOpen(true)}
-              />
-            </>
-          }
-        />
+        <div className={styles.lessonTop}>
+          <LessonMetaBar
+            title={title}
+            level={level}
+            category={category}
+            duration={duration}
+            type={type}
+            rightControls={
+              <>
+                <SwitchCustom
+                  label={tSwitches("sLessonLable")}
+                  isSelected={sidebarOnLeft}
+                  onChange={setSidebarOnLeft}
+                />
+                <ButtonIcon
+                  label={tButtons("butonLessonInstructions")}
+                  icon={<HugeiconsIcon icon={openSlideOut} size={18} strokeWidth={1.6} />}
+                  size="lg"
+                  onClick={() => setIsInstructionsOpen(true)}
+                />
+              </>
+            }
+          />
+        </div>
 
-        <div className={styles.lessonLayout}>
-          {sidebarOnLeft ? (
-            <>
-              <div className={styles.lessonColumn}>{videoSide}</div>
-              <div className={styles.lessonColumn}>{workingAreaSide}</div>
-            </>
-          ) : (
-            <>
-              <div className={styles.lessonColumn}>{workingAreaSide}</div>
-              <div className={styles.lessonColumn}>{videoSide}</div>
-            </>
-          )}
+        <div
+          className={`${styles.lessonBottom} ${
+            sidebarOnLeft ? styles.lessonBottomVideoLeft : ""
+          }`}
+        >
+          <div className={`${styles.lessonBottomPane} ${styles.lessonBottomLeft}`}>
+            {workingAreaSide}
+          </div>
+          <div className={`${styles.lessonBottomPane} ${styles.lessonBottomRight}`}>
+            {videoSide}
+          </div>
         </div>
       </section>
 

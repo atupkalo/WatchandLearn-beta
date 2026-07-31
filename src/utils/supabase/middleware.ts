@@ -14,6 +14,10 @@ function isSupabaseAuthCookie(name: string) {
   return name.startsWith("sb-");
 }
 
+function hasSupabaseAuthCookies(request: NextRequest) {
+  return request.cookies.getAll().some(({ name }) => isSupabaseAuthCookie(name));
+}
+
 function isInvalidRefreshTokenError(error: unknown) {
   if (!(error instanceof Error)) {
     return false;
@@ -63,6 +67,10 @@ export async function updateSession(request: NextRequest) {
       headers: request.headers,
     },
   });
+
+  if (!hasSupabaseAuthCookies(request)) {
+    return response;
+  }
 
   const supabase = createServerClient(supabaseUrl, supabaseKey, {
     cookies: {

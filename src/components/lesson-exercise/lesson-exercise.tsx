@@ -1,11 +1,18 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { HugeiconsIcon } from "@hugeicons/react";
-import type { LessonLine, LessonSayItQuote, LessonToken } from "@/lib/lessons";
+import type {
+  LessonLine,
+  LessonSayItQuote,
+  LessonToken,
+  LessonTranslateItQuote,
+} from "@/lib/lessons";
+import type { LessonPracticeStepId } from "@/lib/lesson-practice";
 import { markLessonCompleted, markLessonStarted } from "@/lib/lesson-state";
-import { ArrowRight, MicStroke } from "@/components/Icons/icons";
+import { useLessonStepAccess } from "@/lib/use-lesson-step-access";
+import { ArrowRight } from "@/components/Icons/icons";
 import ButtonCustom from "@/components/ui/button";
 import ButtonIcon from "@/components/ui/button-icon";
 import DropSlot from "@/components/ui/drop-slot";
@@ -13,17 +20,16 @@ import DropWord from "@/components/ui/drop-word";
 import InputLesson from "@/components/ui/input-lesson";
 import { TabsCustom } from "@/components/ui/tabs";
 import SayIt from "@/components/sayIt/sayIt";
+import TranslateIt from "@/components/translate-it/translate-it";
 import styles from "./lesson-exercise.module.css";
 
 interface LessonExerciseProps {
   lessonId: string;
   userId: string | null;
-  availableModes: string[];
   lines: LessonLine[];
   sayIt?: LessonSayItQuote[];
+  translateIt?: LessonTranslateItQuote[];
 }
-
-const SAY_IT_UNLOCKED_EVENT = "watchandlearn:say-it-unlocked";
 
 interface EasyGroup {
   lines: LessonLine[];
@@ -107,11 +113,13 @@ function getTokenWidth(tokenText: string) {
   return String(Math.max(36, tokenText.length * 12));
 }
 
-function getModeLabel(mode: string, tLessons: ReturnType<typeof useTranslations>) {
+function getModeLabel(mode: LessonPracticeStepId, tLessons: ReturnType<typeof useTranslations>) {
   if (mode === "easy") return tLessons("exerciseEasy");
   if (mode === "medium") return tLessons("exerciseMedium");
   if (mode === "hard") return tLessons("exerciseHard");
-  return mode.charAt(0).toUpperCase() + mode.slice(1);
+  if (mode === "say-it") return tLessons("exerciseSayIt");
+  if (mode === "translate-it") return tLessons("exerciseTranslate");
+  return mode;
 }
 
 function EasyMode({
@@ -481,14 +489,10 @@ function MediumMode({
 
 function HardMode({
   lines,
-  onStartSayIt,
-  isSayItUnlocked = false,
-  onUnlockSayIt,
+  onAdvanceToSayIt,
 }: {
   lines: LessonLine[];
-  onStartSayIt?: () => void;
-  isSayItUnlocked?: boolean;
-  onUnlockSayIt?: () => void;
+  onAdvanceToSayIt?: () => void;
 }) {
   const tGeneric = useTranslations("Generic");
   const tLessons = useTranslations("Lessons");
@@ -503,12 +507,6 @@ function HardMode({
 
   const currentToken = sequence[currentIndex] ?? null;
   const isComplete = currentToken == null;
-
-  useEffect(() => {
-    if (isComplete) {
-      onUnlockSayIt?.();
-    }
-  }, [isComplete, onUnlockSayIt]);
 
   function revealCurrentToken() {
     if (!currentToken) {
@@ -631,21 +629,25 @@ function HardMode({
         ))}
       </div>
 
-      {onStartSayIt ? (
-        <div className="mt-6 flex flex-col items-center gap-3 text-center">
-          <div className="flex items-center gap-2 text-[var(--secondary)]">
-            <HugeiconsIcon icon={MicStroke} size={22} strokeWidth={1.8} />
-            <span className="text-base font-medium text-[var(--textBody)]">
-              {tLessons("sayItPrompt")}
-            </span>
-          </div>
-
+      {isComplete && onAdvanceToSayIt ? (
+        <div className={styles.exerciseControls}>
           <ButtonCustom
-            label={tLessons("sayItOutLoud")}
-            variant="accent"
-            size="md"
-            onClick={onStartSayIt}
-            disabled={!isComplete && !isSayItUnlocked}
+            label={tGeneric("reset")}
+            variant="secondary"
+            onClick={resetExercise}
+          />
+          <ButtonIcon
+            size="sm"
+            label={tGeneric("next")}
+            color="accent"
+            icon={
+              <HugeiconsIcon
+                icon={ArrowRight}
+                size={18}
+                strokeWidth={1.6}
+              />
+            }
+            onClick={onAdvanceToSayIt}
           />
         </div>
       ) : null}
@@ -656,52 +658,32 @@ function HardMode({
 export default function LessonExercise({
   lessonId,
   userId,
-  availableModes,
   lines,
   sayIt = [],
+  translateIt = [],
 }: LessonExerciseProps) {
   const tLessons = useTranslations("Lessons");
-  const sayItUnlockKey = `watchandlearn:say-it-unlocked:${lessonId}`;
-  const [selectedMode, setSelectedMode] = useState(availableModes[0] ?? "easy");
-  const [modeRenderKeys, setModeRenderKeys] = useState<Record<string, number>>({});
-  const [isSayItOpen, setIsSayItOpen] = useState(false);
-  const isSayItUnlocked = useSyncExternalStore(
-    (onStoreChange) => {
-      if (typeof window === "undefined") {
-        return () => undefined;
-      }
-
-      const handleUnlocked = () => {
-        onStoreChange();
-      };
-
-      window.addEventListener("storage", handleUnlocked);
-      window.addEventListener(SAY_IT_UNLOCKED_EVENT, handleUnlocked);
-
-      return () => {
-        window.removeEventListener("storage", handleUnlocked);
-        window.removeEventListener(SAY_IT_UNLOCKED_EVENT, handleUnlocked);
-      };
-    },
-    () =>
-      typeof window !== "undefined" &&
-      window.localStorage.getItem(sayItUnlockKey) === "true",
-    () => false,
+  const hasAdvancedPractice = sayIt.length > 0 && translateIt.length > 0;
+  const { stepOrder, isStepLocked } = useLessonStepAccess({
+    hasAdvancedPractice,
+  });
+  const [selectedMode, setSelectedMode] = useState<LessonPracticeStepId>(
+    stepOrder[0] ?? "easy",
   );
+  const [modeRenderKeys, setModeRenderKeys] = useState<Record<string, number>>({});
 
   useEffect(() => {
     markLessonStarted(userId, lessonId);
   }, [lessonId, userId]);
 
-  const unlockSayIt = useCallback(() => {
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(sayItUnlockKey, "true");
-      window.dispatchEvent(new Event(SAY_IT_UNLOCKED_EVENT));
-    }
-  }, [sayItUnlockKey]);
-
   const handleSelectionChange = useCallback((nextMode: string) => {
+    const nextStep = nextMode as LessonPracticeStepId;
+
     if (selectedMode === nextMode) {
+      return;
+    }
+
+    if (isStepLocked(nextStep)) {
       return;
     }
 
@@ -709,36 +691,23 @@ export default function LessonExercise({
       ...current,
       [selectedMode]: (current[selectedMode] ?? 0) + 1,
     }));
-    setSelectedMode(nextMode);
-  }, [selectedMode]);
+    setSelectedMode(nextStep);
+  }, [isStepLocked, selectedMode]);
 
   const advanceFromEasy = useCallback(() => {
-    const easyIndex = availableModes.indexOf("easy");
-    const nextMode =
-      availableModes[easyIndex + 1] ??
-      (availableModes.includes("medium") ? "medium" : availableModes[0]);
-
-    if (nextMode) {
-      handleSelectionChange(nextMode);
-    }
-  }, [availableModes, handleSelectionChange]);
+    handleSelectionChange("medium");
+  }, [handleSelectionChange]);
 
   const advanceFromMedium = useCallback(() => {
-    const mediumIndex = availableModes.indexOf("medium");
-    const nextMode =
-      availableModes[mediumIndex + 1] ??
-      (availableModes.includes("hard") ? "hard" : availableModes[0]);
-
-    if (nextMode) {
-      handleSelectionChange(nextMode);
-    }
-  }, [availableModes, handleSelectionChange]);
+    handleSelectionChange("hard");
+  }, [handleSelectionChange]);
 
   const tabs = useMemo(
     () =>
-      availableModes.map((mode) => ({
+      stepOrder.map((mode, index) => ({
         id: mode,
-        label: getModeLabel(mode, tLessons),
+        label: `${index + 1} ${getModeLabel(mode, tLessons)}`,
+        disabled: isStepLocked(mode),
         content:
           mode === "easy" ? (
             <EasyMode
@@ -752,43 +721,50 @@ export default function LessonExercise({
               lines={lines}
               onAdvanceToHard={advanceFromMedium}
             />
-          ) : (
+          ) : mode === "hard" ? (
             <HardMode
               key={`hard-${modeRenderKeys.hard ?? 0}`}
               lines={lines}
-              isSayItUnlocked={isSayItUnlocked}
-              onUnlockSayIt={sayIt.length > 0 ? unlockSayIt : undefined}
-              onStartSayIt={sayIt.length > 0 ? () => setIsSayItOpen(true) : undefined}
+              onAdvanceToSayIt={
+                hasAdvancedPractice ? () => handleSelectionChange("say-it") : undefined
+              }
+            />
+          ) : mode === "say-it" ? (
+            <SayIt
+              quotes={sayIt}
+              onComplete={() => handleSelectionChange("translate-it")}
+            />
+          ) : (
+            <TranslateIt
+              quotes={translateIt}
+              onComplete={() => markLessonCompleted(userId, lessonId)}
             />
           ),
       })),
     [
-      availableModes,
       advanceFromEasy,
       advanceFromMedium,
-      isSayItUnlocked,
+      handleSelectionChange,
+      hasAdvancedPractice,
+      isStepLocked,
       lines,
       modeRenderKeys,
-      sayIt.length,
+      sayIt,
       tLessons,
-      unlockSayIt,
+      translateIt,
+      userId,
+      lessonId,
+      stepOrder,
     ],
   );
 
   return (
     <div className={styles.exerciseRoot}>
-      {isSayItOpen ? (
-        <SayIt
-          quotes={sayIt}
-          onComplete={() => markLessonCompleted(userId, lessonId)}
-        />
-      ) : (
-        <TabsCustom
-          tabs={tabs}
-          selectedKey={selectedMode}
-          onSelectionChange={handleSelectionChange}
-        />
-      )}
+      <TabsCustom
+        tabs={tabs}
+        selectedKey={selectedMode}
+        onSelectionChange={handleSelectionChange}
+      />
     </div>
   );
 }

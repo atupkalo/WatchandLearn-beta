@@ -6,22 +6,33 @@ interface AccordionSquareProps {
   title: string;
   children: ReactNode;
   defaultOpen?: boolean;
+  disabled?: boolean;
 }
 
 export default function AccordionSquare({
   title,
   children,
   defaultOpen = false,
+  disabled = false,
 }: AccordionSquareProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className={`${styles.accordionSquare} ${isOpen ? styles.accordionSquareOpen : ""}`}>
+    <div
+      className={`${styles.accordionSquare} ${
+        isOpen ? styles.accordionSquareOpen : ""
+      } ${disabled ? styles.accordionSquareDisabled : ""}`}
+    >
       <button
         type="button"
         className={styles.accordionSquareSummary}
-        onClick={() => setIsOpen((current) => !current)}
+        onClick={() => {
+          if (!disabled) {
+            setIsOpen((current) => !current);
+          }
+        }}
         aria-expanded={isOpen}
+        disabled={disabled}
       >
         <span>{title}</span>
         <span className={styles.accordionSquareChevron} aria-hidden="true">

@@ -50,5 +50,19 @@
 .rightControls {
   display: flex;
   align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
   gap: 12px;
+}
+
+
+@media (max-width: 1520px) {
+  .titleAndMeta {
+    padding: 8px 16px;
+   gap: 8px;
+  }
+  .metaBarLayout{
+    align-items: flex-end;
+  }
 }

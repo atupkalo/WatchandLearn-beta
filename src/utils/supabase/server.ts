@@ -21,6 +21,10 @@ function isSupabaseAuthCookie(name: string) {
   return name.startsWith("sb-");
 }
 
+function hasSupabaseAuthCookies(cookieStore: CookieStore) {
+  return cookieStore.getAll().some(({ name }) => isSupabaseAuthCookie(name));
+}
+
 function isInvalidRefreshTokenError(error: unknown) {
   if (!(error instanceof Error)) {
     return false;
@@ -67,6 +71,10 @@ export const createClient = (cookieStore: CookieStore) => {
 };
 
 export async function getUserOrNull(cookieStore: CookieStore): Promise<User | null> {
+  if (!hasSupabaseAuthCookies(cookieStore)) {
+    return null;
+  }
+
   const supabase = createClient(cookieStore);
 
   try {

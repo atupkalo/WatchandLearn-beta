@@ -4,38 +4,47 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  ArrowRight,
   Loader,
   MicStroke,
-  Play,
   QuoteDown,
   QuoteUp,
 } from "@/components/Icons/icons";
+import AccordionSquare from "@/components/ui/accordion-square";
 import ButtonCustom from "@/components/ui/button";
-import ButtonIcon from "@/components/ui/button-icon";
-import type { LessonSayItQuote } from "@/lib/lessons";
+import { useUserPreferences } from "@/components/providers/user-preferences-provider";
+import type { LessonTranslateItQuote } from "@/lib/lessons";
 import { useSayItSession } from "@/lib/say-it/use-say-it-session";
-import styles from "./sayIt.module.css";
+import styles from "./translate-it.module.css";
 
-interface SayItProps {
+interface TranslateItProps {
+  quotes: LessonTranslateItQuote[];
   onComplete?: () => void;
-  quotes: LessonSayItQuote[];
 }
 
-export default function SayIt({ onComplete, quotes }: SayItProps) {
-  const tGeneric = useTranslations("Generic");
+export default function TranslateIt({
+  quotes,
+  onComplete,
+}: TranslateItProps) {
   const tLessons = useTranslations("Lessons");
+  const { studyLanguage } = useUserPreferences();
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
   const completionSentRef = useRef(false);
   const advanceTimeoutRef = useRef<number | null>(null);
 
   const currentQuote = quotes[currentQuoteIndex] ?? null;
+  const sourceText = useMemo(() => {
+    if (!currentQuote) {
+      return "";
+    }
+
+    return studyLanguage === "en-ru"
+      ? currentQuote.translations.ru
+      : currentQuote.translations.ua;
+  }, [currentQuote, studyLanguage]);
   const strings = useMemo(
     () => ({
-      feedbackNotQuiteThere: tLessons.has("sayItFeedbackNotQuiteThere")
-        ? tLessons("sayItFeedbackNotQuiteThere")
-        : tLessons("sayItFeedbackRetry"),
-      feedbackSuccess: tLessons("sayItFeedbackSuccess"),
+      feedbackNotQuiteThere: tLessons("translateItFeedbackRetry"),
+      feedbackSuccess: tLessons("translateItFeedbackSuccess"),
       micDenied: tLessons("sayItMicDenied"),
       micMissing: tLessons("sayItMicMissing"),
       micUnsupported: tLessons("sayItMicUnsupported"),
@@ -52,10 +61,8 @@ export default function SayIt({ onComplete, quotes }: SayItProps) {
     feedback,
     handleMicClick,
     isListening,
-    isPlaying,
     isProcessing,
     isScriptMatched,
-    playQuote,
     resetCurrentQuote,
     spokenText,
   } = useSayItSession({
@@ -84,6 +91,11 @@ export default function SayIt({ onComplete, quotes }: SayItProps) {
     }
 
     if (currentQuoteIndex === quotes.length - 1) {
+      if (!completionSentRef.current) {
+        completionSentRef.current = true;
+        onComplete?.();
+      }
+
       return;
     }
 
@@ -100,10 +112,6 @@ export default function SayIt({ onComplete, quotes }: SayItProps) {
     };
   }, [currentQuoteIndex, isCompleted, isScriptMatched, onComplete, quotes.length, resetCurrentQuote]);
 
-  if (!quotes.length) {
-    return null;
-  }
-
   function handleReset() {
     if (advanceTimeoutRef.current != null) {
       window.clearTimeout(advanceTimeoutRef.current);
@@ -111,36 +119,29 @@ export default function SayIt({ onComplete, quotes }: SayItProps) {
     }
 
     completionSentRef.current = false;
-    resetCurrentQuote();
     setCurrentQuoteIndex(0);
+    resetCurrentQuote();
   }
 
-  function handleNext() {
-    if (!isCompleted || completionSentRef.current) {
-      return;
-    }
-
-    completionSentRef.current = true;
-    onComplete?.();
-  }
-
-  if (!currentQuote) {
+  if (!quotes.length || !currentQuote) {
     return null;
   }
 
   return (
-    <div className={styles.sayItRoot}>
-      <div className={styles.sayItCard}>
-        <div className={styles.sayItBlock}>
-          <div className={styles.sayItLabel}>{tLessons("sayItLineToSay")}</div>
-          <div className={styles.sayItQuote}>
+    <div className={styles.translateItRoot}>
+      <div className={styles.translateItCard}>
+        <div className={styles.translateItBlock}>
+          <div className={styles.translateItLabel}>
+            {tLessons("translateItLineLabel")}
+          </div>
+          <div className={styles.translateItQuote}>
             <HugeiconsIcon
               icon={QuoteUp}
               size={18}
               strokeWidth={1.6}
               color="var(--textBody)"
             />
-            <span>{currentQuote?.text}</span>
+            <span>{sourceText}</span>
             <HugeiconsIcon
               icon={QuoteDown}
               size={18}
@@ -150,34 +151,26 @@ export default function SayIt({ onComplete, quotes }: SayItProps) {
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-4">
-          <button
-            type="button"
-            className={styles.sayItMicButton}
-            onClick={playQuote}
-            aria-label={tLessons("sayItPlay")}
-            disabled={isPlaying || isCompleted}
-          >
-            <HugeiconsIcon
-              icon={Play}
-              size={32}
-              strokeWidth={1.8}
-              color="var(--primary)"
-            />
-          </button>
+        <AccordionSquare
+          title={tLessons("translateItRevealAnswer")}
+          disabled={attemptCount < 3}
+        >
+          {currentQuote.text}
+        </AccordionSquare>
 
+        <div className={styles.translateItMicRow}>
           <button
             type="button"
-            className={`${styles.sayItMicButton} ${
-              isListening ? styles.sayItMicButtonActive : ""
+            className={`${styles.translateItMicButton} ${
+              isListening ? styles.translateItMicButtonActive : ""
             }`}
             onClick={handleMicClick}
-            aria-label={tLessons("sayItMicAriaLabel")}
+            aria-label={tLessons("translateItMicAriaLabel")}
             disabled={isProcessing || isCompleted}
           >
             <span
-              className={`${styles.sayItMicGlyph} ${
-                isListening ? styles.sayItMicGlyphActive : ""
+              className={`${styles.translateItMicGlyph} ${
+                isListening ? styles.translateItMicGlyphActive : ""
               }`}
             >
               <HugeiconsIcon
@@ -190,18 +183,16 @@ export default function SayIt({ onComplete, quotes }: SayItProps) {
           </button>
         </div>
 
-        <div className={styles.sayItBlock}>
-          <div className={styles.sayItLabel}>{tLessons("sayItYouSaid")}</div>
-          <div className={styles.sayItTranscript}>
+        <div className={styles.translateItBlock}>
+          <div className={styles.translateItLabel}>{tLessons("sayItYouSaid")}</div>
+          <div className={styles.translateItTranscript}>
             {isProcessing ? (
-              <span className={styles.sayItLoaderWrap}>
-                <HugeiconsIcon
-                  icon={Loader}
-                  size={24}
-                  strokeWidth={1.8}
-                  className={styles.sayItLoader}
-                />
-              </span>
+              <HugeiconsIcon
+                icon={Loader}
+                size={24}
+                strokeWidth={1.8}
+                className={styles.translateItLoader}
+              />
             ) : (
               spokenText
             )}
@@ -209,41 +200,32 @@ export default function SayIt({ onComplete, quotes }: SayItProps) {
         </div>
 
         {isCompleted ? (
-          <div className={styles.sayItCompleted}>
+          <div className={styles.translateItCompleted}>
             {tLessons("translateItCompleted")}
           </div>
         ) : visibleFeedback ? (
           <div
-            className={`${styles.sayItFeedback} ${
+            className={`${styles.translateItFeedback} ${
               visibleFeedback === "success"
-                ? styles.sayItFeedbackSuccess
-                : styles.sayItFeedbackError
+                ? styles.translateItFeedbackSuccess
+                : styles.translateItFeedbackError
             }`}
           >
             {feedback}
           </div>
         ) : null}
 
-        <div className={styles.sayItAttempts}>
+        <div className={styles.translateItAttempts}>
           {tLessons("sayItAttempts", { count: attemptCount })}
         </div>
 
-        <div className={styles.sayItFooter}>
+        <div className={styles.translateItFooter}>
           <ButtonCustom
             label={tLessons("translateItReset")}
             variant="secondary"
             size="sm"
             onClick={handleReset}
           />
-          {isCompleted ? (
-            <ButtonIcon
-              label={tGeneric("next")}
-              icon={<HugeiconsIcon icon={ArrowRight} size={18} strokeWidth={1.6} />}
-              size="lg"
-              onClick={handleNext}
-              color="accent"
-            />
-          ) : null}
         </div>
       </div>
     </div>

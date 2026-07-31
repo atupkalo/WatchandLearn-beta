@@ -238,7 +238,6 @@ export default function Iframe({ src = "", title = "Lesson media" }: IframeProps
           disablePictureInPicture
           accentColor={muxPlayerConfig.accentColor}
           metadataVideoId={muxPlayerConfig.playbackId}
-          metadataVideoTitle={muxPlayerConfig.metadataVideoTitle}
           primaryColor={muxPlayerConfig.primaryColor}
           secondaryColor={muxPlayerConfig.secondaryColor}
           tokens={
@@ -247,8 +246,7 @@ export default function Iframe({ src = "", title = "Lesson media" }: IframeProps
               : undefined
           }
           aria-label={title}
-          title={muxPlayerConfig.videoTitle ?? title}
-          videoTitle={muxPlayerConfig.videoTitle}
+          title={title}
         />
       </div>
     );

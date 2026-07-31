@@ -13,7 +13,7 @@
       "availableModes": ["easy", "medium", "hard"],
       "media": {
         "videoFile": "https://player.mux.com/XN2XDjNR3ez62HjOrF00XYJXDvWhyLcm65dHAGR1ZUVg?metadata-video-title=Invincible_short_001&video-title=Invincible_short_001&accent-color=%23e86933&primary-color=%23317782",
-        "thumbnailFile": "Invincible-thumbnail.webp"
+        "thumbnailFile": "Invincible.webp"
       },
       "lessonFile": "invincible_short_001.json",
       "description": {
@@ -32,7 +32,7 @@
       "availableModes": ["easy", "medium", "hard"],
       "media": {
         "videoFile": "https://player.mux.com/SpwSDrxjQCQFGDitroIGA6NHaNqQAL7eBL7EqdAbGBI?metadata-video-title=Invincible_mid_001&video-title=Invincible_mid_001&accent-color=%23e86933&primary-color=%23317782",
-        "thumbnailFile": "Invincible-thumbnail.webp"
+        "thumbnailFile": "Invincible.webp"
       },
       "lessonFile": "invincible_mid_001.json",
       "description": {
@@ -51,7 +51,7 @@
       "availableModes": ["easy", "medium", "hard"],
       "media": {
         "videoFile": "https://player.mux.com/2raSgwBsGwUv1fe3EiJBsxa34wpcwHDsRntxXK7iyPs?metadata-video-title=Invincible_long_001&video-title=Invincible_long_001&accent-color=%23e86933&primary-color=%23317782",
-        "thumbnailFile": "Invincible-thumbnail.webp"
+        "thumbnailFile": "Invincible.webp"
       },
       "lessonFile": "invincible_long_001.json",
       "description": {
@@ -70,7 +70,7 @@
       "availableModes": ["easy", "medium", "hard"],
       "media": {
         "videoFile": "https://player.mux.com/iwulOTk1beuK01NIKwagdwCRXXWAQUwmJmAUCgot01U0100?metadata-video-title=ms-s-1&video-title=ms-s-1&accent-color=%23e86933&primary-color=%23317782",
-        "thumbnailFile": "the-morning-show-thumbnail.jpg"
+        "thumbnailFile": "the-morning-show.jpg"
       },
       "lessonFile": "the-morning-show_short_001.json",
       "description": {
@@ -89,7 +89,7 @@
       "availableModes": ["easy", "medium", "hard"],
       "media": {
         "videoFile": "https://player.mux.com/jOcUWM1cJSbtIM00NkDzHfMi7ibZkQwpnuihRUT01PkfA?metadata-video-title=ms-m-1&video-title=ms-m-1&accent-color=%23e86933&primary-color=%23317782",
-        "thumbnailFile": "the-morning-show-thumbnail.jpg"
+        "thumbnailFile": "the-morning-show.jpg"
       },
       "lessonFile": "the-morning-show_mid_001.json",
       "description": {
@@ -108,7 +108,7 @@
       "availableModes": ["easy", "medium", "hard"],
       "media": {
         "videoFile": "https://player.mux.com/ENmosJJXGiPRlABgZxK62fQXo9li2601O6yQv00JV6ve4?metadata-video-title=ms-l-1&video-title=ms-l-1&accent-color=%23e86933&primary-color=%23317782",
-        "thumbnailFile": "the-morning-show-thumbnail.jpg"
+        "thumbnailFile": "the-morning-show.jpg"
       },
       "lessonFile": "the-morning-show_long_001.json",
       "description": {
@@ -126,7 +126,7 @@
       "availableModes": ["easy", "medium", "hard"],
       "media": {
         "videoFile": "wed-s-1.mp4",
-        "thumbnailFile": "wednesday-cover.jpg"
+        "thumbnailFile": "wednesday.jpg"
       },
       "lessonFile": "wednesday_short_001.json",
       "description": {
@@ -144,7 +144,7 @@
       "availableModes": ["easy", "medium", "hard"],
       "media": {
         "videoFile": "wed-m-1.mp4",
-        "thumbnailFile": "wednesday-cover.jpg"
+        "thumbnailFile": "wednesday.jpg"
       },
       "lessonFile": "wednesday_mid_001.json",
       "description": {
@@ -162,7 +162,7 @@
       "availableModes": ["easy", "medium", "hard"],
       "media": {
         "videoFile": "wed-l-1.mp4",
-        "thumbnailFile": "wednesday-cover.jpg"
+        "thumbnailFile": "wednesday.jpg"
       },
       "lessonFile": "wednesday_long_001.json",
       "description": {

@@ -7,6 +7,7 @@ interface TabsCustomProps {
     id?: string;
     label: string;
     content: ReactNode;
+    disabled?: boolean;
   }>;
   selectedKey?: string;
   onSelectionChange?: (key: string) => void;
@@ -34,6 +35,7 @@ export function TabsCustom({
               className={styles.tab}
               key={tab.id ?? `tab-${index}`}
               id={tab.id ?? `tab-${index}`}
+              isDisabled={tab.disabled}
             >
               {tab.label}
               <Tabs.Indicator />
