@@ -226,6 +226,7 @@ export function useSayItSession({ quote, strings }: UseSayItSessionProps) {
         region,
       );
       speechConfig.speechRecognitionLanguage = "en-US";
+      speechConfig.setProfanity(SpeechSDK.ProfanityOption.Raw);
 
       stopMediaStreams();
 

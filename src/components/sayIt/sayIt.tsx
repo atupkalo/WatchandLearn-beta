@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
@@ -17,6 +17,8 @@ import type { LessonSayItQuote } from "@/lib/lessons";
 import { useSayItSession } from "@/lib/say-it/use-say-it-session";
 import styles from "./sayIt.module.css";
 
+const SAY_IT_ADVANCE_ATTEMPT_COUNT = 3;
+
 interface SayItProps {
   onComplete?: () => void;
   quotes: LessonSayItQuote[];
@@ -27,7 +29,6 @@ export default function SayIt({ onComplete, quotes }: SayItProps) {
   const tLessons = useTranslations("Lessons");
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
   const completionSentRef = useRef(false);
-  const advanceTimeoutRef = useRef<number | null>(null);
 
   const currentQuote = quotes[currentQuoteIndex] ?? null;
   const strings = useMemo(
@@ -62,7 +63,9 @@ export default function SayIt({ onComplete, quotes }: SayItProps) {
     quote: currentQuote,
     strings,
   });
-  const isCompleted = currentQuoteIndex === quotes.length - 1 && isScriptMatched;
+  const canAdvanceCurrentQuote =
+    isScriptMatched || attemptCount >= SAY_IT_ADVANCE_ATTEMPT_COUNT;
+  const isLastQuote = currentQuoteIndex === quotes.length - 1;
   const visibleFeedback =
     feedback && feedback !== strings.recording && feedback !== strings.processing
       ? isScriptMatched
@@ -70,58 +73,33 @@ export default function SayIt({ onComplete, quotes }: SayItProps) {
         : "error"
       : null;
 
-  useEffect(() => {
-    return () => {
-      if (advanceTimeoutRef.current != null) {
-        window.clearTimeout(advanceTimeoutRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!isScriptMatched || isCompleted) {
-      return;
-    }
-
-    if (currentQuoteIndex === quotes.length - 1) {
-      return;
-    }
-
-    advanceTimeoutRef.current = window.setTimeout(() => {
-      resetCurrentQuote();
-      setCurrentQuoteIndex((current) => current + 1);
-    }, 900);
-
-    return () => {
-      if (advanceTimeoutRef.current != null) {
-        window.clearTimeout(advanceTimeoutRef.current);
-        advanceTimeoutRef.current = null;
-      }
-    };
-  }, [currentQuoteIndex, isCompleted, isScriptMatched, onComplete, quotes.length, resetCurrentQuote]);
-
   if (!quotes.length) {
     return null;
   }
 
   function handleReset() {
-    if (advanceTimeoutRef.current != null) {
-      window.clearTimeout(advanceTimeoutRef.current);
-      advanceTimeoutRef.current = null;
-    }
-
     completionSentRef.current = false;
     resetCurrentQuote();
     setCurrentQuoteIndex(0);
   }
 
   function handleNext() {
-    if (!isCompleted || completionSentRef.current) {
+    if (!canAdvanceCurrentQuote || isListening || isProcessing) {
       return;
     }
 
-    completionSentRef.current = true;
-    onComplete?.();
+    if (isLastQuote) {
+      if (completionSentRef.current) {
+        return;
+      }
+
+      completionSentRef.current = true;
+      onComplete?.();
+      return;
+    }
+
+    resetCurrentQuote();
+    setCurrentQuoteIndex((current) => current + 1);
   }
 
   if (!currentQuote) {
@@ -156,7 +134,7 @@ export default function SayIt({ onComplete, quotes }: SayItProps) {
             className={styles.sayItMicButton}
             onClick={playQuote}
             aria-label={tLessons("sayItPlay")}
-            disabled={isPlaying || isCompleted}
+            disabled={isPlaying}
           >
             <HugeiconsIcon
               icon={Play}
@@ -173,7 +151,7 @@ export default function SayIt({ onComplete, quotes }: SayItProps) {
             }`}
             onClick={handleMicClick}
             aria-label={tLessons("sayItMicAriaLabel")}
-            disabled={isProcessing || isCompleted}
+            disabled={isProcessing}
           >
             <span
               className={`${styles.sayItMicGlyph} ${
@@ -208,11 +186,7 @@ export default function SayIt({ onComplete, quotes }: SayItProps) {
           </div>
         </div>
 
-        {isCompleted ? (
-          <div className={styles.sayItCompleted}>
-            {tLessons("translateItCompleted")}
-          </div>
-        ) : visibleFeedback ? (
+        {visibleFeedback ? (
           <div
             className={`${styles.sayItFeedback} ${
               visibleFeedback === "success"
@@ -235,12 +209,13 @@ export default function SayIt({ onComplete, quotes }: SayItProps) {
             size="sm"
             onClick={handleReset}
           />
-          {isCompleted ? (
+          {canAdvanceCurrentQuote ? (
             <ButtonIcon
               label={tGeneric("next")}
               icon={<HugeiconsIcon icon={ArrowRight} size={18} strokeWidth={1.6} />}
               size="lg"
               onClick={handleNext}
+              disabled={isListening || isProcessing}
               color="accent"
             />
           ) : null}

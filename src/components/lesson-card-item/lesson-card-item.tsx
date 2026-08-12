@@ -33,6 +33,18 @@ interface LessonCardItemProps {
   description: string;
 }
 
+function translateOptionLabel(
+  t: ReturnType<typeof useTranslations>,
+  key: string,
+  fallback: string,
+) {
+  try {
+    return t(key);
+  } catch {
+    return fallback;
+  }
+}
+
 export default function LessonCardItem({
   id,
   userId,
@@ -46,8 +58,12 @@ export default function LessonCardItem({
   const t = useTranslations("Lessons");
   const [lessonState, setLessonState] = useState(INITIAL_LESSON_STATE);
   const [isLikePending, setIsLikePending] = useState(false);
-  const categoryLabel = category.map((item) => t(`options.categories.${item}`)).join(", ");
-  const typeLabel = type.map((item) => t(`options.types.${item}`)).join(", ");
+  const categoryLabel = category
+    .map((item) => translateOptionLabel(t, `options.categories.${item}`, item))
+    .join(", ");
+  const typeLabel = type
+    .map((item) => translateOptionLabel(t, `options.types.${item}`, item))
+    .join(", ");
   const statusConfigMap: Record<
     LessonListStatus,
     {

@@ -79,10 +79,6 @@ export default function LessonPageClient({
       ? "Прочитайте речення англійською вголос. Речення буде показано українською або російською мовою, залежно від вибраної мови навчання. Якщо після трьох спроб вам все ще важко сказати його правильно, ви зможете відкрити англійську версію."
       : "Read the sentence aloud in English. The sentence will be shown in Ukrainian or Russian, depending on the selected study language. If you can't say it correctly after three attempts, you can reveal the English version.";
   const stuckTitle = locale === "uk" ? "Якщо застрягли" : "If you get stuck";
-  const stuckBody =
-    locale === "uk"
-      ? "Скористайтеся Lesson key, якщо відчуваєте, що застрягли, але намагайтеся не підглядати відповідь одразу. Дайте собі шанс. Прослухайте кліп щонайменше тричі й лише потім перевіряйте відповідь."
-      : "Use Lesson key if you feel stuck, but try not to look for the answer right away. Give yourself a chance. Play the clip at least three times, and only then check the answer.";
 
   const lessonInstructionSteps = [
     {
@@ -117,7 +113,7 @@ export default function LessonPageClient({
     },
     {
       title: stuckTitle,
-      body: stuckBody,
+      body: tLessonInstructions("step7Body"),
       image: "/lesson-steps/step-7.svg",
     },
   ];

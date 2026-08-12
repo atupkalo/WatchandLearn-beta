@@ -608,7 +608,7 @@
     },
     {
       "lineNumber": 5,
-      "text": "Yeah. That was me. I’m um… Invincible. God, that sounds dumb when I say it like that.",
+      "text": "Yeah. That me. I’m ha… Invincible. God, that sounds dumb when I say it like that.",
       "translations": {
         "ua": "Так. Це був я. Я, ем… Інвінсібл. Боже, як безглуздо це звучить, коли я сам так кажу.",
         "ru": "Да. Это был я. Я, эм… Инвинсибл. Боже, как глупо это звучит, когда я сам это произношу."
@@ -641,17 +641,6 @@
           }
         },
         {
-          "id": "l5w3",
-          "text": "was",
-          "normalized": "be",
-          "punctuationAfter": "",
-          "saveable": true,
-          "translations": {
-            "ua": "бути",
-            "ru": "быть"
-          }
-        },
-        {
           "id": "l5w4",
           "text": "me",
           "normalized": "me",
@@ -671,13 +660,13 @@
         },
         {
           "id": "l5w6",
-          "text": "um",
-          "normalized": "um",
+          "text": "ha",
+          "normalized": "ha",
           "punctuationAfter": "…",
           "saveable": false,
           "translations": {
-            "ua": "ем",
-            "ru": "эм"
+            "ua": "ха",
+            "ru": "ха"
           }
         },
         {
@@ -807,18 +796,8 @@
           "snaps": [
             {
               "snapNumber": 1,
-              "text": "Yeah. That [[was]] me. I’m um… Invincible.",
-              "blanks": [
-                {
-                  "tokenId": "l5w3",
-                  "answer": "was",
-                  "options": [
-                    "was",
-                    "as",
-                    "knows"
-                  ]
-                }
-              ]
+              "text": "Yeah. That me. I’m ha… Invincible.",
+              "blanks": []
             },
             {
               "snapNumber": 2,
@@ -847,7 +826,7 @@
           ]
         },
         "medium": {
-          "text": "Yeah. That was [me]. I’m um… Invincible. God, [that] sounds [dumb] when I [say] it like [that].",
+          "text": "Yeah. That [me]. I’m ha… Invincible. God, [that] sounds [dumb] when I [say] it like [that].",
           "blankedTokenIds": [
             "l5w4",
             "l5w9",
@@ -857,11 +836,10 @@
           ]
         },
         "hard": {
-          "text": "[Yeah.] [That] [was] [me.] I’m um… Invincible. [God,] [that] [sounds] [dumb] [when] [I] [say] [it] [like] [that.]",
+          "text": "[Yeah.] [That] [me.] I’m ha… Invincible. [God,] [that] [sounds] [dumb] [when] [I] [say] [it] [like] [that.]",
           "revealOrder": [
             "l5w1",
             "l5w2",
-            "l5w3",
             "l5w4",
             "l5w8",
             "l5w9",
@@ -1518,7 +1496,7 @@
     },
     {
       "lineNumber": 10,
-      "text": "Do you want to talk about yesterday? You look like you need to talk about yesterday.",
+      "text": "Do you wanna talk about yesterday? You look like you need to talk about yesterday.",
       "translations": {
         "ua": "Ти хочеш поговорити про вчорашнє? Схоже, тобі справді треба поговорити про вчорашнє.",
         "ru": "Ты хочешь поговорить о вчерашнем? Похоже, тебе правда нужно поговорить о вчерашнем."
@@ -1552,24 +1530,13 @@
         },
         {
           "id": "l10w3",
-          "text": "want",
-          "normalized": "want",
+          "text": "wanna",
+          "normalized": "wanna",
           "punctuationAfter": "",
           "saveable": true,
           "translations": {
             "ua": "хотіти",
             "ru": "хотеть"
-          }
-        },
-        {
-          "id": "l10w4",
-          "text": "to",
-          "normalized": "to",
-          "punctuationAfter": "",
-          "saveable": true,
-          "translations": {
-            "ua": "до",
-            "ru": "до"
           }
         },
         {
@@ -1710,7 +1677,7 @@
           "snaps": [
             {
               "snapNumber": 1,
-              "text": "Do you want to [[talk]] about yesterday?",
+              "text": "Do you wanna [[talk]] about yesterday?",
               "blanks": [
                 {
                   "tokenId": "l10w5",
@@ -1750,7 +1717,7 @@
           ]
         },
         "medium": {
-          "text": "Do you [want] to [talk] about yesterday? You [look] like you [need] to talk [about] yesterday.",
+          "text": "Do you [wanna] [talk] about yesterday? You [look] like you [need] to talk [about] yesterday.",
           "blankedTokenIds": [
             "l10w3",
             "l10w5",
@@ -1760,12 +1727,11 @@
           ]
         },
         "hard": {
-          "text": "[Do] [you] [want] [to] [talk] [about] [yesterday?] [You] [look] [like] [you] [need] [to] [talk] [about] [yesterday.]",
+          "text": "[Do] [you] [wanna] [talk] [about] [yesterday?] [You] [look] [like] [you] [need] [to] [talk] [about] [yesterday.]",
           "revealOrder": [
             "l10w1",
             "l10w2",
             "l10w3",
-            "l10w4",
             "l10w5",
             "l10w6",
             "l10w7",
@@ -1806,7 +1772,7 @@
       "quoteNumber": 4,
       "startSec": 46,
       "endSec": 52,
-      "text": "Do you want to talk about yesterday?"
+      "text": "Do you wanna talk about yesterday?"
     }
   ]
 }

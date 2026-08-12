@@ -97,6 +97,10 @@ interface LessonRecord {
     ua: string;
   };
   sourceIssues?: string[];
+  script?: Array<{
+    lineNumber: number;
+    text: string;
+  }>;
   lines: LessonLine[];
   sayIt?: LessonSayItQuote[];
   translateIt?: LessonTranslateItQuote[];
@@ -378,7 +382,8 @@ function toLessonData(fileName: string, record: LessonRecord): LessonData {
       ...record.source,
       sourceFileName: fileName,
     },
-    translateIt: buildTranslateItQuotes(fileName, record.sayIt, record.lines),
+    translateIt:
+      record.translateIt ?? buildTranslateItQuotes(fileName, record.sayIt, record.lines),
     displayMeta: {
       level: record.meta.level,
       category: toArray(record.meta.category),

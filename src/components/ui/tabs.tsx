@@ -28,7 +28,7 @@ export function TabsCustom({
           : undefined
       }
     >
-      <Tabs.ListContainer>
+      <Tabs.ListContainer className={styles.tabsListContainer}>
         <Tabs.List className={styles.tabsList} aria-label="Tabs">
           {tabs.map((tab, index) => (
             <Tabs.Tab

@@ -107,7 +107,7 @@
     "setFilters": "Set Filters",
     "slideOutTitle" : "Lesson Instructions",
     "lessonDescriptionTitle": "Lesson Description",
-    "lessonKeyTitle": "Lessons Key",
+    "lessonKeyTitle": "Hints & Answers",
     "levelLow": "Low level:",
     "levelLowDesc": "The script appears line by line with some missing words. Instead of the missing words, you will see empty slots. Below each line, you will find possible word options. Your task is to drag and drop the correct word into the correct slot.",
     "levelMedium": "Medium level:",
@@ -117,10 +117,10 @@
     "stepsTitle": "Here’s how it works:",
     "step1": "Read the lesson description first to understand the context.",
     "step2": "Start with the Low difficulty level. If it feels too easy, move one level up. If you struggle to find the correct word, try again or choose an easier video.",
-    "step3": "Under the video, you will find the lesson key. We recommend trying the exercise before looking at the answer. If you do not understand what a character is saying, try listening several times before checking the answer.",
+    "step3": "Under the video, you will find Hints & Answers. We recommend trying the exercise before looking at the answer. If you do not understand what a character is saying, try listening several times before checking the answer.",
     "step4": "If you complete the lesson successfully, by the end you should be able to read the text out loud at the same time as the characters. This technique is called shadowing.",
     "note": "Note:",
-    "noteDesc": "The translations in the lesson key are not always exact. We prioritize decoding the idea, feeling, or meaning expressed in English over providing a word-for-word translation.",
+    "noteDesc": "The translations in Hints & Answers are not always exact. We prioritize decoding the idea, feeling, or meaning expressed in English over providing a word-for-word translation.",
     "lineLabel": "Line",
     "exerciseEasy": "Easy",
     "exerciseMedium": "Medium",
@@ -128,7 +128,7 @@
     "exerciseSayIt": "Say it",
     "exerciseTranslate": "Translate",
     "dontKnow": "I don't know",
-    "exerciseCompleted": "Exercise completed.",
+    "exerciseCompleted": "Congratulations on completing this step, please move to the next one.",
     "sayItPrompt": "Time to practice everything you've learned",
     "sayItTitle": "Say it",
     "sayItLineToSay": "Line to say",
@@ -185,6 +185,8 @@
         "Conversational": "Conversational",
         "Slang": "Slang",
         "Business": "Business",
+        "Narrative": "Narrative",
+        "narrative": "Narrative",
         "Technical": "Technical",
         "IT": "IT",
         "Medical": "Medical"
@@ -199,6 +201,8 @@
         "Series": "TV Show",
         "Documentary": "Documentary",
         "Animation": "Animation",
+        "AI": "AI",
+        "ai": "AI",
         "Interview": "Interview"
       }
     }
@@ -229,7 +233,7 @@
     "step6Title": "Translate it",
     "step6Body": "Read the sentence aloud in English. The sentence will be shown in Ukrainian or Russian, depending on the selected study language. If you can't say it correctly after three attempts, you can reveal the English version.",
     "step7Title": "If you get stuck",
-    "step7Body": "Use Lesson key if you feel stuck, but try not to look for the answer right away. Give yourself a chance. Play the clip at least three times, and only then check the answer."
+    "step7Body": "Use Hints & Answers if you feel stuck, but try not to look for the answer right away. Give yourself a chance. Play the clip at least three times, and only then check the answer."
   }
 
 }

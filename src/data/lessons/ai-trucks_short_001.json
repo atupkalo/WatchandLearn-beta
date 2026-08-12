@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 1,
+  "id": "ai-trucks_short_001",
+  "slug": "a-truck-driver-s-day",
+  "title": "AI Trucks",
+  "series": "AI Trucks",
+  "availableModes": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "media": {
+    "videoFile": "https://player.mux.com/RWrq8LIytlLySJRqSGWLkSIl94mkOy00b9w01Lw3VSsyM?metadata-video-title=ai-trucks_short_001&video-title=ai-trucks_short_001&accent-color=%23e86933&primary-color=%23ffffff",
+    "thumbnailFile": "ai-trucks.webp"
+  },
+  "meta": {
+    "level": "A1-A2",
+    "category": "Narrative",
+    "length": "short",
+    "scriptType": "narrative",
+    "type": [
+      "AI"
+    ]
+  },
+  "source": {
+    "originalDocx": "/Users/anatolii/Desktop/Watch&LeanApp/materials/ai/ai-trucks/ai-truck_short_001.docx",
+    "structuredDocx": "/Users/anatolii/Desktop/Watch&LeanApp/materials/ai/ai-trucks/ai-truck_short_001.docx",
+    "sourceFileName": "ai-trucks_short_001"
+  },
+  "description": {
+    "en": "Truck’s driver daily routing.",
+    "ua": "Повсякденна рутина водія вантажівки."
+  },
+  "script": [
+    {
+      "lineNumber": 1,
+      "text": "Tom is a truck driver. Every morning, he checks his truck before work."
+    },
+    {
+      "lineNumber": 2,
+      "text": "He drives to different cities and delivers food to stores."
+    },
+    {
+      "lineNumber": 3,
+      "text": "He stops for lunch and arrives home safely in the evening."
+    }
+  ],
+  "lines": [
+    {
+      "lineNumber": 1,
+      "text": "Tom is a truck driver. Every morning, he checks his truck before work.",
+      "translations": {
+        "ua": "Том — водій вантажівки. Щоранку він перевіряє свою вантажівку перед роботою.",
+        "ru": "Том — водитель грузовика. Каждое утро он проверяет свой грузовик перед работой."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        {
+          "id": "l1w1",
+          "text": "Tom",
+          "normalized": "tom",
+          "punctuationAfter": "",
+          "saveable": false
+        },
+        {
+          "id": "l1w2",
+          "text": "is",
+          "normalized": "be",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w3",
+          "text": "a",
+          "normalized": "a",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w4",
+          "text": "truck",
+          "normalized": "truck",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w5",
+          "text": "driver",
+          "normalized": "driver",
+          "punctuationAfter": ".",
+          "saveable": true
+        },
+        {
+          "id": "l1w6",
+          "text": "Every",
+          "normalized": "every",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w7",
+          "text": "morning",
+          "normalized": "morning",
+          "punctuationAfter": ",",
+          "saveable": true
+        },
+        {
+          "id": "l1w8",
+          "text": "he",
+          "normalized": "he",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w9",
+          "text": "checks",
+          "normalized": "checks",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w10",
+          "text": "his",
+          "normalized": "his",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w11",
+          "text": "truck",
+          "normalized": "truck",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w12",
+          "text": "before",
+          "normalized": "before",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w13",
+          "text": "work",
+          "normalized": "work",
+          "punctuationAfter": ".",
+          "saveable": true
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "Tom [[is]] a truck driver. [[Every]] morning, he [[checks]] his truck [[before]] work.",
+              "blanks": [
+                {
+                  "tokenId": "l1w2",
+                  "answer": "is",
+                  "options": [
+                    "is",
+                    "it",
+                    "in"
+                  ]
+                },
+                {
+                  "tokenId": "l1w6",
+                  "answer": "every",
+                  "options": [
+                    "Irving",
+                    "any",
+                    "every"
+                  ]
+                },
+                {
+                  "tokenId": "l1w9",
+                  "answer": "checks",
+                  "options": [
+                    "checks",
+                    "chess",
+                    "chairs"
+                  ]
+                },
+                {
+                  "tokenId": "l1w12",
+                  "answer": "before",
+                  "options": [
+                    "belong",
+                    "before",
+                    "after"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "Tom [[is]] a [[truck]] driver. [[Every]] [[morning]], he [[checks]] his truck [[before]] [[work]].",
+          "blankedTokenIds": [
+            "l1w2",
+            "l1w4",
+            "l1w6",
+            "l1w7",
+            "l1w9",
+            "l1w12",
+            "l1w13"
+          ]
+        },
+        "hard": {
+          "text": "[[Tom]] [[is]] [[a]] [[truck]] [[driver]][[.]] [[Every]] [[morning]][[,]] [[he]] [[checks]] [[his]] [[truck]] [[before]] [[work]][[.]]",
+          "revealOrder": [
+            "l1w1",
+            "l1w2",
+            "l1w3",
+            "l1w4",
+            "l1w5",
+            "l1w6",
+            "l1w7",
+            "l1w8",
+            "l1w9",
+            "l1w10",
+            "l1w11",
+            "l1w12",
+            "l1w13"
+          ]
+        }
+      }
+    },
+    {
+      "lineNumber": 2,
+      "text": "He drives to different cities and delivers food to stores.",
+      "translations": {
+        "ua": "Він їздить до різних міст і доставляє їжу до магазинів.",
+        "ru": "Он ездит в разные города и доставляет еду в магазины."
+      },
+      "takeaways": {
+        "ua": null,
+        "ru": null
+      },
+      "tokens": [
+        {
+          "id": "l2w1",
+          "text": "He",
+          "normalized": "he",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w2",
+          "text": "drives",
+          "normalized": "drive",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w3",
+          "text": "to",
+          "normalized": "to",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w4",
+          "text": "different",
+          "normalized": "different",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w5",
+          "text": "cities",
+          "normalized": "city",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w6",
+          "text": "and",
+          "normalized": "and",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w7",
+          "text": "delivers",
+          "normalized": "deliver",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w8",
+          "text": "food",
+          "normalized": "food",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w9",
+          "text": "to",
+          "normalized": "to",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w10",
+          "text": "stores",
+          "normalized": "stores",
+          "punctuationAfter": ".",
+          "saveable": true
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "He [[drives]] to [[different]] cities and [[delivers]] food to stores.",
+              "blanks": [
+                {
+                  "tokenId": "l2w2",
+                  "answer": "drives",
+                  "options": [
+                    "drives",
+                    "driver",
+                    "drive"
+                  ]
+                },
+                {
+                  "tokenId": "l2w4",
+                  "answer": "different",
+                  "options": [
+                    "referent",
+                    "different",
+                    "diligent"
+                  ]
+                },
+                {
+                  "tokenId": "l2w7",
+                  "answer": "delivers",
+                  "options": [
+                    "believers",
+                    "delivers",
+                    "dentist"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "He [[drives]] to [[different]] [[cities]] and [[delivers]] [[food]] to [[stores]].",
+          "blankedTokenIds": [
+            "l2w2",
+            "l2w4",
+            "l2w5",
+            "l2w7",
+            "l2w8",
+            "l2w10"
+          ]
+        },
+        "hard": {
+          "text": "[[He]] [[drives]] [[to]] [[different]] [[cities]] [[and]] [[delivers]] [[food]] [[to]] [[stores]][[.]]",
+          "revealOrder": [
+            "l2w1",
+            "l2w2",
+            "l2w3",
+            "l2w4",
+            "l2w5",
+            "l2w6",
+            "l2w7",
+            "l2w8",
+            "l2w9",
+            "l2w10"
+          ]
+        }
+      }
+    },
+    {
+      "lineNumber": 3,
+      "text": "He stops for lunch and arrives home safely in the evening.",
+      "translations": {
+        "ua": "Він зупиняється на обід і безпечно повертається додому ввечері.",
+        "ru": "Он останавливается на обед и безопасно возвращается домой вечером."
+      },
+      "takeaways": {
+        "ua": "in the evening — зверніть увагу: з частинами дня використовується прийменник in (in the evening, in the afternoon, in the morning), як і з довгими проміжками часу: тижні, місяці, роки (in July, in 2024). З конкретним днем кажемо on (on Monday, on my birthday, on June 23rd), а з конкретним часом протягом дня вживаємо at (at 5 pm, at 7 o'clock). ",
+        "ru": "in the evening — обратите внимание: с частями суток используется предлог in (in the evening, in the afternoon, in the morning), как и с длительными промежутками времени: недели, месяцы, годы (in July, in 2024). С конкретным днем используем on (on Monday, on my birthday, on June 23rd), а с точным временем в течение дня употребляем at (at 5 pm, at 7 o'clock)."
+      },
+      "tokens": [
+        {
+          "id": "l3w1",
+          "text": "He",
+          "normalized": "he",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l3w2",
+          "text": "stops",
+          "normalized": "stop",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l3w3",
+          "text": "for",
+          "normalized": "for",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l3w4",
+          "text": "lunch",
+          "normalized": "lunch",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l3w5",
+          "text": "and",
+          "normalized": "and",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l3w6",
+          "text": "arrives",
+          "normalized": "arrive",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l3w7",
+          "text": "home",
+          "normalized": "home",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l3w8",
+          "text": "safely",
+          "normalized": "safely",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l3w9",
+          "text": "in",
+          "normalized": "in",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l3w10",
+          "text": "the",
+          "normalized": "the",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l3w11",
+          "text": "evening",
+          "normalized": "evening",
+          "punctuationAfter": ".",
+          "saveable": true
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "He [[stops]] for lunch and [[arrives]] home [[safely]] in the evening.",
+              "blanks": [
+                {
+                  "tokenId": "l3w2",
+                  "answer": "stops",
+                  "options": [
+                    "stops",
+                    "shops",
+                    "steps"
+                  ]
+                },
+                {
+                  "tokenId": "l3w6",
+                  "answer": "arrives",
+                  "options": [
+                    "writes",
+                    "arrives",
+                    "erases"
+                  ]
+                },
+                {
+                  "tokenId": "l3w8",
+                  "answer": "safely",
+                  "options": [
+                    "safely",
+                    "mostly",
+                    "saintly"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "He [[stops]] for [[lunch]] and [[arrives]] [[home]] [[safely]] in the [[evening]].",
+          "blankedTokenIds": [
+            "l3w2",
+            "l3w4",
+            "l3w6",
+            "l3w7",
+            "l3w8",
+            "l3w11"
+          ]
+        },
+        "hard": {
+          "text": "[[He]] [[stops]] [[for]] [[lunch]] [[and]] [[arrives]] [[home]] [[safely]] [[in]] [[the]] [[evening]][[.]]",
+          "revealOrder": [
+            "l3w1",
+            "l3w2",
+            "l3w3",
+            "l3w4",
+            "l3w5",
+            "l3w6",
+            "l3w7",
+            "l3w8",
+            "l3w9",
+            "l3w10",
+            "l3w11"
+          ]
+        }
+      }
+    }
+  ],
+  "sayIt": [
+    {
+      "quoteNumber": 1,
+      "startSec": 0,
+      "endSec": 5,
+      "text": "Every morning, he checks his truck before work."
+    },
+    {
+      "quoteNumber": 2,
+      "startSec": 5,
+      "endSec": 10,
+      "text": "He drives to different cities and delivers food to stores."
+    },
+    {
+      "quoteNumber": 3,
+      "startSec": 10,
+      "endSec": 15,
+      "text": "He stops for lunch and arrives home safely in the evening."
+    }
+  ],
+  "translateIt": [
+    {
+      "quoteNumber": 1,
+      "startSec": 0,
+      "endSec": 5,
+      "text": "Every morning, he checks his truck before work.",
+      "translations": {
+        "ua": "Щоранку він перевіряє свою вантажівку перед роботою.",
+        "ru": "Каждое утро он проверяет свой грузовик перед работой."
+      }
+    },
+    {
+      "quoteNumber": 2,
+      "startSec": 5,
+      "endSec": 10,
+      "text": "He drives to different cities and delivers food to stores.",
+      "translations": {
+        "ua": "Він їздить до різних міст і доставляє їжу до магазинів.",
+        "ru": "Он ездит в разные города и доставляет еду в магазины."
+      }
+    },
+    {
+      "quoteNumber": 3,
+      "startSec": 10,
+      "endSec": 15,
+      "text": "He stops for lunch and arrives home safely in the evening.",
+      "translations": {
+        "ua": "Він зупиняється на обід і безпечно повертається додому ввечері.",
+        "ru": "Он останавливается на обед и безопасно возвращается домой вечером."
+      }
+    }
+  ]
+}

@@ -8,9 +8,19 @@
       "title": "Invincible",
       "level": "A2-B1",
       "length": "Short",
-      "category": ["Conversational", "Slang"],
-      "type": ["Series", "Animation"],
-      "availableModes": ["easy", "medium", "hard"],
+      "category": [
+        "Conversational",
+        "Slang"
+      ],
+      "type": [
+        "Series",
+        "Animation"
+      ],
+      "availableModes": [
+        "easy",
+        "medium",
+        "hard"
+      ],
       "media": {
         "videoFile": "https://player.mux.com/XN2XDjNR3ez62HjOrF00XYJXDvWhyLcm65dHAGR1ZUVg?metadata-video-title=Invincible_short_001&video-title=Invincible_short_001&accent-color=%23e86933&primary-color=%23317782",
         "thumbnailFile": "Invincible.webp"
@@ -27,9 +37,19 @@
       "title": "Invincible",
       "level": "A2-B1",
       "length": "Medium",
-      "category": ["Conversational", "Slang"],
-      "type": ["Series", "Animation"],
-      "availableModes": ["easy", "medium", "hard"],
+      "category": [
+        "Conversational",
+        "Slang"
+      ],
+      "type": [
+        "Series",
+        "Animation"
+      ],
+      "availableModes": [
+        "easy",
+        "medium",
+        "hard"
+      ],
       "media": {
         "videoFile": "https://player.mux.com/SpwSDrxjQCQFGDitroIGA6NHaNqQAL7eBL7EqdAbGBI?metadata-video-title=Invincible_mid_001&video-title=Invincible_mid_001&accent-color=%23e86933&primary-color=%23317782",
         "thumbnailFile": "Invincible.webp"
@@ -46,9 +66,19 @@
       "title": "Invincible",
       "level": "A2-B1",
       "length": "Long",
-      "category": ["Conversational", "Slang"],
-      "type": ["Series", "Animation"],
-      "availableModes": ["easy", "medium", "hard"],
+      "category": [
+        "Conversational",
+        "Slang"
+      ],
+      "type": [
+        "Series",
+        "Animation"
+      ],
+      "availableModes": [
+        "easy",
+        "medium",
+        "hard"
+      ],
       "media": {
         "videoFile": "https://player.mux.com/2raSgwBsGwUv1fe3EiJBsxa34wpcwHDsRntxXK7iyPs?metadata-video-title=Invincible_long_001&video-title=Invincible_long_001&accent-color=%23e86933&primary-color=%23317782",
         "thumbnailFile": "Invincible.webp"
@@ -60,14 +90,50 @@
       }
     },
     {
+      "id": "rick-and-morty_short_001",
+      "slug": "rick-tells-summer-the-hard-truth-and-jerry-confronts-him",
+      "title": "Rick and Morty",
+      "level": "B1-B2",
+      "length": "Short",
+      "category": [
+        "Conversational"
+      ],
+      "type": [
+        "Series",
+        "Animation"
+      ],
+      "availableModes": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "media": {
+        "videoFile": "https://player.mux.com/CQ9EU7jqXV2rqN02FhG6tAMtFXqYYmHZKzPaEpvsJEcQ?metadata-video-title=rick-and-morty_short_001&video-title=rick-and-morty_short_001&accent-color=%23e86933&primary-color=%23ffffff",
+        "thumbnailFile": "rick-and-morty.webp"
+      },
+      "lessonFile": "rick-and-morty_short_001.json",
+      "description": {
+        "en": "Rick gives Summer a direct life lesson, then Jerry confronts him about dragging Morty into complicated sci-fi adventures.",
+        "ua": "Рік прямо пояснює Саммер неприємну правду, а потім  Джерри дорікає йому за те, що він постійно втягує Морті у складні науково-фантастичні пригоди."
+      }
+    },
+    {
       "id": "the-morning-show_short_001",
       "slug": "bradley-and-mia-argue-in-the-car",
       "title": "The Morning Show",
       "level": "B1-B2",
       "length": "Short",
-      "category": ["Conversational"],
-      "type": ["Series"],
-      "availableModes": ["easy", "medium", "hard"],
+      "category": [
+        "Conversational"
+      ],
+      "type": [
+        "Series"
+      ],
+      "availableModes": [
+        "easy",
+        "medium",
+        "hard"
+      ],
       "media": {
         "videoFile": "https://player.mux.com/iwulOTk1beuK01NIKwagdwCRXXWAQUwmJmAUCgot01U0100?metadata-video-title=ms-s-1&video-title=ms-s-1&accent-color=%23e86933&primary-color=%23317782",
         "thumbnailFile": "the-morning-show.jpg"
@@ -84,9 +150,18 @@
       "title": "The Morning Show",
       "level": "B1-B2",
       "length": "Medium",
-      "category": ["Conversational", "Business"],
-      "type": ["Series"],
-      "availableModes": ["easy", "medium", "hard"],
+      "category": [
+        "Conversational",
+        "Business"
+      ],
+      "type": [
+        "Series"
+      ],
+      "availableModes": [
+        "easy",
+        "medium",
+        "hard"
+      ],
       "media": {
         "videoFile": "https://player.mux.com/jOcUWM1cJSbtIM00NkDzHfMi7ibZkQwpnuihRUT01PkfA?metadata-video-title=ms-m-1&video-title=ms-m-1&accent-color=%23e86933&primary-color=%23317782",
         "thumbnailFile": "the-morning-show.jpg"
@@ -103,9 +178,18 @@
       "title": "The Morning Show",
       "level": "B2-C1",
       "length": "Long",
-      "category": ["Conversational", "Business"],
-      "type": ["Series"],
-      "availableModes": ["easy", "medium", "hard"],
+      "category": [
+        "Conversational",
+        "Business"
+      ],
+      "type": [
+        "Series"
+      ],
+      "availableModes": [
+        "easy",
+        "medium",
+        "hard"
+      ],
       "media": {
         "videoFile": "https://player.mux.com/ENmosJJXGiPRlABgZxK62fQXo9li2601O6yQv00JV6ve4?metadata-video-title=ms-l-1&video-title=ms-l-1&accent-color=%23e86933&primary-color=%23317782",
         "thumbnailFile": "the-morning-show.jpg"
@@ -123,7 +207,11 @@
       "level": "A2-B1",
       "length": "Short",
       "type": "Series",
-      "availableModes": ["easy", "medium", "hard"],
+      "availableModes": [
+        "easy",
+        "medium",
+        "hard"
+      ],
       "media": {
         "videoFile": "wed-s-1.mp4",
         "thumbnailFile": "wednesday.jpg"
@@ -141,7 +229,11 @@
       "level": "A2-B1",
       "length": "Medium",
       "type": "Series",
-      "availableModes": ["easy", "medium", "hard"],
+      "availableModes": [
+        "easy",
+        "medium",
+        "hard"
+      ],
       "media": {
         "videoFile": "wed-m-1.mp4",
         "thumbnailFile": "wednesday.jpg"
@@ -159,7 +251,11 @@
       "level": "B1-B2",
       "length": "Long",
       "type": "Series",
-      "availableModes": ["easy", "medium", "hard"],
+      "availableModes": [
+        "easy",
+        "medium",
+        "hard"
+      ],
       "media": {
         "videoFile": "wed-l-1.mp4",
         "thumbnailFile": "wednesday.jpg"
@@ -168,6 +264,33 @@
       "description": {
         "en": "Wednesday's roommate Enid enters their room and sees that Wednesday has divided the room into two parts with a straight line and removed all color from her side. Enid does not know yet that Wednesday is allergic to colors.",
         "ua": "Сусідка Венздей по кімнаті, Енід, заходить до них і бачить, що Венздей розділила кімнату на дві частини прямою лінією і позбавила свою частину будь-яких кольорів. Енід ще не знає, що у Венздей алергія на кольори."
+      }
+    },
+    {
+      "id": "ai-trucks_short_001",
+      "slug": "a-truck-driver-s-day",
+      "title": "AI Trucks",
+      "level": "A1-A2",
+      "length": "Short",
+      "category": [
+        "Narrative"
+      ],
+      "type": [
+        "AI"
+      ],
+      "availableModes": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "media": {
+        "videoFile": "https://player.mux.com/RWrq8LIytlLySJRqSGWLkSIl94mkOy00b9w01Lw3VSsyM?metadata-video-title=ai-trucks_short_001&video-title=ai-trucks_short_001&accent-color=%23e86933&primary-color=%23ffffff",
+        "thumbnailFile": "ai-trucks.webp"
+      },
+      "lessonFile": "ai-trucks_short_001.json",
+      "description": {
+        "en": "Truck’s driver daily routing.",
+        "ua": "Повсякденна рутина водія вантажівки."
       }
     }
   ]

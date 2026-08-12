@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 1,
+  "id": "rick-and-morty_short_001",
+  "slug": "rick-tells-summer-the-hard-truth-and-jerry-confronts-him",
+  "title": "Rick and Morty",
+  "series": "Rick and Morty",
+  "availableModes": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "media": {
+    "videoFile": "https://player.mux.com/CQ9EU7jqXV2rqN02FhG6tAMtFXqYYmHZKzPaEpvsJEcQ?metadata-video-title=rick-and-morty_short_001&video-title=rick-and-morty_short_001&accent-color=%23e86933&primary-color=%23ffffff",
+    "thumbnailFile": "rick-and-morty.webp"
+  },
+  "meta": {
+    "level": "B1-B2",
+    "category": "Conversational",
+    "length": "short",
+    "scriptType": "dialog",
+    "type": [
+      "series",
+      "animation"
+    ]
+  },
+  "source": {
+    "originalDocx": "/Users/anatolii/Desktop/Watch&LeanApp/materials/RickAndMorty/rick-and-morty_short_001/rick-and-morty_short_001.docx",
+    "structuredDocx": "/Users/anatolii/Desktop/Watch&LeanApp/materials/RickAndMorty/rick-and-morty_short_001/rick-and-morty_short_001.docx",
+    "sourceFileName": "rick-and-morty_short_001"
+  },
+  "description": {
+    "en": "Rick gives Summer a direct life lesson, then Jerry confronts him about dragging Morty into complicated sci-fi adventures.",
+    "ua": "Рік прямо пояснює Саммер неприємну правду, а потім  Джерри дорікає йому за те, що він постійно втягує Морті у складні науково-фантастичні пригоди."
+  },
+  "lines": [
+    {
+      "lineNumber": 1,
+      "text": "There is no God, Summer. You got to rip that band-aid off now.",
+      "translations": {
+        "ua": "Бога не існує, Саммер. Тобі треба зірвати цей пластир прямо зараз.",
+        "ru": "Бога нет, Саммер. Тебе нужно сорвать этот пластырь прямо сейчас."
+      },
+      "takeaways": {
+        "ua": "to rip the band-aid off — ідіома: зробити щось неприємне швидко, без довгого відкладання. Got to – сталий вираз (розмовний) означає have to / must.",
+        "ru": "rip the band-aid off — идиома: сделать что-то неприятное быстро, не растягивая. Got to -устойчивое выражение (разговорное) означает have to / must."
+      },
+      "tokens": [
+        {
+          "id": "l1w1",
+          "text": "There",
+          "normalized": "there",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w2",
+          "text": "is",
+          "normalized": "be",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w3",
+          "text": "no",
+          "normalized": "no",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w4",
+          "text": "God",
+          "normalized": "god",
+          "punctuationAfter": ",",
+          "saveable": true
+        },
+        {
+          "id": "l1w5",
+          "text": "Summer",
+          "normalized": "summer",
+          "punctuationAfter": ".",
+          "saveable": false
+        },
+        {
+          "id": "l1w6",
+          "text": "You",
+          "normalized": "you",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w7",
+          "text": "got",
+          "normalized": "got",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w8",
+          "text": "to",
+          "normalized": "to",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w9",
+          "text": "rip",
+          "normalized": "rip",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w10",
+          "text": "that",
+          "normalized": "that",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w11",
+          "text": "band-aid",
+          "normalized": "band-aid",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w12",
+          "text": "off",
+          "normalized": "off",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l1w13",
+          "text": "now",
+          "normalized": "now",
+          "punctuationAfter": ".",
+          "saveable": true
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "There [[is]] no God, Summer. You [[got]] to rip that [[band-aid]] off now.",
+              "blanks": [
+                {
+                  "tokenId": "l1w2",
+                  "answer": "is",
+                  "options": [
+                    "is",
+                    "in",
+                    "it"
+                  ]
+                },
+                {
+                  "tokenId": "l1w7",
+                  "answer": "got",
+                  "options": [
+                    "got",
+                    "God",
+                    "cut"
+                  ]
+                },
+                {
+                  "tokenId": "l1w11",
+                  "answer": "band-aid",
+                  "options": [
+                    "band-aid",
+                    "bundle",
+                    "band Aim"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "There [[is]] no [[God]], Summer. You [[got]] to [[rip]] that [[band-aid]] off [[now]].",
+          "blankedTokenIds": [
+            "l1w2",
+            "l1w4",
+            "l1w7",
+            "l1w9",
+            "l1w11",
+            "l1w13"
+          ]
+        },
+        "hard": {
+          "text": "[[There]] [[is]] [[no]] [[God]], Summer. [[You]] [[got]] [[to]] [[rip]] [[that]] [[band-aid]] [[off]] [[now]].",
+          "revealOrder": [
+            "l1w1",
+            "l1w2",
+            "l1w3",
+            "l1w4",
+            "l1w6",
+            "l1w7",
+            "l1w8",
+            "l1w9",
+            "l1w10",
+            "l1w11",
+            "l1w12",
+            "l1w13"
+          ]
+        }
+      }
+    },
+    {
+      "lineNumber": 2,
+      "text": "Okay, with all due respect, Rick... What am I talking about? What respect is due? How is my son supposed to pass his classes if you keep dragging him off for high-concept Sci-Fi rigamarole?",
+      "translations": {
+        "ua": "Гаразд, з усією повагою, Ріку... Про що це я? Яка тут повага? Як мій син має вспівати на уроках, якщо ти постійно тягаєш його на свої заумні науково-фантастичні двіжухи?",
+        "ru": "Ладно, при всем уважении, Рик... О чем это я? Какое тут уважение? Как мой сын должен успевать на уроках, если ты постоянно таскаешь его на свои заумные научно-фантастические движухи?"
+      },
+      "takeaways": {
+        "ua": "with all due respect — слово, due вживається в різних контекстах, але за суттю означає «повинно виконатися», «повинно відбутися». Тому, якщо перекласти фразу буквально, це буде щось на кшталт «повага, обов'язкова до виконання», але найкращим перекладом буде «з усією повагою». Rigamarole  — означає заплутану, тривалу й часто безрезультатну метушню; гарним відповідником може бути сленгове українське слово «двіжуха» (або «тяганина»).",
+        "ru": "with all due respect — слово, due используется в разных контекстах, но по сути означает «должно выполниться», «должно произойти». Поэтому, если перевести фразу буквально, это будет что-то вроде «уважение, обязательное к исполнению», но лучшим переводом будет «со всем уважением». Rigamarole  —  означает запутанную, долгую и часто безрезультатную возню; хорошим соответствием может быть сленговое слово «движуха» (или «волокита»). "
+      },
+      "tokens": [
+        {
+          "id": "l2w1",
+          "text": "Okay",
+          "normalized": "okay",
+          "punctuationAfter": ",",
+          "saveable": true
+        },
+        {
+          "id": "l2w2",
+          "text": "with",
+          "normalized": "with",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w3",
+          "text": "all",
+          "normalized": "all",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w4",
+          "text": "due",
+          "normalized": "due",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w5",
+          "text": "respect",
+          "normalized": "respect",
+          "punctuationAfter": ",",
+          "saveable": true
+        },
+        {
+          "id": "l2w6",
+          "text": "Rick",
+          "normalized": "rick",
+          "punctuationAfter": "...",
+          "saveable": false
+        },
+        {
+          "id": "l2w7",
+          "text": "What",
+          "normalized": "what",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w8",
+          "text": "am",
+          "normalized": "be",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w9",
+          "text": "I",
+          "normalized": "i",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w10",
+          "text": "talking",
+          "normalized": "talking",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w11",
+          "text": "about",
+          "normalized": "about",
+          "punctuationAfter": "?",
+          "saveable": true
+        },
+        {
+          "id": "l2w12",
+          "text": "What",
+          "normalized": "what",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w13",
+          "text": "respect",
+          "normalized": "respect",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w14",
+          "text": "is",
+          "normalized": "be",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w15",
+          "text": "due",
+          "normalized": "due",
+          "punctuationAfter": "?",
+          "saveable": true
+        },
+        {
+          "id": "l2w16",
+          "text": "How",
+          "normalized": "how",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w17",
+          "text": "is",
+          "normalized": "be",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w18",
+          "text": "my",
+          "normalized": "my",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w19",
+          "text": "son",
+          "normalized": "son",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w20",
+          "text": "supposed",
+          "normalized": "supposed",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w21",
+          "text": "to",
+          "normalized": "to",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w22",
+          "text": "pass",
+          "normalized": "pass",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w23",
+          "text": "his",
+          "normalized": "his",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w24",
+          "text": "classes",
+          "normalized": "class",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w25",
+          "text": "if",
+          "normalized": "if",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w26",
+          "text": "you",
+          "normalized": "you",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w27",
+          "text": "keep",
+          "normalized": "keep",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w28",
+          "text": "dragging",
+          "normalized": "drag",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w29",
+          "text": "him",
+          "normalized": "him",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w30",
+          "text": "off",
+          "normalized": "off",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w31",
+          "text": "for",
+          "normalized": "for",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w32",
+          "text": "high-concept",
+          "normalized": "high-concept",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w33",
+          "text": "Sci-Fi",
+          "normalized": "sci-fi",
+          "punctuationAfter": "",
+          "saveable": true
+        },
+        {
+          "id": "l2w34",
+          "text": "rigamarole",
+          "normalized": "rigamarole",
+          "punctuationAfter": "?",
+          "saveable": true
+        }
+      ],
+      "modes": {
+        "easy": {
+          "snaps": [
+            {
+              "snapNumber": 1,
+              "text": "Okay, with all [[due]] respect, Rick... What am I talking [[about]]? What [[respect]] is due?",
+              "blanks": [
+                {
+                  "tokenId": "l2w4",
+                  "answer": "due",
+                  "options": [
+                    "due",
+                    "do",
+                    "done"
+                  ]
+                },
+                {
+                  "tokenId": "l2w11",
+                  "answer": "about",
+                  "options": [
+                    "around",
+                    "boat",
+                    "about"
+                  ]
+                },
+                {
+                  "tokenId": "l2w5",
+                  "answer": "respect",
+                  "options": [
+                    "perspective",
+                    "respect",
+                    "retake"
+                  ]
+                }
+              ]
+            },
+            {
+              "snapNumber": 2,
+              "text": "How is my son [[supposed]] to pass his classes if you keep [[dragging]] him off for high-concept Sci-Fi [[rigamarole]]?",
+              "blanks": [
+                {
+                  "tokenId": "l2w20",
+                  "answer": "supposed",
+                  "options": [
+                    "supposed",
+                    "oppose",
+                    "support"
+                  ]
+                },
+                {
+                  "tokenId": "l2w28",
+                  "answer": "dragging",
+                  "options": [
+                    "bragging",
+                    "dragon",
+                    "dragging"
+                  ]
+                },
+                {
+                  "tokenId": "l2w34",
+                  "answer": "rigamarole",
+                  "options": [
+                    "rigamarole",
+                    "casserole",
+                    "parole"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "text": "[[Okay]], with all [[due]] [[respect]], Rick... What [[am]] I talking [[about]]? What [[respect]] is [[due]]? How [[is]] my son [[supposed]] to [[pass]] his [[classes]] if you keep [[dragging]] him [[off]] for high-concept Sci-Fi [[rigamarole]]?",
+          "blankedTokenIds": [
+            "l2w1",
+            "l2w4",
+            "l2w5",
+            "l2w8",
+            "l2w11",
+            "l2w13",
+            "l2w15",
+            "l2w14",
+            "l2w20",
+            "l2w22",
+            "l2w24",
+            "l2w28",
+            "l2w30",
+            "l2w34"
+          ]
+        },
+        "hard": {
+          "text": "[[Okay]], [[with]] [[all]] [[due]] [[respect]], Rick... [[What]] [[am]] [[I]] [[talking]] [[about]]? [[What]] [[respect]] [[is]] [[due]]? [[How]] [[is]] [[my]] [[son]] [[supposed]] [[to]] [[pass]] [[his]] [[classes]] [[if]] [[you]] [[keep]] [[dragging]] [[him]] [[off]] [[for]] [[high-concept]] [[Sci-Fi]] [[rigamarole]]?",
+          "revealOrder": [
+            "l2w1",
+            "l2w2",
+            "l2w3",
+            "l2w4",
+            "l2w5",
+            "l2w7",
+            "l2w8",
+            "l2w9",
+            "l2w10",
+            "l2w11",
+            "l2w12",
+            "l2w13",
+            "l2w14",
+            "l2w15",
+            "l2w16",
+            "l2w17",
+            "l2w18",
+            "l2w19",
+            "l2w20",
+            "l2w21",
+            "l2w22",
+            "l2w23",
+            "l2w24",
+            "l2w25",
+            "l2w26",
+            "l2w27",
+            "l2w28",
+            "l2w29",
+            "l2w30",
+            "l2w31",
+            "l2w32",
+            "l2w33",
+            "l2w34"
+          ]
+        }
+      }
+    }
+  ],
+  "sayIt": [
+    {
+      "quoteNumber": 1,
+      "startSec": 0,
+      "endSec": 3,
+      "text": "There is no God, Summer."
+    },
+    {
+      "quoteNumber": 2,
+      "startSec": 5,
+      "endSec": 7,
+      "text": "What am I talking about? What respect is due?"
+    },
+    {
+      "quoteNumber": 3,
+      "startSec": 7,
+      "endSec": 10,
+      "text": "How is my son supposed to pass his classes…"
+    }
+  ],
+  "translateIt": [
+    {
+      "quoteNumber": 1,
+      "startSec": 0,
+      "endSec": 3,
+      "text": "There is no God, Summer. You got to rip that band-aid off now.",
+      "translations": {
+        "ua": "Бога не існує, Саммер. Тобі треба зірвати цей пластир прямо зараз.",
+        "ru": "Бога нет, Саммер. Тебе нужно сорвать этот пластырь прямо сейчас."
+      }
+    },
+    {
+      "quoteNumber": 2,
+      "startSec": 5,
+      "endSec": 7,
+      "text": "What am I talking about? What respect is due?",
+      "translations": {
+        "ua": "Про що я говорю? Яка тут повага?",
+        "ru": "О чем я говорю? Какое тут уважение?"
+      }
+    },
+    {
+      "quoteNumber": 3,
+      "startSec": 7,
+      "endSec": 10,
+      "text": "How is my son supposed to pass his classes…",
+      "translations": {
+        "ua": "Як мій син має вспівати на уроках…",
+        "ru": "Как мой сын должен успевать на уроках…"
+      }
+    }
+  ]
+}

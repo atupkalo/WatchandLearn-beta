@@ -9,6 +9,7 @@
      "Conversational",
      "Slang",
      "Business",
+     "Narrative",
      "Technical",
      "IT",
      "Medical"
@@ -20,9 +21,10 @@
    ],
    "types": [
      "Movie",
-    "Series",
+     "Series",
      "Documentary",
      "Animation",
+     "AI",
      "Interview"
    ]
 }

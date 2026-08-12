@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
+  ArrowRight,
   Loader,
   MicStroke,
   QuoteDown,
@@ -11,6 +12,7 @@ import {
 } from "@/components/Icons/icons";
 import AccordionSquare from "@/components/ui/accordion-square";
 import ButtonCustom from "@/components/ui/button";
+import ButtonIcon from "@/components/ui/button-icon";
 import { useUserPreferences } from "@/components/providers/user-preferences-provider";
 import type { LessonTranslateItQuote } from "@/lib/lessons";
 import { useSayItSession } from "@/lib/say-it/use-say-it-session";
@@ -25,11 +27,11 @@ export default function TranslateIt({
   quotes,
   onComplete,
 }: TranslateItProps) {
+  const tGeneric = useTranslations("Generic");
   const tLessons = useTranslations("Lessons");
   const { studyLanguage } = useUserPreferences();
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
   const completionSentRef = useRef(false);
-  const advanceTimeoutRef = useRef<number | null>(null);
 
   const currentQuote = quotes[currentQuoteIndex] ?? null;
   const sourceText = useMemo(() => {
@@ -69,7 +71,8 @@ export default function TranslateIt({
     quote: currentQuote,
     strings,
   });
-  const isCompleted = currentQuoteIndex === quotes.length - 1 && isScriptMatched;
+  const isLastQuote = currentQuoteIndex === quotes.length - 1;
+  const canAdvanceCurrentQuote = isScriptMatched;
   const visibleFeedback =
     feedback && feedback !== strings.recording && feedback !== strings.processing
       ? isScriptMatched
@@ -77,50 +80,29 @@ export default function TranslateIt({
         : "error"
       : null;
 
-  useEffect(() => {
-    return () => {
-      if (advanceTimeoutRef.current != null) {
-        window.clearTimeout(advanceTimeoutRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!isScriptMatched || isCompleted) {
-      return;
-    }
-
-    if (currentQuoteIndex === quotes.length - 1) {
-      if (!completionSentRef.current) {
-        completionSentRef.current = true;
-        onComplete?.();
-      }
-
-      return;
-    }
-
-    advanceTimeoutRef.current = window.setTimeout(() => {
-      resetCurrentQuote();
-      setCurrentQuoteIndex((current) => current + 1);
-    }, 900);
-
-    return () => {
-      if (advanceTimeoutRef.current != null) {
-        window.clearTimeout(advanceTimeoutRef.current);
-        advanceTimeoutRef.current = null;
-      }
-    };
-  }, [currentQuoteIndex, isCompleted, isScriptMatched, onComplete, quotes.length, resetCurrentQuote]);
-
   function handleReset() {
-    if (advanceTimeoutRef.current != null) {
-      window.clearTimeout(advanceTimeoutRef.current);
-      advanceTimeoutRef.current = null;
-    }
-
     completionSentRef.current = false;
     setCurrentQuoteIndex(0);
     resetCurrentQuote();
+  }
+
+  function handleNext() {
+    if (!canAdvanceCurrentQuote || isListening || isProcessing) {
+      return;
+    }
+
+    if (isLastQuote) {
+      if (completionSentRef.current) {
+        return;
+      }
+
+      completionSentRef.current = true;
+      onComplete?.();
+      return;
+    }
+
+    resetCurrentQuote();
+    setCurrentQuoteIndex((current) => current + 1);
   }
 
   if (!quotes.length || !currentQuote) {
@@ -166,7 +148,7 @@ export default function TranslateIt({
             }`}
             onClick={handleMicClick}
             aria-label={tLessons("translateItMicAriaLabel")}
-            disabled={isProcessing || isCompleted}
+            disabled={isProcessing}
           >
             <span
               className={`${styles.translateItMicGlyph} ${
@@ -199,11 +181,7 @@ export default function TranslateIt({
           </div>
         </div>
 
-        {isCompleted ? (
-          <div className={styles.translateItCompleted}>
-            {tLessons("translateItCompleted")}
-          </div>
-        ) : visibleFeedback ? (
+        {visibleFeedback ? (
           <div
             className={`${styles.translateItFeedback} ${
               visibleFeedback === "success"
@@ -226,6 +204,16 @@ export default function TranslateIt({
             size="sm"
             onClick={handleReset}
           />
+          {canAdvanceCurrentQuote ? (
+            <ButtonIcon
+              label={tGeneric("next")}
+              icon={<HugeiconsIcon icon={ArrowRight} size={18} strokeWidth={1.6} />}
+              size="lg"
+              onClick={handleNext}
+              disabled={isListening || isProcessing}
+              color="accent"
+            />
+          ) : null}
         </div>
       </div>
     </div>

@@ -14,6 +14,18 @@ interface LessonMetaBarProps {
   rightControls?: ReactNode;
 }
 
+function translateOptionLabel(
+  t: ReturnType<typeof useTranslations>,
+  key: string,
+  fallback: string,
+) {
+  try {
+    return t(key);
+  } catch {
+    return fallback;
+  }
+}
+
 export default function LessonMetaBar({
   title,
   level,
@@ -23,13 +35,23 @@ export default function LessonMetaBar({
   rightControls,
 }: LessonMetaBarProps) {
   const t = useTranslations("Lessons");
-  const categoryLabel = category.map((item) => t(`options.categories.${item}`)).join(", ");
-  const typeLabel = type.map((item) => t(`options.types.${item}`)).join(", ");
+  const categoryLabel = category
+    .map((item) => translateOptionLabel(t, `options.categories.${item}`, item))
+    .join(", ");
+  const typeLabel = type
+    .map((item) => translateOptionLabel(t, `options.types.${item}`, item))
+    .join(", ");
 
   const items = [
-    { label: t("labels.level"), value: t(`options.levels.${level}`) },
+    {
+      label: t("labels.level"),
+      value: translateOptionLabel(t, `options.levels.${level}`, level),
+    },
     { label: t("labels.category"), value: categoryLabel },
-    { label: t("labels.duration"), value: t(`options.durations.${duration}`) },
+    {
+      label: t("labels.duration"),
+      value: translateOptionLabel(t, `options.durations.${duration}`, duration),
+    },
     { label: t("labels.type"), value: typeLabel },
   ];
 

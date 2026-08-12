@@ -10,7 +10,6 @@ import InputSelect from "../ui/input-select";
 import TopBar from "../ui/top-bar";
 import styles from "../ui/ui.module.css";
 
-
 export interface LessonFilterState {
   search: string;
   level: string;
@@ -23,6 +22,18 @@ interface LessonsListFiltersProps {
   value: LessonFilterState;
   onChange: (value: LessonFilterState) => void;
   onApply: () => void;
+}
+
+function translateOptionLabel(
+  t: ReturnType<typeof useTranslations>,
+  key: string,
+  fallback: string,
+) {
+  try {
+    return t(key);
+  } catch {
+    return fallback;
+  }
 }
 
 function toOptions(values: string[], translate: (key: string) => string) {
@@ -47,20 +58,31 @@ export default function LessonsListFilters({
         textValue: "",
         label: "",
       },
-      ...toOptions(filtersData.levels, (filterValue) => t(`options.levels.${filterValue}`)),
+      ...toOptions(filtersData.levels, (filterValue) =>
+        translateOptionLabel(t, `options.levels.${filterValue}`, filterValue),
+      ),
     ],
     [t],
   );
   const durationOptions = useMemo(
-    () => toOptions(filtersData.durations, (filterValue) => t(`options.durations.${filterValue}`)),
+    () =>
+      toOptions(filtersData.durations, (filterValue) =>
+        translateOptionLabel(t, `options.durations.${filterValue}`, filterValue),
+      ),
     [t],
   );
   const categoryOptions = useMemo(
-    () => toOptions(filtersData.categories, (filterValue) => t(`options.categories.${filterValue}`)),
+    () =>
+      toOptions(filtersData.categories, (filterValue) =>
+        translateOptionLabel(t, `options.categories.${filterValue}`, filterValue),
+      ),
     [t],
   );
   const typeOptions = useMemo(
-    () => toOptions(filtersData.types, (filterValue) => t(`options.types.${filterValue}`)),
+    () =>
+      toOptions(filtersData.types, (filterValue) =>
+        translateOptionLabel(t, `options.types.${filterValue}`, filterValue),
+      ),
     [t],
   );
 
